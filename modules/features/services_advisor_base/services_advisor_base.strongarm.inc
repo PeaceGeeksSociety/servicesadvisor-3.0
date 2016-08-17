@@ -513,6 +513,9 @@ function services_advisor_base_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -527,6 +530,9 @@ function services_advisor_base_strongarm() {
         ),
         'language' => array(
           'weight' => '0',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(
