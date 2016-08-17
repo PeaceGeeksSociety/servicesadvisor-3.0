@@ -18,21 +18,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => -2,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_availability' => array(
       'name' => 'Service Availability',
@@ -43,21 +28,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => -1,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_available_nationality' => array(
       'name' => 'Service Available Nationality',
@@ -68,21 +38,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_complaints_mechanism' => array(
       'name' => 'Service Complaints Mechanism',
@@ -93,21 +48,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => -7,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_coverage' => array(
       'name' => 'Service Coverage',
@@ -118,21 +58,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 4,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_feedback_delay' => array(
       'name' => 'Service Feedback Delay',
@@ -143,21 +68,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 5,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_feedback_mechanism' => array(
       'name' => 'Service Feedback Mechanism',
@@ -168,21 +78,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 6,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_intake_criteria' => array(
       'name' => 'Service Intake Criteria',
@@ -193,21 +88,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 7,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_location_availability_days' => array(
       'name' => 'Service Location Availability days',
@@ -218,21 +98,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 8,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_location_hour_close' => array(
       'name' => 'Service Location Office closes at',
@@ -243,21 +108,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 9,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_location_hour_open' => array(
       'name' => 'Service Location Office opens at',
@@ -268,21 +118,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 10,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_nested_categories' => array(
       'name' => 'Service Nested Categories',
@@ -293,21 +128,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => -6,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_nested_location' => array(
       'name' => 'Service Nested Location',
@@ -318,21 +138,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_referral_method' => array(
       'name' => 'Service Referral Method',
@@ -343,21 +148,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 10,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_referral_next_step' => array(
       'name' => 'Service Referral Next Step',
@@ -368,21 +158,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 10,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_registration_type' => array(
       'name' => 'Legal Document Required',
@@ -393,21 +168,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 10,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
     'service_response_delay' => array(
       'name' => 'Service Response Delay',
@@ -418,21 +178,6 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'weight' => 10,
       'language' => 'und',
       'i18n_mode' => 1,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
     ),
   );
 }
