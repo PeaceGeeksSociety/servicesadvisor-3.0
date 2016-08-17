@@ -357,15 +357,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'administer uuid'.
-  $permissions['administer uuid'] = array(
-    'name' => 'administer uuid',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'uuid',
-  );
-
   // Exported permission: 'administer views'.
   $permissions['administer views'] = array(
     'name' => 'administer views',
@@ -679,18 +670,6 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'geocoder',
-  );
-
-  // Exported permission: 'import media'.
-  $permissions['import media'] = array(
-    'name' => 'import media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'manage features'.
