@@ -59,15 +59,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -204,26 +195,6 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'field_group',
-  );
-
-  // Exported permission: 'administer file types'.
-  $permissions['administer file types'] = array(
-    'name' => 'administer file types',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: 'administer files'.
-  $permissions['administer files'] = array(
-    'name' => 'administer files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
   );
 
   // Exported permission: 'administer filters'.
@@ -376,17 +347,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'bypass file access'.
-  $permissions['bypass file access'] = array(
-    'name' => 'bypass file access',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
@@ -446,18 +406,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'context_ui',
   );
 
-  // Exported permission: 'create files'.
-  $permissions['create files'] = array(
-    'name' => 'create files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -466,16 +414,6 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'path',
-  );
-
-  // Exported permission: 'delete any files'.
-  $permissions['delete any files'] = array(
-    'name' => 'delete any files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
   );
 
   // Exported permission: 'delete backup files'.
@@ -488,18 +426,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
-  // Exported permission: 'delete own files'.
-  $permissions['delete own files'] = array(
-    'name' => 'delete own files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
@@ -507,28 +433,6 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'admin_menu',
-  );
-
-  // Exported permission: 'edit any files'.
-  $permissions['edit any files'] = array(
-    'name' => 'edit any files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: 'edit own files'.
-  $permissions['edit own files'] = array(
-    'name' => 'edit own files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
   );
 
   // Exported permission: 'execute php code'.
@@ -878,32 +782,6 @@ function services_advisor_base_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node_view_permissions',
-  );
-
-  // Exported permission: 'view files'.
-  $permissions['view files'] = array(
-    'name' => 'view files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: 'view own files'.
-  $permissions['view own files'] = array(
-    'name' => 'view own files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'file_entity',
   );
 
   // Exported permission: 'view own page content'.

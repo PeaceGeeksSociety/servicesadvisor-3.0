@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * services_advisor_base.features.og_features_permission.inc
+ * services_advisor_partner.features.og_features_permission.inc
  */
 
 /**
  * Implements hook_og_features_default_permissions().
  */
-function services_advisor_base_og_features_default_permissions() {
+function services_advisor_partner_og_features_default_permissions() {
   $permissions = array();
 
   // Exported og permission: 'node:service_partner:add user'

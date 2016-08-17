@@ -5,6 +5,7 @@ package = Services Advisor
 version = 7.x-1.0-alpha01
 dependencies[] = ctools
 dependencies[] = date
+dependencies[] = date_popup
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_group
