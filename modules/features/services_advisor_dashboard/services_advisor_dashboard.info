@@ -7,7 +7,6 @@ dependencies[] = better_exposed_filters
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = ds
-dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = menu
 dependencies[] = services_advisor_base
