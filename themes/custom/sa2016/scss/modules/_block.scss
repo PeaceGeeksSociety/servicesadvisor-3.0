@@ -1,0 +1,74 @@
+//Powered by foogter block
+.block-services-advisor-base-powered-by-peace-geeks {
+	.powered-by-wrapper  {
+		position: relative;
+		margin: 20px 0;
+		.powered-by-text {
+	    position: absolute;
+	    top: 8px;
+	    right: 0px;
+	    color: #028183;
+	    font-weight: bold;
+		}
+		.pg-image-wrapper {
+			img {
+		    padding-top: 20px;
+			}
+		}
+		.pg-url {
+			position: absolute;
+	    bottom: 24px;
+	    right: 0px;
+			a {
+		    color: #028183;
+		    font-weight: bold;
+				font-size: 12px;
+			}
+		}
+	}
+}
+.block-services-advisor-base-jordan-inner-agency {
+	.jordan-inner-wrapper {
+    margin: 52px 0;
+		.image-wrapper, .inner-agency-text {
+			display: inline-block;
+		}
+		.image-wrapper {
+			img {
+				width:62px;
+			}
+		}
+		.inner-agency-text  {
+			padding: 10px;
+			color: white;
+	    font-weight: bold;
+		}
+	}
+}
+
+.block-masquerade-masquerade {
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+	.block-title {
+		font-size: 20px;
+    color:white;
+	}
+  ul , li{
+    list-style: none;
+  }
+  .form-item {
+    color:white;
+  }
+  .container-inline {
+    .rtl-session & {
+      text-align: left;
+    }
+  }
+//	.form-item:not(.form-item-masquerade-user-field) {
+//		display: none;
+//	}
+	#edit-submit {
+		padding: 7px 15px;
+	}
+}

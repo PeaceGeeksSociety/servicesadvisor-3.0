@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install function for the services advisor profile.
+ */
+
+/**
+ * Implements hook_install()
+ */
+function servicesadvisor_install() {
+  $modules = array(
+    'backup_migrate',
+    'context_ui',
+    'contextual',
+    'field_ui',
+  );
+
+  module_enable($modules);
+  theme_enable(array('sa2016'));
+}

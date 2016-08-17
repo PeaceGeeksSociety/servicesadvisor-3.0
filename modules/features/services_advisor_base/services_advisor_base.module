@@ -1,0 +1,319 @@
+<?php
+/**
+ * @file
+ * Code for the services_advisor_base feature.
+ */
+
+include_once 'services_advisor_base.features.inc';
+
+/**
+ * Implements hook_block_info().
+ */
+function services_advisor_base_block_info() {
+  $blocks = array();
+  $blocks['services_links'] = array(
+    'info' => t('Services Links'),
+  );
+  $blocks['add_service_btn'] = array(
+    'info' => t('Add service btn'),
+  );
+  $blocks['powered_by_peace_geeks'] = array(
+    'info' => t('Powered by Peace Geeks'),
+  );
+  $blocks['jordan_inner_agency'] = array(
+    'info' => t('Jordan inner Agency'),
+  );
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function services_advisor_base_block_view($delta='') {
+  $block = array();
+
+  switch($delta) {
+    case 'services_links' :
+      $block['content'] = services_advisor_base_services_links();
+      break;
+	  case 'jordan_inner_agency' :
+		$image_url =  '/'.drupal_get_path('theme', 'sa2016') .'/images/jordan_inter_agency_clean.png';
+	  $block = array(
+	    'content' => array(
+       // '#prefix' => '<div class="medium-12">',
+       // '#suffix' => '</div>',
+       '#markup' => '<div class="jordan-inner-wrapper left"><a href="http://data.unhcr.org/jordan/"><div class="image-wrapper"><img src="'.$image_url.'" /></div><div class="inner-agency-text">'.t('Jordan Inter Agency Coordination').'</div></a</div>',
+     ),
+	  );
+    break;
+	  case 'powered_by_peace_geeks' :
+		$image_url =  '/'.drupal_get_path('theme', 'sa2016') .'/images/PG_vectors.png';
+	  $block = array(
+	    'content' => array(
+       // '#prefix' => '<div class="medium-12">',
+       // '#suffix' => '</div>',
+       '#markup' => '<div class="powered-by-wrapper right"><a href="http://peacegeeks.org/"><div class="powered-by-text">'.t('Powered by').'</div><div class="pg-image-wrapper"><img src="'.$image_url.'" /></div><div class="pg-url">peacegeeks.org</a></div></div>',
+     ),
+	  );
+    break;
+		case 'add_service_btn':
+      $query = array();
+      if ($group_context = og_context('node')) {
+        $query = array('og_group_ref' => $group_context['gid']);
+      }
+			$block['content'] = array (
+      	'#prefix' => '<div class="clearfix">',
+      	'#suffix' => '</div>',
+			);
+      $block['content']['#markup'] = l('<i class="fi-plus"></i>' . t('Add a new service'), '/node/add/service-location', array(
+        'attributes' => array('class' => 'button small alert right radius'),
+        'html' => TRUE,
+        'query' => $query
+      ));
+			break;
+  }
+
+  return $block;
+}
+
+function services_advisor_base_services_links(){
+  $node = menu_get_object();
+  $variables = array(
+    'items' => array(),
+    // Leave the title element empty to omit the title.
+    'title' => '',
+    'type' => 'ul',
+    'attributes' => array(),
+  );
+  $variables['items'][] = l(t('Add a new location'), '/node/add/service-location', array('query' => array('og_group_ref' => $node->nid)));
+  return theme('item_list', $variables);
+}
+
+/**
+ * Alter the access to the ability to clone a given node.
+ *
+ * @param bool $access
+ *   Reference to the boolean determining if cloning should be allowed on a
+ *   given node.
+ * @param $node
+ *   The fully loaded node object being considered for cloning.
+ *
+ * @see clone_access_cloning()
+ * @see drupal_alter()
+ */
+function services_advisor_base_clone_access_alter(&$access, $node) {
+  global $user;
+
+  // Only allow cloning of nodes posted to groups you belong to.
+  if ($node->type == 'service_location' && $node->language == 'en' && og_is_member('node', $node->og_group_ref['und'][0]['target_id'])) {
+    $access = TRUE;
+  }
+}
+
+/*
+ * Implementation of hook_node_insert()
+ */
+
+function services_advisor_base_node_insert($node) {
+
+  // Create the Arabic translation at the same time that we save the English.
+  // If we want to generalize this we could use
+  // $languages = i18n_node_language_list($node, TRUE, TRUE);
+  // but we'd might want a mechanism to detect content type too.
+
+  if ($node->type == 'service_location' && $node->language == 'en' && $node->tnid == 0){
+    $node->tnid = $node->nid;
+
+    $translation_source = new stdClass();
+    $node->translation_source->tnid = $node->nid;
+    $arabic_node = clone $node;
+    // unset version and node id's
+    unset($arabic_node->nid);
+    unset($arabic_node->vid);
+    unset($arabic_node->title);
+    unset($arabic_node->path);
+
+    $arabic_node->language = 'ar';
+
+    // Save the copy
+    node_save($arabic_node);
+    // Flag the Arabic text as needing to be updated, then resave. I can't due this before the initial save.
+    $arabic_node->translate = true;
+    node_save($arabic_node);
+
+    if ($arabic_node->nid){
+      drupal_set_message( '<strong>' . t('You still need to complete the Arabic translation this location, either by !link now or using the Translate tab at a later time.' . '</strong>',
+                          array('!link' => l(t('clicking this link'), 'ar/node/' . $arabic_node->nid . '/edit'), 'status')));
+    }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ *
+ * Auto-node title module does not support internationalization, so I am handling that here.
+ */
+function services_advisor_base_node_presave($node) {
+  if ($node->type == 'service_location'){
+    $translated_sector   = i18n_taxonomy_term_name(taxonomy_term_load($node->field_services_provided['und'][0]['tid']), $node->language);
+    $translated_location = i18n_taxonomy_term_name(taxonomy_term_load($node->field_service_location_location['und'][0]['tid']), $node->language);
+    $node->title = $translated_location . ': ' . $translated_sector;
+    $node->auto_nodetitle_applied = TRUE;
+  }
+}
+
+function services_advisor_base_views_pre_render(&$view) {
+  if ($view->name=='service_location_list') {
+    global $language;
+    if ($language->language == 'en'){
+      return;
+    }
+    header('location: /?lang=en');
+    exit;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function services_advisor_base_form_service_location_node_form_alter(&$form, &$form_state) {
+  $langcode = $form['language']['#value'];
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'services_advisor_base') . '/js/services_advisor_base.node_form.js',
+  );
+
+  // Categories
+  $category_tids = array_keys(
+    $form['field_service_category'][LANGUAGE_NONE]['#options']
+  );
+  $category_terms = taxonomy_term_load_multiple($category_tids);
+  $category_wrappers = entity_metadata_wrapper('list<taxonomy_term>', $category_terms);
+  foreach ($category_wrappers as $category_tid => $category_wrapper) {
+    $form['field_service_category'][LANGUAGE_NONE]['#options_attributes'][$category_tid] = array(
+      'class' => $category_wrapper->field_service_sector->getIdentifier(),
+    );
+  }
+
+  // Activities
+  $activity_tids = array_keys(
+    $form['field_service_activity_details'][LANGUAGE_NONE]['#options']
+  );
+  $activity_terms = taxonomy_term_load_multiple($activity_tids);
+  $activity_wrappers = entity_metadata_wrapper('list<taxonomy_term>', $activity_terms);
+  foreach ($activity_wrappers as $activity_tid => $activity_wrapper) {
+    $form['field_service_activity_details'][LANGUAGE_NONE]['#options_attributes'][$activity_tid] = array(
+      'class' => $activity_wrapper->field_service_activity_category->getIdentifier(),
+    );
+  }
+
+}
+
+/**
+ * Implements hook_ds_fields_info().
+ */
+function services_advisor_base_ds_fields_info($entity_type) {
+  $fields = array();
+
+  if ($entity_type == 'node') {
+    $fields['edit_node'] = array(
+      'title' => t('Edit node'),
+      'field_type' => DS_FIELD_TYPE_FUNCTION,
+      'function' => 'services_advisor_base_render_edit_node',
+    );
+    $fields['expired_node'] = array(
+      'title' => t('Expired node'),
+      'field_type' => DS_FIELD_TYPE_FUNCTION,
+      'function' => 'services_advisor_base_render_expired_node',
+    );
+    $fields['node_language'] = array(
+      'title' => t('Node Language Completion Status'),
+      'field_type' => DS_FIELD_TYPE_FUNCTION,
+      'function' => 'services_advisor_base_node_langauge'
+    );
+
+    return array('node' => $fields);
+  }
+}
+
+/**
+ * Render the "Edit node" field.
+ */
+function services_advisor_base_render_edit_node($field) {
+  $output = '';
+  if (node_access('update', $field['entity'])) {
+    $node_type_label = t('Location');
+
+    $output = l(
+      '<span>' . t('Edit @type', array('@type' => $node_type_label)) . '</span>',
+      'node/' . $field['entity']->nid . '/edit',
+      array(
+        'attributes' => array('class' => array('edit-node round button tiny right alert')),
+        'html' => TRUE
+      )
+    );
+  }
+  return $output;
+}
+
+/**
+ * Render the "Expired node" field.
+ */
+function services_advisor_base_render_expired_node($field) {
+  $output = '';
+	$expiredvalue = strtotime($field['entity']->field_service_end_date['und'][0]['value']) - time();
+	if( (int)$expiredvalue < 0) {
+    $output = '<div class="expired-wrapper round  tiny alert"><i class="fi-alert large"></i>'.t('Service is Expired').'</div>';
+	} 
+	return $output;
+}
+
+
+function services_advisor_base_node_langauge($field) {
+  $language_default = language_default();
+  $node = $field['entity'];
+  $type = variable_get('translation_language_type', LANGUAGE_TYPE_INTERFACE);
+  $list = array();
+
+  if (isset($node->tnid) && drupal_multilingual() && $translations = translation_node_get_translations($node->tnid)) {
+    foreach (language_list() as $langcode => $language) {
+      $language_name = $language->name;
+      if (isset($translations[$langcode])) {
+        $translation_node = node_load($translations[$langcode]->nid);
+        $path = 'node/' . $translation_node->nid;
+        $links = language_negotiation_get_switch_links($type, $path);
+        $list[$langcode] = array(
+          'title' => t($language_name),
+          '#prefix' => $translation_node->translate ? '<span data-tooltip aria-haspopup="true" class="has-tip" title="Service location needs translation update.">' : '<span data-tooltip aria-haspopup="true" class="has-tip" title="The record translation is complete.">',
+          '#suffix' => '</span>',
+          'href' => empty($links->links[$langcode]['href']) ? $path : $links->links[$langcode]['href'],
+          'language' => $links->links[$langcode]['language'],
+          'attributes' => array(
+            'class' => $translation_node->translate ? 'round button tiny secondary-alert lang-outdated ' : 'round info button tiny button'
+          )
+        );
+      } else {
+        $path = 'node/add/' . str_replace('_', '-', $node->type);
+        $links = language_negotiation_get_switch_links($type, $path);
+
+        $list[$langcode] = array(
+          'title' => t($language_name),
+          '#prefix' => '<span data-tooltip aria-haspopup="true" class="has-tip" title="Service location needs translation update.">',
+          '#suffix' => '</span>',
+          'href' => empty($links->links[$langcode]['href']) ? $path : $links->links[$langcode]['href'],
+          'language' => $links->links[$langcode]['language'],
+          'attributes' => array(
+            'class' => 'round button tiny secondary-alert lang-outdated '
+          ),
+          'query' => array(
+            'translation' => $node->nid,
+            'target' => $langcode
+          )
+        );
+      }
+    }
+  }
+
+  return theme('links', array('links' => $list));
+}

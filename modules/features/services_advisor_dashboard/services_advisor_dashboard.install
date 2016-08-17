@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Enabling views_data_export module.
+ */
+function services_advisor_dashboard_update_7000() {
+  $enable_modules = array(
+    'views_data_export',
+  );
+  module_enable($enable_modules);
+}

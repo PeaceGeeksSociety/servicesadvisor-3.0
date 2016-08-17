@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Taxonomy feature.
+ */
+
+include_once 'services_advisor_taxonomy.features.inc';

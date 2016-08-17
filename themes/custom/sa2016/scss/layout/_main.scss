@@ -1,0 +1,94 @@
+// Non-modular or client styles for the .l-content region.
+//.l-main {
+//	background:red;
+//}
+h1.title {
+	font-size:32px;
+	em {
+  	font-size: 14px;
+	}
+}
+//Hides
+//.breadcrumbs {
+//	display: none;
+//}
+.front #page-title{
+	display:none;
+}
+.sa-blue{
+	background:$sa-light-blue;
+}
+
+.white-links {
+	li {
+		a {
+			color:#fff;
+		}
+	}
+}
+.l-main {
+	border: 1px solid $sa-dark-gray;
+  border-top: 0px;
+}
+
+.page-node-edit.node-type-service-location,
+.node-type-service-location  {
+	.breadcrumbs {
+		display: block;
+	}
+}
+.main {
+	padding-top:20px;
+}
+
+//BUGFIXES AND LTR CORRECTIONS
+
+
+//chosen corrections
+.hierarchical-select-wrapper 
+.chosen-container {
+    margin-bottom: 10px;
+}
+.hierarchical-select-wrapper .hierarchical-select .selects .grippie {
+	display:none;
+}
+
+
+.absolute {
+  position: absolute;
+}
+
+.rtl-session {
+	.breadcrumbs > *{
+		float:right !important;
+	}
+	.columns {
+		float: right !important;
+	}
+	//Start Date End Date
+	#field-service-start-date-add-more-wrapper {
+		float:right !important;
+	}
+	.f-dropdown.open::before, .f-dropdown.open::after  {
+	    left: auto !important;
+	    right: 8px !important;
+			
+	}
+  .inline > li {
+    float:right;
+  }
+}
+.has-tip {
+		border:0px;
+    cursor: help;
+    font-weight: bold;
+    color: #333;
+}
+.button.secondary-alert {
+    background-color: $sa-alert;
+    border-color: $sa-alert;
+    color: #fff;
+}
+#updateprogress {
+  margin-bottom: 72px;
+}

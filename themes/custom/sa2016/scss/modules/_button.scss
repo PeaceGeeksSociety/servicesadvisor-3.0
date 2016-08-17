@@ -1,0 +1,75 @@
+#secondary-menu {
+	.button {
+		i{
+	    position: absolute;
+	    left: 13px;
+		}
+	}
+}
+.block-services-advisor-base-add-service-btn{
+	a i {
+    padding-right: 9px;
+	}
+}
+
+.rtl-session {
+	.block-services-advisor-base-add-service-btn a i{
+	    padding-right: 0px !important;
+	    padding-left: 9px !important;
+	}
+} 
+.block-services-advisor-base {
+  a {
+    margin-bottom:0px;
+  }
+}
+button.lang-select {
+	background: none !important;
+	border: 2px solid $sa-black;
+	border-radius: 6px;
+	padding: 8px 41px 5px 22px;
+	margin-top: 14px;
+	color:$sa-black;
+	&::after {
+		border-color:$sa-black transparent transparent transparent !important;
+	}
+	&:hover,
+	&:focus {
+		background: none !important;
+		color:$sa-black;
+		
+	};
+}
+button.user-logout {
+		background: none !important;
+		padding: 8px 41px 13px 22px !important;
+		margin-top: 14px;
+		border: 2px solid $sa-black;
+		border-radius: 6px;
+		color:$sa-black;
+		&:hover,
+		&:focus {
+			background: none !important;
+			color:$sa-black;
+			
+		};
+		&::after {
+			border-color:$sa-black transparent transparent transparent !important;
+		}
+		i {
+			color:$sa-black;
+			&::before{
+		    font-size: 23px !important;
+		    padding-right: 20px;
+				color:$sa-black;
+				.rtl-session & {
+			    padding-left: 20px !important;
+			    padding-right: 0px !important;
+					
+				}
+			}
+		}
+}
+.button.info {
+		color:white !important;
+}

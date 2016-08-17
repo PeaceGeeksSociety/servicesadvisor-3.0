@@ -1,0 +1,549 @@
+//Dashboard views
+
+.view-services-advisor-dashboard {
+	.views-row {
+//    border: 2px solid $sa-light-gray;
+//    padding: 0px 20px;
+//    margin-bottom: 20px;
+	}
+}
+
+//NODE BASEE STYLES WITH DS VIEW MODES
+
+//Node Service location
+.node-service-location {
+		&.node-teaser{
+			position:relative;
+	    position: relative;
+	    border: 2px solid $sa-light-gray;
+	    padding: 20px;
+	    margin-bottom: 20px;
+	    padding-bottom: 0px !important;
+			h2.field-label {
+				font-size:16px;
+			}
+			.field-name-title {
+				h3 {
+		    line-height: 2px;	
+				}
+			}
+			.field-name-og-group-ref {
+				padding-bottom: 10px;
+			}
+			.field-name-title {
+				h3 {
+			    line-height: 17px;
+				}
+			}
+			.field-name-field-service-location-location {
+				.field-items {
+					color: $sa-dark-gray;
+				}
+			}
+			.field-name-changed-date {
+				.field-item {
+					color: $sa-dark-gray;
+				}
+			}
+			.field-name-author {
+				.field-items {
+					color: $sa-dark-gray;
+				}
+			}
+			.field-name-field-services-provided  {
+		    border-top: 1px solid $sa-light-gray;
+		    padding-top: 10px;
+				.links {
+			    list-style: none;
+					margin-left: 0px;
+					li {
+            padding-left: 10px;
+            .rtl-session & {
+              padding-left: 0px;
+              padding-right: 10px;
+            }
+            span {
+              float:left;
+              .rtl-session & {
+                float:right;
+              }
+            }
+				    list-style: none;
+						color: $sa-dark-gray;
+            position: relative;
+            &::after {
+              clear:both;
+							content:'-';
+              color:#008CBA;
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              padding-left: 0px;
+              font-size: 20px;
+              padding-left: 0px;
+              line-height: 20px;
+              position: absolute;
+              left: 0px;
+              top: 2px;
+              .rtl-session & {
+                content:' ';
+                position: relative;
+                left: auto;
+              }
+            }
+						&::before {
+							content:' ';
+							color:#008CBA;
+					    display: inline-block;
+					    width: 10px;
+					    height: 10px;
+					    padding-left: 0px;
+              font-size: 20px;
+              padding-left: 0px;
+              line-height: 20px;
+                .rtl-session & {
+                  position: absolute;
+                  right: 0px;
+                  top: 2px;
+    							content:'-';
+                  
+              }
+              
+						}
+					}
+				}
+			} 
+			.field-name-node-language {
+					padding-top: 0px;
+					float: right;
+					top: 0px;
+					font-size: 12px;
+					margin-left: 10px;
+					.rtl-session & {
+						margin-left: 0px;
+						margin-right: 10px;
+						float: left;
+					}
+				.rtl-session & {
+			    left: 20px;
+					right: auto;
+				}
+				.links {
+					margin:0px;
+					li {
+						display:inline-block;
+						a.lang-outdated {
+							i::before{
+								left: 14px;
+						    top: 6px;
+								position:absolute;
+								font-size:20px;
+							}
+							padding-left: 40px;
+							.rtl-session & {
+								padding-left: 1.25rem;
+								padding-right: 40px;
+								i::before{
+							    font-size: 20px;
+									left: auto;
+									right: 14px;
+							    top: 6px;
+									position:absolute;
+								}
+							}
+						}
+					}
+				}
+			}
+			.field-name-field-service-location-location {
+				ul, li {
+					margin-left: 0px;
+					list-style :none;
+				}
+			}
+			.inline {
+		    background: #f8f8f8;
+		    border: 2px solid $sa-light-gray;
+				border-bottom:0px;
+		    padding-bottom: 0px;
+		    margin-bottom: 0px;
+		    margin-right: -1.375rem;
+				.field-group-format-wrapper {
+					margin:0 20px;
+					> div {
+				    float: left;
+				    padding: 0 10px;
+				    line-height: 22px;
+				    padding-bottom: 9px;
+						font-size: 12px;
+				    padding-left: 0px;
+						.rtl-session & {
+					    float: right;
+						}
+					}
+				}
+				.field-name-expired-node {
+			    position: absolute;
+			    right: 10px;
+					.rtl-session & {
+						right: auto;
+						left:10px;
+					}
+					.expired-wrapper  {
+						color:$sa-alert;
+						position: relative;
+						i {
+					    position: absolute;
+					    left: -24px;
+					    top: -2px;
+							.rtl-session & {
+								left:auto;
+								right: -24px;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.view-mode-full {
+			& > div {
+		    margin: 20px 7.2%;
+		    margin: 0 7.2%;
+		    padding: 0;
+				border-bottom: 1px solid $sa-border-gray;
+				h3 {
+					span {
+				    font-size: 16px;
+						font-weight: bold;
+						font-weight: bold;
+						color:$sa-gray-font-color;
+					}
+				}
+				ul ,li {
+					list-style: none;
+					padding-left: 0px;
+					margin-left: 0px;
+				}
+        ul.links.inline {
+          margin-bottom:0px;
+          li {
+            &::after {
+              content: ', ';
+              display:inline-block;
+              color: #5c5b5c;
+              padding-right: 4px;
+              .rtl-session &{
+                content: ' ،';
+                padding-right: 0px;
+                padding-left: 4px;
+              }
+            }
+            &:last-child {
+               &::after {
+                 content: '';
+               }
+            }
+          }
+        }
+				.field-label {
+			    font-size: 16px;
+					font-weight: normal !important;
+					padding-right: 10px;
+          .rtl-session & {
+  					padding-right: 0px;
+  					padding-left: 10px;
+          }
+					color:$sa-light-blue;
+				}
+			}
+      .field-group-div {
+          padding-bottom: 25px !important;
+      }
+      .field {
+          padding-bottom: 5px;
+      }
+      .field-name-field-complaints-mechanism,
+      .field-name-field-services-provided {
+      	padding-bottom: 0px !important;
+      }
+			.group-head {
+				background:$sa-light-gray;
+		    padding: 20px 7.2% 0 7.2%;
+				margin:0px;
+		    border-top: 59px solid #30c2ba;
+				border-bottom:0px;
+		    position: relative;
+        .print_html {
+          position: absolute;
+          top: -40px;
+          right: 30px;
+          z-index: 1000;
+          .rtl-session & {
+            right: auto;
+            left: 30px;
+          }
+        }
+				.field-name-expired-node {
+			    position: absolute;
+			    right: 30px;
+					.rtl-session & {
+						right: auto;
+						left:30px;
+					}
+					.expired-wrapper  {
+						color:$sa-alert;
+						position: relative;
+						i {
+					    position: absolute;
+					    left: -24px;
+					    top: -6px;
+							.rtl-session & {
+								left:auto;
+								right: -24px;
+							}
+						}
+					}
+				}
+				.field-name-title h3 {
+			    font-weight: bold;
+			    font-size: 30px;
+					&::before{
+						content: 'Service Advisor';
+				    position: absolute;
+				    height: 50px;
+				    width: 100%;
+				    color: white;
+				    text-transform: uppercase;
+				    display: block;
+				    top: -41px;
+				    left: 17px;
+				    font-size: 17px;
+            .rtl-session & {
+  				    right: 17px;
+    					left: auto;
+              content: 'مستشار الخدمة';
+            }
+					}
+				}
+				.field-name-field-services-provided {
+					color:$sa-gray-font-color;
+					font-weight: bold;
+          h2.field-label{
+            font-weight: bold !important;
+            line-height: 10px;
+          }
+					ul {
+						margin-left:0px;
+						li {
+              font-size:13px;
+							margin-left:0px;
+              line-height: 18px;
+              padding-bottom: 8px;
+						}
+					}
+				}
+				.field-name-field-service-location-location {
+					ul li {
+						list-style:none;
+						margin-left:0px;
+						margin-right:0px;
+            font-size:13px;
+					}
+				}
+			}
+			.group-active-dates {
+        padding-bottom: 0px !important;
+        width: 85.4%;
+        padding: 20px 0 0px 0%;
+        margin: 0px auto;
+        border-bottom: 0px;
+				.field-name-field-service-location-hour-clos  {
+					.taxonomy-term-reference-0 {
+						position: relative;
+						padding-left: 20px;
+						&::before {
+					    content: '-';
+					    left: 8px;
+							position:absolute;
+              .rtl-session & {
+  					    left: auto;
+  					    right: 8px;
+              }
+						}
+					}
+				}
+				.group-hours, .group-start-end-date {
+					display:inline-block;
+					margin-right: 40px;
+          .rtl-session & {
+  					margin-right: 0px;
+  					margin-left: 40px;
+          }
+          .field-name-field-service-office-hours {
+            padding-left: 0px;
+            padding-bottom:15px;
+            .field-label {
+              display:none;
+            }
+          }
+					h3, div {
+						display:inline-block;
+						vertical-align: top;
+						ul li {
+							list-style:none;
+						}
+					}
+					h3 {
+				    color: white;
+				    text-transform: uppercase;
+				    font-size: 17px;
+						font-weight: bold;
+            display:block;
+						span {
+							color:$sa-light-blue !important;
+              display:block;
+						}
+					}
+					div {
+				    margin-top: 3px;
+						color:$sa-gray-font-color;
+					}
+				}
+				.field-name-field-service-end-date {
+					padding-left: 20px;
+          .rtl-session & {
+  					padding-right: 20px;
+  					padding-left: 0px;
+          }
+					position:relative;
+					&::before {
+				    content: '-';
+				    left: 8px;
+						position:absolute;
+            .rtl-session & {
+  				    left: auto;
+  				    right: 8px;
+            }
+					}
+				}
+				.field-name-field-service-location-hour-open {
+			    padding-left: 10px;
+          .rtl-session & {
+  			    padding-left: 0px;
+  			    padding-right: 10px;
+          }
+				}
+			}
+			.group-general-info {
+				border-top : 1px solid $sa-border-gray;
+		    margin-top: 0px;
+				.field-name-og-group-ref {
+					padding-bottom:20px;
+				}
+			}
+			.field-name-field-service-contact-email {
+				padding-bottom:20px;				
+			}
+      .field-name-field-service-availability {
+        ul{
+          li {
+            span {
+              display: inline-block !important;
+            }
+          }
+        }
+      }
+      .group-add-info {
+        padding-bottom:15px;
+        border:0px;
+      }
+		}
+}
+//partners login
+.node-service-partner {
+	//Teaser view
+	&.node-teaser {
+		.row {
+	    background: $sa-light-gray;
+	    padding: 20px 0;
+			margin: 10px 0;
+		}
+		.inline-list {
+			& > div:nth-child(1) {
+				padding-right:20px;
+		    border-right: 2px solid $sa-dark-gray;
+				.rtl-session & {
+					padding-right:0px;
+			    border-right: 0px;
+					padding-left:20px;
+			    border-left: 2px solid $sa-dark-gray;
+				}
+			}
+			div {
+			    float: left;
+					margin-left: 20px;
+					.rtl-session & {
+						float: right;
+						margin-left: 0px;						
+					}
+			}
+		}
+		h2.node-title,
+		.node-readmore {
+			display: none;
+		}
+		.field-type-image {
+			img{
+		    border: 1px solid $sa-dark-gray;
+//		    border-radius: 50%;
+		    width: 120px;
+		    height: auto !important;
+			}
+		}
+		.field-name-field-service-partner-url {
+			.rtl-session & {
+				margin-right:10px;
+			}
+			a {
+				color:$sa-orange;
+			}
+		}
+	}
+	&.view-mode-full {
+    margin-top: 20px;
+		> .row {
+			background:$sa-light-gray;
+			padding: 10px 0;
+			margin-bottom: 20px;
+		}
+		.inline-list {
+			& > div:nth-child(1) {
+				padding-right:20px;
+		    border-right: 2px solid $sa-dark-gray;
+			}
+			div {
+			    float: left;
+					margin-left: 20px;
+			}
+		}
+		.field-type-image {
+			img{
+		    border: 1px solid $sa-dark-gray;
+//		    border-radius: 50%;
+		    width: 120px;
+		    height: auto !important;
+			}
+		}
+	}
+}
+
+//User's location list
+.view-service-location-list {
+  .view-content .views-table{
+    width: 100%;
+  }
+}
+//Genral Pager style for the view
+.pagination.pager {
+  clear:both !important;
+}

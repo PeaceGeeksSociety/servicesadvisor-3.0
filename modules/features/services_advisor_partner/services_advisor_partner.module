@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Partner feature.
+ */
+
+include_once 'services_advisor_partner.features.inc';

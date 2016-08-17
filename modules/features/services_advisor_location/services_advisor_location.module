@@ -1,0 +1,51 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Location feature.
+ */
+
+include_once 'services_advisor_location.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function services_advisor_location_form_service_location_node_form_alter(&$form, &$form_state) {
+  // Add logic for og_group_ref field.
+  services_advisor_location_og_group_ref_handling($form, $form_state);
+}
+
+/**
+ * If the user is only in 1 group set that group as the default and hide the
+ * form. The form only get's hidden if the user is not a global OG admin.
+ *
+ * If a org url query is present set the field to match it. Check if current
+ * user is admin or member.
+ *
+ * @see services_advisor_location_form_service_location_node_form_alter().
+ */
+function services_advisor_location_og_group_ref_handling(&$form, &$form_state) {
+  $group_field = &$form['og_group_ref'][LANGUAGE_NONE][0];
+  $group_options = $group_field['default']['#options'];
+  $og_admin = user_access('administer group');
+  unset($group_options['_none']);
+
+  if (count($group_options) === 1) {
+    $default_group = key($group_options);
+    $group_field['default']['#default_value'] = $default_group;
+    $form['og_group_ref']['#access'] = $og_admin;
+  }
+
+  $query = drupal_get_query_parameters();
+  $query_org = isset($query['org']) ? $query['org'] : NULL;
+  $is_member = og_is_member('node', $query_org);
+
+  if ($query_org && ($is_member || $og_admin)) {
+    if ($og_admin && !og_is_member('node', $query_org)) {
+      $group_field['admin']['#default_value'] = array($query_org);
+    } else {
+      $group_field['default']['#default_value'] = $query_org;
+    }
+
+    $form['og_group_ref']['#access'] = $og_admin;
+  }
+}

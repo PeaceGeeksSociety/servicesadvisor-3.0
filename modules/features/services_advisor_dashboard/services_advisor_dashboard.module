@@ -1,0 +1,82 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Dashboard module.
+ */
+
+include_once 'services_advisor_dashboard.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function services_advisor_dashboard_menu() {
+  $items = array();
+  $items['user/edit'] = array(
+    'title'            => 'Edit Profile',
+    'description'      => 'Edit own profile',
+    'page callback'    => 'services_advisor_dashboard_user_edit',
+    'access callback'  => 'services_advisor_dashboard_user_edit_access',
+    'type'             => MENU_LOCAL_TASK,
+    'file'             => 'user.pages.inc',
+    'file path'        => 'modules/user'
+  );
+
+  return $items;
+}
+
+/**
+ * Show edit form for current user profile.
+ */
+function services_advisor_dashboard_user_edit() {
+  global $user;
+
+  $account = user_load($user->uid);
+  return drupal_get_form('user_profile_form', $account);
+}
+
+/**
+ * Does the current user have access to edit their own profile?
+ */
+function services_advisor_dashboard_user_edit_access() {
+  global $user;
+
+  $account = user_load($user->uid);
+  return user_edit_access($account);
+}
+
+function services_advisor_dashboard_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['search'])) {
+		global $language;
+		//adding chosen classes for rtl
+		if (isset($form['organization']) and $language->direction) {
+			$form['organization']['#attributes'] = array('class' => array('chosen-rtl'));
+		}
+		if (isset($form['services_provided']) and $language->direction) {
+			$form['services_provided']['#attributes'] = array('class' => array('chosen-rtl'));
+		}
+		if (isset($form['accessibility']) and $language->direction) {
+			$form['accessibility']['#attributes'] = array('class' => array('chosen-rtl'));
+		}
+		if (isset($form['coverage']) and $language->direction) {
+			$form['coverage']['#attributes'] = array('class' => array('chosen-rtl'));
+		}
+		if (isset($form['nationality']) and $language->direction) {
+			$form['nationality']['#attributes'] = array('class' => array('chosen-rtl'));
+		}
+		if (isset($form['intake_criteria']) and $language->direction) {
+			$form['intake_criteria']['#attributes'] = array('class' => array('chosen-rtl'));
+		}
+  	unset($form['#info']['filter-title']['label']);
+		$form['search']['#attributes']['placeholder'] = t('Search Title');
+		//search-submit-custom
+		$form['search']['#prefix'] = '<div class="row"><div class="large-12 columns"><div class="row collapse"><div class="small-11 columns">';
+		$form['search']['#suffix'] = '</div><div class="small-1 columns"><a id="search-submit-custom" href="#" class="button custom-search-class secondary postfix"><i class="fi-magnifying-glass large"></i></a></div></div></div></div>';
+  }
+	if (isset($form['submit'])) {
+		$form['submit']['#attributes'] = array('class' => array('tiny hide right'));
+		$form['submit']['#value'] =  t('Search');
+	}
+	if (isset($form['reset'])) {
+		$form['reset']['#attributes'] = array('class' => array('tiny right'));
+	}
+}

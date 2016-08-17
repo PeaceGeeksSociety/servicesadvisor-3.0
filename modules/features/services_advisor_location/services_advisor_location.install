@@ -1,0 +1,133 @@
+<?php
+
+/**
+ * Walk through locations which have the "all the above" term filled and
+ * actually select all the above.
+ */
+function services_advisor_location_update_7000(&$sandbox) {
+  $batch = 10;
+  $tid = key(taxonomy_get_term_by_name('All of the above', 'service_accessibility'));
+  $vocabulary = taxonomy_vocabulary_machine_name_load('service_accessibility');
+  $replacement_terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  unset($replacement_terms[$tid]);
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'service_location')
+    ->fieldCondition('field_service_accessibility', 'tid', $tid);
+
+  if (!isset($sandbox['max'])) {
+    $countQuery = clone $query;
+    $sandbox['progress'] = 0;
+    $sandbox['max'] = $countQuery->count()->execute();
+  }
+
+  $results = $query->range(0, $batch)->execute();
+  $nids = isset($results['node']) ? array_keys($results['node']) : array();
+
+  foreach($nids as $nid) {
+    $wrapper = entity_metadata_wrapper('node', $nid);
+    $wrapper->field_service_accessibility->set(NULL);
+    $wrapper->field_service_accessibility->set($replacement_terms);
+    $wrapper->save();
+    $sandbox['progress']++;
+  }
+
+  // Clear entity cache for these entries.
+  entity_get_controller('node')->resetCache($nids);
+
+  if (!empty($nids) && $sandbox['max'] > 0 && $sandbox['max'] > $sandbox['progress']) {
+    $sandbox['#finished'] = $sandbox['progress'] / $sandbox['max'];
+  } else {
+    $sandbox['#finished'] = 1;
+    return t('Updated @count nodes', array('@count' => $sandbox['progress']));
+  }
+}
+
+/**
+ * Remove "All of the above" service_accessibility term.
+ */
+function services_advisor_location_update_7001() {
+  $tid = key(taxonomy_get_term_by_name('All of the above', 'service_accessibility'));
+  if ($tid) {
+    taxonomy_term_delete($tid);
+  }
+}
+
+/**
+ * Populate office hours form elemeont on service locations.
+ */
+function services_advisor_location_update_7002(&$sandbox) {
+  $batch = 10;
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'service_location');
+
+  if (!isset($sandbox['max'])) {
+    $countQuery = clone $query;
+    $sandbox['progress'] = 0;
+    $sandbox['max'] = $countQuery->count()->execute();
+  }
+
+  $results = $query->range($sandbox['progress'], $batch)->execute();
+  $nids = isset($results['node']) ? array_keys($results['node']) : array();
+
+  foreach(entity_metadata_wrapper('list<node>', $nids) as $wrapper) {
+    $values = array();
+    $days = $wrapper->field__service_location_days->value();
+    $hours_open = $wrapper->field_service_location_hour_open->value();
+    $hours_clos = $wrapper->field_service_location_hour_clos->value();
+    $hours_open = services_advisor_location_format_hours($hours_open);
+    $hours_clos = services_advisor_location_format_hours($hours_clos);
+
+    if ($hours_open && $hours_clos) {
+      foreach ($days as $day_term) {
+        $day_code = date('w', strtotime(rtrim($day_term->name, 's')));
+
+        $values[] = array(
+          'day' => $day_code,
+          'starthours' => isset($hours_open) ? $hours_open : 0,
+          'endhours' => isset($hours_clos) ? $hours_clos : 0
+        );
+      }
+
+      $wrapper->field_service_office_hours->set($values);
+      $node = $wrapper->value();
+      node_save($node);
+    }
+
+    $sandbox['progress']++;
+  }
+
+  if (!empty($nids) && $sandbox['max'] > 0 && $sandbox['max'] > $sandbox['progress']) {
+    $sandbox['#finished'] = $sandbox['progress'] / $sandbox['max'];
+  } else {
+    $sandbox['#finished'] = 1;
+    return t('Updated @count nodes out of @max', array(
+      '@count' => $sandbox['progress'],
+      '@max' => $sandbox['max']
+    ));
+  }
+}
+
+function services_advisor_location_format_hours($term) {
+  if (isset($term->name)) {
+    switch ($term->name) {
+      case 'Always open':
+        return '0';
+        break;
+      case 'Custom Hours (see Comments)':
+        return false;
+        break;
+      default:
+        $hours = str_replace(array('am', 'pm'), '', $term->name);
+        return date("Gi", strtotime($hours));
+        break;
+    }
+  }
+
+  return false;
+}

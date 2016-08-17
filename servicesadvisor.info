@@ -1,0 +1,11 @@
+name = Services Advisor
+description = Services Advisor install profile.
+distribution_name = servicesadvisor
+core = 7.x
+
+dependencies[] = services_advisor_base
+dependencies[] = services_advisor_dashboard
+dependencies[] = services_advisor_location
+dependencies[] = services_advisor_partner
+
+files[] = servicesadvisor.profile

@@ -1,0 +1,34 @@
+// Non-modular or client styles for .l-header region.\.
+.logo {
+	margin:10px;
+}
+.l-header-region {
+//	margin-bottom: 20px;
+	.row {
+		background:$sa-light-blue;
+		border: 1px solid $sa-dark-gray;
+		border-bottom:0px;
+	}
+}
+.l-messages {
+    border-left: 1px solid $sa-dark-gray;
+    border-right: 1px solid $sa-dark-gray;
+    padding-top: 20px;
+		.alert-box.success{
+	    background-color: #008CBA;
+	    border-color: #0078a0;
+			a{
+				color:white;
+			}
+		}
+}
+.l-featured  {
+  padding-top: 20px;
+	&.row {
+		border: 1px solid $sa-dark-gray;
+		border-bottom:0px;
+	}
+}
+.sa-header-placeholder {
+	padding-top:10px;
+ }

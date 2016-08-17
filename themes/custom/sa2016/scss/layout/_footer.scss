@@ -1,0 +1,24 @@
+// Non-modular or client styles for .l-footer region.
+
+.l-footer {
+	.footer-first {
+		background:$sa-light-blue;
+	}
+}
+.l-footer-under {
+	padding-bottom: 0px;
+	background:$sa-footer;
+	border: 1px solid $sa-footer;
+	.footer-second {
+		.copyright {
+	    display: inline-block;
+			color: white;
+		}
+		.block-menu-menu-footermenu {
+			float:right;
+			.block-title {
+				display:none;
+			}
+		}
+	}
+}
