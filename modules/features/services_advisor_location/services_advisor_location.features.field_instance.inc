@@ -11,49 +11,6 @@ function services_advisor_location_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'node-service_location-field__service_location_days'.
-  $field_instances['node-service_location-field__service_location_days'] = array(
-    'bundle' => 'service_location',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field__service_location_days',
-    'label' => 'Availability Days',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-service_location-field_complaints_mechanism'.
   $field_instances['node-service_location-field_complaints_mechanism'] = array(
     'bundle' => 'service_location',
@@ -824,96 +781,6 @@ function services_advisor_location_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-service_location-field_service_location_hour_clos'.
-  $field_instances['node-service_location-field_service_location_hour_clos'] = array(
-    'bundle' => 'service_location',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_service_location_hour_clos',
-    'label' => 'Office Closes At',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-service_location-field_service_location_hour_open'.
-  $field_instances['node-service_location-field_service_location_hour_open'] = array(
-    'bundle' => 'service_location',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_service_location_hour_open',
-    'label' => 'Office Opens At',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-service_location-field_service_location_location'.
   $field_instances['node-service_location-field_service_location_location'] = array(
     'bundle' => 'service_location',
@@ -1535,7 +1402,6 @@ function services_advisor_location_field_default_field_instances() {
   t('Accessibility');
   t('Additional Details');
   t('Availability');
-  t('Availability Days');
   t('Comments');
   t('Complaints Mechanism');
   t('Coverage');
@@ -1553,9 +1419,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Location Point');
   t('More Info Link');
   t('Nationality');
-  t('Office Closes At');
   t('Office Hours');
-  t('Office Opens At');
   t('Organization');
   t('Public Address / Location Details');
   t('Referral Contact Email');

@@ -25,7 +25,6 @@ features[ds_field_settings][] = node|service_partner|teaser
 features[ds_layout_settings][] = node|service_partner|default
 features[ds_layout_settings][] = node|service_partner|teaser
 features[features_api][] = api:2
-features[field_base][] = body
 features[field_base][] = field_logo
 features[field_base][] = field_service_partner_full_name
 features[field_base][] = field_service_partner_url
