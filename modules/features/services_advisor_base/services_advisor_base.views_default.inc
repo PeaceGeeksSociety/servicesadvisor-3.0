@@ -492,22 +492,6 @@ function services_advisor_base_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Content: Office Opens At */
-  $handler->display->display_options['fields']['field_service_location_hour_open']['id'] = 'field_service_location_hour_open';
-  $handler->display->display_options['fields']['field_service_location_hour_open']['table'] = 'field_data_field_service_location_hour_open';
-  $handler->display->display_options['fields']['field_service_location_hour_open']['field'] = 'field_service_location_hour_open';
-  $handler->display->display_options['fields']['field_service_location_hour_open']['label'] = 'hours:openAt';
-  $handler->display->display_options['fields']['field_service_location_hour_open']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Content: Office Closes At */
-  $handler->display->display_options['fields']['field_service_location_hour_clos']['id'] = 'field_service_location_hour_clos';
-  $handler->display->display_options['fields']['field_service_location_hour_clos']['table'] = 'field_data_field_service_location_hour_clos';
-  $handler->display->display_options['fields']['field_service_location_hour_clos']['field'] = 'field_service_location_hour_clos';
-  $handler->display->display_options['fields']['field_service_location_hour_clos']['label'] = 'hours:closedAt';
-  $handler->display->display_options['fields']['field_service_location_hour_clos']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
@@ -743,8 +727,6 @@ function services_advisor_base_views_default_views() {
     t('region'),
     t('startDate'),
     t('endDate'),
-    t('hours:openAt'),
-    t('hours:closedAt'),
     t('serviceName'),
     t('details:Nationality'),
     t('details:Intake Criteria'),
