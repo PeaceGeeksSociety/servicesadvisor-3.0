@@ -11,6 +11,94 @@ function services_advisor_base_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'service_categories_json_feed';
+  $view->description = '';
+  $view->tag = 'unhcr';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Service Categories JSON Feed';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Service Categories JSON Feed';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['style_plugin'] = 'views_json';
+  $handler->display->display_options['style_options']['top_child_object'] = 'sector';
+  $handler->display->display_options['style_options']['plaintext_output'] = 1;
+  $handler->display->display_options['style_options']['remove_newlines'] = 0;
+  $handler->display->display_options['style_options']['jsonp_prefix'] = '';
+  $handler->display->display_options['style_options']['using_views_api_mode'] = 0;
+  $handler->display->display_options['style_options']['object_arrays'] = 0;
+  $handler->display->display_options['style_options']['numeric_strings'] = 0;
+  $handler->display->display_options['style_options']['bigint_string'] = 0;
+  $handler->display->display_options['style_options']['pretty_print'] = 0;
+  $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
+  $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
+  $handler->display->display_options['style_options']['char_encoding'] = array();
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Glyph */
+  $handler->display->display_options['fields']['field_sector_glyph']['id'] = 'field_sector_glyph';
+  $handler->display->display_options['fields']['field_sector_glyph']['table'] = 'field_data_field_sector_glyph';
+  $handler->display->display_options['fields']['field_sector_glyph']['field'] = 'field_sector_glyph';
+  $handler->display->display_options['fields']['field_sector_glyph']['label'] = 'glyph';
+  /* Field: Taxonomy term: Marker Color */
+  $handler->display->display_options['fields']['field_sector_marker_color']['id'] = 'field_sector_marker_color';
+  $handler->display->display_options['fields']['field_sector_marker_color']['table'] = 'field_data_field_sector_marker_color';
+  $handler->display->display_options['fields']['field_sector_marker_color']['field'] = 'field_sector_marker_color';
+  $handler->display->display_options['fields']['field_sector_marker_color']['label'] = 'markerColor';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'service_nested_categories' => 'service_nested_categories',
+  );
+  /* Filter criterion: Taxonomy term: Glyph (field_sector_glyph) */
+  $handler->display->display_options['filters']['field_sector_glyph_value']['id'] = 'field_sector_glyph_value';
+  $handler->display->display_options['filters']['field_sector_glyph_value']['table'] = 'field_data_field_sector_glyph';
+  $handler->display->display_options['filters']['field_sector_glyph_value']['field'] = 'field_sector_glyph_value';
+  $handler->display->display_options['filters']['field_sector_glyph_value']['operator'] = 'not empty';
+  /* Filter criterion: Taxonomy term: Marker Color (field_sector_marker_color) */
+  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['id'] = 'field_sector_marker_color_rgb';
+  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['table'] = 'field_data_field_sector_marker_color';
+  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['field'] = 'field_sector_marker_color_rgb';
+  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['operator'] = 'not empty';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'service-sectors';
+  $translatables['service_categories_json_feed'] = array(
+    t('Master'),
+    t('Service Categories JSON Feed'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('glyph'),
+    t('markerColor'),
+    t('Page'),
+  );
+  $export['service_categories_json_feed'] = $view;
+
+  $view = new view();
   $view->name = 'service_location_list';
   $view->description = '';
   $view->tag = 'default';
@@ -992,7 +1080,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_partner_url']['label'] = '';
   $handler->display->display_options['fields']['field_service_partner_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_service_partner_url']['click_sort_column'] = 'url';
-  /* Field: Content: Body */
+  /* Field: Content: Organization Overview */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1144,7 +1232,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_partner_url']['label'] = '';
   $handler->display->display_options['fields']['field_service_partner_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_service_partner_url']['click_sort_column'] = 'url';
-  /* Field: Content: Body */
+  /* Field: Content: Organization Overview */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';

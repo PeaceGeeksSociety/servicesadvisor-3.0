@@ -1362,6 +1362,72 @@ function services_advisor_location_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-service_nested_categories-field_sector_glyph'.
+  $field_instances['taxonomy_term-service_nested_categories-field_sector_glyph'] = array(
+    'bundle' => 'service_nested_categories',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_sector_glyph',
+    'label' => 'Glyph',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-service_nested_categories-field_sector_marker_color'.
+  $field_instances['taxonomy_term-service_nested_categories-field_sector_marker_color'] = array(
+    'bundle' => 'service_nested_categories',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'color_field',
+        'settings' => array(),
+        'type' => 'color_field_default_formatter',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_sector_marker_color',
+    'label' => 'Marker Color',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'color_field',
+      'settings' => array(),
+      'type' => 'color_field_plain_text',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-service_nested_location-field_location_point'.
   $field_instances['taxonomy_term-service_nested_location-field_location_point'] = array(
     'bundle' => 'service_nested_location',
@@ -1411,12 +1477,14 @@ function services_advisor_location_field_default_field_instances() {
   t('Feedback Delay');
   t('Feedback Mechanism');
   t('GPS coordinates');
+  t('Glyph');
   t('If needed, you can add additional details');
   t('If you have the Latitude and Longitude of your location, enter them here. These coordinates will be used for display on the map if they are present.');
   t('Immediate Next Step after Referral');
   t('Intake Criteria');
   t('Legal Documents Required');
   t('Location Point');
+  t('Marker Color');
   t('More Info Link');
   t('Nationality');
   t('Office Hours');
