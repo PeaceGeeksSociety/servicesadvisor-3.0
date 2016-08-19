@@ -149,20 +149,6 @@ function services_advisor_base_node_insert($node) {
   }
 }
 
-/**
- * Implements hook_node_presave().
- *
- * Auto-node title module does not support internationalization, so I am handling that here.
- */
-function services_advisor_base_node_presave($node) {
-  if ($node->type == 'service_location'){
-    $translated_sector   = i18n_taxonomy_term_name(taxonomy_term_load($node->field_services_provided['und'][0]['tid']), $node->language);
-    $translated_location = i18n_taxonomy_term_name(taxonomy_term_load($node->field_service_location_location['und'][0]['tid']), $node->language);
-    $node->title = $translated_location . ': ' . $translated_sector;
-    $node->auto_nodetitle_applied = TRUE;
-  }
-}
-
 function services_advisor_base_views_pre_render(&$view) {
   if ($view->name=='service_location_list') {
     global $language;
@@ -172,42 +158,6 @@ function services_advisor_base_views_pre_render(&$view) {
     header('location: /?lang=en');
     exit;
   }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function services_advisor_base_form_service_location_node_form_alter(&$form, &$form_state) {
-  $langcode = $form['language']['#value'];
-
-  $form['#attached']['js'] = array(
-    drupal_get_path('module', 'services_advisor_base') . '/js/services_advisor_base.node_form.js',
-  );
-
-  // Categories
-  $category_tids = array_keys(
-    $form['field_service_category'][LANGUAGE_NONE]['#options']
-  );
-  $category_terms = taxonomy_term_load_multiple($category_tids);
-  $category_wrappers = entity_metadata_wrapper('list<taxonomy_term>', $category_terms);
-  foreach ($category_wrappers as $category_tid => $category_wrapper) {
-    $form['field_service_category'][LANGUAGE_NONE]['#options_attributes'][$category_tid] = array(
-      'class' => $category_wrapper->field_service_sector->getIdentifier(),
-    );
-  }
-
-  // Activities
-  $activity_tids = array_keys(
-    $form['field_service_activity_details'][LANGUAGE_NONE]['#options']
-  );
-  $activity_terms = taxonomy_term_load_multiple($activity_tids);
-  $activity_wrappers = entity_metadata_wrapper('list<taxonomy_term>', $activity_terms);
-  foreach ($activity_wrappers as $activity_tid => $activity_wrapper) {
-    $form['field_service_activity_details'][LANGUAGE_NONE]['#options_attributes'][$activity_tid] = array(
-      'class' => $activity_wrapper->field_service_activity_category->getIdentifier(),
-    );
-  }
-
 }
 
 /**

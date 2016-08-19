@@ -738,15 +738,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'unique_field',
   );
 
-  // Exported permission: 'use PHP for title patterns'.
-  $permissions['use PHP for title patterns'] = array(
-    'name' => 'use PHP for title patterns',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'auto_nodetitle',
-  );
-
   // Exported permission: 'use ctools import'.
   $permissions['use ctools import'] = array(
     'name' => 'use ctools import',

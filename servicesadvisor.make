@@ -11,9 +11,6 @@ projects[admin_menu][version] = "3.0-rc5"
 projects[admin_views][subdir] = contrib
 projects[admin_views][version] = "1.6"
 
-projects[auto_nodetitle][subdir] = contrib
-projects[auto_nodetitle][version] = "1.0"
-
 projects[backup_migrate][subdir] = contrib
 projects[backup_migrate][version] = "3.1"
 

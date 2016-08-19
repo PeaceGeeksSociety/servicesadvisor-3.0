@@ -6,7 +6,6 @@ version = 7.x-1.0
 project = services_advisor_base
 dependencies[] = admin_menu
 dependencies[] = admin_views
-dependencies[] = auto_nodetitle
 dependencies[] = backup_migrate
 dependencies[] = block
 dependencies[] = chosen

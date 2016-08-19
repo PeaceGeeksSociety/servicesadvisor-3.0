@@ -49,3 +49,16 @@ function services_advisor_location_og_group_ref_handling(&$form, &$form_state) {
     $form['og_group_ref']['#access'] = $og_admin;
   }
 }
+
+/**
+ * Implements hook_node_presave().
+ */
+function services_advisor_location_node_presave($node) {
+  if ($node->type == 'service_location'){
+    $title_parts = array();
+    $title_parts['translated_sector']   = i18n_taxonomy_term_name(taxonomy_term_load($node->field_services_provided['und'][0]['tid']), $node->language);
+    $title_parts['translated_location'] = i18n_taxonomy_term_name(taxonomy_term_load($node->field_service_location_location['und'][0]['tid']), $node->language);
+    $title_parts['tnid'] = $node->tnid;
+    $node->title = implode(': ', $title_parts);
+  }
+}

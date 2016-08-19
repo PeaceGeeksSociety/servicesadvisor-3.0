@@ -76,7 +76,6 @@
 
   <?php if ($messages && !$zurb_foundation_messages_modal): ?>
     <!--.l-messages -->
-		<a>
     <section class="l-messages row">
       <div class="columns">
         <?php if ($messages): print $messages; endif; ?>
