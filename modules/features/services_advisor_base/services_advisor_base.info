@@ -171,7 +171,6 @@ features[user_permission][] = translate own content
 features[user_permission][] = translate user-defined strings
 features[user_permission][] = unique_field_perm_admin
 features[user_permission][] = unique_field_perm_bypass
-features[user_permission][] = use PHP for title patterns
 features[user_permission][] = use ctools import
 features[user_permission][] = view any page content
 features[user_permission][] = view any service_location content

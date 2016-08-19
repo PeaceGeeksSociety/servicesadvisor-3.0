@@ -129,6 +129,7 @@ features[taxonomy][] = service_referral_method
 features[taxonomy][] = service_referral_next_step
 features[taxonomy][] = service_registration_type
 features[taxonomy][] = service_response_delay
+features[variable][] = hs_config_taxonomy-field_services_provided
 features[variable][] = node_options_service_location
 features[variable][] = node_preview_service_location
 features[variable][] = node_submitted_service_location
