@@ -1002,7 +1002,7 @@ function services_advisor_location_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_service_office_hours',
-    'label' => 'Office Hours',
+    'label' => 'Hours',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1478,6 +1478,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Feedback Mechanism');
   t('GPS coordinates');
   t('Glyph');
+  t('Hours');
   t('If needed, you can add additional details');
   t('If you have the Latitude and Longitude of your location, enter them here. These coordinates will be used for display on the map if they are present.');
   t('Immediate Next Step after Referral');
@@ -1487,7 +1488,6 @@ function services_advisor_location_field_default_field_instances() {
   t('Marker Color');
   t('More Info Link');
   t('Nationality');
-  t('Office Hours');
   t('Organization');
   t('Public Address / Location Details');
   t('Referral Contact Email');
