@@ -448,93 +448,37 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
   $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
   $handler->display->display_options['style_options']['char_encoding'] = array();
-  /* Relationship: OG membership: Group Node from OG membership */
+  /* Relationship: Partner */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['ui_name'] = 'Partner';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['label'] = 'Partner';
+  /* Relationship: Nested Location */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['ui_name'] = 'Nested Location';
   $handler->display->display_options['relationships']['term_node_tid']['label'] = 'nested location';
   $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
     'service_nested_location' => 'service_nested_location',
-    'forums' => 0,
-    'activity_status' => 0,
-    'article_type' => 0,
-    'categories' => 0,
-    'event_type' => 0,
-    'gallery_collections' => 0,
-    'report_type' => 0,
-    'incident_severity' => 0,
-    'map_filter_3' => 0,
-    'map_filter_4' => 0,
-    'partner_type' => 0,
-    'service_location_subdistrict' => 0,
-    'service_location_village' => 0,
-    'project_location' => 0,
-    'project_status' => 0,
-    'theme' => 0,
-    'resource_type' => 0,
-    'service_accessibility' => 0,
-    'service_activities' => 0,
-    'service_availability' => 0,
-    'service_available_nationality' => 0,
-    'service_categories' => 0,
-    'service_coverage' => 0,
-    'service_feedback_delay' => 0,
-    'service_feedback_mechanism' => 0,
-    'service_intake_criteria' => 0,
-    'service_location_availability_days' => 0,
-    'service_location_district' => 0,
-    'service_location_governorate' => 0,
-    'service_location_hour_close' => 0,
-    'service_location_hour_open' => 0,
-    'service_location_region' => 0,
-    'service_referral_method' => 0,
-    'service_referral_next_step' => 0,
-    'service_registration_type' => 0,
-    'service_response_delay' => 0,
-    'tags' => 0,
-    'team_member_type' => 0,
-    'contributor_type' => 0,
-  );
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid_1']['id'] = 'term_node_tid_1';
-  $handler->display->display_options['relationships']['term_node_tid_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid_1']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid_1']['label'] = 'nested category';
-  $handler->display->display_options['relationships']['term_node_tid_1']['required'] = TRUE;
-  $handler->display->display_options['relationships']['term_node_tid_1']['vocabularies'] = array(
-    'service_nested_categories' => 'service_nested_categories',
-    'forums' => 0,
-    'categories' => 0,
-    'gallery_collections' => 0,
-    'partner_type' => 0,
     'service_complaints_mechanism' => 0,
-    'service_nested_location' => 0,
-    'project_location' => 0,
-    'project_status' => 0,
+    'service_nested_categories' => 0,
     'service_accessibility' => 0,
     'service_availability' => 0,
     'service_available_nationality' => 0,
-    'service_activities' => 0,
-    'service_categories' => 0,
-    'service_sector' => 0,
     'service_coverage' => 0,
     'service_feedback_delay' => 0,
     'service_feedback_mechanism' => 0,
     'service_intake_criteria' => 0,
     'service_location_availability_days' => 0,
     'service_location_hour_close' => 0,
+    'service_sector' => 0,
+    'service_registration_type' => 0,
     'service_location_hour_open' => 0,
     'service_referral_method' => 0,
     'service_referral_next_step' => 0,
-    'service_registration_type' => 0,
     'service_response_delay' => 0,
-    'tags' => 0,
-    'team_member_type' => 0,
-    'contributor_type' => 0,
   );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -547,6 +491,17 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['title_2']['field'] = 'title';
   $handler->display->display_options['fields']['title_2']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['title_2']['label'] = 'organization';
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_logo']['label'] = 'organizationLogo';
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'image_style' => 'small_logo',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -807,11 +762,11 @@ function services_advisor_base_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Group node from OG membership'),
+    t('Partner'),
     t('nested location'),
-    t('nested category'),
     t('id'),
     t('organization'),
+    t('organizationLogo'),
     t('region'),
     t('startDate'),
     t('endDate'),

@@ -51,6 +51,22 @@ function services_advisor_base_image_default_styles() {
     ),
   );
 
+  // Exported image style: small_logo.
+  $styles['small_logo'] = array(
+    'label' => 'small logo',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 70,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
