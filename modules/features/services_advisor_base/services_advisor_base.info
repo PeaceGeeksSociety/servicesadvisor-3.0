@@ -270,6 +270,7 @@ features[variable][] = node_view_permissions_webform
 features[variable][] = site_404
 features[variable][] = site_frontpage
 features[variable][] = theme_default
+features[variable][] = theme_sa2016_settings
 features[variable][] = unique_field_comp_service_partner
 features[variable][] = unique_field_fields_service_partner
 features[variable][] = unique_field_scope_service_partner
