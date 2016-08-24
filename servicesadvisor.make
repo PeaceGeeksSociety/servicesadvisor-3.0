@@ -77,6 +77,9 @@ projects[eva][version] = "1.2"
 projects[features][subdir] = contrib
 projects[features][version] = "2.10"
 
+projects[feeds][subdir] = contrib
+projects[feeds][version] = 2.0-beta2
+
 projects[field_group][subdir] = contrib
 projects[field_group][version] = "1.5"
 
@@ -108,6 +111,9 @@ projects[i18n][version] = "1.13"
 projects[imagefield_crop][subdir] = contrib
 projects[imagefield_crop][version] = "1.1"
 
+projects[job_scheduler][subdir] = contrib
+projects[job_scheduler][version] = "2.0-alpha3"
+
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.7"
 
@@ -119,6 +125,9 @@ projects[link][version] = "1.4"
 
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
+
+projects[node_export][subdir] = contrib
+projects[node_export][version] = "3.1"
 
 projects[node_clone][subdir] = contrib
 projects[node_clone][version] = "1.0"
@@ -162,6 +171,9 @@ projects[translation_table][download][revision] = "e83f56b3f48ecf80b35da03b9aef7
 
 projects[unique_field][subdir] = contrib
 projects[unique_field][version] = "1.0-rc1"
+
+projects[uuid][subdir] = contrib
+projects[uuid][version] = "1.0-beta2"
 
 projects[variable][subdir] = contrib
 projects[variable][version] = "2.5"

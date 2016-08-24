@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Migration feature.
+ */
+
+include_once 'services_advisor_migration.features.inc';
