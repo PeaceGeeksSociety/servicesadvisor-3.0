@@ -36,32 +36,6 @@ function services_advisor_partner_field_default_field_instances() {
     'label' => 'Organization Overview',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-          'wysiwyg_advanced' => 'wysiwyg_advanced',
-          'wysiwyg_public' => 'wysiwyg_public',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'wysiwyg_advanced' => array(
-              'weight' => -10,
-            ),
-            'wysiwyg_public' => array(
-              'weight' => -9,
-            ),
-          ),
-        ),
-      ),
       'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
