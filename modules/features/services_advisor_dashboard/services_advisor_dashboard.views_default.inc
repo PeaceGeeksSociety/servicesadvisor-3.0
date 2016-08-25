@@ -154,6 +154,10 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['relationships']['field_service_location_location_tid']['field'] = 'field_service_location_location_tid';
   $handler->display->display_options['relationships']['field_service_location_location_tid']['ui_name'] = 'Service Location Term';
   $handler->display->display_options['relationships']['field_service_location_location_tid']['label'] = 'Service Location Term';
+  /* Relationship: Content: Services Provided (field_services_provided) */
+  $handler->display->display_options['relationships']['field_services_provided_tid']['id'] = 'field_services_provided_tid';
+  $handler->display->display_options['relationships']['field_services_provided_tid']['table'] = 'field_data_field_services_provided';
+  $handler->display->display_options['relationships']['field_services_provided_tid']['field'] = 'field_services_provided_tid';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -200,6 +204,17 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['sorts']['type']['id'] = 'type';
   $handler->display->display_options['sorts']['type']['table'] = 'node';
   $handler->display->display_options['sorts']['type']['field'] = 'type';
+  /* Contextual filter: Taxonomy term: Parent term */
+  $handler->display->display_options['arguments']['parent']['id'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['arguments']['parent']['field'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['relationship'] = 'field_services_provided_tid';
+  $handler->display->display_options['arguments']['parent']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = '0';
+  $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1033,6 +1048,19 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['style_options']['newline_token'] = '1';
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Service Location Term */
+  $handler->display->display_options['relationships']['field_service_location_location_tid']['id'] = 'field_service_location_location_tid';
+  $handler->display->display_options['relationships']['field_service_location_location_tid']['table'] = 'field_data_field_service_location_location';
+  $handler->display->display_options['relationships']['field_service_location_location_tid']['field'] = 'field_service_location_location_tid';
+  $handler->display->display_options['relationships']['field_service_location_location_tid']['ui_name'] = 'Service Location Term';
+  $handler->display->display_options['relationships']['field_service_location_location_tid']['label'] = 'Service Location Term';
+  /* Relationship: Service Category 0 */
+  $handler->display->display_options['relationships']['field_services_provided_tid']['id'] = 'field_services_provided_tid';
+  $handler->display->display_options['relationships']['field_services_provided_tid']['table'] = 'field_data_field_services_provided';
+  $handler->display->display_options['relationships']['field_services_provided_tid']['field'] = 'field_services_provided_tid';
+  $handler->display->display_options['relationships']['field_services_provided_tid']['ui_name'] = 'Service Category 0';
+  $handler->display->display_options['relationships']['field_services_provided_tid']['label'] = 'Service Category 0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1074,13 +1102,19 @@ function services_advisor_dashboard_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_services_provided_tid';
+  $handler->display->display_options['fields']['name']['label'] = 'Service Category 0';
   /* Field: Content: Services Provided */
   $handler->display->display_options['fields']['field_services_provided']['id'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided']['table'] = 'field_data_field_services_provided';
   $handler->display->display_options['fields']['field_services_provided']['field'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_services_provided']['delta_offset'] = '0';
-  /* Field: Content: Office Hours */
+  /* Field: Content: Hours */
   $handler->display->display_options['fields']['field_service_office_hours']['id'] = 'field_service_office_hours';
   $handler->display->display_options['fields']['field_service_office_hours']['table'] = 'field_data_field_service_office_hours';
   $handler->display->display_options['fields']['field_service_office_hours']['field'] = 'field_service_office_hours';
@@ -1233,6 +1267,8 @@ function services_advisor_dashboard_views_default_views() {
     t('Desc'),
     t('Displaying @start - @end of @total'),
     t('Service Location Term'),
+    t('term from field_services_provided'),
+    t('All'),
     t('Title'),
     t('Organization'),
     t('Services Provided'),
@@ -1251,9 +1287,10 @@ function services_advisor_dashboard_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Data export'),
+    t('Service Category 0'),
     t('Nid'),
     t('Start Date'),
-    t('Office Hours'),
+    t('Hours'),
     t('Service Location'),
     t('Location Point'),
     t('GPS coordinates'),
