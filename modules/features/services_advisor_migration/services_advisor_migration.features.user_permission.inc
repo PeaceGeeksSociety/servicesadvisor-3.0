@@ -19,6 +19,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'advanced migration information'.
+  $permissions['advanced migration information'] = array(
+    'name' => 'advanced migration information',
+    'roles' => array(),
+    'module' => 'migrate',
+  );
+
   // Exported permission: 'clear service_partner_importer feeds'.
   $permissions['clear service_partner_importer feeds'] = array(
     'name' => 'clear service_partner_importer feeds',
@@ -49,6 +56,13 @@ function services_advisor_migration_user_default_permissions() {
     'name' => 'import service_partner_importer feeds',
     'roles' => array(),
     'module' => 'feeds',
+  );
+
+  // Exported permission: 'migration information'.
+  $permissions['migration information'] = array(
+    'name' => 'migration information',
+    'roles' => array(),
+    'module' => 'migrate',
   );
 
   // Exported permission: 'unlock service_partner_importer feeds'.

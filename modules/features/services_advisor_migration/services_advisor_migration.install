@@ -1,0 +1,25 @@
+<?php
+/**
+ * @file
+ * Handles the installation and updates.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function services_advisor_migration_install() {
+
+}
+
+// /**
+//  * Implement Drupal7-to-Drupal7 migration classes.
+//  */
+// function services_advisor_migration_update_7001() {
+// 	$modules = array(
+// 		'migration',
+// 		'migration_ui',
+// 		'migrate_d2d',
+// 		'migrate_d2d_ui',
+// 	);
+// 	module_enable($modules);
+// }
