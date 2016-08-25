@@ -7,5 +7,6 @@ dependencies[] = services_advisor_base
 dependencies[] = services_advisor_dashboard
 dependencies[] = services_advisor_location
 dependencies[] = services_advisor_partner
+dependencies[] = services_advisor_migration
 
 files[] = servicesadvisor.profile
