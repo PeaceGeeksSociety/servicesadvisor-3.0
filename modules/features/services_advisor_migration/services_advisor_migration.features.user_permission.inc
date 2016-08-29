@@ -10,15 +10,6 @@
 function services_advisor_migration_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'administer feeds'.
-  $permissions['administer feeds'] = array(
-    'name' => 'administer feeds',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'feeds',
-  );
-
   // Exported permission: 'administer feeds_tamper'.
   $permissions['administer feeds_tamper'] = array(
     'name' => 'administer feeds_tamper',
@@ -172,13 +163,6 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'node_export',
   );
 
-  // Exported permission: 'export taxonomy by csv'.
-  $permissions['export taxonomy by csv'] = array(
-    'name' => 'export taxonomy by csv',
-    'roles' => array(),
-    'module' => 'taxonomy_csv',
-  );
-
   // Exported permission: 'import service_accessibility_importer feeds'.
   $permissions['import service_accessibility_importer feeds'] = array(
     'name' => 'import service_accessibility_importer feeds',
@@ -291,13 +275,6 @@ function services_advisor_migration_user_default_permissions() {
     'name' => 'import service_response_delay_importer feeds',
     'roles' => array(),
     'module' => 'feeds',
-  );
-
-  // Exported permission: 'import taxonomy by csv'.
-  $permissions['import taxonomy by csv'] = array(
-    'name' => 'import taxonomy by csv',
-    'roles' => array(),
-    'module' => 'taxonomy_csv',
   );
 
   // Exported permission: 'import user_importer feeds'.

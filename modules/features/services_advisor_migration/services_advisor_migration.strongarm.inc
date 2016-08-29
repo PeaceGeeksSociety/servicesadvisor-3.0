@@ -91,6 +91,22 @@ function services_advisor_migration_strongarm() {
     'service_location_importer-service_location__-unique' => FALSE,
     'service_location_importer-service_location__-feeds_tamper_array_select' => FALSE,
     'service_location_importer-services_provided__-feeds_tamper_array_select' => FALSE,
+    'service_location_importer-services_provided__-trim_whitespace' => FALSE,
+    'service_location_importer-availability__-trim' => FALSE,
+    'service_location_importer-accessiblity-trim' => FALSE,
+    'service_location_importer-service_location__-trim_whitespace' => FALSE,
+    'service_location_importer-coverage-trim' => FALSE,
+    'service_location_importer-legal_documents_required-trim' => FALSE,
+    'service_location_importer-nationality__-trim' => FALSE,
+    'service_location_importer-intake_criteria-trim' => FALSE,
+    'service_location_importer-referral_method-strtotime' => FALSE,
+    'service_location_importer-referral_method-trim' => FALSE,
+    'service_location_importer-immediate_next_step_after_referral-trim' => FALSE,
+    'service_location_importer-complaints_mechanism-trim' => FALSE,
+    'service_location_importer-feedback_delay-trim' => FALSE,
+    'service_location_importer-feedback_mechanism-trim' => FALSE,
+    'service_location_importer-response_delay_after_referral-trim' => FALSE,
+    'service_location_importer-organisation_name__-trim' => FALSE,
   );
   $export['default_feeds_tamper'] = $strongarm;
 

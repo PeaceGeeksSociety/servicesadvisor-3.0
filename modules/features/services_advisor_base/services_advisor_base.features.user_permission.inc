@@ -59,6 +59,13 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
+  // Exported permission: 'access print'.
+  $permissions['access print'] = array(
+    'name' => 'access print',
+    'roles' => array(),
+    'module' => 'print',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -188,6 +195,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'administer feeds'.
+  $permissions['administer feeds'] = array(
+    'name' => 'administer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'administer fieldgroups'.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
@@ -244,6 +260,13 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'masquerade',
   );
 
+  // Exported permission: 'administer menu'.
+  $permissions['administer menu'] = array(
+    'name' => 'administer menu',
+    'roles' => array(),
+    'module' => 'menu',
+  );
+
   // Exported permission: 'administer modules'.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
@@ -270,6 +293,13 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer print'.
+  $permissions['administer print'] = array(
+    'name' => 'administer print',
+    'roles' => array(),
+    'module' => 'print',
   );
 
   // Exported permission: 'administer redirects'.
@@ -612,6 +642,13 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'masquerade',
+  );
+
+  // Exported permission: 'node-specific print configuration'.
+  $permissions['node-specific print configuration'] = array(
+    'name' => 'node-specific print configuration',
+    'roles' => array(),
+    'module' => 'print_ui',
   );
 
   // Exported permission: 'notify of path changes'.
