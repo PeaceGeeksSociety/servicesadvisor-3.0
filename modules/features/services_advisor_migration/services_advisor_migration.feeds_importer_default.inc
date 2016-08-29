@@ -21,11 +21,10 @@ function services_advisor_migration_feeds_importer_default() {
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'private://feeds',
+        'direct' => 0,
+        'directory' => 'public://feeds',
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
       ),
     ),
@@ -182,11 +181,10 @@ function services_advisor_migration_feeds_importer_default() {
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'private://feeds',
+        'direct' => 0,
+        'directory' => 'public://feeds',
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
       ),
     ),
