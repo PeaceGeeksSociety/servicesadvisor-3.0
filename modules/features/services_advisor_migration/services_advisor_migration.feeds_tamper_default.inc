@@ -164,6 +164,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-accessiblity-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Accessiblity';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-accessiblity-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-author_email__-required';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Author Email *';
@@ -210,6 +225,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-availability__-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Availability *';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-availability__-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-complaints_mechanism-explode';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Complaints Mechanism';
@@ -222,6 +252,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Explode';
   $export['service_location_importer-complaints_mechanism-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-complaints_mechanism-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Complaints Mechanism';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-complaints_mechanism-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -242,6 +287,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-coverage-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Coverage';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-coverage-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-end_date__-required';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'End Date *';
@@ -253,6 +313,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Required field';
   $export['service_location_importer-end_date__-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-feedback_delay-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Feedback Delay';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-feedback_delay-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -273,6 +348,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-feedback_mechanism-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Feedback Mechanism';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-feedback_mechanism-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-immediate_next_step_after_referral-explode';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Immediate Next Step after Referral';
@@ -289,6 +379,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-immediate_next_step_after_referral-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Immediate Next Step after Referral';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-immediate_next_step_after_referral-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-intake_criteria-explode';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Intake Criteria';
@@ -301,6 +406,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
   $export['service_location_importer-intake_criteria-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-intake_criteria-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Intake Criteria';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-intake_criteria-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -336,6 +456,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-legal_documents_required-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Legal Documents Required';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-legal_documents_required-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-nationality__-explode';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Nationality *';
@@ -367,6 +502,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-nationality__-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Nationality *';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-nationality__-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-organisation_name__-required';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Organisation Name *';
@@ -378,6 +528,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Required field';
   $export['service_location_importer-organisation_name__-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-organisation_name__-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Organisation Name *';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-organisation_name__-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -394,6 +559,51 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
   $export['service_location_importer-referral_method-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-referral_method-strtotime';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Referral Method';
+  $feeds_tamper->plugin_id = '';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'String to Unix timestamp';
+  $export['service_location_importer-referral_method-strtotime'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-referral_method-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Referral Method';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-referral_method-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-response_delay_after_referral-trim';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Response Delay after Referral';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-response_delay_after_referral-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -458,6 +668,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-service_location__-trim_whitespace';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Service Location *';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-service_location__-trim_whitespace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-services_provided__-explode';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Services Provided *';
@@ -511,9 +736,24 @@ function services_advisor_migration_feeds_tamper_default() {
     'mask' => ',',
     'side' => 'rtrim',
   );
-  $feeds_tamper->weight = 2;
+  $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Trim Commas';
   $export['service_location_importer-services_provided__-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-services_provided__-trim_whitespace';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Services Provided *';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Trim';
+  $export['service_location_importer-services_provided__-trim_whitespace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */

@@ -77,6 +77,9 @@ projects[eva][version] = "1.2"
 projects[features][subdir] = contrib
 projects[features][version] = "2.10"
 
+projects[features_extra][subdir] = contrib
+projects[features_extra][version] = "1.0"
+
 projects[feeds][subdir] = contrib
 projects[feeds][version] = "2.x"
 

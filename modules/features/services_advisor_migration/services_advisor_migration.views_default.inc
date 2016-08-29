@@ -13,7 +13,7 @@ function services_advisor_migration_views_default_views() {
   $view = new view();
   $view->name = 'service_location_master_list';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'Services Advisor';
   $view->base_table = 'node';
   $view->human_name = 'Service Location Master List';
   $view->core = 7;
@@ -52,7 +52,7 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_start_date']['table'] = 'field_data_field_service_start_date';
   $handler->display->display_options['fields']['field_service_start_date']['field'] = 'field_service_start_date';
   $handler->display->display_options['fields']['field_service_start_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'importer_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -64,7 +64,7 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_end_date']['table'] = 'field_data_field_service_end_date';
   $handler->display->display_options['fields']['field_service_end_date']['field'] = 'field_service_end_date';
   $handler->display->display_options['fields']['field_service_end_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'importer_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
