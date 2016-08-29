@@ -78,7 +78,10 @@ projects[features][subdir] = contrib
 projects[features][version] = "2.10"
 
 projects[feeds][subdir] = contrib
-projects[feeds][version] = 2.0-beta2
+projects[feeds][version] = "2.x"
+
+projects[feeds_tamper][subdir] = contrib
+projects[feeds_tamper][version] = "1.1"
 
 projects[field_group][subdir] = contrib
 projects[field_group][version] = "1.5"
@@ -125,6 +128,12 @@ projects[link][version] = "1.4"
 
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
+
+projects[migrate][subdir] = contrib
+projects[migrate[version] = "2.8"
+
+projects[migrate_d2d][subdir] = contrib
+projects[migrate_d2d[version] = "2.1"
 
 projects[node_export][subdir] = contrib
 projects[node_export][version] = "3.1"
@@ -174,6 +183,12 @@ projects[unique_field][version] = "1.0-rc1"
 
 projects[uuid][subdir] = contrib
 projects[uuid][version] = "1.0-beta2"
+
+projects[uif][subdir] = contrib
+projects[uif][version] = "1.5"
+
+projects[uif_plus][subdir] = contrib
+projects[uif_plus][version] = "1.x"
 
 projects[variable][subdir] = contrib
 projects[variable][version] = "2.5"

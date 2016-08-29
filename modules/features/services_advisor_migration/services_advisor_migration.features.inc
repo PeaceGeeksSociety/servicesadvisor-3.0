@@ -11,6 +11,9 @@ function services_advisor_migration_ctools_plugin_api($module = NULL, $api = NUL
   if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
   }
+  if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+    return array("version" => "2");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
