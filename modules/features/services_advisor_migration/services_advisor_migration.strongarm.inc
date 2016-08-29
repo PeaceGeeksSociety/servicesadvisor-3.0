@@ -13,6 +13,90 @@ function services_advisor_migration_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'default_feeds_tamper';
+  $strongarm->value = array(
+    'service_partner_importer-abbreviated_partner_name-required' => TRUE,
+    'service_partner_importer-language-default_value' => FALSE,
+    'service_location_importer-title-required' => FALSE,
+    'service_location_importer-organization_name-required' => TRUE,
+    'service_location_importer-start_date-required' => TRUE,
+    'service_location_importer-end_date-required' => TRUE,
+    'service_partner_importer-abbreviated_partner_name-unique' => FALSE,
+    'service_nested_locations-name-required' => FALSE,
+    'service_complaints_mechanism_importer-name-required' => FALSE,
+    'service_accessibility_importer-name-required' => FALSE,
+    'service_available_nationality_importer-name-required' => FALSE,
+    'service_coverage_importer-name-required' => FALSE,
+    'service_feedback_delay_importer-name-required' => FALSE,
+    'service_feedback_mechanism_importer-name-required' => FALSE,
+    'service_intake_criteria_importer-name-required' => FALSE,
+    'service_referral_method_importer-name-required' => FALSE,
+    'service_referral_next_step_importer-name-required' => FALSE,
+    'service_registration_type_importer-name-required' => FALSE,
+    'service_response_delay_importer-name-required' => FALSE,
+    'service_availability_importer-name-required' => FALSE,
+    'service_nested_categories_importer-name-required' => FALSE,
+    'user_importer-email_address-required' => TRUE,
+    'user_importer-language-default_value' => FALSE,
+    'user_importer-status-default_value' => FALSE,
+    'user_importer-username-required' => TRUE,
+    'service_location_importer-availability-required' => TRUE,
+    'service_location_importer-nationality-required' => TRUE,
+    'service_location_importer-author_email-required' => TRUE,
+    'service_location_importer-service_location-explode' => TRUE,
+    'service_location_importer-services_provided-explode' => TRUE,
+    'service_location_importer-language-default_value' => FALSE,
+    'user_importer-service_organisation-explode' => TRUE,
+    'user_importer-service_organisation-unique' => TRUE,
+    'service_location_importer-services_provided-required' => TRUE,
+    'service_location_importer-service_location-required' => TRUE,
+    'service_location_importer-nationality-explode' => TRUE,
+    'service_location_importer-availability-explode' => TRUE,
+    'service_location_importer-accessiblity-explode' => FALSE,
+    'service_location_importer-coverage-explode' => FALSE,
+    'service_location_importer-legal_documents_required-strtotime' => FALSE,
+    'service_location_importer-legal_documents_required-explode' => FALSE,
+    'service_location_importer-intake_criteria-explode' => FALSE,
+    'service_location_importer-referral_method-explode' => FALSE,
+    'service_location_importer-immediate_next_step_after_referral-explode' => FALSE,
+    'service_location_importer-feedback_mechanism-explode' => FALSE,
+    'service_location_importer-complaints_mechanism-explode' => FALSE,
+    'service_legal_document_importer-name-required' => FALSE,
+    'service_location_importer-services_provided-trim' => FALSE,
+    'service_location_importer-service_location-trim' => FALSE,
+    'user_importer-email_address__-required' => FALSE,
+    'user_importer-username__-required' => FALSE,
+    'user_importer-service_organisation__-required' => FALSE,
+    'service_location_importer-author_email__-required' => FALSE,
+    'service_location_importer-start_date__-required' => FALSE,
+    'service_location_importer-end_date__-required' => FALSE,
+    'service_location_importer-organisation_name__-required' => FALSE,
+    'service_location_importer-services_provided__-required' => FALSE,
+    'service_location_importer-services_provided__-explode' => FALSE,
+    'service_location_importer-services_provided__-trim' => FALSE,
+    'service_location_importer-availability__-required' => FALSE,
+    'service_location_importer-availability__-explode' => FALSE,
+    'service_location_importer-service_location__-required' => FALSE,
+    'service_location_importer-service_location__-explode' => FALSE,
+    'service_location_importer-service_location__-trim' => FALSE,
+    'service_location_importer-nationality__-required' => FALSE,
+    'service_location_importer-nationality__-explode' => FALSE,
+    'service_partner_importer-abbreviated_partner_name__-required' => FALSE,
+    'service_partner_importer-abbreviated_partner_name__-trim' => FALSE,
+    'service_partner_importer-author_email__-required' => TRUE,
+    'user_importer-service_organisation__-explode' => FALSE,
+    'service_coverage_importer-name-strtotime' => FALSE,
+    'service_location_importer-complaints_mechanism-strtotime' => FALSE,
+    'service_location_importer-services_provided__-unique' => TRUE,
+    'service_location_importer-service_location__-unique' => FALSE,
+    'service_location_importer-service_location__-feeds_tamper_array_select' => FALSE,
+    'service_location_importer-services_provided__-feeds_tamper_array_select' => FALSE,
+  );
+  $export['default_feeds_tamper'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_export_code';
   $strongarm->value = 'all';
   $export['node_export_code'] = $strongarm;
@@ -497,6 +581,288 @@ function services_advisor_migration_strongarm() {
   $strongarm->name = 'node_export_reset_sticky_webform';
   $strongarm->value = 0;
   $export['node_export_reset_sticky_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_check_hierarchy';
+  $strongarm->value = 0;
+  $export['taxonomy_csv_check_hierarchy'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_check_line';
+  $strongarm->value = 1;
+  $export['taxonomy_csv_check_line'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_check_utf8';
+  $strongarm->value = 1;
+  $export['taxonomy_csv_check_utf8'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_delete_terms';
+  $strongarm->value = 0;
+  $export['taxonomy_csv_delete_terms'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_delimiter';
+  $strongarm->value = 'comma';
+  $export['taxonomy_csv_export_delimiter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_delimiter_custom';
+  $strongarm->value = '';
+  $export['taxonomy_csv_export_delimiter_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_enclosure';
+  $strongarm->value = 'quotation';
+  $export['taxonomy_csv_export_enclosure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_enclosure_custom';
+  $strongarm->value = '';
+  $export['taxonomy_csv_export_enclosure_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_format';
+  $strongarm->value = 'tree';
+  $export['taxonomy_csv_export_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_line_ending';
+  $strongarm->value = 'Unix';
+  $export['taxonomy_csv_export_line_ending'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_order';
+  $strongarm->value = 'name';
+  $export['taxonomy_csv_export_order'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_export_vocabulary_id';
+  $strongarm->value = array(
+    45 => '45',
+  );
+  $export['taxonomy_csv_export_vocabulary_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_filter_format';
+  $strongarm->value = 'plain_text';
+  $export['taxonomy_csv_filter_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_filter_format_custom';
+  $strongarm->value = 'none';
+  $export['taxonomy_csv_filter_format_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_i18n_mode';
+  $strongarm->value = '0';
+  $export['taxonomy_csv_i18n_mode'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_delimiter';
+  $strongarm->value = 'comma';
+  $export['taxonomy_csv_import_delimiter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_delimiter_custom';
+  $strongarm->value = '';
+  $export['taxonomy_csv_import_delimiter_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_delimiter_soft_tab_width';
+  $strongarm->value = '2';
+  $export['taxonomy_csv_import_delimiter_soft_tab_width'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_enclosure';
+  $strongarm->value = 'quotation';
+  $export['taxonomy_csv_import_enclosure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_enclosure_custom';
+  $strongarm->value = '';
+  $export['taxonomy_csv_import_enclosure_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_fields_custom';
+  $strongarm->value = '';
+  $export['taxonomy_csv_import_fields_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_fields_format';
+  $strongarm->value = 'name';
+  $export['taxonomy_csv_import_fields_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_format';
+  $strongarm->value = 'structure';
+  $export['taxonomy_csv_import_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_import_language';
+  $strongarm->value = 'und';
+  $export['taxonomy_csv_import_language'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_keep_order';
+  $strongarm->value = 0;
+  $export['taxonomy_csv_keep_order'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_language';
+  $strongarm->value = 'und';
+  $export['taxonomy_csv_language'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_locale_custom';
+  $strongarm->value = '';
+  $export['taxonomy_csv_locale_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_result_duplicates';
+  $strongarm->value = 1;
+  $export['taxonomy_csv_result_duplicates'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_result_level';
+  $strongarm->value = 'notices';
+  $export['taxonomy_csv_result_level'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_result_stats';
+  $strongarm->value = 'result_stats';
+  $export['taxonomy_csv_result_stats'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_result_terms';
+  $strongarm->value = 0;
+  $export['taxonomy_csv_result_terms'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_result_type';
+  $strongarm->value = 'by_message';
+  $export['taxonomy_csv_result_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_set_hierarchy';
+  $strongarm->value = '1';
+  $export['taxonomy_csv_set_hierarchy'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_source_choice';
+  $strongarm->value = 'file';
+  $export['taxonomy_csv_source_choice'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_structure_type';
+  $strongarm->value = 'tree';
+  $export['taxonomy_csv_structure_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_translate_by';
+  $strongarm->value = 'name';
+  $export['taxonomy_csv_translate_by'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_translate_languages';
+  $strongarm->value = '';
+  $export['taxonomy_csv_translate_languages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_update_or_ignore';
+  $strongarm->value = 'update';
+  $export['taxonomy_csv_update_or_ignore'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_vocabulary_id';
+  $strongarm->value = '13';
+  $export['taxonomy_csv_vocabulary_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_csv_vocabulary_target';
+  $strongarm->value = 'existing';
+  $export['taxonomy_csv_vocabulary_target'] = $strongarm;
 
   return $export;
 }
