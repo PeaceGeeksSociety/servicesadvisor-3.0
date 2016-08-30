@@ -134,6 +134,7 @@ projects[masquerade][version] = "1.0-rc7"
 
 projects[migrate][subdir] = contrib
 projects[migrate[version] = "2.8"
+projects[migrate][patch][] = "https://www.drupal.org/files/issues/migrate-export_config_as_code-1983404-10_1.patch"
 
 projects[migrate_d2d][subdir] = contrib
 projects[migrate_d2d[version] = "2.1"
