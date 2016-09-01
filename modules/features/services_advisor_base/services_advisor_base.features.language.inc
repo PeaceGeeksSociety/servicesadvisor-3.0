@@ -23,5 +23,18 @@ function services_advisor_base_locale_default_languages() {
     'prefix' => 'ar',
     'weight' => 0,
   );
+  // Exported language: en.
+  $languages['en'] = array(
+    'language' => 'en',
+    'name' => 'English',
+    'native' => 'English',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 0,
+    'formula' => '',
+    'domain' => '',
+    'prefix' => '',
+    'weight' => 0,
+  );
   return $languages;
 }

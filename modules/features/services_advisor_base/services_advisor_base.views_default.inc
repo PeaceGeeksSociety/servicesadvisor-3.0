@@ -673,7 +673,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_services_provided_2']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_services_provided_2']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_services_provided_2']['delta_offset'] = '1';
-  /* Field: Content: Office Hours */
+  /* Field: Content: Hours */
   $handler->display->display_options['fields']['field_service_office_hours']['id'] = 'field_service_office_hours';
   $handler->display->display_options['fields']['field_service_office_hours']['table'] = 'field_data_field_service_office_hours';
   $handler->display->display_options['fields']['field_service_office_hours']['field'] = 'field_service_office_hours';

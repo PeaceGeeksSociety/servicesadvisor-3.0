@@ -1,0 +1,8 @@
+name = "Feeds Tamper Array Select"
+description = "Feeds Tamper Plugin that selects chosen element from the array."
+package = Feeds
+dependencies[] = feeds
+dependencies[] = feeds_tamper
+core = 7.x
+version = "7.x-1.0-alpha1"
+project = "feeds_tamper_array_select"
