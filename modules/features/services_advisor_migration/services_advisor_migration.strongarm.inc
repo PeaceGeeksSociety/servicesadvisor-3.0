@@ -226,6 +226,20 @@ function services_advisor_migration_strongarm() {
     'service_location_complete_importer-complaints_mechanism-explode' => FALSE,
     'service_location_complete_importer-complaints_mechanism-unique' => FALSE,
     'service_location_complete_importer-username-required' => FALSE,
+    'service_partner_master_importer-language-default_value_language' => FALSE,
+    'service_partner_master_importer-status-default_value_status' => FALSE,
+    'service_partner_master_importer-abbreviated_partner_name-required' => FALSE,
+    'user_complete_importer-email_address__-required' => FALSE,
+    'user_complete_importer-username__-required' => FALSE,
+    'user_complete_importer-language-default_value' => FALSE,
+    'user_complete_importer-service_organisation__-required' => FALSE,
+    'user_complete_importer-service_organisation__-explode' => FALSE,
+    'user_complete_importer-username-required' => FALSE,
+    'user_complete_importer-email_address-required' => FALSE,
+    'user_complete_importer-user_roles-explode' => FALSE,
+    'user_complete_importer-user_roles-unique' => FALSE,
+    'user_complete_importer-service_organisation-explode' => FALSE,
+    'user_complete_importer-service_organisation-unique' => FALSE,
   );
   $export['default_feeds_tamper'] = $strongarm;
 
