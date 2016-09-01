@@ -90,6 +90,7 @@ features[feeds_tamper][] = service_location_complete_importer-services_provided-
 features[feeds_tamper][] = service_location_complete_importer-services_provided-required
 features[feeds_tamper][] = service_location_complete_importer-services_provided-unique
 features[feeds_tamper][] = service_location_complete_importer-start_date-required
+features[feeds_tamper][] = service_location_complete_importer-username-required
 features[feeds_tamper][] = service_location_id_importer-accessibility-explode
 features[feeds_tamper][] = service_location_id_importer-accessibility-unique
 features[feeds_tamper][] = service_location_id_importer-author_uid-required

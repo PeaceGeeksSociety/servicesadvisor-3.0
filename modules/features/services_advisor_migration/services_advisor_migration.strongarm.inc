@@ -193,7 +193,7 @@ function services_advisor_migration_strongarm() {
     'service_location_id_importer-complaints_mechanism-unique' => FALSE,
     'service_location_id_importer-start_date-required' => FALSE,
     'service_location_id_importer-end_date-required' => FALSE,
-    'service_location_complete_importer-author_uid-required' => FALSE,
+    'service_location_complete_importer-author_uid-required' => TRUE,
     'service_location_complete_importer-start_date-required' => FALSE,
     'service_location_complete_importer-end_date-required' => FALSE,
     'service_location_complete_importer-organization-required' => FALSE,
@@ -225,6 +225,7 @@ function services_advisor_migration_strongarm() {
     'service_location_complete_importer-feedback_mechanism-unique' => FALSE,
     'service_location_complete_importer-complaints_mechanism-explode' => FALSE,
     'service_location_complete_importer-complaints_mechanism-unique' => FALSE,
+    'service_location_complete_importer-username-required' => FALSE,
   );
   $export['default_feeds_tamper'] = $strongarm;
 

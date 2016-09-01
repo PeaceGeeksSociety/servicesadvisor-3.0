@@ -604,6 +604,21 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-username-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Username';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-username-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_id_importer-accessibility-explode';
   $feeds_tamper->importer = 'service_location_id_importer';
   $feeds_tamper->source = 'Accessibility';
