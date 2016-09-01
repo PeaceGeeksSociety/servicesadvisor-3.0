@@ -94,13 +94,6 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
-  // Exported permission: 'clear service_location_id_importer feeds'.
-  $permissions['clear service_location_id_importer feeds'] = array(
-    'name' => 'clear service_location_id_importer feeds',
-    'roles' => array(),
-    'module' => 'feeds',
-  );
-
   // Exported permission: 'clear service_location_importer feeds'.
   $permissions['clear service_location_importer feeds'] = array(
     'name' => 'clear service_location_importer feeds',
@@ -129,6 +122,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'clear service_partner_master_importer feeds'.
+  $permissions['clear service_partner_master_importer feeds'] = array(
+    'name' => 'clear service_partner_master_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'clear service_referral_method_importer feeds'.
   $permissions['clear service_referral_method_importer feeds'] = array(
     'name' => 'clear service_referral_method_importer feeds',
@@ -146,6 +146,13 @@ function services_advisor_migration_user_default_permissions() {
   // Exported permission: 'clear service_response_delay_importer feeds'.
   $permissions['clear service_response_delay_importer feeds'] = array(
     'name' => 'clear service_response_delay_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear user_complete_importer feeds'.
+  $permissions['clear user_complete_importer feeds'] = array(
+    'name' => 'clear user_complete_importer feeds',
     'roles' => array(),
     'module' => 'feeds',
   );
@@ -245,13 +252,6 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
-  // Exported permission: 'import service_location_id_importer feeds'.
-  $permissions['import service_location_id_importer feeds'] = array(
-    'name' => 'import service_location_id_importer feeds',
-    'roles' => array(),
-    'module' => 'feeds',
-  );
-
   // Exported permission: 'import service_location_importer feeds'.
   $permissions['import service_location_importer feeds'] = array(
     'name' => 'import service_location_importer feeds',
@@ -280,6 +280,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'import service_partner_master_importer feeds'.
+  $permissions['import service_partner_master_importer feeds'] = array(
+    'name' => 'import service_partner_master_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'import service_referral_method_importer feeds'.
   $permissions['import service_referral_method_importer feeds'] = array(
     'name' => 'import service_referral_method_importer feeds',
@@ -297,6 +304,13 @@ function services_advisor_migration_user_default_permissions() {
   // Exported permission: 'import service_response_delay_importer feeds'.
   $permissions['import service_response_delay_importer feeds'] = array(
     'name' => 'import service_response_delay_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import user_complete_importer feeds'.
+  $permissions['import user_complete_importer feeds'] = array(
+    'name' => 'import user_complete_importer feeds',
     'roles' => array(),
     'module' => 'feeds',
   );
@@ -392,13 +406,6 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds_tamper',
   );
 
-  // Exported permission: 'tamper service_location_id_importer'.
-  $permissions['tamper service_location_id_importer'] = array(
-    'name' => 'tamper service_location_id_importer',
-    'roles' => array(),
-    'module' => 'feeds_tamper',
-  );
-
   // Exported permission: 'tamper service_location_importer'.
   $permissions['tamper service_location_importer'] = array(
     'name' => 'tamper service_location_importer',
@@ -427,6 +434,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds_tamper',
   );
 
+  // Exported permission: 'tamper service_partner_master_importer'.
+  $permissions['tamper service_partner_master_importer'] = array(
+    'name' => 'tamper service_partner_master_importer',
+    'roles' => array(),
+    'module' => 'feeds_tamper',
+  );
+
   // Exported permission: 'tamper service_referral_method_importer'.
   $permissions['tamper service_referral_method_importer'] = array(
     'name' => 'tamper service_referral_method_importer',
@@ -444,6 +458,13 @@ function services_advisor_migration_user_default_permissions() {
   // Exported permission: 'tamper service_response_delay_importer'.
   $permissions['tamper service_response_delay_importer'] = array(
     'name' => 'tamper service_response_delay_importer',
+    'roles' => array(),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper user_complete_importer'.
+  $permissions['tamper user_complete_importer'] = array(
+    'name' => 'tamper user_complete_importer',
     'roles' => array(),
     'module' => 'feeds_tamper',
   );
@@ -525,13 +546,6 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
-  // Exported permission: 'unlock service_location_id_importer feeds'.
-  $permissions['unlock service_location_id_importer feeds'] = array(
-    'name' => 'unlock service_location_id_importer feeds',
-    'roles' => array(),
-    'module' => 'feeds',
-  );
-
   // Exported permission: 'unlock service_location_importer feeds'.
   $permissions['unlock service_location_importer feeds'] = array(
     'name' => 'unlock service_location_importer feeds',
@@ -560,6 +574,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'unlock service_partner_master_importer feeds'.
+  $permissions['unlock service_partner_master_importer feeds'] = array(
+    'name' => 'unlock service_partner_master_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'unlock service_referral_method_importer feeds'.
   $permissions['unlock service_referral_method_importer feeds'] = array(
     'name' => 'unlock service_referral_method_importer feeds',
@@ -577,6 +598,13 @@ function services_advisor_migration_user_default_permissions() {
   // Exported permission: 'unlock service_response_delay_importer feeds'.
   $permissions['unlock service_response_delay_importer feeds'] = array(
     'name' => 'unlock service_response_delay_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock user_complete_importer feeds'.
+  $permissions['unlock user_complete_importer feeds'] = array(
+    'name' => 'unlock user_complete_importer feeds',
     'roles' => array(),
     'module' => 'feeds',
   );
