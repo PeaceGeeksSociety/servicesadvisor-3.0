@@ -601,7 +601,7 @@ function services_advisor_migration_feeds_importer_default() {
       'config' => array(
         'expire' => '-1',
         'author' => 0,
-        'authorize' => 1,
+        'authorize' => 0,
         'mappings' => array(
           0 => array(
             'source' => 'Username',
