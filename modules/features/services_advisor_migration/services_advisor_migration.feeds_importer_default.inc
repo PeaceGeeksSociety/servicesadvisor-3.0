@@ -580,11 +580,11 @@ function services_advisor_migration_feeds_importer_default() {
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'delete_uploaded_file' => FALSE,
-        'direct' => FALSE,
+        'delete_uploaded_file' => 1,
+        'direct' => 0,
         'directory' => 'public://feeds',
         'allowed_schemes' => array(
-          0 => 'public',
+          'public' => 'public',
         ),
       ),
     ),
@@ -803,10 +803,10 @@ function services_advisor_migration_feeds_importer_default() {
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => 1800,
+    'import_period' => '1800',
     'expire_period' => 3600,
-    'import_on_create' => TRUE,
-    'process_in_background' => FALSE,
+    'import_on_create' => 1,
+    'process_in_background' => 1,
   );
   $export['service_location_complete_importer'] = $feeds_importer;
 
@@ -1182,7 +1182,7 @@ function services_advisor_migration_feeds_importer_default() {
         'allowed_schemes' => array(
           'public' => 'public',
         ),
-        'delete_uploaded_file' => FALSE,
+        'delete_uploaded_file' => 1,
       ),
     ),
     'parser' => array(
@@ -1677,9 +1677,8 @@ function services_advisor_migration_feeds_importer_default() {
         'directory' => 'public://feeds',
         'allowed_schemes' => array(
           'public' => 'public',
-          'private' => 'private',
         ),
-        'delete_uploaded_file' => FALSE,
+        'delete_uploaded_file' => 1,
       ),
     ),
     'parser' => array(
