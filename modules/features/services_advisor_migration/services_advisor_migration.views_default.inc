@@ -509,7 +509,7 @@ function services_advisor_migration_views_default_views() {
   $view = new view();
   $view->name = 'user_master_list';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'Services Advisor Migration';
   $view->base_table = 'users';
   $view->human_name = 'User Master List';
   $view->core = 7;
@@ -589,17 +589,17 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['ui_name'] = 'Language';
   /* Field: Service Organisation */
-  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['ui_name'] = 'Service Organisation';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Service Organisation';
-  $handler->display->display_options['fields']['og_group_ref']['alter']['trim_whitespace'] = TRUE;
-  $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
-    'link' => 1,
+  $handler->display->display_options['fields']['og_user_node']['id'] = 'og_user_node';
+  $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
+  $handler->display->display_options['fields']['og_user_node']['ui_name'] = 'Service Organisation';
+  $handler->display->display_options['fields']['og_user_node']['label'] = 'Service Organisation';
+  $handler->display->display_options['fields']['og_user_node']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['og_user_node']['settings'] = array(
+    'link' => 0,
   );
-  $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['og_group_ref']['separator'] = ',';
+  $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['og_user_node']['separator'] = ',';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';

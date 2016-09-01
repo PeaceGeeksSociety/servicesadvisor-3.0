@@ -30,29 +30,6 @@ function services_advisor_base_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: user-menu_my-account:user/edit.
-  $menu_links['user-menu_my-account:user/edit'] = array(
-    'menu_name' => 'user-menu',
-    'link_path' => 'user/edit',
-    'router_path' => 'user/edit',
-    'link_title' => 'My Account',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'user-menu_my-account:user/edit',
-      'alter' => TRUE,
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
   // Exported menu link: user-menu_my-organization:my-organization.
   $menu_links['user-menu_my-organization:my-organization'] = array(
     'menu_name' => 'user-menu',
@@ -126,7 +103,6 @@ function services_advisor_base_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Log out');
-  t('My Account');
   t('My organization');
   t('Services');
   t('User account');
