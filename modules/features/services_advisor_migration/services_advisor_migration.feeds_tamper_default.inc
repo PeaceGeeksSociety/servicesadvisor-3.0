@@ -1475,7 +1475,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->importer = 'user_complete_importer';
   $feeds_tamper->source = 'Service Organisation';
   $feeds_tamper->plugin_id = 'unique';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Unique';
   $export['user_complete_importer-service_organisation-unique'] = $feeds_tamper;
@@ -1503,7 +1503,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper->importer = 'user_complete_importer';
   $feeds_tamper->source = 'User Roles';
   $feeds_tamper->plugin_id = 'unique';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Unique';
   $export['user_complete_importer-user_roles-unique'] = $feeds_tamper;
