@@ -87,6 +87,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'clear service_location_complete_importer feeds'.
+  $permissions['clear service_location_complete_importer feeds'] = array(
+    'name' => 'clear service_location_complete_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'clear service_location_id_importer feeds'.
   $permissions['clear service_location_id_importer feeds'] = array(
     'name' => 'clear service_location_id_importer feeds',
@@ -231,6 +238,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'import service_location_complete_importer feeds'.
+  $permissions['import service_location_complete_importer feeds'] = array(
+    'name' => 'import service_location_complete_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'import service_location_id_importer feeds'.
   $permissions['import service_location_id_importer feeds'] = array(
     'name' => 'import service_location_id_importer feeds',
@@ -371,6 +385,13 @@ function services_advisor_migration_user_default_permissions() {
     'module' => 'feeds_tamper',
   );
 
+  // Exported permission: 'tamper service_location_complete_importer'.
+  $permissions['tamper service_location_complete_importer'] = array(
+    'name' => 'tamper service_location_complete_importer',
+    'roles' => array(),
+    'module' => 'feeds_tamper',
+  );
+
   // Exported permission: 'tamper service_location_id_importer'.
   $permissions['tamper service_location_id_importer'] = array(
     'name' => 'tamper service_location_id_importer',
@@ -493,6 +514,13 @@ function services_advisor_migration_user_default_permissions() {
   // Exported permission: 'unlock service_legal_document_importer feeds'.
   $permissions['unlock service_legal_document_importer feeds'] = array(
     'name' => 'unlock service_legal_document_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock service_location_complete_importer feeds'.
+  $permissions['unlock service_location_complete_importer feeds'] = array(
+    'name' => 'unlock service_location_complete_importer feeds',
     'roles' => array(),
     'module' => 'feeds',
   );

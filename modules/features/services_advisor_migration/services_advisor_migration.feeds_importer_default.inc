@@ -572,6 +572,233 @@ function services_advisor_migration_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'service_location_complete_importer';
+  $feeds_importer->config = array(
+    'name' => 'Service Location Complete Importer',
+    'description' => 'Imports ALL values of a Service Location. Used for migration',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'delete_uploaded_file' => FALSE,
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'encoding' => 'UTF-8',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => 0,
+        'authorize' => 1,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Author UID',
+            'target' => 'uid',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          1 => array(
+            'source' => 'Published Date',
+            'target' => 'created',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          2 => array(
+            'source' => 'Status',
+            'target' => 'status',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          3 => array(
+            'source' => 'Language',
+            'target' => 'language',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          4 => array(
+            'source' => 'Start Date',
+            'target' => 'field_service_start_date:start',
+            'timezone' => '__SITE__',
+            'language' => 'und',
+          ),
+          5 => array(
+            'source' => 'End Date',
+            'target' => 'field_service_end_date:start',
+            'timezone' => '__SITE__',
+            'language' => 'und',
+          ),
+          6 => array(
+            'source' => 'Organization',
+            'target' => 'og_group_ref:etid',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          7 => array(
+            'source' => 'Services Provided',
+            'target' => 'field_services_provided',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          8 => array(
+            'source' => 'Availability',
+            'target' => 'field_service_availability',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          9 => array(
+            'source' => 'Accessibility',
+            'target' => 'field_service_accessibility',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          10 => array(
+            'source' => 'Additional Details',
+            'target' => 'field_service_location_details',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          11 => array(
+            'source' => 'Service Location',
+            'target' => 'field_service_location_location',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          12 => array(
+            'source' => 'Public Address / Location Details',
+            'target' => 'field_location_address',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          13 => array(
+            'source' => 'Coverage',
+            'target' => 'field_service_coverage',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          14 => array(
+            'source' => 'Legal Documents Required',
+            'target' => 'field_service_registration_type',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          15 => array(
+            'source' => 'Nationality',
+            'target' => 'field_service_nationality',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          16 => array(
+            'source' => 'Intake Criteria',
+            'target' => 'field_service_intake_criteria',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          17 => array(
+            'source' => 'Referral Method',
+            'target' => 'field_service_referral_method',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          18 => array(
+            'source' => 'Referral Contact Email',
+            'target' => 'field_service_contact_email',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          19 => array(
+            'source' => 'Referral Contact Name',
+            'target' => 'field_service_contact_name',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          20 => array(
+            'source' => 'Referral Contact Phone',
+            'target' => 'field_service_contact_phone',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          21 => array(
+            'source' => 'Immediate Next Step',
+            'target' => 'field_service_referral_next_step',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          22 => array(
+            'source' => 'Response Delay',
+            'target' => 'field_response_delay_after_refer',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          23 => array(
+            'source' => 'Feedback Mechanism',
+            'target' => 'field_service_feedback_mechanism',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          24 => array(
+            'source' => 'Feedback Delay',
+            'target' => 'field_service_feedback_delay',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          25 => array(
+            'source' => 'Complaints Mechanism',
+            'target' => 'field_complaints_mechanism',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          26 => array(
+            'source' => 'Comments',
+            'target' => 'field_service_comments',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          27 => array(
+            'source' => 'More Info Link Title',
+            'target' => 'field_service_more_info_link:title',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          28 => array(
+            'source' => 'More Info Link URL',
+            'target' => 'field_service_more_info_link:url',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+        ),
+        'insert_new' => '1',
+        'update_existing' => '2',
+        'update_non_existent' => 'skip',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'service_location',
+        'language' => 'und',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => 1800,
+    'expire_period' => 3600,
+    'import_on_create' => TRUE,
+    'process_in_background' => FALSE,
+  );
+  $export['service_location_complete_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'service_location_id_importer';
   $feeds_importer->config = array(
     'name' => 'Service Location ID Importer',

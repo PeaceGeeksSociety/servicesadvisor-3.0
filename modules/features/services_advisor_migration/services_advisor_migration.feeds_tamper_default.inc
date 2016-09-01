@@ -148,6 +148,462 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-accessibility-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Accessibility';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-accessibility-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-accessibility-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Accessibility';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-accessibility-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-author_uid-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Author UID';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-author_uid-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-availability-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Availability';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-availability-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-availability-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Availability';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-availability-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-availability-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Availability';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-availability-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-complaints_mechanism-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Complaints Mechanism';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-complaints_mechanism-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-complaints_mechanism-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Complaints Mechanism';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-complaints_mechanism-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-coverage-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Coverage';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-coverage-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-coverage-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Coverage';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-coverage-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-end_date-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'End Date';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-end_date-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-feedback_mechanism-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Feedback Mechanism';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-feedback_mechanism-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-feedback_mechanism-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Feedback Mechanism';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-feedback_mechanism-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-immediate_next_step-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Immediate Next Step';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-immediate_next_step-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-immediate_next_step-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Immediate Next Step';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-immediate_next_step-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-intake_criteria-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Intake Criteria';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-intake_criteria-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-intake_criteria-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Intake Criteria';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-intake_criteria-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-legal_documents_required-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Legal Documents Required';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-legal_documents_required-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-legal_documents_required-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Legal Documents Required';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-legal_documents_required-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-nationality-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Nationality';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-nationality-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-nationality-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Nationality';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-nationality-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-nationality-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Nationality';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-nationality-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-organization-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Organization';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-organization-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-organization-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Organization';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-organization-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-organization-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Organization';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-organization-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-referral_method-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Referral Method';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-referral_method-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-referral_method-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Referral Method';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-referral_method-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-service_location-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Service Location';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-service_location-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-services_provided-explode';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Services Provided';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Explode';
+  $export['service_location_complete_importer-services_provided-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-services_provided-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Services Provided';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-services_provided-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-services_provided-unique';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Services Provided';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Unique';
+  $export['service_location_complete_importer-services_provided-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_complete_importer-start_date-required';
+  $feeds_tamper->importer = 'service_location_complete_importer';
+  $feeds_tamper->source = 'Start Date';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array(
+    'invert' => 0,
+    'log' => 1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Required field';
+  $export['service_location_complete_importer-start_date-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_id_importer-accessibility-explode';
   $feeds_tamper->importer = 'service_location_id_importer';
   $feeds_tamper->source = 'Accessibility';

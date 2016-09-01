@@ -385,7 +385,7 @@ function services_advisor_migration_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Service Location Master ID List';
+  $handler->display->display_options['title'] = 'Service Location Master List';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -474,8 +474,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_availability']['table'] = 'field_data_field_service_availability';
   $handler->display->display_options['fields']['field_service_availability']['field'] = 'field_service_availability';
   $handler->display->display_options['fields']['field_service_availability']['ui_name'] = 'Availability';
-  $handler->display->display_options['fields']['field_service_availability']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_availability']['alter']['text'] = '[field_service_availability-tid]';
   $handler->display->display_options['fields']['field_service_availability']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_availability']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_availability']['delta_offset'] = '0';
@@ -485,8 +483,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_accessibility']['table'] = 'field_data_field_service_accessibility';
   $handler->display->display_options['fields']['field_service_accessibility']['field'] = 'field_service_accessibility';
   $handler->display->display_options['fields']['field_service_accessibility']['ui_name'] = 'Accessibility';
-  $handler->display->display_options['fields']['field_service_accessibility']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_accessibility']['alter']['text'] = '[field_service_accessibility-tid]';
   $handler->display->display_options['fields']['field_service_accessibility']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_accessibility']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_accessibility']['delta_offset'] = '0';
@@ -503,7 +499,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_location_location']['table'] = 'field_data_field_service_location_location';
   $handler->display->display_options['fields']['field_service_location_location']['field'] = 'field_service_location_location';
   $handler->display->display_options['fields']['field_service_location_location']['ui_name'] = 'Service Location';
-  $handler->display->display_options['fields']['field_service_location_location']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_service_location_location']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_location_location']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Public Address/Location Details */
@@ -521,8 +516,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_coverage']['table'] = 'field_data_field_service_coverage';
   $handler->display->display_options['fields']['field_service_coverage']['field'] = 'field_service_coverage';
   $handler->display->display_options['fields']['field_service_coverage']['ui_name'] = 'Coverage';
-  $handler->display->display_options['fields']['field_service_coverage']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_coverage']['alter']['text'] = '[field_service_coverage-tid]';
   $handler->display->display_options['fields']['field_service_coverage']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_coverage']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_coverage']['delta_offset'] = '0';
@@ -531,8 +524,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_registration_type']['table'] = 'field_data_field_service_registration_type';
   $handler->display->display_options['fields']['field_service_registration_type']['field'] = 'field_service_registration_type';
   $handler->display->display_options['fields']['field_service_registration_type']['ui_name'] = 'Legal Documents Required';
-  $handler->display->display_options['fields']['field_service_registration_type']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_registration_type']['alter']['text'] = '[field_service_registration_type-tid]';
   $handler->display->display_options['fields']['field_service_registration_type']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_registration_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_registration_type']['delta_offset'] = '0';
@@ -542,8 +533,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_nationality']['table'] = 'field_data_field_service_nationality';
   $handler->display->display_options['fields']['field_service_nationality']['field'] = 'field_service_nationality';
   $handler->display->display_options['fields']['field_service_nationality']['ui_name'] = 'Nationality';
-  $handler->display->display_options['fields']['field_service_nationality']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_nationality']['alter']['text'] = '[field_service_nationality-tid]';
   $handler->display->display_options['fields']['field_service_nationality']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_nationality']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_nationality']['delta_offset'] = '0';
@@ -553,8 +542,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_intake_criteria']['table'] = 'field_data_field_service_intake_criteria';
   $handler->display->display_options['fields']['field_service_intake_criteria']['field'] = 'field_service_intake_criteria';
   $handler->display->display_options['fields']['field_service_intake_criteria']['ui_name'] = 'Intake Criteria';
-  $handler->display->display_options['fields']['field_service_intake_criteria']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_intake_criteria']['alter']['text'] = '[field_service_intake_criteria-tid]';
   $handler->display->display_options['fields']['field_service_intake_criteria']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_intake_criteria']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_intake_criteria']['delta_offset'] = '0';
@@ -564,8 +551,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_referral_method']['table'] = 'field_data_field_service_referral_method';
   $handler->display->display_options['fields']['field_service_referral_method']['field'] = 'field_service_referral_method';
   $handler->display->display_options['fields']['field_service_referral_method']['ui_name'] = 'Referral Method';
-  $handler->display->display_options['fields']['field_service_referral_method']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_referral_method']['alter']['text'] = '[field_service_referral_method-tid]';
   $handler->display->display_options['fields']['field_service_referral_method']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_referral_method']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_referral_method']['delta_offset'] = '0';
@@ -594,8 +579,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_referral_next_step']['field'] = 'field_service_referral_next_step';
   $handler->display->display_options['fields']['field_service_referral_next_step']['ui_name'] = 'Immediate Next Step';
   $handler->display->display_options['fields']['field_service_referral_next_step']['label'] = 'Immediate Next Step';
-  $handler->display->display_options['fields']['field_service_referral_next_step']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_referral_next_step']['alter']['text'] = '[field_service_referral_next_step-tid]';
   $handler->display->display_options['fields']['field_service_referral_next_step']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_referral_next_step']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_referral_next_step']['delta_offset'] = '0';
@@ -606,8 +589,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_response_delay_after_refer']['field'] = 'field_response_delay_after_refer';
   $handler->display->display_options['fields']['field_response_delay_after_refer']['ui_name'] = 'Response Delay';
   $handler->display->display_options['fields']['field_response_delay_after_refer']['label'] = 'Response Delay';
-  $handler->display->display_options['fields']['field_response_delay_after_refer']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_response_delay_after_refer']['alter']['text'] = '[field_response_delay_after_refer-tid]';
   $handler->display->display_options['fields']['field_response_delay_after_refer']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_response_delay_after_refer']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Feedback Mechanism */
@@ -615,8 +596,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['table'] = 'field_data_field_service_feedback_mechanism';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['field'] = 'field_service_feedback_mechanism';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['ui_name'] = 'Feedback Mechanism';
-  $handler->display->display_options['fields']['field_service_feedback_mechanism']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_service_feedback_mechanism']['alter']['text'] = '[field_service_feedback_mechanism-tid]';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['delta_offset'] = '0';
@@ -626,8 +605,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['fields']['field_complaints_mechanism']['table'] = 'field_data_field_complaints_mechanism';
   $handler->display->display_options['fields']['field_complaints_mechanism']['field'] = 'field_complaints_mechanism';
   $handler->display->display_options['fields']['field_complaints_mechanism']['ui_name'] = 'Complaints Mechanism';
-  $handler->display->display_options['fields']['field_complaints_mechanism']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_complaints_mechanism']['alter']['text'] = '[field_complaints_mechanism-tid]';
   $handler->display->display_options['fields']['field_complaints_mechanism']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_complaints_mechanism']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_complaints_mechanism']['delta_offset'] = '0';
@@ -672,10 +649,16 @@ function services_advisor_migration_views_default_views() {
   /* Display: Service Location Master ID List */
   $handler = $view->new_display('page', 'Service Location Master ID List', 'page');
   $handler->display->display_options['display_description'] = 'A page of all the Service Location nodes with various IDs associated with it.';
-  $handler->display->display_options['path'] = 'service-location-master-id-list';
+  $handler->display->display_options['path'] = 'service-location-master-list';
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['path'] = 'service-location-master-list/export';
   $translatables['service_location_master_list'] = array(
     t('Master'),
-    t('Service Location Master ID List'),
+    t('Service Location Master List'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -698,37 +681,28 @@ function services_advisor_migration_views_default_views() {
     t('Organization'),
     t('Services Provided'),
     t('Availability'),
-    t('[field_service_availability-tid]'),
     t('Accessibility'),
-    t('[field_service_accessibility-tid]'),
     t('Additional Details'),
     t('Service Location'),
     t('Public Address / Location Details'),
     t('Coverage'),
-    t('[field_service_coverage-tid]'),
     t('Legal Documents Required'),
-    t('[field_service_registration_type-tid]'),
     t('Nationality'),
-    t('[field_service_nationality-tid]'),
     t('Intake Criteria'),
-    t('[field_service_intake_criteria-tid]'),
     t('Referral Method'),
-    t('[field_service_referral_method-tid]'),
     t('Referral Contact Email'),
     t('Referral Contact Name'),
     t('Referral Contact Phone'),
     t('Immediate Next Step'),
-    t('[field_service_referral_next_step-tid]'),
     t('Response Delay'),
-    t('[field_response_delay_after_refer-tid]'),
     t('Feedback Mechanism'),
-    t('[field_service_feedback_mechanism-tid]'),
     t('Complaints Mechanism'),
-    t('[field_complaints_mechanism-tid]'),
     t('Comments'),
     t('More Info Link Title'),
     t('More Info Link URL'),
+    t('Service Location Master ID List'),
     t('A page of all the Service Location nodes with various IDs associated with it.'),
+    t('Data export'),
   );
   $export['service_location_master_list'] = $view;
 
