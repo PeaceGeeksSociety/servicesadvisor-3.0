@@ -137,15 +137,15 @@ function services_advisor_base_node_insert($node) {
     $arabic_node->language = 'ar';
 
     // Save the copy
-    // node_save($arabic_node);
+    node_save($arabic_node);
     // Flag the Arabic text as needing to be updated, then resave. I can't due this before the initial save.
     $arabic_node->translate = true;
-    // node_save($arabic_node);
+    node_save($arabic_node);
 
-    // if ($arabic_node->nid){
-    //   drupal_set_message( '<strong>' . t('You still need to complete the Arabic translation this location, either by !link now or using the Translate tab at a later time.' . '</strong>',
-    //                       array('!link' => l(t('clicking this link'), 'ar/node/' . $arabic_node->nid . '/edit'), 'status')));
-    // }
+    if ($arabic_node->nid){
+      drupal_set_message( '<strong>' . t('You still need to complete the Arabic translation this location, either by !link now or using the Translate tab at a later time.' . '</strong>',
+                          array('!link' => l(t('clicking this link'), 'ar/node/' . $arabic_node->nid . '/edit'), 'status')));
+    }
   }
 }
 
