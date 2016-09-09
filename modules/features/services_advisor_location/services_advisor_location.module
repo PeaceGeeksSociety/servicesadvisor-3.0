@@ -61,7 +61,10 @@ function services_advisor_location_og_group_ref_handling(&$form, &$form_state) {
 function services_advisor_location_node_presave($node) {
   if ($node->type == 'service_location'){
     $title_parts = array();
-    $title_parts['translated_sector']   = i18n_taxonomy_term_name(taxonomy_term_load($node->field_services_provided['und'][0]['tid']), $node->language);
+
+    if (!empty($node->field_services_provided)) {
+      $title_parts['translated_sector']   = i18n_taxonomy_term_name(taxonomy_term_load($node->field_services_provided['und'][0]['tid']), $node->language);
+    }
 
     if (!empty($node->field_service_location_location)) {
       $title_parts['translated_location'] = i18n_taxonomy_term_name(taxonomy_term_load($node->field_service_location_location['und'][0]['tid']), $node->language);

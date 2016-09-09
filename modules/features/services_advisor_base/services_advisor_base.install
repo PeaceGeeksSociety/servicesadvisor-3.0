@@ -154,3 +154,15 @@ function services_advisor_base_update_7011() {
     }
   }
 }
+
+/**
+ * Enables 'Services Advisor Migration' and adds an importer format.
+ */
+function services_advisor_base_update_7012() {
+  features_revert_module('services_advisor_base');
+
+  $enable_modules = array(
+    'service_advisor_migration'
+  );
+  module_enable($enable_modules, true);
+}

@@ -30,6 +30,50 @@ function services_advisor_base_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_fe_date_custom_date_formats().
+ */
+function services_advisor_base_fe_date_custom_date_formats() {
+  $custom_date_formats = array();
+  $custom_date_formats['m/d/Y'] = 'm/d/Y';
+  return $custom_date_formats;
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function services_advisor_base_date_format_types() {
+  $format_types = array();
+  // Exported date format type: importer_format
+  $format_types['importer_format'] = 'Importer Format';
+  return $format_types;
+}
+
+/**
+ * Implements hook_fe_date_locale_date_format().
+ */
+function services_advisor_base_fe_date_locale_date_format() {
+  $locale_date_formats = array();
+
+  // Exported format: importer_format::ar
+  $locale_date_formats['importer_format::ar'] = array(
+    'type' => 'importer_format',
+    'format' => 'm/d/Y',
+    'locales' => array(
+      0 => 'ar',
+    ),
+  );
+  // Exported format: importer_format::en
+  $locale_date_formats['importer_format::en'] = array(
+    'type' => 'importer_format',
+    'format' => 'm/d/Y',
+    'locales' => array(
+      0 => 'en',
+    ),
+  );
+  return $locale_date_formats;
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function services_advisor_base_image_default_styles() {

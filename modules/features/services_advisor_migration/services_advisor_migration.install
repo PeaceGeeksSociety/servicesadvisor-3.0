@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Handles the installation and updates.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function services_advisor_migration_install() {
+
+}
+
+/**
+ * Enable Migration-related modules and components in 'Services Advisor Migration'.
+ */
+function services_advisor_migration_update_7001() {
+	$modules = array(
+		'migration',
+		'migration_ui',
+		'migrate_d2d',
+		'migrate_d2d_ui',
+	);
+	module_enable($modules);
+
+	features_revert_module('services_advisor_migration');
+}

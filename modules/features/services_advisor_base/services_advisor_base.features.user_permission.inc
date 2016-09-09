@@ -59,6 +59,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
+  // Exported permission: 'access print'.
+  $permissions['access print'] = array(
+    'name' => 'access print',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'print',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -188,6 +197,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'administer feeds'.
+  $permissions['administer feeds'] = array(
+    'name' => 'administer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'administer fieldgroups'.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
@@ -244,6 +262,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'masquerade',
   );
 
+  // Exported permission: 'administer menu'.
+  $permissions['administer menu'] = array(
+    'name' => 'administer menu',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu',
+  );
+
   // Exported permission: 'administer modules'.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
@@ -270,6 +297,15 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer print'.
+  $permissions['administer print'] = array(
+    'name' => 'administer print',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'print',
   );
 
   // Exported permission: 'administer redirects'.
@@ -350,7 +386,9 @@ function services_advisor_base_user_default_permissions() {
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -431,6 +469,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'display drupal links',
     'roles' => array(
       'administrator' => 'administrator',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'admin_menu',
   );
@@ -545,7 +584,9 @@ function services_advisor_base_user_default_permissions() {
   // Exported permission: 'geocoder_service_handler_openstreetmap_nominatim'.
   $permissions['geocoder_service_handler_openstreetmap_nominatim'] = array(
     'name' => 'geocoder_service_handler_openstreetmap_nominatim',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'geocoder',
   );
 
@@ -612,6 +653,15 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'masquerade',
+  );
+
+  // Exported permission: 'node-specific print configuration'.
+  $permissions['node-specific print configuration'] = array(
+    'name' => 'node-specific print configuration',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'print_ui',
   );
 
   // Exported permission: 'notify of path changes'.
@@ -770,7 +820,7 @@ function services_advisor_base_user_default_permissions() {
   $permissions['view any service_partner content'] = array(
     'name' => 'view any service_partner content',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'administrator' => 'administrator',
     ),
     'module' => 'node_view_permissions',
   );
@@ -809,7 +859,7 @@ function services_advisor_base_user_default_permissions() {
   $permissions['view own service_partner content'] = array(
     'name' => 'view own service_partner content',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'administrator' => 'administrator',
     ),
     'module' => 'node_view_permissions',
   );
