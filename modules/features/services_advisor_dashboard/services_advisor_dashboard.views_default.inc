@@ -154,10 +154,6 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['relationships']['field_service_location_location_tid']['field'] = 'field_service_location_location_tid';
   $handler->display->display_options['relationships']['field_service_location_location_tid']['ui_name'] = 'Service Location Term';
   $handler->display->display_options['relationships']['field_service_location_location_tid']['label'] = 'Service Location Term';
-  /* Relationship: Content: Services Provided (field_services_provided) */
-  $handler->display->display_options['relationships']['field_services_provided_tid']['id'] = 'field_services_provided_tid';
-  $handler->display->display_options['relationships']['field_services_provided_tid']['table'] = 'field_data_field_services_provided';
-  $handler->display->display_options['relationships']['field_services_provided_tid']['field'] = 'field_services_provided_tid';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1267,7 +1263,6 @@ function services_advisor_dashboard_views_default_views() {
     t('Desc'),
     t('Displaying @start - @end of @total'),
     t('Service Location Term'),
-    t('term from field_services_provided'),
     t('All'),
     t('Title'),
     t('Organization'),
