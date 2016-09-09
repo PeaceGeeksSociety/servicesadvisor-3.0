@@ -5,6 +5,30 @@
  */
 
 /**
+ * Implements hook_migrate_api().
+ */
+function services_advisor_migration_migrate_api() {
+  return array(
+    'api' => 2,
+    'groups' => array(
+      'services_advisor_migration' => array(
+        'title' => t('services Advisor Migration')
+      ),
+    ),
+    'migrations' => array(
+      'memberships' => array(
+        'class_name' => 'SAMigrateMembershipsMigration',
+        'group_name' => 'services_advisor_migration'
+      ),
+      'term_translations' => array(
+        'class_name' => 'SAMigrateTaxTermTranslationsMigration',
+        'group_name' => 'services_advisor_migration'
+      )
+    ),
+  );
+}
+
+/**
  * Implements hook_migrate_preset().
  */
 function services_advisor_migration_migrate_preset() {

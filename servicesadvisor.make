@@ -135,6 +135,9 @@ projects[masquerade][version] = "1.0-rc7"
 projects[migrate][subdir] = contrib
 projects[migrate[version] = "2.8"
 
+projects[migrate_extras][subdir] = contrib
+projects[migrate_extras[version] = "2.5"
+
 projects[migrate_d2d][subdir] = contrib
 projects[migrate_d2d[version] = "2.1"
 

@@ -3,6 +3,10 @@ description = Deals with the import/export of content.
 core = 7.x
 package = Services Advisor
 version = 7.x-1.00-alpha03
+
+files[] = includes/SAMigrateMembershipsMigration.inc
+files[] = includes/SAMigrateTaxTermTranslationsMigration.inc
+
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = feeds
