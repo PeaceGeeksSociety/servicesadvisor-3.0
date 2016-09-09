@@ -110,6 +110,7 @@ projects[globalredirect][version] = "1.5"
 projects[hierarchical_select][subdir] = contrib
 projects[hierarchical_select][version] = "3.0-beta7"
 projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/feature-code-export-error-2764871-4.patch"
+projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/hierarchical_select-fix_selection_keys-2719141-22-7.x-3.x-dev.patch"
 
 projects[i18n][subdir] = contrib
 projects[i18n][version] = "1.13"

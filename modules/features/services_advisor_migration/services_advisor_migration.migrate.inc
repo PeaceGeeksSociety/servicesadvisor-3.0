@@ -20,6 +20,10 @@ function services_advisor_migration_migrate_api() {
         'class_name' => 'SAMigrateMembershipsMigration',
         'group_name' => 'services_advisor_migration'
       ),
+      'logos' => array(
+        'class_name' => 'SAMigrateOgFilesMigration',
+        'group_name' => 'services_advisor_migration'
+      ),
       'term_translations' => array(
         'class_name' => 'SAMigrateTaxTermTranslationsMigration',
         'group_name' => 'services_advisor_migration'

@@ -90,10 +90,7 @@ features[field_base][] = body
 features[field_instance][] = node-page-body
 features[field_instance][] = taxonomy_term-service_sector-field_sector_glyph
 features[field_instance][] = taxonomy_term-service_sector-field_sector_marker_color
-<<<<<<< HEAD
 features[filter][] = filtered_html
-=======
->>>>>>> Trim input for whitespace before importing CSV files. Fixed date format issue
 features[filter][] = plain_text
 features[hierarchical_select][] = taxonomy-field_service_location_location
 features[image][] = scale_120_w
