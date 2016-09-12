@@ -82,7 +82,7 @@ function sa2016_breadcrumb($variables) {
     foreach ($breadcrumb as $value) {
       $breadcrumbs .= '<li>' . $value . '</li>';
     }
-		if($node->type == 'service_location' and isset($node->og_group_ref['und'][0]['entity'])){
+		if(isset($node) && $node->type == 'service_location' and isset($node->og_group_ref['und'][0]['entity'])){
 			$ogTitle = $node->og_group_ref['und'][0]['entity']->title;
 			$ogNid = $node->og_group_ref['und'][0]['entity']->nid;
  	    $breadcrumbs .= '<li><a href="/node/'. $ogNid. '">' . $ogTitle . '</a></li>';
