@@ -22,7 +22,7 @@ function services_advisor_base_filter_default_formats() {
         'weight' => -10,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<p> <a> <em> <u> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <strike> <hr> <div>',
+          'allowed_html' => '<p> <a> <em> <u> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <strike> <hr> <div> <h1> <h2> <h3> <h4> <h5> <h6> <img>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
