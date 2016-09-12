@@ -59,6 +59,16 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
+  // Exported permission: 'access content'.
+  $permissions['access content'] = array(
+    'name' => 'access content',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
@@ -444,6 +454,18 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'context_ui',
   );
 
+  // Exported permission: 'create page content'.
+  $permissions['create page content'] = array(
+    'name' => 'create page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -452,6 +474,17 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'path',
+  );
+
+  // Exported permission: 'delete any page content'.
+  $permissions['delete any page content'] = array(
+    'name' => 'delete any page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'delete backup files'.
@@ -464,6 +497,29 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
+  // Exported permission: 'delete own page content'.
+  $permissions['delete own page content'] = array(
+    'name' => 'delete own page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete revisions'.
+  $permissions['delete revisions'] = array(
+    'name' => 'delete revisions',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
@@ -472,6 +528,29 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'admin_menu',
+  );
+
+  // Exported permission: 'edit any page content'.
+  $permissions['edit any page content'] = array(
+    'name' => 'edit any page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own page content'.
+  $permissions['edit own page content'] = array(
+    'name' => 'edit own page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'execute php code'.
@@ -702,6 +781,17 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
+  // Exported permission: 'revert revisions'.
+  $permissions['revert revisions'] = array(
+    'name' => 'revert revisions',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'select account cancellation method'.
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
@@ -807,24 +897,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'node_view_permissions',
   );
 
-  // Exported permission: 'view any service_location content'.
-  $permissions['view any service_location content'] = array(
-    'name' => 'view any service_location content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_view_permissions',
-  );
-
-  // Exported permission: 'view any service_partner content'.
-  $permissions['view any service_partner content'] = array(
-    'name' => 'view any service_partner content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node_view_permissions',
-  );
-
   // Exported permission: 'view own page content'.
   $permissions['view own page content'] = array(
     'name' => 'view own page content',
@@ -846,22 +918,26 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'view own service_location content'.
-  $permissions['view own service_location content'] = array(
-    'name' => 'view own service_location content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_view_permissions',
-  );
-
-  // Exported permission: 'view own service_partner content'.
-  $permissions['view own service_partner content'] = array(
-    'name' => 'view own service_partner content',
+  // Exported permission: 'view own unpublished content'.
+  $permissions['view own unpublished content'] = array(
+    'name' => 'view own unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
     ),
-    'module' => 'node_view_permissions',
+    'module' => 'node',
+  );
+
+  // Exported permission: 'view revisions'.
+  $permissions['view revisions'] = array(
+    'name' => 'view revisions',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'view the administration theme'.
