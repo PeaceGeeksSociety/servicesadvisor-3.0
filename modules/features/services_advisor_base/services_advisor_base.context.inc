@@ -124,6 +124,12 @@ function services_advisor_base_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'views-ecdd3e3a5684bee9e40fbfd8db70e522' => array(
+          'module' => 'views',
+          'delta' => 'ecdd3e3a5684bee9e40fbfd8db70e522',
+          'region' => 'content',
+          'weight' => '10',
+        ),
       ),
     ),
   );
