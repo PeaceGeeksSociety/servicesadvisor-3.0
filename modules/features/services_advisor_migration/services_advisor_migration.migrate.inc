@@ -24,6 +24,10 @@ function services_advisor_migration_migrate_api() {
         'class_name' => 'SAMigrateUserMembershipsMigration',
         'group_name' => 'services_advisor_migration'
       ),
+      'locations' => array(
+        'class_name' => 'SAMigrateLocationsMigration',
+        'group_name' => 'services_advisor_migration'
+      ),
       'logos' => array(
         'class_name' => 'SAMigrateOgFilesMigration',
         'group_name' => 'services_advisor_migration'
