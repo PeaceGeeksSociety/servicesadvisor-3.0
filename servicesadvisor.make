@@ -212,6 +212,7 @@ projects[views_data_export][version] = "3.0-beta9"
 
 projects[views_datasource][subdir] = contrib
 projects[views_datasource][version] = "1.0-alpha2"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/views_datasource-2720063-labels-prevent-translation.patch"
 
 projects[views_geojson][subdir] = contrib
 projects[views_geojson][version] = "1.0-beta3"
