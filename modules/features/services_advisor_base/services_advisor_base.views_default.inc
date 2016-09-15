@@ -490,76 +490,85 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_nationality']['id'] = 'field_service_nationality';
   $handler->display->display_options['fields']['field_service_nationality']['table'] = 'field_data_field_service_nationality';
   $handler->display->display_options['fields']['field_service_nationality']['field'] = 'field_service_nationality';
-  $handler->display->display_options['fields']['field_service_nationality']['label'] = 'details:Nationality';
+  $handler->display->display_options['fields']['field_service_nationality']['label'] = 'nationality';
   $handler->display->display_options['fields']['field_service_nationality']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_nationality']['delta_offset'] = '0';
   /* Field: Content: Intake Criteria */
   $handler->display->display_options['fields']['field_service_intake_criteria']['id'] = 'field_service_intake_criteria';
   $handler->display->display_options['fields']['field_service_intake_criteria']['table'] = 'field_data_field_service_intake_criteria';
   $handler->display->display_options['fields']['field_service_intake_criteria']['field'] = 'field_service_intake_criteria';
-  $handler->display->display_options['fields']['field_service_intake_criteria']['relationship'] = 'field_service_location_service_target_id';
-  $handler->display->display_options['fields']['field_service_intake_criteria']['label'] = 'details:Intake Criteria';
+  $handler->display->display_options['fields']['field_service_intake_criteria']['label'] = 'intakeCriteria';
   $handler->display->display_options['fields']['field_service_intake_criteria']['delta_offset'] = '0';
   /* Field: Content: Accessibility */
   $handler->display->display_options['fields']['field_service_accessibility']['id'] = 'field_service_accessibility';
   $handler->display->display_options['fields']['field_service_accessibility']['table'] = 'field_data_field_service_accessibility';
   $handler->display->display_options['fields']['field_service_accessibility']['field'] = 'field_service_accessibility';
-  $handler->display->display_options['fields']['field_service_accessibility']['label'] = 'details:Accessibility';
+  $handler->display->display_options['fields']['field_service_accessibility']['label'] = 'accessibility';
   $handler->display->display_options['fields']['field_service_accessibility']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_accessibility']['delta_offset'] = '0';
   /* Field: Content: Coverage */
   $handler->display->display_options['fields']['field_service_coverage']['id'] = 'field_service_coverage';
   $handler->display->display_options['fields']['field_service_coverage']['table'] = 'field_data_field_service_coverage';
   $handler->display->display_options['fields']['field_service_coverage']['field'] = 'field_service_coverage';
-  $handler->display->display_options['fields']['field_service_coverage']['label'] = 'details:Coverage';
+  $handler->display->display_options['fields']['field_service_coverage']['label'] = 'coverage';
   $handler->display->display_options['fields']['field_service_coverage']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_coverage']['delta_offset'] = '0';
   /* Field: Content: Availability */
   $handler->display->display_options['fields']['field_service_availability']['id'] = 'field_service_availability';
   $handler->display->display_options['fields']['field_service_availability']['table'] = 'field_data_field_service_availability';
   $handler->display->display_options['fields']['field_service_availability']['field'] = 'field_service_availability';
-  $handler->display->display_options['fields']['field_service_availability']['label'] = 'details:Availability';
+  $handler->display->display_options['fields']['field_service_availability']['label'] = 'availability';
   $handler->display->display_options['fields']['field_service_availability']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_availability']['delta_offset'] = '0';
   /* Field: Content: Referral Method */
   $handler->display->display_options['fields']['field_service_referral_method']['id'] = 'field_service_referral_method';
   $handler->display->display_options['fields']['field_service_referral_method']['table'] = 'field_data_field_service_referral_method';
   $handler->display->display_options['fields']['field_service_referral_method']['field'] = 'field_service_referral_method';
-  $handler->display->display_options['fields']['field_service_referral_method']['relationship'] = 'field_service_location_service_target_id';
-  $handler->display->display_options['fields']['field_service_referral_method']['label'] = 'details:Referral Method';
+  $handler->display->display_options['fields']['field_service_referral_method']['label'] = 'referralMethod';
   $handler->display->display_options['fields']['field_service_referral_method']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_referral_method']['delta_offset'] = '0';
   /* Field: Content: Immediate Next Step after Referral */
   $handler->display->display_options['fields']['field_service_referral_next_step']['id'] = 'field_service_referral_next_step';
   $handler->display->display_options['fields']['field_service_referral_next_step']['table'] = 'field_data_field_service_referral_next_step';
   $handler->display->display_options['fields']['field_service_referral_next_step']['field'] = 'field_service_referral_next_step';
-  $handler->display->display_options['fields']['field_service_referral_next_step']['relationship'] = 'field_service_location_service_target_id';
-  $handler->display->display_options['fields']['field_service_referral_next_step']['label'] = 'details:Referral Next Steps';
+  $handler->display->display_options['fields']['field_service_referral_next_step']['label'] = 'referralNextSteps';
   $handler->display->display_options['fields']['field_service_referral_next_step']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_referral_next_step']['delta_offset'] = '0';
   /* Field: Content: Feedback Mechanism */
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['id'] = 'field_service_feedback_mechanism';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['table'] = 'field_data_field_service_feedback_mechanism';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['field'] = 'field_service_feedback_mechanism';
-  $handler->display->display_options['fields']['field_service_feedback_mechanism']['label'] = 'details:Feedback Mechanism';
+  $handler->display->display_options['fields']['field_service_feedback_mechanism']['label'] = 'feedbackMechanism';
   $handler->display->display_options['fields']['field_service_feedback_mechanism']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_service_feedback_mechanism']['delta_offset'] = '0';
   /* Field: Content: Feedback Delay */
   $handler->display->display_options['fields']['field_service_feedback_delay']['id'] = 'field_service_feedback_delay';
   $handler->display->display_options['fields']['field_service_feedback_delay']['table'] = 'field_data_field_service_feedback_delay';
   $handler->display->display_options['fields']['field_service_feedback_delay']['field'] = 'field_service_feedback_delay';
-  $handler->display->display_options['fields']['field_service_feedback_delay']['relationship'] = 'field_service_location_service_target_id';
-  $handler->display->display_options['fields']['field_service_feedback_delay']['label'] = 'details:Feedback Delay';
+  $handler->display->display_options['fields']['field_service_feedback_delay']['label'] = 'feedbackDelay';
   $handler->display->display_options['fields']['field_service_feedback_delay']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Complaints Mechanism */
+  $handler->display->display_options['fields']['field_complaints_mechanism']['id'] = 'field_complaints_mechanism';
+  $handler->display->display_options['fields']['field_complaints_mechanism']['table'] = 'field_data_field_complaints_mechanism';
+  $handler->display->display_options['fields']['field_complaints_mechanism']['field'] = 'field_complaints_mechanism';
+  $handler->display->display_options['fields']['field_complaints_mechanism']['label'] = 'complaintsMechanism';
+  $handler->display->display_options['fields']['field_complaints_mechanism']['delta_offset'] = '0';
   /* Field: Content: Legal Documents Required */
   $handler->display->display_options['fields']['field_service_registration_type']['id'] = 'field_service_registration_type';
   $handler->display->display_options['fields']['field_service_registration_type']['table'] = 'field_data_field_service_registration_type';
@@ -587,12 +596,6 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_location']['settings'] = array(
     'data' => 'full',
   );
-  /* Field: Content: Complaints Mechanism */
-  $handler->display->display_options['fields']['field_complaints_mechanism']['id'] = 'field_complaints_mechanism';
-  $handler->display->display_options['fields']['field_complaints_mechanism']['table'] = 'field_data_field_complaints_mechanism';
-  $handler->display->display_options['fields']['field_complaints_mechanism']['field'] = 'field_complaints_mechanism';
-  $handler->display->display_options['fields']['field_complaints_mechanism']['label'] = 'details:Complaints Mechanism';
-  $handler->display->display_options['fields']['field_complaints_mechanism']['delta_offset'] = '0';
   /* Field: Content: Services Provided */
   $handler->display->display_options['fields']['field_services_provided']['id'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided']['table'] = 'field_data_field_services_provided';
