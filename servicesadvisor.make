@@ -115,6 +115,9 @@ projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/hi
 projects[i18n][subdir] = contrib
 projects[i18n][version] = "1.13"
 
+projects[i18nviews][subdir] = contrib
+projects[i18nviews][version] = "3.0-alpha1"
+
 projects[imagefield_crop][subdir] = contrib
 projects[imagefield_crop][version] = "1.1"
 

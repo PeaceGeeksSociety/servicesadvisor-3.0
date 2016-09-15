@@ -41,6 +41,7 @@ dependencies[] = i18n_menu
 dependencies[] = i18n_node
 dependencies[] = i18n_string
 dependencies[] = i18n_sync
+dependencies[] = i18nviews
 dependencies[] = image
 dependencies[] = jquery_update
 dependencies[] = link

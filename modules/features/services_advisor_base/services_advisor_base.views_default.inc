@@ -44,14 +44,11 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
   $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
   $handler->display->display_options['style_options']['char_encoding'] = array();
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Name (translated) */
+  $handler->display->display_options['fields']['name_i18n']['id'] = 'name_i18n';
+  $handler->display->display_options['fields']['name_i18n']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_i18n']['field'] = 'name_i18n';
+  $handler->display->display_options['fields']['name_i18n']['label'] = 'name';
   /* Field: Taxonomy term: Glyph */
   $handler->display->display_options['fields']['field_sector_glyph']['id'] = 'field_sector_glyph';
   $handler->display->display_options['fields']['field_sector_glyph']['table'] = 'field_data_field_sector_glyph';
@@ -83,19 +80,6 @@ function services_advisor_base_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'service-sectors';
-  $translatables['service_categories_json_feed'] = array(
-    t('Master'),
-    t('Service Categories JSON Feed'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('glyph'),
-    t('markerColor'),
-    t('Page'),
-  );
   $export['service_categories_json_feed'] = $view;
 
   $view = new view();
@@ -374,45 +358,6 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['service_location_list'] = array(
-    t('Master'),
-    t('Service location List'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('No Service location'),
-    t('There are no Service Location records for your organization.'),
-    t('Node Membership'),
-    t('Service Partner'),
-    t('User Membership'),
-    t('User'),
-    t('Translations'),
-    t('Org'),
-    t('Service Location'),
-    t('Service Location (Ar)'),
-    t('Translation Status'),
-    t('Needs work'),
-    t('Complete '),
-    t('Translation'),
-    t('[translate] <a href="/node/[nid]/translate"> edit</a>'),
-    t('Edit English'),
-    t('Edit Arabic'),
-    t('Edit'),
-    t('Clone'),
-    t('All'),
-    t('Service list'),
-    t('Services'),
-  );
   $export['service_location_list'] = $view;
 
   $view = new view();
@@ -654,7 +599,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_services_provided']['field'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided']['label'] = 'category';
   $handler->display->display_options['fields']['field_services_provided']['empty'] = 'Basic Needs';
-  $handler->display->display_options['fields']['field_services_provided']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_services_provided']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_services_provided']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_services_provided']['delta_offset'] = '0';
   /* Field: Content: Services Provided */
@@ -662,7 +607,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_services_provided_1']['table'] = 'field_data_field_services_provided';
   $handler->display->display_options['fields']['field_services_provided_1']['field'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided_1']['label'] = 'servicesProvided';
-  $handler->display->display_options['fields']['field_services_provided_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_services_provided_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_services_provided_1']['delta_offset'] = '1';
   $handler->display->display_options['fields']['field_services_provided_1']['separator'] = '||';
   /* Field: Content: Services Provided */
@@ -670,7 +615,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_services_provided_2']['table'] = 'field_data_field_services_provided';
   $handler->display->display_options['fields']['field_services_provided_2']['field'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided_2']['label'] = 'subCategory';
-  $handler->display->display_options['fields']['field_services_provided_2']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_services_provided_2']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_services_provided_2']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_services_provided_2']['delta_offset'] = '1';
   /* Field: Content: Hours */
@@ -753,45 +698,6 @@ function services_advisor_base_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'service-locations';
-  $translatables['service_locations_json_feed'] = array(
-    t('Master'),
-    t('Service Locations JSON Feed'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Partner'),
-    t('nested location'),
-    t('id'),
-    t('organization'),
-    t('organizationLogo'),
-    t('region'),
-    t('startDate'),
-    t('endDate'),
-    t('serviceName'),
-    t('details:Nationality'),
-    t('details:Intake Criteria'),
-    t('details:Accessibility'),
-    t('details:Coverage'),
-    t('details:Availability'),
-    t('details:Referral Method'),
-    t('details:Referral Next Steps'),
-    t('details:Feedback Mechanism'),
-    t('details:Feedback Delay'),
-    t('Legal Documents Required'),
-    t('location:geometry'),
-    t('locationAlternate:geometry'),
-    t('details:Complaints Mechanism'),
-    t('category'),
-    t('Basic Needs'),
-    t('servicesProvided'),
-    t('subCategory'),
-    t('officeHours'),
-    t('Published'),
-    t('Page'),
-  );
   $export['service_locations_json_feed'] = $view;
 
   $view = new view();
@@ -911,29 +817,6 @@ function services_advisor_base_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
-  $translatables['service_locations_with_translations'] = array(
-    t('Defaults'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('There is no content in this group.'),
-    t('OG membership from node'),
-    t('Translations'),
-    t('Title'),
-    t('عنوان'),
-    t('All'),
-    t('Block'),
-  );
   $export['service_locations_with_translations'] = $view;
 
   $view = new view();
@@ -1312,27 +1195,6 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  $translatables['service_partner_login'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Membership'),
-    t('User'),
-    t('Uid'),
-    t('Edit Organization'),
-    t('Logout'),
-    t('Organization User Details '),
-    t('[nothing] [nothing_4] [nothing_1] '),
-    t('Add new Service Location'),
-    t('All'),
-    t('Service partner login'),
-    t('Service partner For Node'),
-    t('Dashboard'),
-  );
   $export['service_partner_login'] = $view;
 
   $view = new view();
@@ -1396,20 +1258,7 @@ function services_advisor_base_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'service-sectors';
-  $translatables['service_sectors_json_feed'] = array(
-    t('Master'),
-    t('Service Sectors JSON Feed'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('glyph'),
-    t('markerColor'),
-    t('Page'),
-  );
+  $handler->display->display_options['path'] = 'service-sectors-old';
   $export['service_sectors_json_feed'] = $view;
 
   return $export;
