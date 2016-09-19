@@ -346,6 +346,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'administer taxonomy'.
+  $permissions['administer taxonomy'] = array(
+    'name' => 'administer taxonomy',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'administer themes'.
   $permissions['administer themes'] = array(
     'name' => 'administer themes',
