@@ -206,6 +206,9 @@ projects[uif_plus][version] = "1.x"
 projects[variable][subdir] = contrib
 projects[variable][version] = "2.5"
 
+projects[varnish][subdir] = contrib
+projects[varnish][version] = "1.1"
+
 projects[views][subdir] = contrib
 projects[views][version] = "3.14"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
