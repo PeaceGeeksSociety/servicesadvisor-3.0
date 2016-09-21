@@ -188,6 +188,9 @@ projects[translation_table][subdir] = contrib
 projects[translation_table][version] = "1.x-dev"
 projects[translation_table][download][revision] = "e83f56b3f48ecf80b35da03b9aef7862541f7f4c"
 
+projects[transliteration][subdir] = contrib
+projects[transliteration][version] = "3.2"
+
 projects[unique_field][subdir] = contrib
 projects[unique_field][version] = "1.0-rc1"
 

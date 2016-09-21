@@ -193,10 +193,9 @@ function services_advisor_base_ds_fields_info($entity_type) {
 function services_advisor_base_render_edit_node($field) {
   $output = '';
   if (node_access('update', $field['entity'])) {
-    $node_type_label = t('Location');
 
     $output = l(
-      '<span>' . t('Edit @type', array('@type' => $node_type_label)) . '</span>',
+      '<span>' . t('Edit Service') . '</span>',
       'node/' . $field['entity']->nid . '/edit',
       array(
         'attributes' => array('class' => array('edit-node round button tiny right alert')),
