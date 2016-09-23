@@ -34,6 +34,7 @@ function services_advisor_base_views_api($module = NULL, $api = NULL) {
  */
 function services_advisor_base_fe_date_custom_date_formats() {
   $custom_date_formats = array();
+  $custom_date_formats['F d, Y'] = 'F d, Y';
   $custom_date_formats['m/d/Y'] = 'm/d/Y';
   return $custom_date_formats;
 }
@@ -45,6 +46,8 @@ function services_advisor_base_date_format_types() {
   $format_types = array();
   // Exported date format type: importer_format
   $format_types['importer_format'] = 'Importer Format';
+  // Exported date format type: service_location_hours_format
+  $format_types['service_location_hours_format'] = 'Service Location Hours Format';
   return $format_types;
 }
 

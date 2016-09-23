@@ -52,6 +52,53 @@ function services_advisor_location_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|service_location|print';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'service_location';
+  $ds_fieldsetting->view_mode = 'print';
+  $ds_fieldsetting->settings = array(
+    'dash' => array(
+      'weight' => '21',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'powered_by_peacegeeks' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:44:"services_advisor_base-powered_by_peace_geeks";}',
+        'load_terms' => 0,
+      ),
+    ),
+    'site_name' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => 'h1',
+        'ctools' => 'a:3:{s:4:"conf";a:4:{s:6:"linked";i:0;s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:14:"page_site_name";s:7:"subtype";s:14:"page_site_name";}',
+        'load_terms' => 0,
+      ),
+    ),
+    'title' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+      ),
+    ),
+  );
+  $export['node|service_location|print'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|service_location|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'service_location';
@@ -89,6 +136,59 @@ function services_advisor_location_ds_field_settings_info() {
     ),
   );
   $export['node|service_location|teaser'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_custom_fields_info().
+ */
+function services_advisor_location_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'dash';
+  $ds_field->label = 'Dash';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '-',
+      'format' => 'plain_text',
+    ),
+    'use_token' => 0,
+  );
+  $export['dash'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'powered_by_peacegeeks';
+  $ds_field->label = 'Powered by PeaceGeeks';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['powered_by_peacegeeks'] = $ds_field;
 
   return $export;
 }
@@ -310,6 +410,119 @@ function services_advisor_location_ds_layout_settings_info() {
     'layout_disable_css' => FALSE,
   );
   $export['node|service_location|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|service_location|print';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'service_location';
+  $ds_layout->view_mode = 'print';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'group_header',
+        1 => 'group_summary',
+        2 => 'site_name',
+        3 => 'powered_by_peacegeeks',
+        4 => 'group_time',
+        5 => 'group_nationality',
+        6 => 'group_registration',
+        7 => 'group_intake_criteria',
+        8 => 'group_coverage',
+        9 => 'field_service_registration_type',
+        10 => 'group_availability',
+        11 => 'group_accessibility',
+        12 => 'title',
+        13 => 'field_services_provided',
+        14 => 'group_referral_method',
+        15 => 'group_referral_next_steps',
+        16 => 'field_service_nationality',
+        17 => 'field_service_intake_criteria',
+        18 => 'field_service_referral_next_step',
+        19 => 'group_feedback',
+        20 => 'group_left_summary',
+        21 => 'group_complaints_mechanism',
+        22 => 'field_service_feedback_mechanism',
+        23 => 'group_right_summary',
+        24 => 'field_complaints_mechanism',
+        25 => 'field_service_feedback_delay',
+        26 => 'group_comments',
+        27 => 'field_service_comments',
+        28 => 'group_hours',
+        29 => 'field_service_referral_method',
+        30 => 'group_date',
+        31 => 'field_service_contact_name',
+        32 => 'field_service_location_location',
+        33 => 'field_location_address',
+        34 => 'field_service_coverage',
+        35 => 'field_service_contact_phone',
+        36 => 'field_service_contact_email',
+        37 => 'field_service_accessibility',
+        38 => 'field_service_start_date',
+        39 => 'dash',
+        40 => 'field_service_end_date',
+        41 => 'field_service_office_hours',
+        42 => 'field_service_availability',
+      ),
+    ),
+    'fields' => array(
+      'group_header' => 'ds_content',
+      'group_summary' => 'ds_content',
+      'site_name' => 'ds_content',
+      'powered_by_peacegeeks' => 'ds_content',
+      'group_time' => 'ds_content',
+      'group_nationality' => 'ds_content',
+      'group_registration' => 'ds_content',
+      'group_intake_criteria' => 'ds_content',
+      'group_coverage' => 'ds_content',
+      'field_service_registration_type' => 'ds_content',
+      'group_availability' => 'ds_content',
+      'group_accessibility' => 'ds_content',
+      'title' => 'ds_content',
+      'field_services_provided' => 'ds_content',
+      'group_referral_method' => 'ds_content',
+      'group_referral_next_steps' => 'ds_content',
+      'field_service_nationality' => 'ds_content',
+      'field_service_intake_criteria' => 'ds_content',
+      'field_service_referral_next_step' => 'ds_content',
+      'group_feedback' => 'ds_content',
+      'group_left_summary' => 'ds_content',
+      'group_complaints_mechanism' => 'ds_content',
+      'field_service_feedback_mechanism' => 'ds_content',
+      'group_right_summary' => 'ds_content',
+      'field_complaints_mechanism' => 'ds_content',
+      'field_service_feedback_delay' => 'ds_content',
+      'group_comments' => 'ds_content',
+      'field_service_comments' => 'ds_content',
+      'group_hours' => 'ds_content',
+      'field_service_referral_method' => 'ds_content',
+      'group_date' => 'ds_content',
+      'field_service_contact_name' => 'ds_content',
+      'field_service_location_location' => 'ds_content',
+      'field_location_address' => 'ds_content',
+      'field_service_coverage' => 'ds_content',
+      'field_service_contact_phone' => 'ds_content',
+      'field_service_contact_email' => 'ds_content',
+      'field_service_accessibility' => 'ds_content',
+      'field_service_start_date' => 'ds_content',
+      'dash' => 'ds_content',
+      'field_service_end_date' => 'ds_content',
+      'field_service_office_hours' => 'ds_content',
+      'field_service_availability' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|service_location|print'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

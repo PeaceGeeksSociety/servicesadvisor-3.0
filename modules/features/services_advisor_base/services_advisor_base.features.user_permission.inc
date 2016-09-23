@@ -69,6 +69,22 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access content overview'.
+  $permissions['access content overview'] = array(
+    'name' => 'access content overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'access contextual links'.
+  $permissions['access contextual links'] = array(
+    'name' => 'access contextual links',
+    'roles' => array(),
+    'module' => 'contextual',
+  );
+
   // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
@@ -180,6 +196,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'i18n_node',
   );
 
+  // Exported permission: 'administer content types'.
+  $permissions['administer content types'] = array(
+    'name' => 'administer content types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'administer contexts'.
   $permissions['administer contexts'] = array(
     'name' => 'administer contexts',
@@ -223,6 +248,13 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'field_group',
+  );
+
+  // Exported permission: 'administer fields'.
+  $permissions['administer fields'] = array(
+    'name' => 'administer fields',
+    'roles' => array(),
+    'module' => 'field',
   );
 
   // Exported permission: 'administer filters'.
@@ -288,6 +320,15 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer nodes'.
+  $permissions['administer nodes'] = array(
+    'name' => 'administer nodes',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'administer pathauto'.
@@ -381,6 +422,15 @@ function services_advisor_base_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer uuid'.
+  $permissions['administer uuid'] = array(
+    'name' => 'administer uuid',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'uuid',
   );
 
   // Exported permission: 'administer views'.

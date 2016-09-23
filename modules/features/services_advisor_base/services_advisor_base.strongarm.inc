@@ -367,6 +367,13 @@ function services_advisor_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_service_location_hours_format';
+  $strongarm->value = 'F d, Y';
+  $export['date_format_service_location_hours_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_yyyy_mm_dd';
   $strongarm->value = 'Y-m-d';
   $export['date_format_yyyy_mm_dd'] = $strongarm;
@@ -487,7 +494,7 @@ function services_advisor_base_strongarm() {
             'visible' => FALSE,
           ),
           'print' => array(
-            'weight' => '13',
+            'weight' => '29',
             'visible' => FALSE,
           ),
         ),
