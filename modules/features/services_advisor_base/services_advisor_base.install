@@ -62,7 +62,7 @@ function services_advisor_base_update_7002() {
  */
 function services_advisor_base_update_7003() {
   $enable_modules = array(
-    'service_advisor_dashboard',
+    'services_advisor_dashboard',
   );
   module_enable($enable_modules);
   
@@ -86,8 +86,8 @@ function services_advisor_base_update_7006() {
   }
   
   $enable_modules = array(
-    'service_advisor_location',
-    'service_advisor_partner',
+    'services_advisor_location',
+    'services_advisor_partner',
   );
   module_enable($enable_modules);
   
@@ -122,7 +122,7 @@ function services_advisor_base_update_7008() {
  */
 function services_advisor_base_update_7009() {
   features_revert_module('services_advisor_base');
-  module_enable(array('service_advisor_taxonomy'));
+  module_enable(array('services_advisor_taxonomy'));
 }
 
 /**
@@ -131,7 +131,7 @@ function services_advisor_base_update_7009() {
 function services_advisor_base_update_7010() {
   $enable_modules = array(
     'contextual',
-    'service_advisor_location'
+    'services_advisor_location'
   );
   module_enable($enable_modules, true);
 }
@@ -162,7 +162,19 @@ function services_advisor_base_update_7012() {
   features_revert_module('services_advisor_base');
 
   $enable_modules = array(
-    'service_advisor_migration'
+    'services_advisor_migration'
   );
   module_enable($enable_modules, true);
+}
+
+/**
+ * Enable module 'Service Advisor Print'.
+ */ 
+function services_advisor_base_update_7013() {
+  features_revert_module('services_advisor_base');
+
+  $enable_modules = array(
+    'services_advisor_print',
+  );
+  module_enalbe($enable_modules);
 }

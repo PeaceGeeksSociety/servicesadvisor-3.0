@@ -26,7 +26,6 @@ function services_advisor_base_block_info() {
   return $blocks;
 }
 
-
 /**
  * Implements hook_block_view().
  */
