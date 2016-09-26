@@ -125,12 +125,12 @@ div.field.field-name-site-name {
   font-size: 20px;
 }
 
-div.field.field-name-peacegeeks-logo {
+div.field.field-name-powered-by-peacegeeks {
   float: right;
 }
 
-div.field.field-name-peacegeeks-logo div.powered-by-wrapper.right a div.pg-image-wrapper img {
-  height: 40px;
+div.field.field-name-powered-by-peacegeeks div.powered-by-wrapper.right a div.pg-image-wrapper img {
+  height: 50px;
   width: auto;
 }
 
@@ -139,7 +139,7 @@ div.powered-by-text, div.pg-url  {
   display: none;
 }
 
-div.group-head.field-group-div {
+div.group-summary.field-group-div {
   background: #f2f2f2;
   border: none;
 
@@ -148,18 +148,18 @@ div.group-head.field-group-div {
   padding-bottom: 5px;
 }
 
-div.group-left-head.field-group-div, div.group-right-head.field-group-div {
+div.group-left-summary.field-group-div, div.group-right-summary.field-group-div {
   border: none;
   margin: 0;
   padding: 0;
   display: inline-block;
 }
 
-div.group-left-head.field-group-div {
+div.group-left-summary.field-group-div {
   padding-left: 5px;
 }
 
-div.group-right-head.field-group-div {
+div.group-right-summary.field-group-div {
   padding-right: 5px;
   margin-top: 7.5px;
 
@@ -191,10 +191,11 @@ div.field.field-name-field-location-address {
 .group-time.field-group-div {
   text-align: center;
   border: none;
+  padding: 0;
   margin-bottom: 20px;
 }
 
-.group-time.field-group-div h3 {
+.group-time.field-group-div h3 span {
   color: #2bd7da;
   font-size: 22px;
 }
@@ -221,6 +222,13 @@ div.field.field-name-field-location-address {
 
 .group-date.field-group-div h3 {
   padding-right: 10px;
+
+  top: 0;
+  left: 0;
+}
+
+.field.field-name-field-service-office-hours {
+  padding-left: 10px;
 }
 
 .field.field-name-dash.field-type-ds p {

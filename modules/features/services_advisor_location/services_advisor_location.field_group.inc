@@ -440,8 +440,8 @@ function services_advisor_location_field_group_info() {
     'label' => 'Header',
     'weight' => '0',
     'children' => array(
-      0 => 'powered_by_peacegeeks',
-      1 => 'site_name',
+      0 => 'site_name',
+      1 => 'powered_by_peacegeeks',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -1210,8 +1210,8 @@ function services_advisor_location_field_group_info() {
     'label' => 'Time',
     'weight' => '2',
     'children' => array(
-      0 => 'group_hours',
-      1 => 'group_date',
+      0 => 'group_date',
+      1 => 'group_hours',
     ),
     'format_type' => 'div',
     'format_settings' => array(
