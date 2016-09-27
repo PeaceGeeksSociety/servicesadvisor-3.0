@@ -45,11 +45,13 @@ body,
 #page,
 #main,
 #content {
-  color: #000;
+  color: #6C6C6C;
   background-color: transparent !important;
   background-image: none !important;
   padding: 0;
   margin: 0;
+  font-family: arial;
+  font-size: 14px;
 }
 
 ul {
@@ -81,20 +83,18 @@ div.field-group-div {
   margin-bottom: 10px;
   margin-left: 50px;
   margin-right: 50px;
+}
 
-  padding-left: 60px;
-  padding-right: 60px;
+div.field-group-div h3 {
+  margin: 15px 0;
+  color: #9CA5AA;
 }
 
 h3, h2.field-label  {
-  font-weight: normal !important;
+  font-weight: normal;
   color: grey;
 
   padding-right: 10px;
-}
-
-h3 {
-  font-size: 24px;
 }
 
 h2.field-label {
@@ -109,28 +109,29 @@ div.field-type-taxonomy-term-reference h2 {
 
 div.group-header.field-group-div {
   background-color: #2BD7DA;
-  color: white;
+  color: #FFFFFF;
 
-  padding-top: 25px;
-  padding-bottom: 40px;
+  padding: 0 50px;
   margin: 0;
-}
-
-div.field.field-name-site-name, div.field.field-name-peacegeeks-logo {
-  display: inline-block;
+  height: 40px;
+  line-height: 40px;
 }
 
 div.field.field-name-site-name {
-  padding-top: 10px;
-  font-size: 20px;
+  float: left;
+}
+
+div.field.field-name-site-name {
+  text-transform: uppercase;
 }
 
 div.field.field-name-powered-by-peacegeeks {
   float: right;
 }
 
-div.field.field-name-powered-by-peacegeeks div.powered-by-wrapper.right a div.pg-image-wrapper img {
-  height: 50px;
+div.field.field-name-powered-by-peacegeeks img {
+  margin-top: 2px;
+  height: 35px;
   width: auto;
 }
 
@@ -144,32 +145,28 @@ div.group-summary.field-group-div {
   border: none;
 
   margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  height: 60px;
+  padding: 15px 50px;
+}
+
+div.group-left-summary.field-group-div {
+  float: left;
+}
+
+div.group-right-summary.field-group-div {
+  float: right;
+  text-align: right;
 }
 
 div.group-left-summary.field-group-div, div.group-right-summary.field-group-div {
   border: none;
   margin: 0;
   padding: 0;
-  display: inline-block;
-}
-
-div.group-left-summary.field-group-div {
-  padding-left: 5px;
-}
-
-div.group-right-summary.field-group-div {
-  padding-right: 5px;
-  margin-top: 7.5px;
-
-  float: right;
-  text-align: right;
 }
 
 div.field.field-name-title h3 {
   padding: 0;
-  margin: 2px;
+  margin: 0;
   font-size: 32px;
 }
 

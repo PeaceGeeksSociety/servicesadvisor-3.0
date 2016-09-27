@@ -567,7 +567,7 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 19,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
@@ -614,7 +614,7 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 18,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
