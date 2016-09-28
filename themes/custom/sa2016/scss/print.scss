@@ -84,7 +84,7 @@ div.node-service-location.view-mode-print {
     .field-name-site-name {
       text-transform: uppercase;
     }
-    .field-name-powered-by-peacegeeks {
+    .field-name-site-logo {
       float: right;
 
       img {
@@ -94,8 +94,7 @@ div.node-service-location.view-mode-print {
       img, .pg-image-wrapper {
         height: 35px;
       }
-      .powered-by-text,
-      .pg-url {
+      .print-footnote {
         display: none;
       }
     }
@@ -146,7 +145,7 @@ div.node-service-location.view-mode-print {
   div.node-service-location.view-mode-print {
 
     .group-header {
-      .field-name-powered-by-peacegeeks {
+      .field-name-site-logo {
         float: left;
       }
     }

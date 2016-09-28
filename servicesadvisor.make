@@ -39,7 +39,7 @@ projects[context][subdir] = contrib
 projects[context][version] = "3.7"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.10"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
@@ -63,10 +63,10 @@ projects[email_registration][subdir] = contrib
 projects[email_registration][version] = "1.3"
 
 projects[entity][subdir] = contrib
-projects[entity][version] = "1.7"
+projects[entity][version] = "1.8"
 
 projects[entityreference][subdir] = contrib
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.2"
 
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entityreference_prepopulate][version] = "1.6"
@@ -90,7 +90,7 @@ projects[field_group][subdir] = contrib
 projects[field_group][version] = "1.5"
 
 projects[file_entity][subdir] = contrib
-projects[file_entity][version] = "2.0-unstable7"
+projects[file_entity][version] = "2.0-beta3"
 
 projects[geocoder][subdir] = contrib
 projects[geocoder][version] = "1.3"
@@ -217,7 +217,7 @@ projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.3"
 
 projects[views_data_export][subdir] = contrib
-projects[views_data_export][version] = "3.0-beta9"
+projects[views_data_export][version] = "3.1"
 
 projects[views_datasource][subdir] = contrib
 projects[views_datasource][version] = "1.0-alpha2"

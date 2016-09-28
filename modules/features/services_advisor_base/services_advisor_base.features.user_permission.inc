@@ -90,6 +90,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access print',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'print',
   );
@@ -478,6 +479,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'change own username',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'site administrator' => 'site administrator',
