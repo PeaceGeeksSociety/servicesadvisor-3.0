@@ -1,0 +1,307 @@
+/**
+ * @file
+ * Print styling
+ *
+ * We provide some sane print styling for Drupal using Zen's layout method.
+ */
+
+ a:link,
+ a:visited {
+  text-decoration: underline !important;
+}
+
+/* Don't underline header. */
+a:link.header__site-link,
+a:visited.header__site-link {
+  text-decoration: none !important;
+}
+
+/* Add visible URL after links. */
+#content a[href]:after {
+  content: " (" attr(href) ")";
+  font-weight: normal;
+  font-size: 16px;
+}
+/* Only display useful links. */
+#content a[href^="javascript:"]:after,
+#content a[href^="#"]:after {
+  content: "";
+}
+
+/* Add visible title after abbreviations. */
+#content abbr[title]:after {
+  content: " (" attr(title) ")";
+}
+/* Un-float the content. */
+#content {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Turn off any background colors or images. */
+body,
+#page,
+#main,
+#content {
+  color: #6C6C6C;
+  background-color: transparent !important;
+  background-image: none !important;
+  padding: 0;
+  margin: 0;
+  font-family: arial;
+  font-size: 14px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+p, div.print-site_name, div.print-breadcrumb, div.print-footer, hr.print-hr, div.print-links {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+div.node-service-location.view-mode-print {
+  background-color: #f2f2f2;
+
+  .group-header {
+    background-color: #2BD7DA;
+    color: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 50px;
+
+    .field-name-site-name {
+      text-transform: uppercase;
+    }
+    .field-name-powered-by-peacegeeks {
+      float: right;
+
+      img {
+        margin-top: 2px;
+        height: 35px;
+        width: auto;
+      }
+      .powered-by-text,
+      .pg-url {
+        display: none;
+      }
+    }
+  }
+
+  .group-left, .group-right {
+    padding: 15px 0;
+  }
+  .group-left div.field {
+    padding-left: 50px;
+  }
+  .group-right div.field {
+    padding-right: 50px;
+    text-align: right;
+  }
+
+  .group-footer {
+    background-color: #ffffff;
+
+    > div {
+      padding: 0 50px;
+    }
+
+    h2.field-label,
+    div.field-label {
+      border-top: 2px solid #e6e8eb;
+      color: #9CA5AA;
+      font-size: 1.17em;
+      font-weight: normal;
+      margin: 15px 0 0 0;
+      padding: 15px 0;
+    }
+
+    > div:first-child .field-label {
+      border-top: none;
+    }
+  }
+
+  .field-name-title h3 {
+    color: #9CA5AA;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+  }
+}
+
+// div.row.node.node-service-location.view-mode-print.clearfix {
+//   padding-bottom: 30px;
+// }
+
+// div.field-group-div {
+//   border-top: 2px solid #e6e8eb;
+
+//   margin-top: 0;
+//   margin-bottom: 10px;
+//   margin-left: 50px;
+//   margin-right: 50px;
+// }
+
+// div.field-group-div h3 {
+//   margin: 15px 0;
+//   color: #9CA5AA;
+// }
+
+// h3, h2.field-label  {
+//   font-weight: normal;
+//   color: grey;
+
+//   padding-right: 10px;
+// }
+
+// h2.field-label {
+//   font-size: 20px;
+// }
+
+// div.field-type-taxonomy-term-reference h2 {
+//   padding: 0;
+//   padding-right: 10px;
+//   margin: 0;
+// }
+
+// div.group-header.field-group-div {
+//   background-color: #2BD7DA;
+//   color: #FFFFFF;
+
+//   padding: 0 50px;
+//   margin: 0;
+//   height: 40px;
+//   line-height: 40px;
+// }
+
+// div.field.field-name-site-name {
+//   float: left;
+// }
+
+// div.field.field-name-site-name {
+//   text-transform: uppercase;
+// }
+
+// div.field.field-name-powered-by-peacegeeks {
+//   float: right;
+// }
+
+// div.field.field-name-powered-by-peacegeeks img {
+//   margin-top: 2px;
+//   height: 35px;
+//   width: auto;
+// }
+
+// div.powered-by-text, div.pg-url  {
+//   visibility: hidden;
+//   display: none;
+// }
+
+// div.group-summary.field-group-div {
+//   background: #f2f2f2;
+//   border: none;
+
+//   margin: 0;
+//   height: 60px;
+//   padding: 15px 50px;
+// }
+
+// div.group-left-summary.field-group-div {
+//   float: left;
+// }
+
+// div.group-right-summary.field-group-div {
+//   float: right;
+//   text-align: right;
+// }
+
+// div.group-left-summary.field-group-div, div.group-right-summary.field-group-div {
+//   border: none;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// div.field.field-name-title h3 {
+//   padding: 0;
+//   margin: 0;
+//   font-size: 32px;
+// }
+
+// div.field.field-name-field-services-provided ul {
+//   margin: 2px;
+//   padding: 0;
+// }
+
+// div.field.field-name-field-service-location-location ul {
+//   margin: 2px;
+//   padding: 0;
+// }
+
+// div.field.field-name-field-location-address {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .group-time.field-group-div {
+//   text-align: center;
+//   border: none;
+//   padding: 0;
+//   margin-bottom: 20px;
+// }
+
+// .group-time.field-group-div h3 span {
+//   color: #2bd7da;
+//   font-size: 22px;
+// }
+
+// .group-hours.field-group-div, .group-date.field-group-div {
+//   display: inline-block;
+//   border: none;
+
+//   padding: 0;
+//   padding-top: 15px;
+//   margin: 0;
+// }
+
+// .group-hours.field-group-div {
+//   padding-right: 15px;
+// }
+
+
+// .group-hours.field-group-div h3, .field-type-office-hours, .group-date.field-group-div h3, .field-type-date, .field.field-name-dash.field-type-ds {
+//   display: inline-block;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// .group-date.field-group-div h3 {
+//   padding-right: 10px;
+
+//   top: 0;
+//   left: 0;
+// }
+
+// .field.field-name-field-service-office-hours {
+//   padding-left: 10px;
+// }
+
+// .field.field-name-dash.field-type-ds p {
+//   display: inline;
+//   visibility: visible;
+// }
+
+// .field-type-date {
+//   margin: 5px;
+// }

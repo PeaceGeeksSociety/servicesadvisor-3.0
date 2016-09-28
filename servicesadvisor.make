@@ -259,3 +259,4 @@ projects[zurb-foundation][type] = theme
 projects[zurb-foundation][version] = "4.4"
 projects[zurb-foundation][subdir] = contrib
 projects[zurb-foundation][download][revision] = "581dbdd895e6e401093b7661d47c9290996c94f6"
+projects[zurb-foundation][directory_name] = "zurb_foundation"

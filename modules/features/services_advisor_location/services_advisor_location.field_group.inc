@@ -13,38 +13,6 @@ function services_advisor_location_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_accessibility|node|service_location|print';
-  $field_group->group_name = 'group_accessibility';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Accessibility',
-    'weight' => '8',
-    'children' => array(
-      0 => 'field_service_accessibility',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Accessibility',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-accessibility field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_accessibility|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_active_dates|node|service_location|default';
   $field_group->group_name = 'group_active_dates';
   $field_group->entity_type = 'node';
@@ -143,134 +111,6 @@ function services_advisor_location_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_availability|node|service_location|print';
-  $field_group->group_name = 'group_availability';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Availability',
-    'weight' => '7',
-    'children' => array(
-      0 => 'field_service_availability',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Availability',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-availability field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_availability|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_comments|node|service_location|print';
-  $field_group->group_name = 'group_comments';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Comments',
-    'weight' => '13',
-    'children' => array(
-      0 => 'field_service_comments',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Comments',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-comments field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_comments|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_complaints_mechanism|node|service_location|print';
-  $field_group->group_name = 'group_complaints_mechanism';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Complaints Mechanism',
-    'weight' => '12',
-    'children' => array(
-      0 => 'field_complaints_mechanism',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Complaints Mechanism',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-complaints-mechanism field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_complaints_mechanism|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_coverage|node|service_location|print';
-  $field_group->group_name = 'group_coverage';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Coverage',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_service_coverage',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Coverage',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-coverage field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_coverage|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_date_group|node|service_location|form';
   $field_group->group_name = 'group_date_group';
   $field_group->entity_type = 'node';
@@ -297,73 +137,6 @@ function services_advisor_location_field_group_info() {
     ),
   );
   $field_groups['group_date_group|node|service_location|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_date|node|service_location|print';
-  $field_group->group_name = 'group_date';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = 'group_time';
-  $field_group->data = array(
-    'label' => 'Start/End Date',
-    'weight' => '15',
-    'children' => array(
-      0 => 'field_service_end_date',
-      1 => 'field_service_start_date',
-      2 => 'dash',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Start/End Date',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-date field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_date|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_feedback|node|service_location|print';
-  $field_group->group_name = 'group_feedback';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Feedback',
-    'weight' => '11',
-    'children' => array(
-      0 => 'field_service_feedback_delay',
-      1 => 'field_service_feedback_mechanism',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Feedback',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-feedback field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_feedback|node|service_location|print'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -426,39 +199,6 @@ function services_advisor_location_field_group_info() {
     ),
   );
   $field_groups['group_general|node|service_location|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_header|node|service_location|print';
-  $field_group->group_name = 'group_header';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Header',
-    'weight' => '0',
-    'children' => array(
-      0 => 'site_name',
-      1 => 'powered_by_peacegeeks',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Header',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-header field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_header|node|service_location|print'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -527,38 +267,6 @@ function services_advisor_location_field_group_info() {
     ),
   );
   $field_groups['group_hours|node|service_location|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_hours|node|service_location|print';
-  $field_group->group_name = 'group_hours';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = 'group_time';
-  $field_group->data = array(
-    'label' => 'Hours',
-    'weight' => '14',
-    'children' => array(
-      0 => 'field_service_office_hours',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Hours',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-hours field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_hours|node|service_location|print'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -632,71 +340,6 @@ function services_advisor_location_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_intake_criteria|node|service_location|print';
-  $field_group->group_name = 'group_intake_criteria';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Intake Criteria',
-    'weight' => '5',
-    'children' => array(
-      0 => 'field_service_intake_criteria',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Intake Criteria',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-intake-criteria field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_intake_criteria|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_left_summary|node|service_location|print';
-  $field_group->group_name = 'group_left_summary';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = 'group_summary';
-  $field_group->data = array(
-    'label' => 'Left Summary',
-    'weight' => '12',
-    'children' => array(
-      0 => 'field_services_provided',
-      1 => 'title',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Left Summary',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-left-summary field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_left_summary|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_location|node|service_location|default';
   $field_group->group_name = 'group_location';
   $field_group->entity_type = 'node';
@@ -726,38 +369,6 @@ function services_advisor_location_field_group_info() {
     ),
   );
   $field_groups['group_location|node|service_location|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_nationality|node|service_location|print';
-  $field_group->group_name = 'group_nationality';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Nationality',
-    'weight' => '3',
-    'children' => array(
-      0 => 'field_service_nationality',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Nationality',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-nationality field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_nationality|node|service_location|print'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -836,105 +447,6 @@ function services_advisor_location_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_referral_method|node|service_location|print';
-  $field_group->group_name = 'group_referral_method';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Referral Method',
-    'weight' => '9',
-    'children' => array(
-      0 => 'field_service_contact_email',
-      1 => 'field_service_contact_name',
-      2 => 'field_service_contact_phone',
-      3 => 'field_service_referral_method',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Referral Method',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-referral-method field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_referral_method|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_referral_next_steps|node|service_location|print';
-  $field_group->group_name = 'group_referral_next_steps';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Referral Next Steps',
-    'weight' => '10',
-    'children' => array(
-      0 => 'field_service_referral_next_step',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Referral Next Steps',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-referral-next-steps field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_referral_next_steps|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_registration|node|service_location|print';
-  $field_group->group_name = 'group_registration';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Registration Type Requirement',
-    'weight' => '4',
-    'children' => array(
-      0 => 'field_service_registration_type',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Registration Type Requirement',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-registration field-group-div',
-        'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_registration|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_reg|node|service_location|default';
   $field_group->group_name = 'group_reg';
   $field_group->entity_type = 'node';
@@ -965,39 +477,6 @@ function services_advisor_location_field_group_info() {
     ),
   );
   $field_groups['group_reg|node|service_location|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_right_summary|node|service_location|print';
-  $field_group->group_name = 'group_right_summary';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = 'group_summary';
-  $field_group->data = array(
-    'label' => 'Right Summary',
-    'weight' => '13',
-    'children' => array(
-      0 => 'field_location_address',
-      1 => 'field_service_location_location',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Right Summary',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-right-summary field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_right_summary|node|service_location|print'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1164,104 +643,20 @@ function services_advisor_location_field_group_info() {
   );
   $field_groups['group_start_end_date|node|service_location|default'] = $field_group;
 
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_summary|node|service_location|print';
-  $field_group->group_name = 'group_summary';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Summary',
-    'weight' => '1',
-    'children' => array(
-      0 => 'group_left_summary',
-      1 => 'group_right_summary',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Summary',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-summary field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_summary|node|service_location|print'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_time|node|service_location|print';
-  $field_group->group_name = 'group_time';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'service_location';
-  $field_group->mode = 'print';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Time',
-    'weight' => '2',
-    'children' => array(
-      0 => 'group_date',
-      1 => 'group_hours',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Time',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-time field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_time|node|service_location|print'] = $field_group;
-
   // Translatables
   // Included for use with string extractors like potx.
-  t('Accessibility');
   t('Additional Information');
-  t('Availability');
   t('Availability ');
-  t('Comments');
-  t('Complaints Mechanism');
-  t('Coverage');
   t('Documentations and Specific Needs');
-  t('Feedback');
   t('General Information');
   t('General information');
   t('Head');
-  t('Header');
-  t('Hours');
   t('Hours:');
-  t('Intake Criteria');
-  t('Left Summary');
   t('Location');
-  t('Nationality');
   t('Office Information');
-  t('Referral Method');
-  t('Referral Next Steps');
   t('Referral and Feedback');
-  t('Registration Type Requirement');
-  t('Right Summary');
   t('Service active dates');
   t('Start Date / End Date:');
-  t('Start/End Date');
-  t('Summary');
-  t('Time');
 
   return $field_groups;
 }
