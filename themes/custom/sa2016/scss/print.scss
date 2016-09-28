@@ -4,13 +4,6 @@
  *
  * We provide some sane print styling for Drupal using Zen's layout method.
  */
-.rtl-session .group-right {
-	.field {
-		text-align:left ! important;
-		margin-right:0px !important;
-		margin-left:50px;
-	}
-}
  a:link,
  a:visited {
   text-decoration: underline !important;
@@ -96,8 +89,10 @@ div.node-service-location.view-mode-print {
 
       img {
         margin-top: 2px;
-        height: 35px;
         width: auto;
+      }
+      img, .pg-image-wrapper {
+        height: 35px;
       }
       .powered-by-text,
       .pg-url {
@@ -110,10 +105,10 @@ div.node-service-location.view-mode-print {
     padding: 15px 0;
   }
   .group-left div.field {
-    padding-left: 50px;
+    padding: 0 50px;
   }
   .group-right div.field {
-    padding-right: 50px;
+    padding: 0 50px;
     text-align: right;
   }
 
@@ -147,167 +142,16 @@ div.node-service-location.view-mode-print {
   }
 }
 
-// div.row.node.node-service-location.view-mode-print.clearfix {
-//   padding-bottom: 30px;
-// }
+.rtl-session {
+  div.node-service-location.view-mode-print {
 
-// div.field-group-div {
-//   border-top: 2px solid #e6e8eb;
-
-//   margin-top: 0;
-//   margin-bottom: 10px;
-//   margin-left: 50px;
-//   margin-right: 50px;
-// }
-
-// div.field-group-div h3 {
-//   margin: 15px 0;
-//   color: #9CA5AA;
-// }
-
-// h3, h2.field-label  {
-//   font-weight: normal;
-//   color: grey;
-
-//   padding-right: 10px;
-// }
-
-// h2.field-label {
-//   font-size: 20px;
-// }
-
-// div.field-type-taxonomy-term-reference h2 {
-//   padding: 0;
-//   padding-right: 10px;
-//   margin: 0;
-// }
-
-// div.group-header.field-group-div {
-//   background-color: #2BD7DA;
-//   color: #FFFFFF;
-
-//   padding: 0 50px;
-//   margin: 0;
-//   height: 40px;
-//   line-height: 40px;
-// }
-
-// div.field.field-name-site-name {
-//   float: left;
-// }
-
-// div.field.field-name-site-name {
-//   text-transform: uppercase;
-// }
-
-// div.field.field-name-powered-by-peacegeeks {
-//   float: right;
-// }
-
-// div.field.field-name-powered-by-peacegeeks img {
-//   margin-top: 2px;
-//   height: 35px;
-//   width: auto;
-// }
-
-// div.powered-by-text, div.pg-url  {
-//   visibility: hidden;
-//   display: none;
-// }
-
-// div.group-summary.field-group-div {
-//   background: #f2f2f2;
-//   border: none;
-
-//   margin: 0;
-//   height: 60px;
-//   padding: 15px 50px;
-// }
-
-// div.group-left-summary.field-group-div {
-//   float: left;
-// }
-
-// div.group-right-summary.field-group-div {
-//   float: right;
-//   text-align: right;
-// }
-
-// div.group-left-summary.field-group-div, div.group-right-summary.field-group-div {
-//   border: none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// div.field.field-name-title h3 {
-//   padding: 0;
-//   margin: 0;
-//   font-size: 32px;
-// }
-
-// div.field.field-name-field-services-provided ul {
-//   margin: 2px;
-//   padding: 0;
-// }
-
-// div.field.field-name-field-service-location-location ul {
-//   margin: 2px;
-//   padding: 0;
-// }
-
-// div.field.field-name-field-location-address {
-//   margin: 0;
-//   padding: 0;
-// }
-
-// .group-time.field-group-div {
-//   text-align: center;
-//   border: none;
-//   padding: 0;
-//   margin-bottom: 20px;
-// }
-
-// .group-time.field-group-div h3 span {
-//   color: #2bd7da;
-//   font-size: 22px;
-// }
-
-// .group-hours.field-group-div, .group-date.field-group-div {
-//   display: inline-block;
-//   border: none;
-
-//   padding: 0;
-//   padding-top: 15px;
-//   margin: 0;
-// }
-
-// .group-hours.field-group-div {
-//   padding-right: 15px;
-// }
-
-
-// .group-hours.field-group-div h3, .field-type-office-hours, .group-date.field-group-div h3, .field-type-date, .field.field-name-dash.field-type-ds {
-//   display: inline-block;
-//   padding: 0;
-//   margin: 0;
-// }
-
-// .group-date.field-group-div h3 {
-//   padding-right: 10px;
-
-//   top: 0;
-//   left: 0;
-// }
-
-// .field.field-name-field-service-office-hours {
-//   padding-left: 10px;
-// }
-
-// .field.field-name-dash.field-type-ds p {
-//   display: inline;
-//   visibility: visible;
-// }
-
-// .field-type-date {
-//   margin: 5px;
-// }
+    .group-header {
+      .field-name-powered-by-peacegeeks {
+        float: left;
+      }
+    }
+    .group-right .field {
+      text-align: left;
+    }
+  }
+}
