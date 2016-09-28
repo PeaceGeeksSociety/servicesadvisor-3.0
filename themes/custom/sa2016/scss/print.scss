@@ -4,7 +4,13 @@
  *
  * We provide some sane print styling for Drupal using Zen's layout method.
  */
-
+.rtl-session .group-right {
+	.field {
+		text-align:left ! important;
+		margin-right:0px !important;
+		margin-left:50px;
+	}
+}
  a:link,
  a:visited {
   text-decoration: underline !important;
