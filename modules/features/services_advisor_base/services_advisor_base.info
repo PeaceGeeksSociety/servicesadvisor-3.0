@@ -89,6 +89,7 @@ features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[ds_fields][] = site_logo
 features[ds_fields][] = site_name
 features[ds_layout_settings][] = node|page|form
 features[fe_date_custom_date_formats][] = F d, Y
