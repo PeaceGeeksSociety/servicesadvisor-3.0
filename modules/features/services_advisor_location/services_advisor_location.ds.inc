@@ -57,6 +57,11 @@ function services_advisor_location_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'service_location';
   $ds_fieldsetting->view_mode = 'print';
   $ds_fieldsetting->settings = array(
+    'site_logo' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'site_name' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -65,17 +70,6 @@ function services_advisor_location_ds_field_settings_info() {
         'show_title' => 0,
         'title_wrapper' => 'h1',
         'ctools' => 'a:3:{s:4:"conf";a:4:{s:6:"linked";i:0;s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:14:"page_site_name";s:7:"subtype";s:14:"page_site_name";}',
-        'load_terms' => 0,
-      ),
-    ),
-    'powered_by_peacegeeks' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"block";s:7:"subtype";s:44:"services_advisor_base-powered_by_peace_geeks";}',
         'load_terms' => 0,
       ),
     ),
@@ -416,7 +410,7 @@ function services_advisor_location_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'header' => array(
-        0 => 'powered_by_peacegeeks',
+        0 => 'site_logo',
         1 => 'site_name',
       ),
       'left' => array(
@@ -449,7 +443,7 @@ function services_advisor_location_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'powered_by_peacegeeks' => 'header',
+      'site_logo' => 'header',
       'site_name' => 'header',
       'title' => 'left',
       'field_services_provided' => 'left',
