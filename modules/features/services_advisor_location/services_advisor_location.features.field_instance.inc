@@ -26,11 +26,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 20,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 10,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -70,11 +70,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 22,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 22,
+        'type' => 'text_plain',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -119,10 +119,9 @@ function services_advisor_location_field_default_field_instances() {
       ),
       'print' => array(
         'label' => 'inline',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -165,11 +164,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 18,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 27,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -211,9 +210,10 @@ function services_advisor_location_field_default_field_instances() {
       ),
       'print' => array(
         'label' => 'above',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -253,11 +253,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 11,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'text_plain',
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -301,11 +301,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 15,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -349,11 +349,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 13,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -397,11 +397,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 14,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -444,11 +444,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 23,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 23,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -495,18 +495,18 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 33,
       ),
       'print' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'service_location_hours_format',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 33,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -567,11 +567,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 19,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 9,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -614,11 +614,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 18,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 8,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -659,11 +659,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 11,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -705,7 +705,7 @@ function services_advisor_location_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -749,10 +749,9 @@ function services_advisor_location_field_default_field_instances() {
       ),
       'print' => array(
         'label' => 'inline',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -799,8 +798,8 @@ function services_advisor_location_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 13,
+        'type' => 'hs_taxonomy_term_reference_last_text_only',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -843,10 +842,9 @@ function services_advisor_location_field_default_field_instances() {
       ),
       'print' => array(
         'label' => 'inline',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -904,7 +902,7 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 10,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
@@ -972,26 +970,26 @@ function services_advisor_location_field_default_field_instances() {
         'module' => 'office_hours',
         'settings' => array(
           'closedformat' => 'Closed',
-          'compress' => FALSE,
+          'compress' => 0,
           'current_status' => array(
             'closed_text' => 'Currently closed',
             'open_text' => 'Currently open!',
             'position' => 'hide',
           ),
           'date_first_day' => 0,
-          'daysformat' => 'long',
-          'grouped' => FALSE,
+          'daysformat' => 'short',
+          'grouped' => 0,
           'hoursformat' => 0,
           'separator_day_hours' => ': ',
           'separator_days' => '<br />',
           'separator_grouped_days' => ' - ',
           'separator_hours_hours' => '-',
           'separator_more_hours' => ', ',
-          'showclosed' => 'all',
+          'showclosed' => 'open',
           'timezone_field' => '',
         ),
         'type' => 'office_hours',
-        'weight' => 37,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1032,11 +1030,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 12,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 12,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1077,11 +1075,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 16,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1122,11 +1120,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 8,
       ),
       'print' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1173,18 +1171,18 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 32,
       ),
       'print' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'service_location_hours_format',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 32,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -1244,11 +1242,11 @@ function services_advisor_location_field_default_field_instances() {
         'weight' => 4,
       ),
       'print' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 14,
+        'type' => 'hs_taxonomy_term_reference_last_text_only',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1293,12 +1291,9 @@ function services_advisor_location_field_default_field_instances() {
       ),
       'print' => array(
         'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'hidden',

@@ -1,0 +1,156 @@
+/**
+ * @file
+ * Print styling
+ *
+ * We provide some sane print styling for Drupal using Zen's layout method.
+ */
+ a:link,
+ a:visited {
+  text-decoration: underline !important;
+}
+
+/* Don't underline header. */
+a:link.header__site-link,
+a:visited.header__site-link {
+  text-decoration: none !important;
+}
+
+/* Add visible URL after links. */
+#content a[href]:after {
+  content: " (" attr(href) ")";
+  font-weight: normal;
+  font-size: 16px;
+}
+/* Only display useful links. */
+#content a[href^="javascript:"]:after,
+#content a[href^="#"]:after {
+  content: "";
+}
+
+/* Add visible title after abbreviations. */
+#content abbr[title]:after {
+  content: " (" attr(title) ")";
+}
+/* Un-float the content. */
+#content {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Turn off any background colors or images. */
+body,
+#page,
+#main,
+#content {
+  color: #6C6C6C;
+  background-color: transparent !important;
+  background-image: none !important;
+  padding: 0;
+  margin: 0;
+  font-family: arial;
+  font-size: 14px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+p, div.print-site_name, div.print-breadcrumb, div.print-footer, hr.print-hr, div.print-links {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+div.node-service-location.view-mode-print {
+  background-color: #f2f2f2;
+
+  .group-header {
+    background-color: #2BD7DA;
+    color: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 50px;
+
+    .field-name-site-name {
+      text-transform: uppercase;
+    }
+    .field-name-site-logo {
+      float: right;
+
+      img {
+        margin-top: 2px;
+        width: auto;
+      }
+      img, .pg-image-wrapper {
+        height: 35px;
+      }
+      .print-footnote {
+        display: none;
+      }
+    }
+  }
+
+  .group-left, .group-right {
+    padding: 15px 0;
+  }
+  .group-left div.field {
+    padding: 0 50px;
+  }
+  .group-right div.field {
+    padding: 0 50px;
+    text-align: right;
+  }
+
+  .group-footer {
+    background-color: #ffffff;
+
+    > div {
+      padding: 0 50px;
+    }
+
+    h2.field-label,
+    div.field-label {
+      border-top: 2px solid #e6e8eb;
+      color: #9CA5AA;
+      font-size: 1.17em;
+      font-weight: normal;
+      margin: 15px 0 0 0;
+      padding: 15px 0;
+    }
+
+    > div:first-child .field-label {
+      border-top: none;
+    }
+  }
+
+  .field-name-title h3 {
+    color: #9CA5AA;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+  }
+}
+
+.rtl-session {
+  div.node-service-location.view-mode-print {
+
+    .group-header {
+      .field-name-site-logo {
+        float: left;
+      }
+    }
+    .group-right .field {
+      text-align: left;
+    }
+  }
+}

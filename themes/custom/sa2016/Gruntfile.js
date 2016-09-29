@@ -56,7 +56,8 @@ module.exports = function(grunt) {
           includePaths: ['<%= global_vars.theme_scss %>', '<%= global_vars.base_theme_path %>/scss/'].concat(bourbon)
         },
         files: {
-          '<%= global_vars.theme_css %>/<%= global_vars.theme_name %>.css': '<%= global_vars.theme_scss %>/<%= global_vars.theme_name %>.scss'
+          '<%= global_vars.theme_css %>/<%= global_vars.theme_name %>.css': '<%= global_vars.theme_scss %>/<%= global_vars.theme_name %>.scss',
+          '<%= global_vars.theme_css %>/print.css': '<%= global_vars.theme_scss %>/print.scss'
         }
       }
     },
