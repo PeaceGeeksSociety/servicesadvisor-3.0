@@ -4,3 +4,6 @@
  *  Deals with installation and updates for the  'Services Advisor Print'.
  */
 
+function services_advisor_print_update_7000() {
+  variable_del('print_html_link_text');
+}

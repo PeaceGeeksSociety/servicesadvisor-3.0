@@ -48,13 +48,6 @@ function services_advisor_print_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_html_link_text';
-  $strongarm->value = 'Printer-friendly version';
-  $export['print_html_link_text'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'print_html_link_text_enabled';
   $strongarm->value = 0;
   $export['print_html_link_text_enabled'] = $strongarm;
