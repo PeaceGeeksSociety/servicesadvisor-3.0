@@ -34,3 +34,17 @@
 .inline {
   @include inline-list;
 }
+
+div.krumo-root {
+  color: #000;
+
+  div.krumo-element {
+    *, em, a.krumo-name, div.krumo-preview {
+      color: #000;
+    }
+  }
+}
+
+body.admin-menu {
+  margin-top: 29px !important;
+}

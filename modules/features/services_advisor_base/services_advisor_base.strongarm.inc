@@ -877,7 +877,7 @@ function services_advisor_base_strongarm() {
     'toggle_favicon' => 1,
     'toggle_main_menu' => 0,
     'toggle_secondary_menu' => 1,
-    'default_logo' => 0,
+    'default_logo' => 1,
     'logo_path' => 'public://service_advisor_logo_en_2.png',
     'logo_upload' => '',
     'default_favicon' => 1,

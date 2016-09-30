@@ -5,56 +5,51 @@
   <header role="banner" class="l-header">
 
     <!-- Title, slogan and menu -->
-		<?php $alt_header = TRUE; ?>
+    <?php $alt_header = TRUE; ?>
     <?php if ($alt_header): ?>
       <section class="row">
-        <?php if ($site_name): ?>
-          <?php if ($title): ?>
-            <div id="site-name" class="element-invisible">
-              <strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong>
-            </div>
-          <?php else: /* Use h1 when the content title is empty */ ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
-        <?php endif; ?>
         <?php if ($site_slogan): ?>
           <h2 title="<?php print $site_slogan; ?>" class="site-slogan"><?php print $site_slogan; ?></h2>
         <?php endif; ?>
-		    <?php if (!empty($page['header'])): ?>
-		      <!--.l-header-region -->
-		      <section class="l-header-region columns">
-						 <div class="row">
-							 <div class="small-12 large-5 columns">
-			         	<?php if ($linked_logo): print $linked_logo; endif; ?>				
-							 </div>
-		        	<?php if ($alt_main_menu): ?>
-							 <div class="small-12 medium-6 columns">
- 				          	<nav id="main-menu" class="navigation" role="navigation">
- 				           <?php print ($alt_main_menu); ?>
- 				          	</nav> 
-							 </div>
-				        <?php endif; ?>
-			        <?php if ($alt_secondary_menu): ?>
-			 					 <?php if ($logged_in): ?>
-			          	 <div class="small-12 medium-7 columns">
-									 <?php print render($page['header']); ?>
-									 
-									<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button small right user-logout dropdown"><i class="fi-torso"></i><?php
-							 				print $user->name; ?></button><br>
-							 	 <?php endif; ?>
-									<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-				            <?php print $alt_secondary_menu; ?>
-									</ul>
-								</div>
-			        <?php endif; ?>
-		        </div>
-		      </section>
-		      <!--/.l-header-region -->
-		    <?php endif; ?>
+        <?php if (!empty($page['header'])): ?>
+          <!--.l-header-region -->
+          <section class="l-header-region columns">
+            <div class="row"> 
+              <div class="small-12 large-5 columns">
+                <?php if ($site_name): ?>
+                  <h1 id="site-name">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+                      <?php if ($logo_img): print $logo_img; endif; ?>
+                      <span class="site-name"><?php print $site_name; ?></span>
+                    </a>
+                  </h1>
+                <?php endif; ?>
+              </div>
+              <?php if ($alt_main_menu): ?>
+              <div class="small-12 medium-6 columns">
+                <nav id="main-menu" class="navigation" role="navigation">
+                  <?php print ($alt_main_menu); ?>
+                </nav> 
+              </div>
+              <?php endif; ?>
+              <?php if ($alt_secondary_menu): ?>
+                <?php if ($logged_in): ?>
+                  <div class="small-12 medium-7 columns">
+                  <?php print render($page['header']); ?>
+                   
+                  <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button small right user-logout dropdown">
+                    <i class="fi-torso"></i><?php print $user->name; ?>
+                  </button><br>
+                <?php endif; ?>
+                <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                  <?php print $alt_secondary_menu; ?>
+                </ul>
+                </div>
+              <?php endif; ?>
+            </div>
+          </section>
+          <!--/.l-header-region -->
+        <?php endif; ?>
 
 
       </section>
@@ -163,11 +158,11 @@
   <!--.l-footer -->
   <footer class="l-footer  row" role="contentinfo">
     <?php if (!empty($page['footer'])): ?>
-			<div class="column medium-12 footer-first">
-	      <div class="footer columns">
-	        <?php print render($page['footer']); ?>
-	      </div>
-			</div>
+      <div class="column medium-12 footer-first">
+        <div class="footer columns">
+          <?php print render($page['footer']); ?>
+        </div>
+      </div>
     <?php endif; ?>
 
   </footer>
@@ -175,14 +170,14 @@
   <!--.l-footer-under -->
   <footer class="l-footer-under panel row" role="contentinfo">
 
-			<div class="column large-9 large-offset-1  footer-second">
-	      <div class="copyright ">
-	        &copy; <?php print date('Y') . ' ' . $site_name . ' ' . t('Jordan Inter Agency coordination'); ?>
-	      </div>
-		    <?php if (!empty($page['footer_under'])): ?>
-			        <?php print render($page['footer_under']); ?>
-		    <?php endif; ?>
-			</div>
+      <div class="column large-9 large-offset-1  footer-second">
+        <div class="copyright ">
+          &copy; <?php print date('Y') . ' ' . $site_name . ' ' . t('Jordan Inter Agency coordination'); ?>
+        </div>
+        <?php if (!empty($page['footer_under'])): ?>
+              <?php print render($page['footer_under']); ?>
+        <?php endif; ?>
+      </div>
   </footer>
   <!--/.l-footer -->
 
