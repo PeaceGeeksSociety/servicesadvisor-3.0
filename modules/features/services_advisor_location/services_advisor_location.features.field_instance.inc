@@ -67,7 +67,7 @@ function services_advisor_location_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 22,
+        'weight' => 4,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -441,7 +441,7 @@ function services_advisor_location_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 23,
+        'weight' => 5,
       ),
       'print' => array(
         'label' => 'above',
@@ -691,14 +691,64 @@ function services_advisor_location_field_default_field_instances() {
   // Exported field_instance: 'node-service_location-field_service_location'.
   $field_instances['node-service_location-field_service_location'] = array(
     'bundle' => 'service_location',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
-    'description' => 'If you have the Latitude and Longitude of your location, enter them here. These coordinates will be used for display on the map if they are present.',
+    'description' => 'If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'leaflet',
+        'settings' => array(
+          'height' => 400,
+          'icon' => array(
+            'html' => '',
+            'htmlClass' => '',
+            'iconAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconImageStyle' => '',
+            'iconSize' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconType' => 'marker',
+            'iconUrl' => '',
+            'popupAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowUrl' => '',
+          ),
+          'leaflet_map' => 'OSM Mapnik',
+          'popup' => array(
+            'show' => 0,
+            'text' => '',
+          ),
+          'vector_display' => array(
+            'clickable' => 0,
+            'color' => '',
+            'dashArray' => '',
+            'fill' => 0,
+            'fillColor' => '',
+            'fillOpacity' => '',
+            'opacity' => '',
+            'stroke' => 0,
+            'stroke_override' => 0,
+            'weight' => '',
+          ),
+          'zoom' => array(
+            'initialZoom' => 10,
+            'maxZoom' => 12,
+            'minZoom' => 6,
+            'scrollWheelZoom' => 1,
+          ),
+        ),
+        'type' => 'geofield_leaflet',
         'weight' => 3,
       ),
       'print' => array(
@@ -723,11 +773,30 @@ function services_advisor_location_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'geofield',
+      'module' => 'leaflet_widget',
       'settings' => array(
-        'html5_geolocation' => 0,
+        'geocoder' => array(
+          'enabled' => 0,
+          'handler' => 'latlon',
+        ),
+        'map' => array(
+          'auto_center' => 1,
+          'base_url' => 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'center' => array(
+            'lat' => 31.95,
+            'lng' => 35.583,
+          ),
+          'draw_types' => array(
+            'circle' => 0,
+            'marker' => 1,
+            'polygon' => 0,
+            'polyline' => 0,
+            'rectangle' => 0,
+          ),
+          'zoom' => 12,
+        ),
       ),
-      'type' => 'geofield_latlon',
+      'type' => 'leaflet_widget_widget',
       'weight' => 14,
     ),
   );
@@ -1426,17 +1495,64 @@ function services_advisor_location_field_default_field_instances() {
   // 'taxonomy_term-service_nested_location-field_location_point'.
   $field_instances['taxonomy_term-service_nested_location-field_location_point'] = array(
     'bundle' => 'service_nested_location',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'geofield',
+        'module' => 'leaflet',
         'settings' => array(
-          'data' => 'full',
+          'height' => 400,
+          'icon' => array(
+            'html' => '',
+            'htmlClass' => '',
+            'iconAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconImageStyle' => '',
+            'iconSize' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconType' => 'marker',
+            'iconUrl' => '',
+            'popupAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowUrl' => '',
+          ),
+          'leaflet_map' => 'OSM Mapnik',
+          'popup' => array(
+            'show' => 0,
+            'text' => '',
+          ),
+          'vector_display' => array(
+            'clickable' => 0,
+            'color' => '',
+            'dashArray' => '',
+            'fill' => 0,
+            'fillColor' => '',
+            'fillOpacity' => '',
+            'opacity' => '',
+            'stroke' => 0,
+            'stroke_override' => 0,
+            'weight' => '',
+          ),
+          'zoom' => array(
+            'initialZoom' => -1,
+            'maxZoom' => -1,
+            'minZoom' => 1,
+            'scrollWheelZoom' => 1,
+          ),
         ),
-        'type' => 'geofield_wkt',
+        'type' => 'geofield_leaflet',
         'weight' => 0,
       ),
     ),
@@ -1449,11 +1565,30 @@ function services_advisor_location_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'geofield',
+      'module' => 'leaflet_widget',
       'settings' => array(
-        'html5_geolocation' => 0,
+        'geocoder' => array(
+          'enabled' => 0,
+          'handler' => 'wkt',
+        ),
+        'map' => array(
+          'auto_center' => 1,
+          'base_url' => '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'center' => array(
+            'lat' => 0,
+            'lng' => 0,
+          ),
+          'draw_types' => array(
+            'circle' => 0,
+            'marker' => 1,
+            'polygon' => 0,
+            'polyline' => 0,
+            'rectangle' => 0,
+          ),
+          'zoom' => 10,
+        ),
       ),
-      'type' => 'geofield_latlon',
+      'type' => 'leaflet_widget_widget',
       'weight' => 31,
     ),
   );
@@ -1475,7 +1610,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Glyph');
   t('Hours');
   t('If needed, you can add additional details');
-  t('If you have the Latitude and Longitude of your location, enter them here. These coordinates will be used for display on the map if they are present.');
+  t('If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present.');
   t('Immediate Next Step after Referral');
   t('Intake Criteria');
   t('Legal Documents Required');
