@@ -25,3 +25,26 @@ function services_advisor_migration_update_7001() {
 
 	features_revert_module('services_advisor_migration');
 }
+
+/**
+ * Removing migrate depenedency.
+ */
+function services_advisor_migration_update_7002() {
+  $to_disable_modules = array(
+    'migrate',
+    'migrate_ui',
+    'migrate_d2d',
+    'migrate_d2d_ui',
+  );
+
+  $modules = array();
+
+  foreach ($to_disable_modules as $module) {
+    if(module_exists($module)) {
+      $modules[] = $module;
+    }
+  }
+  
+  module_disable($modules);
+  drupal_uninstall_modules($modules);
+}

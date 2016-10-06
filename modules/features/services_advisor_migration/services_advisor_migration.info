@@ -4,12 +4,6 @@ core = 7.x
 package = Services Advisor
 version = 7.x-1.00-alpha03
 
-files[] = includes/SAMigrateLocationsMigration.inc
-files[] = includes/SAMigrateMembershipsMigration.inc
-files[] = includes/SAMigrateOgFilesMigration.inc
-files[] = includes/SAMigrateTaxTermTranslationsMigration.inc
-files[] = includes/SAMigrateUserMembershipsMigration.inc
-
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = feeds
@@ -33,7 +27,6 @@ dependencies[] = views
 dependencies[] = views_data_export
 features[ctools][] = feeds:feeds_importer_default:1
 features[ctools][] = feeds_tamper:feeds_tamper_default:2
-features[ctools][] = migrate:migrate:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
