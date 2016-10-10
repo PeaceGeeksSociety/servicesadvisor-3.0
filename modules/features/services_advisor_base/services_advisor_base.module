@@ -113,37 +113,39 @@ function services_advisor_base_clone_access_alter(&$access, $node) {
 /*
  * Implementation of hook_node_insert()
  */
-
 function services_advisor_base_node_insert($node) {
+  if ($node->type == 'service_location' && $node->tnid == 0) {
+    $languages = locale_language_list();
+    foreach ($languages as $langcode => $language) {
 
-  // Create the Arabic translation at the same time that we save the English.
-  // If we want to generalize this we could use
-  // $languages = i18n_node_language_list($node, TRUE, TRUE);
-  // but we'd might want a mechanism to detect content type too.
+      // Make sure we skip the current language.
+      if ($node->language == $langcode) { continue; }
 
-  if ($node->type == 'service_location' && $node->language == 'en' && $node->tnid == 0){
-    $node->tnid = $node->nid;
+      $node->translation_source = new stdClass();
+      $node->translation_source->tnid = $node->nid;
 
-    $node->translation_source = new stdClass();
-    $node->translation_source->tnid = $node->nid;
-    $arabic_node = clone $node;
-    // unset version and node id's
-    unset($arabic_node->nid);
-    unset($arabic_node->vid);
-    unset($arabic_node->title);
-    unset($arabic_node->path);
+      $clone = clone $node;
+      $node->tnid = $node->nid;
+      $clone->tnid = $node->nid;
 
-    $arabic_node->language = 'ar';
+      unset($clone->nid);
+      unset($clone->vid);
+      unset($clone->title);
+      unset($clone->path);
 
-    // Save the copy
-    node_save($arabic_node);
-    // Flag the Arabic text as needing to be updated, then resave. I can't due this before the initial save.
-    $arabic_node->translate = true;
-    node_save($arabic_node);
+      $clone->language = $langcode;
 
-    if ($arabic_node->nid){
-      drupal_set_message( '<strong>' . t('You still need to complete the Arabic translation this location, either by !link now or using the Translate tab at a later time.' . '</strong>',
-                          array('!link' => l(t('clicking this link'), 'ar/node/' . $arabic_node->nid . '/edit'), 'status')));
+      node_save($clone);
+      // Flag the clone node as needing to be updated, then resave. I can't due this before the initial save.
+      $clone->translate = TRUE;
+      node_save($clone);
+    }
+
+    if ($clone->translate) {
+      $message = t('You still need to !link.', array(
+        '!link' => l('translate this Service', 'node/' . $node->nid . '/translate')
+      ));
+      drupal_set_message('<strong>' . $message . '</strong>', 'status');
     }
   }
 }

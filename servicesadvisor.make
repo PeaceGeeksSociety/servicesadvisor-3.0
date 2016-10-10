@@ -102,7 +102,8 @@ projects[geolocation][subdir] = contrib
 projects[geolocation][version] = "1.6"
 
 projects[geophp][subdir] = contrib
-projects[geophp][version] = "1.7"
+projects[geophp][version] = "1.x-dev"
+projects[geophp][download][revision] = "2777c5ebc953841dea71fba6b91ff388499fc59e"
 
 projects[globalredirect][subdir] = contrib
 projects[globalredirect][version] = "1.5"
@@ -126,6 +127,17 @@ projects[job_scheduler][version] = "2.0-alpha3"
 
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.7"
+
+projects[leaflet][subdir] = contrib
+projects[leaflet][version] = "1.3"
+
+projects[leaflet_widget][subdir] = contrib
+projects[leaflet_widget][type] = module
+projects[leaflet_widget][download][type] = git
+projects[leaflet_widget][download][url] = git://git.drupal.org/project/leaflet_widget.git
+projects[leaflet_widget][download][revision] = e2c24f9b
+projects[leaflet_widget][download][branch] = 7.x-2.x
+projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/configurable-draw-handlers-2812687-2.patch"
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = "2.3"
@@ -250,6 +262,17 @@ libraries[jquery-simple-color][download][type] = get
 libraries[jquery-simple-color][download][url] = https://github.com/recurser/jquery-simple-color/archive/v1.2.1.zip
 libraries[jquery-simple-color][directory_name] = jquery-simple-color
 libraries[jquery-simple-color][destination] = libraries
+
+; Leaflet
+libraries[leaflet][download][type] = "get"
+libraries[leaflet][download][url] = "http://cdn.leafletjs.com/downloads/leaflet-0.7.5.zip"
+
+; Leaflet.widget
+libraries[Leaflet.widget][download][type] = git
+libraries[Leaflet.widget][download][url] = https://github.com/tnightingale/Leaflet.widget.git
+libraries[Leaflet.widget][directory_name] = Leaflet.widget
+libraries[Leaflet.widget][destination] = libraries
+libraries[Leaflet.widget][download][revision] = 668b335
 
 ;-------
 ; Themes

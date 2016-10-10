@@ -12,6 +12,15 @@
 // }
 
 /**
+ * Implements template_preprocess_html.
+ */
+function sa2016_preprocess_html(&$variables) {
+  $unclean_name = decode_entities(variable_get('site_name', $variables['head_title_array']['name']));
+  $variables['head_title_array']['name'] = strip_tags($unclean_name);
+  $variables['head_title'] = implode($variables['head_title_array'], ' | ');
+}
+
+/**
  * Implements template_preprocess_page.
  */
 // function sa2016_preprocess_page(&$variables) {

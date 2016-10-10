@@ -281,9 +281,8 @@ function services_advisor_location_field_group_info() {
     'label' => '',
     'weight' => '15',
     'children' => array(
-      0 => 'field_service_location',
-      1 => 'changed_date',
-      2 => 'submitted_by',
+      0 => 'changed_date',
+      1 => 'submitted_by',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -350,8 +349,9 @@ function services_advisor_location_field_group_info() {
     'label' => 'Location',
     'weight' => '3',
     'children' => array(
-      0 => 'field_service_coverage',
-      1 => 'field_location_address',
+      0 => 'field_location_address',
+      1 => 'field_service_coverage',
+      2 => 'field_service_location',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -383,15 +383,15 @@ function services_advisor_location_field_group_info() {
     'label' => 'Referral and Feedback',
     'weight' => '6',
     'children' => array(
-      0 => 'field_service_contact_email',
-      1 => 'field_service_contact_name',
-      2 => 'field_service_contact_phone',
-      3 => 'field_response_delay_after_refer',
-      4 => 'field_service_feedback_delay',
-      5 => 'field_service_feedback_mechanism',
-      6 => 'field_service_referral_method',
-      7 => 'field_service_referral_next_step',
-      8 => 'field_complaints_mechanism',
+      0 => 'field_complaints_mechanism',
+      1 => 'field_response_delay_after_refer',
+      2 => 'field_service_contact_email',
+      3 => 'field_service_contact_name',
+      4 => 'field_service_contact_phone',
+      5 => 'field_service_feedback_delay',
+      6 => 'field_service_feedback_mechanism',
+      7 => 'field_service_referral_method',
+      8 => 'field_service_referral_next_step',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -458,8 +458,8 @@ function services_advisor_location_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_service_intake_criteria',
-      1 => 'field_service_registration_type',
-      2 => 'field_service_nationality',
+      1 => 'field_service_nationality',
+      2 => 'field_service_registration_type',
     ),
     'format_type' => 'div',
     'format_settings' => array(

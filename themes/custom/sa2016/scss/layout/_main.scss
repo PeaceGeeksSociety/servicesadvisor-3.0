@@ -8,6 +8,20 @@ h1.title {
   	font-size: 14px;
 	}
 }
+h1#site-name {
+  height: 62px;
+  font-size: 32px;
+
+  span.site-name {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 25px;
+  }
+  a {
+    color: $sa-black;
+  }
+}
+
 //Hides
 //.breadcrumbs {
 //	display: none;
