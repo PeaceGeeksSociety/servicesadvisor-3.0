@@ -15,6 +15,8 @@ function services_advisor_location_form_service_location_node_form_alter(&$form,
   $form['title']['#type'] = 'value';
   $form['title']['#required'] = FALSE;
 
+  $form['field_service_location'][LANGUAGE_NONE]['geocoder']['#description'] = t('Enter Latitude and Longitude separated by a comman. ex. 31.95, 35.583');
+
   // Add logic for og_group_ref field.
   services_advisor_location_og_group_ref_handling($form, $form_state);
 }

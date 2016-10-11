@@ -776,7 +776,7 @@ function services_advisor_location_field_default_field_instances() {
       'module' => 'leaflet_widget',
       'settings' => array(
         'geocoder' => array(
-          'enabled' => 0,
+          'enabled' => 1,
           'handler' => 'latlon',
         ),
         'map' => array(
