@@ -119,6 +119,9 @@ projects[i18n][version] = "1.13"
 projects[i18nviews][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
 
+projects[l10n_update][subdir] = contrib
+projects[l10n_update][version] = "2.0"
+
 projects[imagefield_crop][subdir] = contrib
 projects[imagefield_crop][version] = "1.1"
 
