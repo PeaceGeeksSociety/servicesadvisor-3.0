@@ -7,6 +7,69 @@
 include_once 'services_advisor_base.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function services_advisor_base_menu() {
+  $items = array();
+
+  $items['service-strings'] = array(
+    'title' => 'Service Strings',
+    'page callback' => 'services_advisor_base_service_strings',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE
+  );
+
+  return $items;
+}
+
+function services_advisor_base_service_strings() {
+  drupal_json_output(array(
+    'CATEGORY' => t('Category'),
+    'SEARCH_TEXT' => t('To find a service, select from the category or region below. Use the filter button above to further refine your search.'),
+    'REGION' => t('Region'),
+    'FILTERS' => t('More Filters'),
+    'TOGGLE_MAP' => t('Show/Hide Map'),
+    'REFERRAL_REQUIRED' => t('Referral Required'),
+    'OK' => t('OK'),
+    'ORGANIZATIONS' => t('Organizations'),
+    'BACK' => t('Back'),
+    'SEARCH_RESULTS' => t('Search Results'),
+    'HOURS' => t('Hours'),
+    'ACTIVITY_DETAILS' => t('Activity Details'),
+    'START_DATE' => t('Start Date'),
+    'END_DATE' => t('End Date'),
+    'REFERRAL_METHOD' => t('Referral Method'),
+    'SERVICES_ADVISOR' => t('Services Advisor'),
+    'POWERED_BY' => t('Powered by PeaceGeeks'),
+    'Ajlun Governorate' => t('Ajlun Governorate'),
+    'Al Aqabah Governorate' => t('Al Aqabah Governorate'),
+    'Al Balqa Governorate' => t('Al Balqa Governorate'),
+    'Al Karak Governorate' => t('Al Karak Governorate'),
+    'Al Mafraq Governorate' => t('Al Mafraq Governorate'),
+    'Amman Governorate' => t('Amman Governorate'),
+    'At Tafilah Governorate' => t('At Tafilah Governorate'),
+    'Az Zarqa Governorate' => t('Az Zarqa Governorate'),
+    'Irbid Governorate' => t('Irbid Governorate'),
+    'Jarash Governorate' => t('Jarash Governorate'),
+    'Ma\'an Governorate' => t('Ma\'an Governorate'),
+    'Madaba Governorate' => t('Madaba Governorate'),
+    'ALL' => t('All'),
+    'REFERRAL_NOT_REQUIRED' => t('Referral Not Required'),
+    'UNKNOWN' => t('Unknown'),
+    'NATIONALITY' => t('Nationality'),
+    'INTAKE_CRITERIA' => t('Intake Criteria'),
+    'ACCESSIBILITY' => t('Accessibility'),
+    'COVERAGE' => t('Coverage'),
+    'AVAILABILITY' => t('Availability'),
+    'REFERRAL_METHOD' => t('Referral Method'),
+    'REFERRAL_NEXT_STEPS' => t('Referral Next Steps'),
+    'FEEDBACK_MECHANISM' => t('Feedback Mechanism'),
+    'FEEDBACK_DELAY' => t('Feedback Delay'),
+    'COMPLAINTS_MECHANISM' => t('Complaints Mechanism')
+  ));
+}
+
+/**
  * Implements hook_block_info().
  */
 function services_advisor_base_block_info() {
