@@ -10,6 +10,7 @@ projects[admin_menu][version] = "3.0-rc5"
 
 projects[admin_views][subdir] = contrib
 projects[admin_views][version] = "1.6"
+projects[admin_views][patch][] = "https://www.drupal.org/files/issues/admin_views-duplicate_system_path-1780004-54.patch"
 
 projects[backup_migrate][subdir] = contrib
 projects[backup_migrate][version] = "3.1"

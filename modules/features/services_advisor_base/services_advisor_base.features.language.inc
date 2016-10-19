@@ -33,7 +33,7 @@ function services_advisor_base_locale_default_languages() {
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
-    'prefix' => '',
+    'prefix' => 'en',
     'weight' => 0,
   );
   return $languages;
