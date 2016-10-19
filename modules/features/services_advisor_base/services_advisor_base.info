@@ -76,6 +76,7 @@ dependencies[] = unique_field
 dependencies[] = user
 dependencies[] = uuid
 dependencies[] = views
+dependencies[] = views_aggregator
 dependencies[] = views_bulk_operations
 dependencies[] = views_geojson
 dependencies[] = views_json

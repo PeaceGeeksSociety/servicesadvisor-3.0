@@ -229,6 +229,9 @@ projects[views][subdir] = contrib
 projects[views][version] = "3.14"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
 
+projects[views_aggregator][subdir] = contrib
+projects[views_aggregator][version] = "1.4"
+
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.3"
 
