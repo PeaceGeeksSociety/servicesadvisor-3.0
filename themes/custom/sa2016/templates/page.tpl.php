@@ -15,7 +15,7 @@
           <!--.l-header-region -->
           <section class="l-header-region columns">
             <div class="row"> 
-              <div class="small-12 large-5 columns">
+              <div class="small-12 medium-8 columns">
                 <?php if ($site_name): ?>
                   <h1 id="site-name">
                     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
@@ -34,7 +34,7 @@
               <?php endif; ?>
               <?php if ($alt_secondary_menu): ?>
                 <?php if ($logged_in): ?>
-                  <div class="small-12 medium-7 columns">
+                  <div class="small-12 medium-4 columns">
                   <?php print render($page['header']); ?>
                    
                   <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button small right user-logout dropdown">
