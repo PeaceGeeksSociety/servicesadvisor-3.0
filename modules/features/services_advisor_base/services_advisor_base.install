@@ -4,3 +4,9 @@
  * Deals with installation, uninstallation and updates
  *
  */
+
+function services_advisor_base_install() {
+  $status = variable_get('views_defaults', array());
+  $status['admin_views_user'] = TRUE;
+  variable_set('views_defaults', $status);
+}
