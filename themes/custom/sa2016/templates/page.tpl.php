@@ -11,7 +11,6 @@
         <?php if ($site_slogan): ?>
           <h2 title="<?php print $site_slogan; ?>" class="site-slogan"><?php print $site_slogan; ?></h2>
         <?php endif; ?>
-        <?php if (!empty($page['header'])): ?>
           <!--.l-header-region -->
           <section class="l-header-region columns">
             <div class="row"> 
@@ -49,7 +48,6 @@
             </div>
           </section>
           <!--/.l-header-region -->
-        <?php endif; ?>
 
 
       </section>
