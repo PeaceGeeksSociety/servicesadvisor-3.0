@@ -290,8 +290,7 @@ function services_advisor_base_node_langauge($field) {
   $list = array();
 
   if (isset($node->tnid) && drupal_multilingual() && $translations = translation_node_get_translations($node->tnid)) {
-    foreach (language_list() as $langcode => $language) {
-      $language_name = $language->name;
+    foreach (locale_language_list() as $langcode => $language_name) {
       if (isset($translations[$langcode])) {
         $translation_node = node_load($translations[$langcode]->nid);
         $path = 'node/' . $translation_node->nid;
