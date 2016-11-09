@@ -1036,7 +1036,7 @@ function services_advisor_base_views_default_views() {
     'compress' => 0,
     'grouped' => 0,
     'closedformat' => 'Closed',
-    'separator_days' => ',',
+    'separator_days' => '|',
     'separator_grouped_days' => ' - ',
     'separator_day_hours' => ': ',
     'separator_hours_hours' => '-',
