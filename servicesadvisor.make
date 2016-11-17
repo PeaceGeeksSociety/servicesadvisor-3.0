@@ -91,6 +91,7 @@ projects[field_group][subdir] = contrib
 projects[field_group][version] = "1.5"
 
 projects[field_preset][subdir] = contrib
+projects[field_preset][type] = module
 projects[field_preset][download][type] = git
 projects[field_preset][download][branch] = "7.x-1.x"
 projects[field_preset][download][url] = http://git.drupal.org/sandbox/smithmilner/2827971.git
