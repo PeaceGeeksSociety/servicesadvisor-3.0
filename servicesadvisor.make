@@ -95,7 +95,7 @@ projects[field_preset][type] = module
 projects[field_preset][download][type] = git
 projects[field_preset][download][branch] = "7.x-1.x"
 projects[field_preset][download][url] = http://git.drupal.org/sandbox/smithmilner/2827971.git
-projects[field_preset][download][revision] = "de1e6019d0b2ee642b17c3e0528fbc8d77c99069"
+projects[field_preset][download][revision] = "60b5feb27c13e294cc402ee195246f0a12a0a90e"
 
 projects[file_entity][subdir] = contrib
 projects[file_entity][version] = "2.0-beta3"
