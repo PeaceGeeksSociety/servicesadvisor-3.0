@@ -15,7 +15,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
   );
@@ -25,7 +25,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -44,7 +44,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access backup and migrate',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -54,7 +54,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access backup files',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -109,7 +109,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access site reports',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -119,7 +119,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access user profiles',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -174,7 +174,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer backup and migrate',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -272,7 +272,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer group',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'og',
   );
@@ -291,7 +291,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer languages',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'locale',
   );
@@ -346,7 +346,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer permissions',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -374,7 +374,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer site configuration',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -392,7 +392,7 @@ function services_advisor_base_user_default_permissions() {
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
     'roles' => array(
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'taxonomy',
   );
@@ -420,7 +420,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -448,7 +448,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'block IP addresses',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -469,7 +469,7 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -482,7 +482,7 @@ function services_advisor_base_user_default_permissions() {
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -522,7 +522,7 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -532,7 +532,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'create url aliases',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'path',
   );
@@ -543,7 +543,7 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -553,7 +553,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'delete backup files',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -565,7 +565,7 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -576,7 +576,7 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -586,7 +586,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'display drupal links',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
   );
@@ -597,7 +597,7 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -609,7 +609,7 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -628,7 +628,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'flush caches',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
   );
@@ -780,7 +780,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'masquerade as any user',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'masquerade',
   );
@@ -790,7 +790,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'masquerade as user',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'masquerade',
   );
@@ -818,7 +818,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'perform backup',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -837,7 +837,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'restore from backup',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -848,7 +848,7 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -876,7 +876,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'translate admin strings',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'i18n_string',
   );
@@ -886,7 +886,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'translate content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'translation',
   );
@@ -896,7 +896,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'translate interface',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'locale',
   );
@@ -916,7 +916,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'translate user-defined strings',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'i18n_string',
   );
@@ -974,7 +974,7 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'file_entity',
   );
@@ -985,7 +985,7 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -996,7 +996,7 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );

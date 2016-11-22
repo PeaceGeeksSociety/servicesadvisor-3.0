@@ -15,7 +15,7 @@ function services_advisor_partner_user_default_permissions() {
     'name' => 'create service_partner content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -25,7 +25,7 @@ function services_advisor_partner_user_default_permissions() {
     'name' => 'delete any service_partner content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -35,7 +35,7 @@ function services_advisor_partner_user_default_permissions() {
     'name' => 'delete own service_partner content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -45,7 +45,7 @@ function services_advisor_partner_user_default_permissions() {
     'name' => 'edit any service_partner content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );

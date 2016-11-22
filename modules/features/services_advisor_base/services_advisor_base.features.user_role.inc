@@ -13,7 +13,7 @@ function services_advisor_base_user_default_roles() {
   // Exported role: administrator.
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => 4,
+    'weight' => 5,
   );
 
   // Exported role: contributor.
@@ -28,10 +28,10 @@ function services_advisor_base_user_default_roles() {
     'weight' => 3,
   );
 
-  // Exported role: site administrator.
-  $roles['site administrator'] = array(
-    'name' => 'site administrator',
-    'weight' => 5,
+  // Exported role: manager.
+  $roles['manager'] = array(
+    'name' => 'manager',
+    'weight' => 4,
   );
 
   return $roles;

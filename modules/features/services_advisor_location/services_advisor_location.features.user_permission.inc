@@ -24,7 +24,7 @@ function services_advisor_location_user_default_permissions() {
     'name' => 'delete any service_location content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -34,7 +34,7 @@ function services_advisor_location_user_default_permissions() {
     'name' => 'delete own service_location content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -44,7 +44,7 @@ function services_advisor_location_user_default_permissions() {
     'name' => 'edit any service_location content',
     'roles' => array(
       'administrator' => 'administrator',
-      'site administrator' => 'site administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );

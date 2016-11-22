@@ -52,23 +52,6 @@ function services_advisor_base_date_format_types() {
 }
 
 /**
- * Implements hook_fe_date_locale_date_format().
- */
-function services_advisor_base_fe_date_locale_date_format() {
-  $locale_date_formats = array();
-
-  // Exported format: importer_format::en
-  $locale_date_formats['importer_format::en'] = array(
-    'type' => 'importer_format',
-    'format' => 'm/d/Y',
-    'locales' => array(
-      0 => 'en',
-    ),
-  );
-  return $locale_date_formats;
-}
-
-/**
  * Implements hook_image_default_styles().
  */
 function services_advisor_base_image_default_styles() {

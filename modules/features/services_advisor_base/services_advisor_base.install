@@ -10,3 +10,13 @@ function services_advisor_base_install() {
   $status['admin_views_user'] = TRUE;
   variable_set('views_defaults', $status);
 }
+
+/**
+ * Update site administrator name to be more accurate.
+ */
+function services_advisor_base_update_7000() {
+  if ($role = user_role_load_by_name('site administrator')) {
+    $role->name = 'manager';
+    user_role_save($role);
+  }
+}
