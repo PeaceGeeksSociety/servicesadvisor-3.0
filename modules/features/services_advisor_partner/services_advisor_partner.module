@@ -5,3 +5,23 @@
  */
 
 include_once 'services_advisor_partner.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function services_advisor_partner_form_service_partner_node_form_alter(&$form, &$form_state) {
+  $form['author']['name']['#default_value'] = null;
+  $form['author']['#access'] = user_access('edit partner author');
+}
+
+/**
+ * Implements hook_permission().
+ */
+function services_advisor_partner_permission() {
+  return array(
+    'edit partner author' => array(
+      'title' => t('Edit partner author'),
+      'description' => t('Allows a user who has edit permission on partners to also change the author.'),
+    ),
+  );
+}
