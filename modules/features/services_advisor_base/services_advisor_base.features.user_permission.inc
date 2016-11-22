@@ -44,7 +44,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access backup and migrate',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -54,7 +53,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access backup files',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -74,6 +72,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -109,7 +108,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'access site reports',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -174,7 +172,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer backup and migrate',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -193,6 +190,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer content translations',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'i18n_node',
   );
@@ -346,7 +344,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer permissions',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -374,7 +371,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer site configuration',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -441,6 +437,16 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'views',
+  );
+
+  // Exported permission: 'assign all roles'.
+  $permissions['assign all roles'] = array(
+    'name' => 'assign all roles',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'role_delegation',
   );
 
   // Exported permission: 'block IP addresses'.
@@ -553,7 +559,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'delete backup files',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -586,7 +591,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'display drupal links',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
   );
@@ -628,7 +632,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'flush caches',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
   );
@@ -818,7 +821,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'perform backup',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -837,7 +839,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'restore from backup',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'backup_migrate',
   );
@@ -1006,6 +1007,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );

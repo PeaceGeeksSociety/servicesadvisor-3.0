@@ -187,6 +187,9 @@ projects[print][version] = "2.0"
 projects[redirect][subdir] = contrib
 projects[redirect][version] = "1.0-rc3"
 
+projects[role_delegation][subdir] = contrib
+projects[role_delegation][version] = "1.1"
+
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
 
