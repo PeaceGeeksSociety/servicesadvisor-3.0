@@ -22,12 +22,6 @@ function services_advisor_base_user_default_roles() {
     'weight' => 2,
   );
 
-  // Exported role: editor.
-  $roles['editor'] = array(
-    'name' => 'editor',
-    'weight' => 3,
-  );
-
   // Exported role: manager.
   $roles['manager'] = array(
     'name' => 'manager',

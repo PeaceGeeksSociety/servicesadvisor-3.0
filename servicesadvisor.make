@@ -193,6 +193,9 @@ projects[role_delegation][version] = "1.1"
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
 
+projects[taxonomy_access_fix][subdir] = contrib
+projects[taxonomy_access_fix][version] = "2.3"
+
 projects[taxonomy_csv][subdir] = contrib
 projects[taxonomy_csv][version] = "5.10"
 

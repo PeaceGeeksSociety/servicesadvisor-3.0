@@ -23,5 +23,40 @@ function services_advisor_partner_permission() {
       'title' => t('Edit partner author'),
       'description' => t('Allows a user who has edit permission on partners to also change the author.'),
     ),
+    'administer og context' => array(
+      'title' => t('Administer OG context'),
+      'description' => t('Allows a user to administer OG context.')
+    ),
+    'administer og membership entities' => array(
+      'title' => t('Administer OG membership entities'),
+      'description' => t('Allows a user to add/edit/remove new kinds of OG membership entities.')
+    ),
+    'edit og field settings' => array(
+      'title' => t('Edit OG field settings'),
+      'description' => t('Allows a user to access the the field settings specific Organic Groups.')
+    ),
+    'administer og permissions' => array(
+      'title' => t('Administer OG permissions'),
+      'description' => t('Allows a user to configure OG permissions')
+    ),
+    'administer og settings' => array(
+      'title' => t('Administer OG settings'),
+      'description' => t('Allows a user to administer OG base settings.')
+    ),
   );
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function services_advisor_partner_menu_alter(&$items) {
+  $items['admin/config/group']['access arguments']                  = array('administer og settings');
+  $items['admin/config/group/settings']['access arguments']         = array('administer og settings');
+  $items['admin/config/group/context']['access arguments']          = array('administer og context');
+  $items['admin/config/group/permissions']['access arguments']      = array('administer og permissions');
+  $items['admin/config/group/roles']['access arguments']            = array('administer og permissions');
+  $items['admin/config/group/fields']['access arguments']           = array('edit og field settings');
+
+  $items['admin/config/group/group-membership']['access callback']  = 'user_access';
+  $items['admin/config/group/group-membership']['access arguments'] = array('administer og membership entities');
 }

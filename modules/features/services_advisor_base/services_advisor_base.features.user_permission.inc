@@ -122,6 +122,156 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'add terms in service_accessibility'.
+  $permissions['add terms in service_accessibility'] = array(
+    'name' => 'add terms in service_accessibility',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_availability'.
+  $permissions['add terms in service_availability'] = array(
+    'name' => 'add terms in service_availability',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_available_nationality'.
+  $permissions['add terms in service_available_nationality'] = array(
+    'name' => 'add terms in service_available_nationality',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_complaints_mechanism'.
+  $permissions['add terms in service_complaints_mechanism'] = array(
+    'name' => 'add terms in service_complaints_mechanism',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_coverage'.
+  $permissions['add terms in service_coverage'] = array(
+    'name' => 'add terms in service_coverage',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_feedback_delay'.
+  $permissions['add terms in service_feedback_delay'] = array(
+    'name' => 'add terms in service_feedback_delay',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_feedback_mechanism'.
+  $permissions['add terms in service_feedback_mechanism'] = array(
+    'name' => 'add terms in service_feedback_mechanism',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_intake_criteria'.
+  $permissions['add terms in service_intake_criteria'] = array(
+    'name' => 'add terms in service_intake_criteria',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_location_availability_days'.
+  $permissions['add terms in service_location_availability_days'] = array(
+    'name' => 'add terms in service_location_availability_days',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_nested_categories'.
+  $permissions['add terms in service_nested_categories'] = array(
+    'name' => 'add terms in service_nested_categories',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_nested_location'.
+  $permissions['add terms in service_nested_location'] = array(
+    'name' => 'add terms in service_nested_location',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_referral_method'.
+  $permissions['add terms in service_referral_method'] = array(
+    'name' => 'add terms in service_referral_method',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_referral_next_step'.
+  $permissions['add terms in service_referral_next_step'] = array(
+    'name' => 'add terms in service_referral_next_step',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_registration_type'.
+  $permissions['add terms in service_registration_type'] = array(
+    'name' => 'add terms in service_registration_type',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in service_response_delay'.
+  $permissions['add terms in service_response_delay'] = array(
+    'name' => 'add terms in service_response_delay',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'admin_classes'.
   $permissions['admin_classes'] = array(
     'name' => 'admin_classes',
@@ -387,9 +537,7 @@ function services_advisor_base_user_default_permissions() {
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
-    'roles' => array(
-      'manager' => 'manager',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -474,7 +622,6 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'user',
@@ -487,7 +634,6 @@ function services_advisor_base_user_default_permissions() {
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'user',
@@ -527,7 +673,6 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',
@@ -569,7 +714,6 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',
@@ -580,7 +724,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',
@@ -612,7 +755,6 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',
@@ -848,7 +990,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',
@@ -949,6 +1090,17 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'ctools',
   );
 
+  // Exported permission: 'use text format filtered_html'.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'manager' => 'manager',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'view any page content'.
   $permissions['view any page content'] = array(
     'name' => 'view any page content',
@@ -974,7 +1126,6 @@ function services_advisor_base_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'contributor' => 'contributor',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'file_entity',
@@ -985,7 +1136,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',
@@ -996,7 +1146,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
       'manager' => 'manager',
     ),
     'module' => 'node',

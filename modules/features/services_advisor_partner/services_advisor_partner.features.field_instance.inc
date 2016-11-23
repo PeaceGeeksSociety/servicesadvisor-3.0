@@ -98,7 +98,7 @@ function services_advisor_partner_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'partner_480',
+        'preview_image_style' => 'medium',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
