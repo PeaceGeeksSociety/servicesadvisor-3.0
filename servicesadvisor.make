@@ -90,6 +90,13 @@ projects[feeds_tamper][version] = "1.1"
 projects[field_group][subdir] = contrib
 projects[field_group][version] = "1.5"
 
+projects[field_preset][subdir] = contrib
+projects[field_preset][type] = module
+projects[field_preset][download][type] = git
+projects[field_preset][download][branch] = "7.x-1.x"
+projects[field_preset][download][url] = http://git.drupal.org/sandbox/smithmilner/2827971.git
+projects[field_preset][download][revision] = "60b5feb27c13e294cc402ee195246f0a12a0a90e"
+
 projects[file_entity][subdir] = contrib
 projects[file_entity][version] = "2.0-beta3"
 
@@ -142,6 +149,7 @@ projects[leaflet_widget][download][url] = git://git.drupal.org/project/leaflet_w
 projects[leaflet_widget][download][revision] = e2c24f9b
 projects[leaflet_widget][download][branch] = 7.x-2.x
 projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/configurable-draw-handlers-2812687-4.patch"
+projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/geom-type-ajax-2456915-9.patch"
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = "2.3"
