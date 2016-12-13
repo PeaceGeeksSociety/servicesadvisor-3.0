@@ -97,6 +97,5 @@ function services_advisor_location_field_widget_properties_alter(&$widget, $cont
     $widget['settings']['map']['center']['lat'] = $map_settings['lat'];
     $widget['settings']['map']['center']['lng'] = $map_settings['lng'];
     $widget['settings']['map']['zoom']          = $map_settings['zoom'];
-    dsm($widget);
   }
 }
