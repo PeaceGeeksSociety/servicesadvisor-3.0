@@ -79,3 +79,24 @@ function services_advisor_location_node_presave($node) {
     $node->title = implode(': ', $title_parts);
   }
 }
+
+/**
+ * Implements hook_field_widget_properties_alter().
+ *
+ * Adding custom settings for default center and zoom. This is so we can have
+ * different defaults per install.
+ */
+function services_advisor_location_field_widget_properties_alter(&$widget, $context) {
+  if ($widget['type'] == 'leaflet_widget_widget') {
+    $map_settings = variable_get('services_advisor_location_default_map_settings', array(
+      'lat' => 31.95,
+      'lng' => 35.583,
+      'zoom' => 9
+    ));
+
+    $widget['settings']['map']['center']['lat'] = $map_settings['lat'];
+    $widget['settings']['map']['center']['lng'] = $map_settings['lng'];
+    $widget['settings']['map']['zoom']          = $map_settings['zoom'];
+    dsm($widget);
+  }
+}
