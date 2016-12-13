@@ -610,7 +610,7 @@ function services_advisor_location_field_default_field_bases() {
     'locked' => 0,
     'module' => 'office_hours',
     'settings' => array(
-      'cardinality' => 1,
+      'cardinality' => 2,
       'granularity' => 1,
       'hoursformat' => 2,
       'limitend' => '',
