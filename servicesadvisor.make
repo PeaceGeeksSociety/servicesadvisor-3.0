@@ -116,6 +116,9 @@ projects[geophp][download][revision] = "2777c5ebc953841dea71fba6b91ff388499fc59e
 projects[globalredirect][subdir] = contrib
 projects[globalredirect][version] = "1.5"
 
+projects[google_analytics][subdir] = contrib
+projects[google_analytics][version] = "2.3"
+
 projects[hierarchical_select][subdir] = contrib
 projects[hierarchical_select][version] = "3.0-beta7"
 projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/feature-code-export-error-2764871-4.patch"
