@@ -216,7 +216,7 @@ projects[taxonomy_term_depth][download][type] = git
 projects[taxonomy_term_depth][download][url] = git://git.drupal.org/project/taxonomy_term_depth.git
 projects[taxonomy_term_depth][download][revision] = 95676500
 projects[taxonomy_term_depth][download][branch] = 7.x-1.x
-projects[taxonomy_term_depth][patch][] = "https://www.drupal.org/files/issues/2836507-2-views-field-parent-term-depth.patch"
+projects[taxonomy_term_depth][patch][] = "https://www.drupal.org/files/issues/2836507-5-views-field-parent-term-depth.patch"
 
 projects[token][subdir] = contrib
 projects[token][version] = "1.6"
