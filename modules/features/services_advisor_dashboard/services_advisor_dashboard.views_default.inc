@@ -1109,12 +1109,6 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['fields']['name_depth_5']['relationship'] = 'field_services_provided_tid_i18n';
   $handler->display->display_options['fields']['name_depth_5']['label'] = 'Service Category 6';
   $handler->display->display_options['fields']['name_depth_5']['desired_depth'] = '6';
-  /* Field: Content: Services Provided */
-  $handler->display->display_options['fields']['field_services_provided']['id'] = 'field_services_provided';
-  $handler->display->display_options['fields']['field_services_provided']['table'] = 'field_data_field_services_provided';
-  $handler->display->display_options['fields']['field_services_provided']['field'] = 'field_services_provided';
-  $handler->display->display_options['fields']['field_services_provided']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_services_provided']['delta_offset'] = '0';
   /* Field: Content: Hours */
   $handler->display->display_options['fields']['field_service_office_hours']['id'] = 'field_service_office_hours';
   $handler->display->display_options['fields']['field_service_office_hours']['table'] = 'field_data_field_service_office_hours';
