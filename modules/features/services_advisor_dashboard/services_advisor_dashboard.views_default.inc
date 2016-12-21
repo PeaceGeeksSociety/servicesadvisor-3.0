@@ -1140,11 +1140,41 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['fields']['field_service_accessibility']['field'] = 'field_service_accessibility';
   $handler->display->display_options['fields']['field_service_accessibility']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_service_accessibility']['delta_offset'] = '0';
-  /* Field: Content: Service Location */
-  $handler->display->display_options['fields']['field_service_location_location']['id'] = 'field_service_location_location';
-  $handler->display->display_options['fields']['field_service_location_location']['table'] = 'field_data_field_service_location_location';
-  $handler->display->display_options['fields']['field_service_location_location']['field'] = 'field_service_location_location';
-  $handler->display->display_options['fields']['field_service_location_location']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Depth Name */
+  $handler->display->display_options['fields']['name_depth_6']['id'] = 'name_depth_6';
+  $handler->display->display_options['fields']['name_depth_6']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_depth_6']['field'] = 'name_depth';
+  $handler->display->display_options['fields']['name_depth_6']['relationship'] = 'field_service_location_location_tid';
+  $handler->display->display_options['fields']['name_depth_6']['label'] = 'Service Location 1';
+  $handler->display->display_options['fields']['name_depth_6']['desired_depth'] = '1';
+  /* Field: Taxonomy term: Depth Name */
+  $handler->display->display_options['fields']['name_depth_7']['id'] = 'name_depth_7';
+  $handler->display->display_options['fields']['name_depth_7']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_depth_7']['field'] = 'name_depth';
+  $handler->display->display_options['fields']['name_depth_7']['relationship'] = 'field_service_location_location_tid';
+  $handler->display->display_options['fields']['name_depth_7']['label'] = 'Service Location 2';
+  $handler->display->display_options['fields']['name_depth_7']['desired_depth'] = '2';
+  /* Field: Taxonomy term: Depth Name */
+  $handler->display->display_options['fields']['name_depth_8']['id'] = 'name_depth_8';
+  $handler->display->display_options['fields']['name_depth_8']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_depth_8']['field'] = 'name_depth';
+  $handler->display->display_options['fields']['name_depth_8']['relationship'] = 'field_service_location_location_tid';
+  $handler->display->display_options['fields']['name_depth_8']['label'] = 'Service Location 3';
+  $handler->display->display_options['fields']['name_depth_8']['desired_depth'] = '3';
+  /* Field: Taxonomy term: Depth Name */
+  $handler->display->display_options['fields']['name_depth_9']['id'] = 'name_depth_9';
+  $handler->display->display_options['fields']['name_depth_9']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_depth_9']['field'] = 'name_depth';
+  $handler->display->display_options['fields']['name_depth_9']['relationship'] = 'field_service_location_location_tid';
+  $handler->display->display_options['fields']['name_depth_9']['label'] = 'Service Location 4';
+  $handler->display->display_options['fields']['name_depth_9']['desired_depth'] = '4';
+  /* Field: Taxonomy term: Depth Name */
+  $handler->display->display_options['fields']['name_depth_10']['id'] = 'name_depth_10';
+  $handler->display->display_options['fields']['name_depth_10']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_depth_10']['field'] = 'name_depth';
+  $handler->display->display_options['fields']['name_depth_10']['relationship'] = 'field_service_location_location_tid';
+  $handler->display->display_options['fields']['name_depth_10']['label'] = 'Service Location 5';
+  $handler->display->display_options['fields']['name_depth_10']['desired_depth'] = '5';
   /* Field: Taxonomy term: Location Point */
   $handler->display->display_options['fields']['field_location_point']['id'] = 'field_location_point';
   $handler->display->display_options['fields']['field_location_point']['table'] = 'field_data_field_location_point';
