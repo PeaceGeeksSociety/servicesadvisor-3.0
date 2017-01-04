@@ -1437,7 +1437,7 @@ function services_advisor_location_field_default_field_instances() {
   // Exported field_instance: 'node-service_location-og_group_ref'.
   $field_instances['node-service_location-og_group_ref'] = array(
     'bundle' => 'service_location',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
@@ -1476,7 +1476,7 @@ function services_advisor_location_field_default_field_instances() {
         'og_widget' => array(
           'access_override' => 0,
           'admin' => array(
-            'widget_type' => 'options_buttons',
+            'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
             'widget_type' => 'options_select',
@@ -1512,7 +1512,9 @@ function services_advisor_location_field_default_field_instances() {
     'widget' => array(
       'active' => 0,
       'module' => 'og',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'og_complex',
       'weight' => 1,
     ),
