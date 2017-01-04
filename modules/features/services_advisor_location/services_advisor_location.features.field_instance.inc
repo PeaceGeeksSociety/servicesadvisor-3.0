@@ -693,7 +693,7 @@ function services_advisor_location_field_default_field_instances() {
     'bundle' => 'service_location',
     'default_value' => array(),
     'deleted' => 0,
-    'description' => 'If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present.',
+    'description' => 'If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present. Enter Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field and will be inserted as marker on the map when you are done. ex. 31.95, 35.583',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1661,8 +1661,8 @@ function services_advisor_location_field_default_field_instances() {
       'module' => 'leaflet_widget',
       'settings' => array(
         'geocoder' => array(
-          'enabled' => 0,
-          'handler' => 'wkt',
+          'enabled' => 1,
+          'handler' => 'latlon',
         ),
         'map' => array(
           'auto_center' => 1,
@@ -1678,7 +1678,7 @@ function services_advisor_location_field_default_field_instances() {
             'polyline' => 0,
             'rectangle' => 0,
           ),
-          'zoom' => 10,
+          'zoom' => 12,
         ),
       ),
       'type' => 'leaflet_widget_widget',
@@ -1703,7 +1703,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Glyph');
   t('Hours');
   t('If needed, you can add additional details');
-  t('If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present.');
+  t('If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present. Enter Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field and will be inserted as marker on the map when you are done. ex. 31.95, 35.583');
   t('Immediate Next Step after Referral');
   t('Intake Criteria');
   t('Legal Documents Required');

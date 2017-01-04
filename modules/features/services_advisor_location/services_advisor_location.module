@@ -15,8 +15,6 @@ function services_advisor_location_form_service_location_node_form_alter(&$form,
   $form['title']['#type'] = 'value';
   $form['title']['#required'] = FALSE;
 
-  $form['field_service_location'][LANGUAGE_NONE]['geocoder']['#description'] = t('Enter Latitude and Longitude separated by a comman. ex. 31.95, 35.583');
-
   // Add logic for og_group_ref field.
   services_advisor_location_og_group_ref_handling($form, $form_state);
 }
@@ -97,5 +95,18 @@ function services_advisor_location_field_widget_properties_alter(&$widget, $cont
     $widget['settings']['map']['center']['lat'] = $map_settings['lat'];
     $widget['settings']['map']['center']['lng'] = $map_settings['lng'];
     $widget['settings']['map']['zoom']          = $map_settings['zoom'];
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Add custom widget javascript and hide geocoder add button.
+ */
+function services_advisor_location_field_widget_leaflet_widget_widget_form_alter(&$element, &$form_state, $context) {
+  if (isset($element['geocoder'])) {
+    $element['geocoder']['#attached']['js'][] = drupal_get_path('module', 'services_advisor_location') . '/js/widget.js';
+    unset($element['geocoder']['#description']);
+    unset($element['geocoder']['#field_suffix']);
   }
 }
