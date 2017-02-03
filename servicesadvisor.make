@@ -16,7 +16,7 @@ projects[backup_migrate][subdir] = contrib
 projects[backup_migrate][version] = "3.1"
 
 projects[better_exposed_filters][subdir] = contrib
-projects[better_exposed_filters][version] = "3.2"
+projects[better_exposed_filters][version] = "3.4"
 
 projects[captcha][subdir] = contrib
 projects[captcha][version] = "1.3"
@@ -25,7 +25,7 @@ projects[chained_selects][subdir] = contrib
 projects[chained_selects][version] = "1.x-dev"
 
 projects[chosen][subdir] = contrib
-projects[chosen][version] = "2.0-beta5"
+projects[chosen][version] = "2.0"
 
 projects[color_field][subdir] = contrib
 projects[color_field][version] = "1.8"
@@ -40,7 +40,7 @@ projects[context][subdir] = contrib
 projects[context][version] = "3.7"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.10"
+projects[ctools][version] = "1.12"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
@@ -52,7 +52,7 @@ projects[devel][subdir] = contrib
 projects[devel][version] = "1.5"
 
 projects[diff][subdir] = contrib
-projects[diff][version] = "3.2"
+projects[diff][version] = "3.3"
 
 projects[ds][subdir] = contrib
 projects[ds][version] = "2.14"
@@ -70,7 +70,7 @@ projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.2"
 
 projects[entityreference_prepopulate][subdir] = contrib
-projects[entityreference_prepopulate][version] = "1.6"
+projects[entityreference_prepopulate][version] = "1.7"
 
 projects[eva][subdir] = contrib
 projects[eva][version] = "1.2"
@@ -82,7 +82,7 @@ projects[features_extra][subdir] = contrib
 projects[features_extra][version] = "1.0"
 
 projects[feeds][subdir] = contrib
-projects[feeds][version] = "2.x"
+projects[feeds][version] = "2.0-beta3"
 
 projects[feeds_tamper][subdir] = contrib
 projects[feeds_tamper][version] = "1.1"
@@ -125,7 +125,7 @@ projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/fe
 projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/hierarchical_select-fix_selection_keys-2719141-22-7.x-3.x-dev.patch"
 
 projects[i18n][subdir] = contrib
-projects[i18n][version] = "1.13"
+projects[i18n][version] = "1.15"
 
 projects[i18nviews][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
@@ -143,7 +143,7 @@ projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.7"
 
 projects[leaflet][subdir] = contrib
-projects[leaflet][version] = "1.3"
+projects[leaflet][version] = "1.4"
 
 projects[leaflet_widget][subdir] = contrib
 projects[leaflet_widget][type] = module
@@ -219,7 +219,7 @@ projects[taxonomy_term_depth][download][branch] = 7.x-1.x
 projects[taxonomy_term_depth][patch][] = "https://www.drupal.org/files/issues/2836507-5-views-field-parent-term-depth.patch"
 
 projects[token][subdir] = contrib
-projects[token][version] = "1.6"
+projects[token][version] = "1.7"
 
 projects[translation_own_nodes][subdir] = contrib
 projects[translation_own_nodes][version] = "1.x-dev"
@@ -271,7 +271,7 @@ projects[views_geojson][subdir] = contrib
 projects[views_geojson][version] = "1.0-beta3"
 
 projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][version] = "2.3"
 
 ;----------
 ; Libraries
