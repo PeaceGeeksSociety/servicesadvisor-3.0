@@ -32,9 +32,9 @@ function services_advisor_base_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'services_advisor_base-jordan_inner_agency' => array(
+        'services_advisor_base-site_operator' => array(
           'module' => 'services_advisor_base',
-          'delta' => 'jordan_inner_agency',
+          'delta' => 'site_operator',
           'region' => 'footer',
           'weight' => '-22',
         ),

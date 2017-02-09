@@ -145,10 +145,78 @@ function services_advisor_base_block_info() {
   $blocks['powered_by_peace_geeks'] = array(
     'info' => t('Powered by Peace Geeks'),
   );
-  $blocks['jordan_inner_agency'] = array(
-    'info' => t('Jordan inner Agency'),
+  $blocks['site_operator'] = array(
+    'info' => t('Site Operator'),
   );
   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function services_advisor_base_block_configure($delta = '') {
+  $form = array();
+
+  switch ($delta) {
+    case 'site_operator':
+      // url
+      $form['site_operator_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Operator URL'),
+        '#description' => t('The operator\'s logo and name will be linked to this URL.'),
+        '#default_value' => variable_get('site_operator_url', '')
+      );
+      // logo
+      $form['site_operator_logo_fid'] = array(
+        '#type' => 'managed_file',
+        '#title' => t('Operator Logo'),
+        '#description' => t('The uploaded image will be displayed as the operator logo in the site footer.'),
+        '#default_value' => variable_get('site_operator_logo_fid', ''),
+        '#size' => 22,
+        '#upload_location' => 'public://'
+      );
+      // name
+      $form['site_operator_name'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Operator Name',
+        '#description' => t('The operator\'s name which will be linked along with the logo.'),
+        '#default_value' => variable_get('site_operator_name', 'Services Advisor Operator'),
+        '#required' => true
+      );
+      break;
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function services_advisor_base_block_save($delta = '', $edit = array()) {
+  switch ($delta) {
+    case 'site_operator':
+      if ($edit['site_operator_logo_fid']) {
+        $old_logo_fid = variable_get('site_operator_logo_fid', 0);
+
+        if ($old_logo_fid && $edit['site_operator_logo_fid'] !== $old_logo_fid) {
+          $old_logo = file_load($old_logo_fid);
+          file_delete($old_logo, true);
+        }
+
+        $logo = file_load($edit['site_operator_logo_fid']);
+        // Change status to permanent.
+        $logo->status = FILE_STATUS_PERMANENT;
+        // Save.
+        file_save($logo);
+
+        file_usage_add($logo, 'services_advisor_base', 'site_operator_logo', 1);
+        variable_set('site_operator_logo_fid', $logo->fid);
+      }
+
+      variable_set('site_operator_url', $edit['site_operator_url']);
+      variable_set('site_operator_name', $edit['site_operator_name']);
+      break;
+  }
 }
 
 /**
@@ -161,22 +229,35 @@ function services_advisor_base_block_view($delta='') {
     case 'services_links' :
       $block['content'] = services_advisor_base_services_links();
       break;
-	  case 'jordan_inner_agency' :
-		$image_url =  '/'.drupal_get_path('theme', 'sa2016') .'/images/jordan_inter_agency_clean.png';
-	  $block = array(
-	    'content' => array(
-       // '#prefix' => '<div class="medium-12">',
-       // '#suffix' => '</div>',
-       '#markup' => '<div class="jordan-inner-wrapper left"><a href="http://data.unhcr.org/jordan/"><div class="image-wrapper"><img src="'.$image_url.'" /></div><div class="inner-agency-text">'.t('Jordan Inter Agency Coordination').'</div></a</div>',
-     ),
-	  );
+    case 'site_operator' :
+      $operator_logo_fid = variable_get('site_operator_logo_fid');
+      if ($operator_logo_fid) {
+        $logo = file_load($operator_logo_fid);
+        $logo_image = theme('image_style', array('style_name' => 'small_logo', 'path' => $logo->uri));
+      } else {
+        $logo_image = '<img src="' . drupal_get_path('theme', 'sa2016') .'/images/jordan_inter_agency_clean.png' . '" />';
+      }
+
+      $operator_url = variable_get('site_operator_url', 'http://data.unhcr.org/jordan/');
+      $operator_name = variable_get('site_operator_name', 'Jordan Inter Agency Coordination');
+      $block = array(
+        'content' => array(
+         '#markup' => '
+          <div class="site-operator-inner-wrapper left">
+            <a href="' . $operator_url . '">
+              <div class="image-wrapper">
+                ' . $logo_image . '
+              </div>
+              <div class="inner-text">' . $operator_name . '</div>
+            </a>
+          </div>',
+       ),
+      );
     break;
 	  case 'powered_by_peace_geeks' :
 		$image_url =  '/'.drupal_get_path('theme', 'sa2016') .'/images/PG_vectors.png';
 	  $block = array(
 	    'content' => array(
-       // '#prefix' => '<div class="medium-12">',
-       // '#suffix' => '</div>',
        '#markup' => '<div class="powered-by-wrapper right"><a href="http://peacegeeks.org/"><div class="powered-by-text">'.t('Powered by').'</div><div class="pg-image-wrapper"><img src="'.$image_url.'" /></div><div class="pg-url">peacegeeks.org</a></div></div>',
      ),
 	  );
