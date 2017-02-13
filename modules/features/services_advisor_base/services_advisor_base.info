@@ -330,6 +330,7 @@ features[variable][] = node_view_permissions_service_partner
 features[variable][] = node_view_permissions_webform
 features[variable][] = site_404
 features[variable][] = site_frontpage
+features[variable][] = taxonomy_terms_per_page_admin
 features[variable][] = theme_default
 features[variable][] = theme_sa2016_settings
 features[variable][] = transliteration_file_lowercase

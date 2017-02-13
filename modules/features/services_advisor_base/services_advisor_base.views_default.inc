@@ -1322,7 +1322,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_partner_url']['label'] = '';
   $handler->display->display_options['fields']['field_service_partner_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_service_partner_url']['click_sort_column'] = 'url';
-  /* Field: Content: Organization Overview */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1474,7 +1474,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_partner_url']['label'] = '';
   $handler->display->display_options['fields']['field_service_partner_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_service_partner_url']['click_sort_column'] = 'url';
-  /* Field: Content: Organization Overview */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';

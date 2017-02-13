@@ -895,6 +895,13 @@ function services_advisor_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_terms_per_page_admin';
+  $strongarm->value = '1000';
+  $export['taxonomy_terms_per_page_admin'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
   $strongarm->value = 'sa2016';
   $export['theme_default'] = $strongarm;
