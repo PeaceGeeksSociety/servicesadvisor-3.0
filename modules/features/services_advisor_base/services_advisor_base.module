@@ -247,7 +247,7 @@ function services_advisor_base_block_view($delta='') {
         $logo = file_load($operator_logo_fid);
         $logo_image = theme('image_style', array('style_name' => 'small_logo', 'path' => $logo->uri));
       } else {
-        $logo_image = '<img src="' . drupal_get_path('theme', 'sa2016') .'/images/jordan_inter_agency_clean.png' . '" />';
+        $logo_image = '<img src="/' . drupal_get_path('theme', 'sa2016') .'/images/jordan_inter_agency_clean.png' . '" />';
       }
 
       $operator_url = variable_get('site_operator_url', 'http://data.unhcr.org/jordan/');
