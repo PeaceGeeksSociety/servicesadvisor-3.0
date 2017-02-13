@@ -180,6 +180,7 @@ projects[node_clone][version] = "1.0"
 
 projects[node_view_permissions][subdir] = contrib
 projects[node_view_permissions][version] = "1.5"
+projects[node_view_permissions][patch][] = "https://www.drupal.org/files/issues/node_view_permissions-D7-2564273-22.patch"
 
 projects[office_hours][subdir] = contrib
 projects[office_hours][version] = "1.x-dev"
