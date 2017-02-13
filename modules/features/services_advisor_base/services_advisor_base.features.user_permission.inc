@@ -439,7 +439,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer languages',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'locale',
   );
@@ -516,6 +515,15 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'redirect',
   );
 
+  // Exported permission: 'administer services advisor settings'.
+  $permissions['administer services advisor settings'] = array(
+    'name' => 'administer services advisor settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'services_advisor_base',
+  );
+
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
@@ -567,6 +575,15 @@ function services_advisor_base_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer users advanced'.
+  $permissions['administer users advanced'] = array(
+    'name' => 'administer users advanced',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'services_advisor_base',
   );
 
   // Exported permission: 'administer uuid'.
@@ -1038,7 +1055,6 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'translate interface',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'locale',
   );

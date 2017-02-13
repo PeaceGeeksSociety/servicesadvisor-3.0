@@ -29,6 +29,14 @@ function services_advisor_base_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_menu_alter().
+ */
+function services_advisor_base_menu_alter(&$items) {
+  $items['admin/config/people/accounts']['access arguments'] = array('administer users advanced');
+  $items['admin/config/people/ip-blocking']['access arguments'] = array('administer users advanced');
+}
+
 function services_advisor_base_service_strings() {
   drupal_json_output(array(
     'CATEGORY' => t('Category'),
@@ -128,6 +136,10 @@ function services_advisor_base_permission() {
   return array(
     'administer services advisor settings' => array(
       'title' => t('Administer Services Advisor Settings')
+    ),
+    'administer users advanced' => array(
+      'title' => t('Advanced User Administration'),
+      'description' => t('Controls access to user administraton pages locationed below "admin/config/people/".')
     )
   );
 }
