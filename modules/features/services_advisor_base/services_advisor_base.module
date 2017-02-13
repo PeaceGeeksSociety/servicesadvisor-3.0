@@ -353,6 +353,9 @@ function services_advisor_base_node_insert($node) {
       ));
       drupal_set_message('<strong>' . $message . '</strong>', 'status');
     }
+
+    $title_queue = DrupalQueue::get('service_location_title_queue');
+    $title_queue->createItem($node->nid);
   }
 }
 

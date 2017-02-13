@@ -7,6 +7,17 @@
 include_once 'services_advisor_location.features.inc';
 
 /**
+ * Implements hook_cron_queue_info().
+ */
+function services_advisor_location_cron_queue_info() {
+  $queues['service_location_title_queue'] = array(
+    'worker callback' => 'services_advisor_location_title_runner'
+  );
+
+  return $queues;
+}
+
+/**
  * Implements hook_form_alter().
  */
 function services_advisor_location_form_service_location_node_form_alter(&$form, &$form_state) {
@@ -59,6 +70,16 @@ function services_advisor_location_og_group_ref_handling(&$form, &$form_state) {
  * Implements hook_node_presave().
  */
 function services_advisor_location_node_presave($node) {
+  services_advisor_location_title($node, false);
+}
+
+function services_advisor_location_title_runner($nid) {
+  $node = node_load($nid);
+  services_advisor_location_title($node);
+  node_save($node);
+}
+
+function services_advisor_location_title($node) {
   if ($node->type == 'service_location'){
     $title_parts = array();
 
