@@ -34,7 +34,7 @@ function services_advisor_partner_node_info() {
     'service_partner' => array(
       'name' => t('Service Partner'),
       'base' => 'node_content',
-      'description' => t('A partner for a UNHCR service source'),
+      'description' => t('A partner for a service source'),
       'has_title' => '1',
       'title_label' => t('Abbreviated Partner Name'),
       'help' => '',
