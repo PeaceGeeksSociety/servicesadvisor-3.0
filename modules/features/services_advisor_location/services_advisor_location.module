@@ -28,6 +28,8 @@ function services_advisor_location_form_service_location_node_form_alter(&$form,
 
   // Add logic for og_group_ref field.
   services_advisor_location_og_group_ref_handling($form, $form_state);
+
+  $form['#validate'][] = 'services_advisor_location_location_date_validate';
 }
 
 /**
@@ -70,7 +72,7 @@ function services_advisor_location_og_group_ref_handling(&$form, &$form_state) {
  * Implements hook_node_presave().
  */
 function services_advisor_location_node_presave($node) {
-  services_advisor_location_title($node, false);
+  services_advisor_location_title($node);
 }
 
 function services_advisor_location_title_runner($nid) {
@@ -129,5 +131,14 @@ function services_advisor_location_field_widget_leaflet_widget_widget_form_alter
     $element['geocoder']['#attached']['js'][] = drupal_get_path('module', 'services_advisor_location') . '/js/widget.js';
     unset($element['geocoder']['#description']);
     unset($element['geocoder']['#field_suffix']);
+  }
+}
+
+function services_advisor_location_location_date_validate($form, &$form_state) {
+  $startdate = $form_state['values']['field_service_start_date'][LANGUAGE_NONE][0]['value'];
+  $enddate = $form_state['values']['field_service_end_date'][LANGUAGE_NONE][0]['value'];
+
+  if ($enddate < $startdate) {
+    form_set_error('field_service_end_date', t('End Date must be after Start Date.'));
   }
 }
