@@ -1162,6 +1162,97 @@ function services_advisor_location_field_default_field_instances() {
           ),
         ),
       ),
+      1 => array(
+        'preset_name' => 'Full Days (no break)',
+        'preset_value' => array(
+          'und' => array(
+            0 => array(
+              'starthours' => '0900',
+              'endhours' => 1700,
+              'day' => 0,
+              'daydelta' => 0,
+            ),
+            1 => array(
+              'day' => 0,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+            2 => array(
+              'day' => 1,
+              'daydelta' => 0,
+              'endhours' => 1700,
+              'starthours' => '0900',
+            ),
+            3 => array(
+              'day' => 1,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+            4 => array(
+              'day' => 2,
+              'daydelta' => 0,
+              'endhours' => 1700,
+              'starthours' => '0900',
+            ),
+            5 => array(
+              'day' => 2,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+            6 => array(
+              'day' => 3,
+              'daydelta' => 0,
+              'endhours' => 1700,
+              'starthours' => '0900',
+            ),
+            7 => array(
+              'day' => 3,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+            8 => array(
+              'day' => 4,
+              'daydelta' => 0,
+              'endhours' => 1700,
+              'starthours' => '0900',
+            ),
+            9 => array(
+              'day' => 4,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+            10 => array(
+              'day' => 5,
+              'daydelta' => 0,
+              'endhours' => 1700,
+              'starthours' => '0900',
+            ),
+            11 => array(
+              'day' => 5,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+            12 => array(
+              'day' => 6,
+              'daydelta' => 0,
+              'endhours' => 1700,
+              'starthours' => '0900',
+            ),
+            13 => array(
+              'day' => 6,
+              'daydelta' => 1,
+              'endhours' => '',
+              'starthours' => '',
+            ),
+          ),
+        ),
+      ),
     ),
     'required' => 0,
     'settings' => array(
