@@ -170,7 +170,7 @@
 
       <div class="column large-9 large-offset-1  footer-second">
         <div class="copyright ">
-          &copy; <?php print date('Y') . ' ' . $site_name; ?>
+          &copy; <?php print date('Y') . ' Services Advisor'; ?>
         </div>
         <?php if (!empty($page['footer_under'])): ?>
               <?php print render($page['footer_under']); ?>
