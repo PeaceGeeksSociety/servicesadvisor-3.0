@@ -131,7 +131,7 @@ projects[i18nviews][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
 
 projects[l10n_update][subdir] = contrib
-projects[l10n_update][version] = "2.0"
+projects[l10n_update][version] = "2.1"
 
 projects[imagefield_crop][subdir] = contrib
 projects[imagefield_crop][version] = "1.1"
@@ -247,14 +247,14 @@ projects[varnish][subdir] = contrib
 projects[varnish][version] = "1.1"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.14"
+projects[views][version] = "3.15"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
 
 projects[views_aggregator][subdir] = contrib
 projects[views_aggregator][version] = "1.4"
 
 projects[views_bulk_operations][subdir] = contrib
-projects[views_bulk_operations][version] = "3.3"
+projects[views_bulk_operations][version] = "3.4"
 
 projects[views_data_export][subdir] = contrib
 projects[views_data_export][version] = "3.1"

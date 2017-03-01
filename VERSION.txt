@@ -1,6 +1,8 @@
+
 SA 0.11.0
 ---------
-* Adding new hours presets.
-* Fixing footer copy.
-* Adding date validation on location form.
-* Improving access for site managers.
+* See #28 - Adding new hours presets.
+* See #34 - Fixing footer copy.
+* See #41 - Adding date validation on location form.
+* See #33 - Improving access for site managers.
+* See #24 - Making footer and header blocks configurable.
