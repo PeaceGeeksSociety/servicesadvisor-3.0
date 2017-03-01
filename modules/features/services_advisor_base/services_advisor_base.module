@@ -7,6 +7,38 @@
 include_once 'services_advisor_base.features.inc';
 
 /**
+ * Get the Services Advisor version from version.txt
+ */
+function services_advisor_base_get_version() {
+  $version_path = drupaL_realpath(drupal_get_path('profile', 'servicesadvisor') . '/VERSION.txt');
+  if (file_exists($version_path)) {
+    if ($version_file = fopen($version_path, 'r')) {
+      if ($version = trim(fgets($version_file))) {
+        if (preg_match('/^SA \d\.\d+\.[0-9A-Z]\d?$/', $version)) {
+          return $version;
+        }
+      }
+      // Create watchdog error, could not identify version in VERSION.txt
+      watchdog(
+        'services_advisor_base',
+        'The version could not be determined from the file %file',
+        array('%file' => $version_path),
+        WATCHDOG_ERROR
+      );
+      return '';
+    }
+  }
+  // Create watchdog error, could not open VERSION.txt
+  watchdog(
+    'services_advisor_base',
+    'The version could not be determined because the file %file could not be opened',
+    array('%file' => $version_path),
+    WATCHDOG_ERROR
+  );
+  return '';
+}
+
+/**
  * Implements hook_menu().
  */
 function services_advisor_base_menu() {
@@ -19,11 +51,14 @@ function services_advisor_base_menu() {
     'access callback' => TRUE
   );
 
-  $items['admin/config/services-advisor'] = array(
-    'title' => 'Service Advisor Settings',
+  $version = services_advisor_base_get_version();
+
+  $items['admin/services-advisor'] = array(
+    'title' => t('!version', array('!version' => $version)),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('services_advisor_base_settings_form'),
     'access arguments' => array('administer services advisor settings'),
+    'weight' => 100
   );
 
   return $items;
