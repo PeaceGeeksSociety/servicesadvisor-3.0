@@ -1,3 +1,7 @@
+SA 0.12.0
+---------
+* See #53 - Service Location titles no longer wrap in listings.
+
 SA 0.11.0
 ---------
 * See #28 - Adding new hours presets.
