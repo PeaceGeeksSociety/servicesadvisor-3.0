@@ -7,10 +7,28 @@
 include_once 'services_advisor_notify.features.inc';
 
 /**
- * Implements hook_init().
+ * Implements hook_sa_settings_form().
+ *
+ * @see services_advisor_base_settings_form().
  */
-function services_advisor_notify_init() {
-  $node = node_load(1050);
+function services_advisor_notify_sa_settings_form($form, &$form_state) {
+
+  $form['service_advisor_notify_expiry_cutoff'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Service Location Expiration Notication Cutoff'),
+    '#description' => t('How early should the expiry notifications be sent? Format using !url. Example "-1 week midnight". <strong>Reschedule notifications if you change this value!</strong>', array(
+      '!url' => l('PHP Relative Formats', 'http://php.net/manual/en/datetime.formats.relative.php', array('attributes' => array('target' => '_blank')))
+    )),
+    '#default_value' => variable_get('service_advisor_notify_expiry_cutoff', '-1 week midnight')
+  );
+
+  $form['services_advisor_notify_bulk_schedule'] = array(
+    '#type' => 'submit',
+    '#value' => t('Bulk Reschedule Notifications'),
+    '#submit' => array('services_advisor_notify_schedule_bulk')
+  );
+
+  return $form;
 }
 
 /**
@@ -23,14 +41,24 @@ function services_advisor_notify_node_presave($node) {
   services_advisor_notify_schedule_notification($node);
 }
 
+/**
+ * Schedule expiry notifications for locations that are still active.
+ */
 function services_advisor_notify_schedule_notification($node) {
-  if ($node->type == 'service_location') {
+  if ($node->type == 'service_location' && $node->tnid > 0) {
     $wrapper = entity_metadata_wrapper('node', $node);
+    $now = time();
     $expiry = $wrapper->field_service_end_date->value();
     $cutoff = services_advisor_notify_cutoff($expiry);
 
-    node_scheduler_schedule_action($node->tnid, 'service_expiring', $cutoff);
+    if ($expiry > $now) {
+      node_scheduler_schedule_action($node->tnid, 'service_expiring', $cutoff);
+
+      return true;
+    }
   }
+
+  return false;
 }
 
 /**
@@ -39,7 +67,8 @@ function services_advisor_notify_schedule_notification($node) {
  * @todo  Make this configurable.
  */
 function services_advisor_notify_cutoff($expiry) {
-  return strtotime('-1 week midnight', $expiry);
+  $cutoff = variable_get('service_advisor_notify_expiry_cutoff', '-1 week midnight');
+  return strtotime($cutoff, $expiry);
 }
 
 /**
@@ -55,4 +84,21 @@ function services_advisor_notify_node_scheduler_action($nid, $schedule_key) {
       $wrapper->save();
       break;
   }
+}
+
+function services_advisor_notify_schedule_bulk() {
+  $count = 0;
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('n.type', 'service_location')
+    ->where('n.nid = n.tnid');
+  $results = $query->execute()->fetchCol();
+
+  foreach (node_load_multiple($results) as $node) {
+    if (services_advisor_notify_schedule_notification($node)) {
+      $count++;
+    }
+  }
+
+  drupal_set_message(t('Rescheduled notifications for @count locations', array('@count' => $count)));
 }
