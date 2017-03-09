@@ -1,0 +1,58 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Notify feature.
+ */
+
+include_once 'services_advisor_notify.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function services_advisor_notify_init() {
+  $node = node_load(1050);
+}
+
+/**
+ * Implements hook_node_presave().
+ *
+ * @todo  Make sure notification date is updated properly when changing the
+ *        end date.
+ */
+function services_advisor_notify_node_presave($node) {
+  services_advisor_notify_schedule_notification($node);
+}
+
+function services_advisor_notify_schedule_notification($node) {
+  if ($node->type == 'service_location') {
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $expiry = $wrapper->field_service_end_date->value();
+    $cutoff = services_advisor_notify_cutoff($expiry);
+
+    node_scheduler_schedule_action($node->tnid, 'service_expiring', $cutoff);
+  }
+}
+
+/**
+ * Return the timestamp when messages should be sent out.
+ *
+ * @todo  Make this configurable.
+ */
+function services_advisor_notify_cutoff($expiry) {
+  return strtotime('-1 week midnight', $expiry);
+}
+
+/**
+ * Implements hook_node_scheduler_action().
+ */
+function services_advisor_notify_node_scheduler_action($nid, $schedule_key) {
+  switch ($schedule_key) {
+    case 'service_expiring':
+      $service = node_load($nid);
+      $message = message_create($schedule_key);
+      $wrapper = entity_metadata_wrapper('message', $message);
+      $wrapper->field_service_message_service->set($service);
+      $wrapper->save();
+      break;
+  }
+}

@@ -75,6 +75,9 @@ projects[entityreference_prepopulate][version] = "1.7"
 projects[eva][subdir] = contrib
 projects[eva][version] = "1.2"
 
+projects[flag][subdir] = contrib
+projects[flag][version] = "3.9"
+
 projects[features][subdir] = contrib
 projects[features][version] = "2.10"
 
@@ -163,6 +166,15 @@ projects[link][version] = "1.4"
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
 
+projects[message][subdir] = contrib
+projects[message][version] = "1.12"
+
+projects[message_notify][subdir] = contrib
+projects[message_notify][version] = "2.5"
+
+projects[message_subscribe][subdir] = contrib
+projects[message_subscribe][version] = "1.0-rc2"
+
 projects[migrate][subdir] = contrib
 projects[migrate[version] = "2.8"
 
@@ -177,6 +189,12 @@ projects[node_export][version] = "3.1"
 
 projects[node_clone][subdir] = contrib
 projects[node_clone][version] = "1.0"
+
+projects[node_scheduler][subdir] = contrib
+projects[node_scheduler][type] = module
+projects[node_scheduler][download][type] = git
+projects[node_scheduler][download][url] = git@github.com:affinitybridge/node_scheduler.git
+projects[node_scheduler][download][revision] = 766ab109
 
 projects[node_view_permissions][subdir] = contrib
 projects[node_view_permissions][version] = "1.5"
