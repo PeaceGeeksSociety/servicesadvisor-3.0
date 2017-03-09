@@ -121,45 +121,25 @@ function services_advisor_base_service_strings() {
 
 /**
  * Services Advisor Settings Form.
- *
- * @todo Add hook call so other features can inject their settings.
  */
 function services_advisor_base_settings_form($form, &$form_state) {
   $form = array();
 
-  $map_settings = variable_get('services_advisor_location_default_map_settings', array(
-    'lat' => 31.95,
-    'lng' => 35.583,
-    'zoom' => 9
-  ));
+  foreach (module_implements('sa_settings_form') as $module) {
+    $info = system_get_info('module', $module);
+    $function = $module . '_' . 'sa_settings_form';
+    $form[$module] = array(
+      '#type' => 'fieldset',
+      '#collapsible' => true,
+      '#title' => $info['name']
+    );
 
-  $form['services_advisor_location_default_map_settings'] = array(
-    '#type' => 'fieldset',
-    '#collapsible' => true,
-    '#tree' => true,
-    '#title' => t('Map Widget Defaults')
-  );
-  $form['services_advisor_location_default_map_settings']['lat'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Default Latitude'),
-    '#required' => true,
-    '#default_value' => $map_settings['lat'],
-    '#element_validate' => array('element_validate_number')
-  );
-  $form['services_advisor_location_default_map_settings']['lng'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Default Longitude'),
-    '#required' => true,
-    '#default_value' => $map_settings['lng'],
-    '#element_validate' => array('element_validate_number')
-  );
-  $form['services_advisor_location_default_map_settings']['zoom'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Default Zoom'),
-    '#required' => true,
-    '#default_value' => $map_settings['zoom'],
-    '#element_validate' => array('element_validate_number')
-  );
+    // We are not using module_invoke because form_state needs to be passed by
+    // reference.
+    $form[$module] = array_merge($form[$module], $function($form[$module], $form_state));
+  }
+
+  drupal_alter('sa_settings_form', $form, $form_state);
 
   return system_settings_form($form);
 }
