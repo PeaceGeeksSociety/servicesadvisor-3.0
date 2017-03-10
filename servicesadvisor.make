@@ -169,6 +169,9 @@ projects[masquerade][version] = "1.0-rc7"
 projects[message][subdir] = contrib
 projects[message][version] = "1.12"
 
+projects[message_digest][subdir] = contrib
+projects[message_digest][version] = "1.0"
+
 projects[message_notify][subdir] = contrib
 projects[message_notify][version] = "2.5"
 

@@ -82,6 +82,8 @@ function services_advisor_notify_node_scheduler_action($nid, $schedule_key) {
       $wrapper = entity_metadata_wrapper('message', $message);
       $wrapper->field_service_message_service->set($service);
       $wrapper->save();
+
+      message_subscribe_send_message('node', $service, $message);
       break;
   }
 }
