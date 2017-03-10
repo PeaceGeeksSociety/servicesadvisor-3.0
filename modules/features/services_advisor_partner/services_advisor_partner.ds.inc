@@ -22,6 +22,11 @@ function services_advisor_partner_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'links' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
   );
   $export['node|service_partner|default'] = $ds_fieldsetting;
 
@@ -77,16 +82,18 @@ function services_advisor_partner_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_wrapper_around',
         1 => 'title',
-        2 => 'field_logo',
-        3 => 'field_service_partner_full_name',
-        4 => 'field_service_partner_url',
-        5 => 'group_left',
-        6 => 'group_right',
+        2 => 'links',
+        3 => 'field_logo',
+        4 => 'field_service_partner_full_name',
+        5 => 'field_service_partner_url',
+        6 => 'group_left',
+        7 => 'group_right',
       ),
     ),
     'fields' => array(
       'group_wrapper_around' => 'ds_content',
       'title' => 'ds_content',
+      'links' => 'ds_content',
       'field_logo' => 'ds_content',
       'field_service_partner_full_name' => 'ds_content',
       'field_service_partner_url' => 'ds_content',

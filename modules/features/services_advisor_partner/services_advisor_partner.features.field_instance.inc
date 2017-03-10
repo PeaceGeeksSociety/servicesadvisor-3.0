@@ -21,7 +21,7 @@ function services_advisor_partner_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -245,7 +245,7 @@ function services_advisor_partner_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'hidden',

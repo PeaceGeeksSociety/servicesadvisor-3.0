@@ -102,3 +102,25 @@ function services_advisor_notify_schedule_bulk() {
 
   drupal_set_message(t('Rescheduled notifications for @count locations', array('@count' => $count)));
 }
+
+/**
+ * Implements hook_flag_access().
+ */
+function services_advisor_notify_flag_access($flag, $entity_id, $action, $account) {
+  if ($flag->name == 'subscribe_to_partner_nofications') {
+    return og_user_access('node', $entity_id, 'access partner notifications', $account);
+  }
+}
+
+/**
+ * Implements hook_og_permission().
+ */
+function services_advisor_notify_og_permission() {
+  return array(
+    'access partner notifications' => array(
+      'title' => t('Access Partner Notifications'),
+      'description' => t('Allows access to the notification subscribe flag displayed on partners.'),
+      'default role' => array(OG_AUTHENTICATED_ROLE, OG_ADMINISTRATOR_ROLE),
+    )
+  );
+}

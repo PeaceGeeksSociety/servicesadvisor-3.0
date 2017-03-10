@@ -14,6 +14,52 @@ function services_advisor_notify_ctools_plugin_api($module = NULL, $api = NULL) 
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function services_advisor_notify_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Subscribe to partner nofications".
+  $flags['subscribe_to_partner_nofications'] = array(
+    'entity_type' => 'node',
+    'title' => 'Subscribe to partner nofications',
+    'global' => 0,
+    'types' => array(
+      0 => 'service_partner',
+    ),
+    'flag_short' => 'Subscribe to notifications',
+    'flag_long' => 'You have been subscribed.',
+    'flag_message' => '',
+    'unflag_short' => 'Unsubscribe from notifications',
+    'unflag_long' => '',
+    'unflag_message' => 'You have been unsubscribed.',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'teaser' => 0,
+      'rss' => 0,
+      'diff_standard' => 0,
+      'print' => 0,
+      'token' => 0,
+      'revision' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'api_version' => 3,
+    'module' => 'services_advisor_notify',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_default_message_type().
  */
 function services_advisor_notify_default_message_type() {
