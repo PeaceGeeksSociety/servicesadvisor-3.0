@@ -1,3 +1,7 @@
+SA 0.12.1
+---------
+* See #33 - Removing patch 995156-5 from Drupal core that used vocabulary machine names in permission. Features has support without the patch now.
+
 SA 0.12.0
 ---------
 * See #53 - Service Location titles no longer wrap in listings.
