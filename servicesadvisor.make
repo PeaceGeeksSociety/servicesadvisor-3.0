@@ -163,6 +163,9 @@ projects[libraries][version] = "2.3"
 projects[link][subdir] = contrib
 projects[link][version] = "1.4"
 
+projects[mail_logger][subdir] = contrib
+projects[mail_logger][version] = "1.4"
+
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
 
