@@ -78,9 +78,9 @@ function services_advisor_notify_default_message_type() {
     "arguments" : null,
     "message_text" : { "en" : [
         {
-          "value" : "\\u003Cp\\u003EThe service \\u003Cstrong\\u003E[message:field-service-message-service:title]\\u003C\\/strong\\u003E is about to expire.\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003EThe service \\u003Cstrong\\u003E\\u003Ca href=\\u0022[message:field-service-message-service:url:absolute]\\u0022 title=\\u0022[message:field-service-message-service:title]\\u0022\\u003E[message:field-service-message-service:title]\\u003C\\/a\\u003E\\u003C\\/strong\\u003E is about to expire.\\u003C\\/p\\u003E",
           "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003EThe service \\u003Cstrong\\u003E[message:field-service-message-service:title]\\u003C\\/strong\\u003E is about to expire.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EThe service \\u003Cstrong\\u003E\\u003Ca href=\\u0022absolute]\\u0022 title=\\u0022title]\\u0022\\u003E[message:field-service-message-service:title]\\u003C\\/a\\u003E\\u003C\\/strong\\u003E is about to expire.\\u003C\\/p\\u003E\\n"
         }
       ]
     }

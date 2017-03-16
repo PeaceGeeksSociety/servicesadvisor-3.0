@@ -47,6 +47,16 @@ function services_advisor_notify_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'mail_system';
+  $strongarm->value = array(
+    'default-system' => 'DefaultMailSystem',
+    'message_digest_mail' => 'HTMLMailSystem',
+  );
+  $export['mail_system'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'message_subscribe_default_notifiers';
   $strongarm->value = array(
     'digest_day' => 'digest_day',
