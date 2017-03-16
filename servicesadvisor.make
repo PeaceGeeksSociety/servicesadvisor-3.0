@@ -174,12 +174,15 @@ projects[message][version] = "1.12"
 
 projects[message_digest][subdir] = contrib
 projects[message_digest][version] = "1.0"
+projects[message_digest][patch][] = "https://www.drupal.org/files/issues/message-queue-logic-2238833-8.patch"
+projects[message_digest][patch][] = "https://www.drupal.org/files/issues/duplicate-digests-2717863-3.patch"
 
 projects[message_notify][subdir] = contrib
 projects[message_notify][version] = "2.5"
 
 projects[message_subscribe][subdir] = contrib
-projects[message_subscribe][version] = "1.0-rc2"
+projects[message_subscribe][version] = "1.x-dev"
+projects[message_subscribe][download][revision] = "34c74c9e037928c54f7a95561b28bf98eb1e75fa"
 
 projects[migrate][subdir] = contrib
 projects[migrate[version] = "2.8"
