@@ -115,6 +115,34 @@ function services_advisor_notify_flag_access($flag, $entity_id, $action, $accoun
 }
 
 /**
+ * Implements hook_og_membership_insert().
+ *
+ * When a user joins a group set the notifications flag.
+ */
+function services_advisor_notify_og_membership_insert($og_membership) {
+  if ($og_membership->entity_type == 'user') {
+    $flag = flag_get_flag('subscribe_to_partner_nofications');
+    $account = user_load($og_membership->etid);
+
+    $flag->flag('flag', $og_membership['gid'], $account);
+  }
+}
+
+/**
+ * Implements hook_og_membership_delete().
+ *
+ * When a user leaves a group unset the notifications flag.
+ */
+function services_advisor_notify_og_membership_delete($og_membership) {
+  if ($og_membership->entity_type == 'user') {
+    $flag = flag_get_flag('subscribe_to_partner_nofications');
+    $account = user_load($og_membership->etid);
+
+    $flag->flag('unflag', $og_membership['gid'], $account);
+  }
+}
+
+/**
  * Implements hook_og_permission().
  */
 function services_advisor_notify_og_permission() {
