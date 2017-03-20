@@ -303,55 +303,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['path'] = 'service-location-master-list/export';
-  $translatables['service_location_master_list'] = array(
-    t('Master'),
-    t('Service Location Master List'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('author'),
-    t('Username'),
-    t('Published Date'),
-    t('Status'),
-    t('Language'),
-    t('Start Date'),
-    t('End Date'),
-    t('Organization'),
-    t('Services Provided'),
-    t('Availability'),
-    t('Accessibility'),
-    t('Additional Details'),
-    t('Service Location'),
-    t('Public Address / Location Details'),
-    t('Coverage'),
-    t('Legal Documents Required'),
-    t('Nationality'),
-    t('Intake Criteria'),
-    t('Referral Method'),
-    t('Referral Contact Email'),
-    t('Referral Contact Name'),
-    t('Referral Contact Phone'),
-    t('Immediate Next Step'),
-    t('Response Delay'),
-    t('Feedback Mechanism'),
-    t('Complaints Mechanism'),
-    t('Comments'),
-    t('More Info Link Title'),
-    t('More Info Link URL'),
-    t('Service Location Master ID List'),
-    t('A page of all the Service Location nodes with various IDs associated with it.'),
-    t('Data export'),
-  );
   $export['service_location_master_list'] = $view;
 
   $view = new view();
@@ -475,35 +426,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['path'] = 'service-partner-master-list/export';
-  $translatables['service_partner_master_list'] = array(
-    t('Master'),
-    t('Service Partner Master List'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('author'),
-    t('Username'),
-    t('Published Date'),
-    t('Language'),
-    t('Status'),
-    t('Abbreviated Partner Name'),
-    t('[title]'),
-    t('Full Partner Name'),
-    t('Organization Overview'),
-    t('Partner URL'),
-    t('Lists all the details of every Service Partner'),
-    t('Data export'),
-  );
   $export['service_partner_master_list'] = $view;
 
   $view = new view();
@@ -617,33 +539,6 @@ function services_advisor_migration_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['path'] = 'user-master-list/export';
-  $translatables['user_master_list'] = array(
-    t('Master'),
-    t('User Master List'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Username'),
-    t('[name]'),
-    t('Created Date'),
-    t('Status'),
-    t('Email Address'),
-    t('User Roles'),
-    t('Language'),
-    t('Service Organisation'),
-    t('Shows all the values of all the users.'),
-    t('Data export'),
-  );
   $export['user_master_list'] = $view;
 
   return $export;

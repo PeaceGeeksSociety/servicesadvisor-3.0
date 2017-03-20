@@ -174,7 +174,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $export['service_location_complete_importer-accessibility-unique'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->disabled = TRUE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_complete_importer-author_uid-required';
   $feeds_tamper->importer = 'service_location_complete_importer';
@@ -1124,7 +1124,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $export['service_location_importer-service_location__-explode'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->disabled = TRUE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-service_location__-feeds_tamper_array_select';
   $feeds_tamper->importer = 'service_location_importer';
@@ -1199,7 +1199,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $export['service_location_importer-services_provided__-explode'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->disabled = TRUE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-services_provided__-feeds_tamper_array_select';
   $feeds_tamper->importer = 'service_location_importer';
@@ -1318,7 +1318,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $export['service_partner_importer-abbreviated_partner_name__-required'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->disabled = TRUE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_partner_importer-author_email__-required';
   $feeds_tamper->importer = 'service_partner_importer';
