@@ -1,3 +1,8 @@
+SA 0.13.0
+---------
+* See #70 - Better location delete logic.
+* See #69 - Hide empty taxonomy term reference fields.
+
 SA 0.12.2
 ---------
 Fixing feature dependencies.

@@ -582,3 +582,23 @@ function services_advisor_base_get_missing_translations($node) {
 
   return $missing_langs;
 }
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * Hide term reference fields linked to empty vocabularies.
+ */
+function services_advisor_base_field_widget_form_alter(&$element, &$form_state, $context) {
+  $term_fields = array('options_buttons');
+
+  if ($context['field']['type'] == 'taxonomy_term_reference' && in_array($context['instance']['widget']['type'], $term_fields)) {
+    $vocabulary_machine_name = $context['field']['settings']['allowed_values'][0]['vocabulary'];
+    $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
+    $terms = taxonomy_get_tree($vocabulary->vid, 0, 1, false);
+
+    if (empty($terms)) {
+      $element['#access'] = false;
+      $element['#required'] = false;
+    }
+  }
+}
