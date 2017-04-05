@@ -344,34 +344,13 @@ function services_advisor_base_clone_access_alter(&$access, $node) {
 }
 
 /*
- * Implementation of hook_node_insert()
+ * Implements hook_node_insert()
  */
 function services_advisor_base_node_insert($node) {
   if ($node->type == 'service_location' && $node->tnid == 0) {
     $languages = locale_language_list();
     foreach ($languages as $langcode => $language) {
-
-      // Make sure we skip the current language.
-      if ($node->language == $langcode) { continue; }
-
-      $node->translation_source = new stdClass();
-      $node->translation_source->tnid = $node->nid;
-
-      $clone = clone $node;
-      $node->tnid = $node->nid;
-      $clone->tnid = $node->nid;
-
-      unset($clone->nid);
-      unset($clone->vid);
-      unset($clone->title);
-      unset($clone->path);
-
-      $clone->language = $langcode;
-
-      node_save($clone);
-      // Flag the clone node as needing to be updated, then resave. I can't due this before the initial save.
-      $clone->translate = TRUE;
-      node_save($clone);
+      $clone = services_advisor_base_create_translation_clone($node, $langcode);
     }
 
     if ($clone->translate) {
@@ -383,6 +362,25 @@ function services_advisor_base_node_insert($node) {
 
     $title_queue = DrupalQueue::get('service_location_title_queue');
     $title_queue->createItem($node->nid);
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function services_advisor_base_node_delete($node) {
+  if ($node->type == 'service_location' && $node->tnid) {
+    $store = &drupal_static(__FUNCTION__, array());
+
+    if (!isset($store[$node->tnid])) {
+      $store[$node->tnid] = true;
+
+      // Delete translations.
+      $nids = services_advisor_base_get_translations($node);
+      if (!empty($nids)) {
+        node_delete_multiple($nids);
+      }
+    }
   }
 }
 
@@ -501,4 +499,86 @@ function services_advisor_base_node_langauge($field) {
   }
 
   return theme('links', array('links' => $list));
+}
+
+/**
+ * Create a translation of the node for provided langcode. Return node if it
+ * matches the provided langcode.
+ *
+ * @param  $node
+ * @param  $langcode
+ * @param  $save
+ *
+ * @return $clone
+ */
+function services_advisor_base_create_translation_clone($node, $langcode, $save = true) {
+  // Make sure we skip the current language.
+  if ($node->language == $langcode) { return $node; }
+
+  $node->translation_source = new stdClass();
+  $node->translation_source->tnid = $node->nid;
+
+  $clone = clone $node;
+  $node->tnid = $node->nid;
+  $clone->tnid = $node->nid;
+
+  unset($clone->nid);
+  unset($clone->vid);
+  unset($clone->title);
+  unset($clone->path);
+
+  $clone->language = $langcode;
+
+  if ($save) {
+    node_save($clone);
+    // Flag the clone node as needing to be updated, then resave. I can't due this before the initial save.
+    $clone->translate = TRUE;
+    node_save($clone);
+  }
+
+  return $clone;
+}
+
+function services_advisor_base_get_translations($node) {
+  if (is_numeric($node->tnid) && $node->tnid) {
+    $translations = &drupal_static(__FUNCTION__, array());
+
+    if (!isset($translations[$node->tnid])) {
+      $translations[$node->tnid] = array();
+
+      $results = db_select('node', 'n')
+          ->fields('n', array('nid', 'language'))
+          ->condition('n.type', 'service_location')
+          ->condition('n.tnid', $node->tnid)
+          ->condition('n.tnid', 0, '>')
+          ->condition('n.nid', $node->nid, '<>')
+          ->execute();
+
+      foreach ($results as $result) {
+        $translations[$node->tnid][$result->language] = $result->nid;
+      }
+    }
+
+    return $translations[$node->tnid];
+  }
+}
+
+/**
+ * Given a location node. Find which languages are not translated.
+ */
+function services_advisor_base_get_missing_translations($node) {
+  $missing_langs = array();
+  $translations = services_advisor_base_get_translations($node);
+  foreach (locale_language_list() as $langcode => $language_name) {
+    // Skip the given nodes language.
+    if ($node->language == $langcode) {
+      continue;
+    }
+
+    if (!isset($translations[$langcode])) {
+      $missing_langs[] = $langcode;
+    }
+  }
+
+  return $missing_langs;
 }

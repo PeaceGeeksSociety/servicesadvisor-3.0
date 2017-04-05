@@ -5,18 +5,20 @@
  *
  */
 
-function services_advisor_base_install() {
-  $status = variable_get('views_defaults', array());
-  $status['admin_views_user'] = TRUE;
-  variable_set('views_defaults', $status);
-}
-
 /**
- * Update site administrator name to be more accurate.
+ * Recreate missing translation nodes.
  */
-function services_advisor_base_update_7000() {
-  if ($role = user_role_load_by_name('site administrator')) {
-    $role->name = 'manager';
-    user_role_save($role);
+function services_advisor_base_update_7013() {
+  $query = db_select('node', 'n')
+    ->fields('n', array('tnid'))
+    ->condition('n.type', 'service_location')
+    ->groupBy('tnid')
+    ->having('COUNT(nid) < :langnum', array(':langnum' => count(locale_language_list())));
+  $results = $query->execute()->fetchCol();
+
+  foreach (node_load_multiple($results) as $node) {
+    foreach(services_advisor_base_get_missing_translations($node) as $missing_lang) {
+      services_advisor_base_create_translation_clone($node, $missing_lang);
+    }
   }
 }
