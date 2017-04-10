@@ -24,7 +24,7 @@
         });
 
         // Populate geocoder field with marker location.
-        map.on('draw:created draw:edited', function(e) {
+        map.on('draw:created', function(e) {
           var type = e.layerType,
               layer = e.layer;
 
@@ -35,6 +35,18 @@
 
             geocoderInput.val(lat + ', ' + lng);
           }
+        });
+
+        map.on('draw:edited', function(e) {
+          var layers = e.layers;
+
+          layers.eachLayer(function (layer) {
+            var location = layer.getLatLng();
+            var lat = location.lat.toFixed(3);
+            var lng = location.lng.toFixed(3);
+
+            geocoderInput.val(lat + ', ' + lng);
+          });
         });
 
         // Empty geocoder field on layer deletion.
