@@ -604,9 +604,47 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'assign administrator role'.
+  $permissions['assign administrator role'] = array(
+    'name' => 'assign administrator role',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'role_delegation',
+  );
+
   // Exported permission: 'assign all roles'.
   $permissions['assign all roles'] = array(
     'name' => 'assign all roles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: 'assign contributor role'.
+  $permissions['assign contributor role'] = array(
+    'name' => 'assign contributor role',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: 'assign editor role'.
+  $permissions['assign editor role'] = array(
+    'name' => 'assign editor role',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: 'assign manager role'.
+  $permissions['assign manager role'] = array(
+    'name' => 'assign manager role',
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',
