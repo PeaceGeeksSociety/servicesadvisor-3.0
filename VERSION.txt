@@ -1,6 +1,7 @@
 SA 0.14.0
 ---------
 * See #43 - Preventing managers from assigning administrator role.
+* See #45 - Fixing issue where geofield is not updated when marker is moved on widget.
 
 SA 0.13.0
 ---------
