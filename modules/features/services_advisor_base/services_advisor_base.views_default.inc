@@ -455,11 +455,13 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_sector_glyph']['table'] = 'field_data_field_sector_glyph';
   $handler->display->display_options['fields']['field_sector_glyph']['field'] = 'field_sector_glyph';
   $handler->display->display_options['fields']['field_sector_glyph']['label'] = 'glyph';
+  $handler->display->display_options['fields']['field_sector_glyph']['empty'] = 'ocha-sector-logistic';
   /* Field: Taxonomy term: Marker Color */
   $handler->display->display_options['fields']['field_sector_marker_color']['id'] = 'field_sector_marker_color';
   $handler->display->display_options['fields']['field_sector_marker_color']['table'] = 'field_data_field_sector_marker_color';
   $handler->display->display_options['fields']['field_sector_marker_color']['field'] = 'field_sector_marker_color';
   $handler->display->display_options['fields']['field_sector_marker_color']['label'] = 'markerColor';
+  $handler->display->display_options['fields']['field_sector_marker_color']['empty'] = '#999999';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -467,16 +469,12 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'service_nested_categories' => 'service_nested_categories',
   );
-  /* Filter criterion: Taxonomy term: Glyph (field_sector_glyph) */
-  $handler->display->display_options['filters']['field_sector_glyph_value']['id'] = 'field_sector_glyph_value';
-  $handler->display->display_options['filters']['field_sector_glyph_value']['table'] = 'field_data_field_sector_glyph';
-  $handler->display->display_options['filters']['field_sector_glyph_value']['field'] = 'field_sector_glyph_value';
-  $handler->display->display_options['filters']['field_sector_glyph_value']['operator'] = 'not empty';
-  /* Filter criterion: Taxonomy term: Marker Color (field_sector_marker_color) */
-  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['id'] = 'field_sector_marker_color_rgb';
-  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['table'] = 'field_data_field_sector_marker_color';
-  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['field'] = 'field_sector_marker_color_rgb';
-  $handler->display->display_options['filters']['field_sector_marker_color_rgb']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Depth */
+  $handler->display->display_options['filters']['depth']['id'] = 'depth';
+  $handler->display->display_options['filters']['depth']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['depth']['field'] = 'depth';
+  $handler->display->display_options['filters']['depth']['value']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
