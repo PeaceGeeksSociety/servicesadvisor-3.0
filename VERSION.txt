@@ -1,3 +1,7 @@
+SA 0.14.0
+---------
+* See #43 - Preventing managers from assigning administrator role.
+
 SA 0.13.0
 ---------
 * See #70 - Better location delete logic.
