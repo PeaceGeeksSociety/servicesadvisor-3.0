@@ -758,12 +758,12 @@ function services_advisor_base_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'masquerade_admin_roles';
   $strongarm->value = array(
+    7 => '7',
     3 => '3',
-    4 => '4',
     1 => 0,
     2 => 0,
+    4 => 0,
     5 => 0,
-    6 => 0,
   );
   $export['masquerade_admin_roles'] = $strongarm;
 
