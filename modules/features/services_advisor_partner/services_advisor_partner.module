@@ -10,8 +10,13 @@ include_once 'services_advisor_partner.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function services_advisor_partner_form_service_partner_node_form_alter(&$form, &$form_state) {
+  global $user;
+
   $form['author']['name']['#default_value'] = null;
   $form['author']['#access'] = user_access('edit partner author');
+
+  $is_author = $form['#node']->uid == $user->uid;
+  $form['actions']['delete']['#access'] = $is_author ? user_access('delete own service_partner content', $user) : user_access('delete any service_partner content', $user);
 }
 
 /**
