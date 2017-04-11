@@ -632,16 +632,6 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'role_delegation',
   );
 
-  // Exported permission: 'assign editor role'.
-  $permissions['assign editor role'] = array(
-    'name' => 'assign editor role',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
-    'module' => 'role_delegation',
-  );
-
   // Exported permission: 'assign manager role'.
   $permissions['assign manager role'] = array(
     'name' => 'assign manager role',

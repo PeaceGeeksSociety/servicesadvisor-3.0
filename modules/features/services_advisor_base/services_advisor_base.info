@@ -177,7 +177,6 @@ features[user_permission][] = administer views
 features[user_permission][] = assign administrator role
 features[user_permission][] = assign all roles
 features[user_permission][] = assign contributor role
-features[user_permission][] = assign editor role
 features[user_permission][] = assign manager role
 features[user_permission][] = block IP addresses
 features[user_permission][] = bypass node access
