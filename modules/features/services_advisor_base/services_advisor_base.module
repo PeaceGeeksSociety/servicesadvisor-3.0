@@ -77,6 +77,8 @@ function services_advisor_base_service_strings() {
     'CATEGORY' => t('Category'),
     'SEARCH_TEXT' => t('To find a service, select from the category or region below. Use the filter button above to further refine your search.'),
     'REGION' => t('Region'),
+    'PHONE' => t('Hotline / Phone'),
+    'INFO_LINK' => t('More Information'),
     'FILTERS' => t('More Filters'),
     'TOGGLE_MAP' => t('Show/Hide Map'),
     'REFERRAL_REQUIRED' => t('Referral Required'),
