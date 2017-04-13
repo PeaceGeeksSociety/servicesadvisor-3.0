@@ -1055,7 +1055,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_more_info_link']['id'] = 'field_service_more_info_link';
   $handler->display->display_options['fields']['field_service_more_info_link']['table'] = 'field_data_field_service_more_info_link';
   $handler->display->display_options['fields']['field_service_more_info_link']['field'] = 'field_service_more_info_link';
-  $handler->display->display_options['fields']['field_service_more_info_link']['label'] = 'InfoLink';
+  $handler->display->display_options['fields']['field_service_more_info_link']['label'] = 'infoLink';
   $handler->display->display_options['fields']['field_service_more_info_link']['click_sort_column'] = 'url';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
