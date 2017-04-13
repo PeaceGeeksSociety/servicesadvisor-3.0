@@ -1,3 +1,8 @@
+SA 0.14.1
+---------
+* See #74 - Adding more info field to json feed.
+* See #75 - Adding phone field to locations. Adding phone field to json feed.
+
 SA 0.14.0
 ---------
 * See #39 - Users should not be able to delete partners.
