@@ -621,6 +621,21 @@ function services_advisor_location_field_default_field_bases() {
     'type' => 'office_hours',
   );
 
+  // Exported field_base: 'field_service_public_phone'.
+  $field_bases['field_service_public_phone'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_service_public_phone',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'telephone',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'telephone',
+  );
+
   // Exported field_base: 'field_service_referral_method'.
   $field_bases['field_service_referral_method'] = array(
     'active' => 1,

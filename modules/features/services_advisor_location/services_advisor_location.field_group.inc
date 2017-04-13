@@ -93,7 +93,8 @@ function services_advisor_location_field_group_info() {
     'children' => array(
       0 => 'field_service_comments',
       1 => 'field_service_more_info_link',
-      2 => 'path',
+      2 => 'field_service_public_phone',
+      3 => 'path',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

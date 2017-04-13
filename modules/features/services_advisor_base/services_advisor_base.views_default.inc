@@ -228,7 +228,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_related_node_group']['label'] = 'Partner';
   /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_user';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
@@ -1046,6 +1046,17 @@ function services_advisor_base_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_service_office_hours']['delta_offset'] = '0';
+  /* Field: Content: Hotline / Public Phone */
+  $handler->display->display_options['fields']['field_service_public_phone']['id'] = 'field_service_public_phone';
+  $handler->display->display_options['fields']['field_service_public_phone']['table'] = 'field_data_field_service_public_phone';
+  $handler->display->display_options['fields']['field_service_public_phone']['field'] = 'field_service_public_phone';
+  $handler->display->display_options['fields']['field_service_public_phone']['label'] = 'hotlinePhone';
+  /* Field: Content: More Info Link */
+  $handler->display->display_options['fields']['field_service_more_info_link']['id'] = 'field_service_more_info_link';
+  $handler->display->display_options['fields']['field_service_more_info_link']['table'] = 'field_data_field_service_more_info_link';
+  $handler->display->display_options['fields']['field_service_more_info_link']['field'] = 'field_service_more_info_link';
+  $handler->display->display_options['fields']['field_service_more_info_link']['label'] = 'InfoLink';
+  $handler->display->display_options['fields']['field_service_more_info_link']['click_sort_column'] = 'url';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -1320,7 +1331,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_partner_url']['label'] = '';
   $handler->display->display_options['fields']['field_service_partner_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_service_partner_url']['click_sort_column'] = 'url';
-  /* Field: Content: Body */
+  /* Field: Content: Organization Overview */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1472,7 +1483,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_partner_url']['label'] = '';
   $handler->display->display_options['fields']['field_service_partner_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_service_partner_url']['click_sort_column'] = 'url';
-  /* Field: Content: Body */
+  /* Field: Content: Organization Overview */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';

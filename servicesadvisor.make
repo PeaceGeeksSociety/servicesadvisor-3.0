@@ -214,6 +214,9 @@ projects[taxonomy_csv][version] = "5.10"
 projects[taxonomy_term_depth][subdir] = contrib
 projects[taxonomy_term_depth][version] = "1.0-beta3"
 
+projects[telephone][subdir] = contrib
+projects[telephone][version] = "1.0-alpha1"
+
 projects[token][subdir] = contrib
 projects[token][version] = "1.7"
 

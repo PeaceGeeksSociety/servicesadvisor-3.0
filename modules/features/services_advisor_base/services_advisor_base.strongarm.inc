@@ -490,7 +490,7 @@ function services_advisor_base_strongarm() {
           'weight' => '45',
         ),
         'path' => array(
-          'weight' => '17',
+          'weight' => '15',
         ),
         'redirect' => array(
           'weight' => '11',

@@ -103,7 +103,7 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'name' => 'Service Nested Categories',
       'machine_name' => 'service_nested_categories',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -6,
       'language' => 'und',

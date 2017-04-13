@@ -952,7 +952,7 @@ function services_advisor_location_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1263,6 +1263,52 @@ function services_advisor_location_field_default_field_instances() {
       'module' => 'office_hours',
       'settings' => array(),
       'type' => 'office_hours',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-service_location-field_service_public_phone'.
+  $field_instances['node-service_location-field_service_public_phone'] = array(
+    'bundle' => 'service_location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 38,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_service_public_phone',
+    'label' => 'Hotline / Public Phone',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'telephone',
+      'settings' => array(
+        'placeholder' => '',
+      ),
+      'type' => 'telephone_default',
       'weight' => 13,
     ),
   );
@@ -1794,6 +1840,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Feedback Mechanism');
   t('GPS coordinates');
   t('Glyph');
+  t('Hotline / Public Phone');
   t('Hours');
   t('If needed, you can add additional details');
   t('If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present. Enter Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field and will be inserted as marker on the map when you are done. ex. 31.95, 35.583');
