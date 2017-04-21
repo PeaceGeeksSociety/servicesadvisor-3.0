@@ -1270,6 +1270,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'masquerade as any user',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'masquerade',
   );
