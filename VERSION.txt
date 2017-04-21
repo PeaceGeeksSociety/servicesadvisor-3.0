@@ -1,3 +1,9 @@
+SA 0.15.0
+---------
+* See #76 - Service Partners can be authored by anonymous or regular users.
+* See #78 - Managers can masquerade properly again.
+* See #49 - Masquerade switchback link has been added as a message.
+
 SA 0.14.1
 ---------
 * See #74 - Adding more info field to json feed.
