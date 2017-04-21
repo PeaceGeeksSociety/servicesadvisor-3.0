@@ -151,7 +151,7 @@ projects[leaflet_widget][download][type] = git
 projects[leaflet_widget][download][url] = git://git.drupal.org/project/leaflet_widget.git
 projects[leaflet_widget][download][revision] = e2c24f9b
 projects[leaflet_widget][download][branch] = 7.x-2.x
-projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/configurable-draw-handlers-2812687-4.patch"
+projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/configurable-draw-handlers-2812687-6.patch"
 projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/geom-type-ajax-2456915-9.patch"
 
 projects[libraries][subdir] = contrib
