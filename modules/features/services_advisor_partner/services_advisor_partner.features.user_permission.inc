@@ -109,6 +109,7 @@ function services_advisor_partner_user_default_permissions() {
     'name' => 'edit partner author',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'services_advisor_partner',
   );
