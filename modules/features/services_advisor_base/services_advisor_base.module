@@ -7,6 +7,48 @@
 include_once 'services_advisor_base.features.inc';
 
 /**
+ * Implements hook_init().
+ */
+function services_advisor_base_init() {
+  if ($uid = isset($_SESSION['masquerading'])) {
+    global $user;
+
+    drupal_set_message(t('You are masquerading as !user. !switchlink.', array(
+      '!user' => l($user->name, 'user/' . $user->uid),
+      '!switchlink' => l('Switch back', 'masquerade/unswitch', array('query' => array('token' => drupal_get_token('masquerade/unswitch'))))
+    )));
+  }
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function services_advisor_base_user_login(&$edit, $account) {
+  $messages = drupal_get_messages('status');
+  if (isset($messages['status'])) {
+    foreach($messages['status'] as $message) {
+      if($message != t('You are now masquerading as !masq_as.', array('!masq_as' => theme('username', array('account' => $account))))) {
+        drupal_set_message($message, 'status');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function services_advisor_base_user_logout($account) {
+  $messages = drupal_get_messages('status');
+  if (isset($messages['status'])) {
+    foreach($messages['status'] as $message) {
+      if(strpos($message, 'You are masquerading as') === false) {
+        drupal_set_message($message, 'status');
+      }
+    }
+  }
+}
+
+/**
  * Get the Services Advisor version from version.txt
  */
 function services_advisor_base_get_version() {
