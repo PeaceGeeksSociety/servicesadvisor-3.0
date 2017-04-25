@@ -303,7 +303,7 @@ libraries[Leaflet.widget][download][type] = git
 libraries[Leaflet.widget][download][url] = https://github.com/tnightingale/Leaflet.widget.git
 libraries[Leaflet.widget][directory_name] = Leaflet.widget
 libraries[Leaflet.widget][destination] = libraries
-libraries[Leaflet.widget][download][revision] = 668b335
+libraries[Leaflet.widget][download][revision] = 650ee5b
 
 ;-------
 ; Themes
