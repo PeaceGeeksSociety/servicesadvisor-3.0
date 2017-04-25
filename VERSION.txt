@@ -1,3 +1,7 @@
+SA 0.15.1
+---------
+* See #79 - Fixing bug causing multiple markers for service locations.
+
 SA 0.15.0
 ---------
 * See #76 - Service Partners can be authored by anonymous or regular users.
