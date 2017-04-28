@@ -1009,8 +1009,8 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_services_provided_1']['table'] = 'field_data_field_services_provided';
   $handler->display->display_options['fields']['field_services_provided_1']['field'] = 'field_services_provided';
   $handler->display->display_options['fields']['field_services_provided_1']['label'] = 'servicesProvided';
-  $handler->display->display_options['fields']['field_services_provided_1']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_services_provided_1']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_services_provided_1']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
+  $handler->display->display_options['fields']['field_services_provided_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_services_provided_1']['separator'] = '||';
   /* Field: Content: Services Provided */
   $handler->display->display_options['fields']['field_services_provided_2']['id'] = 'field_services_provided_2';
