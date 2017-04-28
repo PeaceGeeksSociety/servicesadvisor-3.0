@@ -1027,7 +1027,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_office_hours']['label'] = 'officeHours';
   $handler->display->display_options['fields']['field_service_office_hours']['click_sort_column'] = 'day';
   $handler->display->display_options['fields']['field_service_office_hours']['settings'] = array(
-    'showclosed' => 'all',
+    'showclosed' => 'open',
     'date_first_day' => '0',
     'daysformat' => 'long',
     'hoursformat' => '2',

@@ -1,3 +1,7 @@
+SA 0.16.0
+---------
+* See #56 - Hiding service hours on closed days.
+
 SA 0.15.1
 ---------
 * See #79 - Fixing bug causing multiple markers for service locations.
