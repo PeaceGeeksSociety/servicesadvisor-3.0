@@ -212,7 +212,8 @@ projects[taxonomy_csv][subdir] = contrib
 projects[taxonomy_csv][version] = "5.10"
 
 projects[taxonomy_term_depth][subdir] = contrib
-projects[taxonomy_term_depth][version] = "1.0-beta3"
+projects[taxonomy_term_depth][version] = "1.0"
+projects[taxonomy_term_depth][patch][] = "https://www.drupal.org/files/issues/2876118-2-division-zero-install.patch"
 
 projects[telephone][subdir] = contrib
 projects[telephone][version] = "1.0-alpha1"
