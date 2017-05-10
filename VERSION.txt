@@ -2,6 +2,7 @@ SA 0.16.0
 ---------
 * See #56 - Hiding service hours on closed days.
 * See #48 - Updating display of categories on client map.
+* See #69 - Hiding taxonomy select lists if there are no terms to choose from.
 
 SA 0.15.1
 ---------
