@@ -633,7 +633,10 @@ function services_advisor_base_get_missing_translations($node) {
  * Hide term reference fields linked to empty vocabularies.
  */
 function services_advisor_base_field_widget_form_alter(&$element, &$form_state, $context) {
-  $term_fields = array('options_buttons');
+  $term_fields = array(
+    'options_buttons',
+    'options_select'
+  );
 
   if ($context['field']['type'] == 'taxonomy_term_reference' && in_array($context['instance']['widget']['type'], $term_fields)) {
     $vocabulary_machine_name = $context['field']['settings']['allowed_values'][0]['vocabulary'];
