@@ -90,7 +90,7 @@ function services_advisor_location_og_group_ref_handling(&$form, &$form_state) {
   $og_admin = user_access('administer group');
   unset($group_options['_none']);
 
-  if (count($group_options) === 1) {
+  if (count($group_options) === 1 && $form['nid']['#value'] === NULL) {
     $default_group = key($group_options);
     $group_field['default']['#default_value'] = $default_group;
     $form['og_group_ref']['#access'] = $og_admin;
