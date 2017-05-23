@@ -1,6 +1,7 @@
 SA 0.17.0
 ---------
 * See #52 - Add a 'Type' field for the Service Partner
+* See #82 - Move the “Additional details” field one section
 
 SA 0.16.0
 ---------
