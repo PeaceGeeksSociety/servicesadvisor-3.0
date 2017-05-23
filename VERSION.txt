@@ -1,7 +1,8 @@
 SA 0.17.0
 ---------
-* See #52 - Add a 'Type' field for the Service Partner
-* See #82 - Move the “Additional details” field one section
+* See #52 - Add a 'Type' field for the Service Partner.
+* See #82 - Move the “Additional details” field one section.
+* See #42 - Show the 'Public Address' field on the Client App record.
 
 SA 0.16.0
 ---------
