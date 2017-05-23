@@ -54,7 +54,7 @@
 	Drupal.behaviors.chosenTrigger = {
 	  attach: function (context, settings) {
 	    $('html', context).once('chosenTrigger', function () {
-        $('#edit-organization , #edit-coverage , #edit-services-provided, #edit-intake-criteria , #edit-accessibility , #edit-coverage , #edit-nationality, #edit-expired-1, #edit-expired-2').on('change', function(evt, params) {
+        $('#edit-organization , #edit-coverage , #edit-services-provided, #edit-intake-criteria , #edit-accessibility , #edit-coverage , #edit-nationality, #edit-partner-type, #edit-expired-1, #edit-expired-2').on('change', function(evt, params) {
           setTimeout(function(){ 
             $('#search-submit-custom').click();
           }, 300);          

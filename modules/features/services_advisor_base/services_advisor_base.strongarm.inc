@@ -48,7 +48,7 @@ function services_advisor_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'chosen_jquery_selector';
-  $strongarm->value = 'select#edit-coverage, select#edit-organization, select#edit-services-provided, select#edit-accessibility, select#edit-intake-criteria, select#edit-nationality';
+  $strongarm->value = 'select#edit-coverage, select#edit-organization, select#edit-services-provided, select#edit-accessibility, select#edit-intake-criteria, select#edit-nationality, select#edit-partner-type';
   $export['chosen_jquery_selector'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -553,13 +553,13 @@ function services_advisor_base_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'language' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '9',
         ),
       ),
       'display' => array(

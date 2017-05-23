@@ -48,7 +48,7 @@ function services_advisor_partner_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -102,7 +102,7 @@ function services_advisor_partner_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -174,6 +174,45 @@ function services_advisor_partner_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-service_partner-field_service_partner_type'.
+  $field_instances['node-service_partner-field_service_partner_type'] = array(
+    'bundle' => 'service_partner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_service_partner_type',
+    'label' => 'Partner Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-service_partner-field_service_partner_url'.
   $field_instances['node-service_partner-field_service_partner_url'] = array(
     'bundle' => 'service_partner',
@@ -226,7 +265,7 @@ function services_advisor_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -281,7 +320,7 @@ function services_advisor_partner_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -292,6 +331,7 @@ function services_advisor_partner_field_default_field_instances() {
   t('Group');
   t('Logo');
   t('Organization Overview');
+  t('Partner Type');
   t('Partner URL');
 
   return $field_instances;

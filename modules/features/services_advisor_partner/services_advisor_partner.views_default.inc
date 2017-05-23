@@ -68,19 +68,6 @@ function services_advisor_partner_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'orglist-temporary';
-  $translatables['orglist_temporary'] = array(
-    t('Master'),
-    t('OrgList Temporary'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Title'),
-    t('Logo'),
-    t('Page'),
-  );
   $export['orglist_temporary'] = $view;
 
   return $export;
