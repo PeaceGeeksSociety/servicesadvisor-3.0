@@ -1058,6 +1058,11 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_service_more_info_link']['label'] = 'infoLink';
   $handler->display->display_options['fields']['field_service_more_info_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_service_more_info_link']['type'] = 'link_absolute';
+  /* Field: Content: Public Address / Location Details */
+  $handler->display->display_options['fields']['field_location_address']['id'] = 'field_location_address';
+  $handler->display->display_options['fields']['field_location_address']['table'] = 'field_data_field_location_address';
+  $handler->display->display_options['fields']['field_location_address']['field'] = 'field_location_address';
+  $handler->display->display_options['fields']['field_location_address']['label'] = 'publicAddress';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
