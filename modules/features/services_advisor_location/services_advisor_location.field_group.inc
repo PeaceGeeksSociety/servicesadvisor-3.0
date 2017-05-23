@@ -152,7 +152,8 @@ function services_advisor_location_field_group_info() {
     'label' => 'General information',
     'weight' => '2',
     'children' => array(
-      0 => 'og_group_ref',
+      0 => 'field_service_location_details',
+      1 => 'og_group_ref',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -184,9 +185,10 @@ function services_advisor_location_field_group_info() {
     'label' => 'General Information',
     'weight' => '1',
     'children' => array(
-      0 => 'field_services_provided',
-      1 => 'og_group_ref',
-      2 => 'title',
+      0 => 'field_service_location_details',
+      1 => 'field_services_provided',
+      2 => 'og_group_ref',
+      3 => 'title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -426,7 +428,6 @@ function services_advisor_location_field_group_info() {
     'children' => array(
       0 => 'field_service_accessibility',
       1 => 'field_service_availability',
-      2 => 'field_service_location_details',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -563,8 +564,7 @@ function services_advisor_location_field_group_info() {
     'children' => array(
       0 => 'field_service_accessibility',
       1 => 'field_service_availability',
-      2 => 'field_service_location_details',
-      3 => 'field_service_office_hours',
+      2 => 'field_service_office_hours',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

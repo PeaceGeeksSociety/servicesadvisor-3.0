@@ -487,7 +487,7 @@ function services_advisor_base_strongarm() {
           'weight' => '12',
         ),
         'title' => array(
-          'weight' => '45',
+          'weight' => '3',
         ),
         'path' => array(
           'weight' => '15',

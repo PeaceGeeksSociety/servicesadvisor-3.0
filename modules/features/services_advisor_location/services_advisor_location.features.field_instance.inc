@@ -816,7 +816,7 @@ function services_advisor_location_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 2,
       ),
       'print' => array(
         'label' => 'inline',
@@ -846,7 +846,7 @@ function services_advisor_location_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 4,
     ),
   );
 
@@ -1279,9 +1279,8 @@ function services_advisor_location_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_plain',
+        'type' => 'hidden',
         'weight' => 38,
       ),
       'print' => array(
@@ -1569,7 +1568,7 @@ function services_advisor_location_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 44,
+      'weight' => 2,
     ),
   );
 
