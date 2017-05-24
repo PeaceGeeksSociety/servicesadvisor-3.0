@@ -507,7 +507,7 @@ function services_advisor_base_strongarm() {
             'visible' => FALSE,
           ),
           'print' => array(
-            'weight' => '29',
+            'weight' => '38',
             'visible' => FALSE,
           ),
         ),

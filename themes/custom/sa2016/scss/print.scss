@@ -127,10 +127,27 @@ div.node-service-location.view-mode-print {
       margin: 15px 0 0 0;
       padding: 15px 0;
     }
-
     > div:first-child .field-label {
       border-top: none;
     }
+
+    > fieldset {
+      padding: 0 50px;
+      border: none;
+      margin-top: 15px;
+      > legend {
+      border-top: 2px solid #e6e8eb;
+        width: 100%;
+        color: #9CA5AA;
+        font-size: 1.17em;
+        font-weight: normal;
+        margin: 15px 0 0 0;
+        padding: 15px 0;
+      }
+    }
+
+
+
   }
 
   .field-name-title h3 {

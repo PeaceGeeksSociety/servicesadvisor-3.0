@@ -84,6 +84,7 @@ features[field_group][] = group_hours|node|service_location|default
 features[field_group][] = group_inline|node|service_location|default
 features[field_group][] = group_inline|node|service_location|teaser
 features[field_group][] = group_location|node|service_location|default
+features[field_group][] = group_location|node|service_location|print
 features[field_group][] = group_nex_steps|node|service_location|default
 features[field_group][] = group_office_info|node|service_location|default
 features[field_group][] = group_reg|node|service_location|default

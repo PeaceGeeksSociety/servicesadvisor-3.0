@@ -376,6 +376,34 @@ function services_advisor_location_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_location|node|service_location|print';
+  $field_group->group_name = 'group_location';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'service_location';
+  $field_group->mode = 'print';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Location',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_service_location',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Location',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-location field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_location|node|service_location|print'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_nex_steps|node|service_location|default';
   $field_group->group_name = 'group_nex_steps';
   $field_group->entity_type = 'node';
