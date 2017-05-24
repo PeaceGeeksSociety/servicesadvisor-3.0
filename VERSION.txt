@@ -2,7 +2,8 @@ SA 0.17.0
 ---------
 * See #42 - Show the 'Public Address' field on the Client App record.
 * See #52 - Add a 'Type' field for the Service Partner.
-* See #62 - Add Map to 'printable' view
+* See #62 - Add Map to 'printable' view.
+* See #81 - Users should be able to login using their email.
 * See #82 - Move the “Additional details” field one section.
 
 SA 0.16.0
