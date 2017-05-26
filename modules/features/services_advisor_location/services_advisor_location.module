@@ -119,9 +119,10 @@ function services_advisor_location_node_presave($node) {
 }
 
 function services_advisor_location_title_runner($nid) {
-  $node = node_load($nid);
-  services_advisor_location_title($node);
-  node_save($node);
+  if ($node = node_load($nid)) {
+    services_advisor_location_title($node);
+    node_save($node);
+  }
 }
 
 function services_advisor_location_title($node) {
