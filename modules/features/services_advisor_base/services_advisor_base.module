@@ -125,6 +125,7 @@ function services_advisor_base_service_strings() {
     'TOGGLE_MAP' => t('Show/Hide Map'),
     'REFERRAL_REQUIRED' => t('Referral Required'),
     'OK' => t('OK'),
+    'ORGANIZATION' => t('Organization'),
     'ORGANIZATIONS' => t('Organizations'),
     'BACK' => t('Back'),
     'SEARCH_RESULTS' => t('Search Results'),
