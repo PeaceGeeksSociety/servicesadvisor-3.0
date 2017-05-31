@@ -843,7 +843,7 @@ function services_advisor_location_field_default_field_instances() {
             'polyline' => 0,
             'rectangle' => 0,
           ),
-          'maxZoom' => 15,
+          'maxZoom' => 17,
           'minZoom' => 3,
           'zoom' => 12,
         ),

@@ -1011,6 +1011,17 @@ function services_advisor_migration_feeds_importer_default() {
             'unique' => FALSE,
             'language' => 'und',
           ),
+          27 => array(
+            'source' => 'Latitude',
+            'target' => 'field_service_location:lat',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          28 => array(
+            'source' => 'Longitude',
+            'target' => 'field_service_location:lon',
+            'unique' => FALSE,
+          ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
@@ -1026,7 +1037,7 @@ function services_advisor_migration_feeds_importer_default() {
     'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
-    'process_in_background' => 1,
+    'process_in_background' => 0,
   );
   $export['service_location_importer'] = $feeds_importer;
 

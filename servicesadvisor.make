@@ -105,6 +105,7 @@ projects[geocoder][version] = "1.3"
 
 projects[geofield][subdir] = contrib
 projects[geofield][version] = "2.3"
+projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-feeds_import_not_saving-2534822-46.patch"
 
 projects[geolocation][subdir] = contrib
 projects[geolocation][version] = "1.6"

@@ -240,6 +240,8 @@ function services_advisor_migration_strongarm() {
     'user_complete_importer-user_roles-unique' => FALSE,
     'user_complete_importer-service_organisation-explode' => FALSE,
     'user_complete_importer-service_organisation-unique' => FALSE,
+    'service_location_importer-latitude-trim' => FALSE,
+    'service_location_importer-longitude-trim' => FALSE,
   );
   $export['default_feeds_tamper'] = $strongarm;
 
