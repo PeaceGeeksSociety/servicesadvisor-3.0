@@ -30,6 +30,18 @@ function services_advisor_migration_feeds_processor_targets($entity_type, $bundl
 }
 
 /**
+ * Implements hook_feeds_processor_targets_alter().
+ */
+function services_advisor_migration_feeds_processor_targets_alter(array &$targets, $entity_type, $bundle) {
+  // taxonomy_feeds_set_target
+  foreach ($targets as $k => &$target) {
+    if (isset($target['callback']) && $target['callback'] == 'taxonomy_feeds_set_target') {
+      $target['callback'] = 'services_advisor_migration_taxonomy_feeds_set_target';
+    }
+  }
+}
+
+/**
  * Example callback specified in hook_feeds_processor_targets().
  *
  * @param FeedsSource $source
@@ -93,4 +105,128 @@ function service_advisor_migration_source_office_hours(FeedsSource $source, $ent
   if (!empty($results)) {
     $entity->{$real_target}[$lang] = $results;
   }
+}
+
+/**
+ * Callback for mapping taxonomy terms.
+ */
+function services_advisor_migration_taxonomy_feeds_set_target(FeedsSource $source, $entity, $target, array $terms, array $mapping) {
+  $language = $mapping['language'];
+
+  // Add in default values.
+  $mapping += array(
+    'term_search' => FEEDS_TAXONOMY_SEARCH_TERM_NAME,
+    'autocreate' => FALSE,
+  );
+
+  $info = field_info_field($target);
+
+  $cache = &drupal_static(__FUNCTION__);
+  if (!isset($cache['allowed_values'][$target])) {
+    $cache['allowed_values'][$target] = taxonomy_allowed_values($info);
+  }
+
+  if (!isset($cache['allowed_vocabularies'][$target])) {
+    foreach ($info['settings']['allowed_values'] as $tree) {
+      if ($vocabulary = taxonomy_vocabulary_machine_name_load($tree['vocabulary'])) {
+        $cache['allowed_vocabularies'][$target][$vocabulary->vid] = $vocabulary->machine_name;
+      }
+    }
+  }
+
+  // Some kind of configuration issue. Perhaps the vocabulary was deleted.
+  // Nothing we can do about it.
+  if (empty($cache['allowed_vocabularies'][$target])) {
+    return;
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+    ->entityCondition('bundle', $cache['allowed_vocabularies'][$target])
+    ->range(0, 1);
+
+
+  $field = isset($entity->$target) ? $entity->$target : array($language => array());
+
+  if (!isset($field[$language])) {
+    $field[$language] = array();
+  }
+
+  // Allow for multiple mappings to the same target.
+  $delta = count($field[$language]);
+
+  // Iterate over all values.
+  foreach ($terms as $term) {
+
+    if ($info['cardinality'] == $delta) {
+      break;
+    }
+
+    $tid = FALSE;
+
+    // FeedsTermElement already is a term.
+    if ($term instanceof FeedsTermElement) {
+      $tid = $term->tid;
+    }
+    else {
+      switch ($mapping['term_search']) {
+
+        // Lookup by name.
+        case FEEDS_TAXONOMY_SEARCH_TERM_NAME:
+          $term = trim($term);
+          $name_query = clone $query;
+          if (strlen($term) && $tids = $name_query->propertyCondition('name', $term)->execute()) {
+
+            // Find the first allowed term.
+            foreach ($tids['taxonomy_term'] as $possible_term) {
+              if (isset($cache['allowed_values'][$target][$possible_term->tid])) {
+                $tid = $possible_term->tid;
+                break;
+              }
+            }
+          }
+          elseif (!$mapping['autocreate'] && strlen($term)) {
+            $source->log('services_advisor_migration', 'Term value %termname not found for field %field', array('%termname' => $term, '%field' => $target), WATCHDOG_WARNING);
+          }
+          elseif ($mapping['autocreate'] && strlen($term)) {
+            $term = (object) array(
+              'name' => drupal_substr($term, 0, 255),
+              'vid' => key($cache['allowed_vocabularies'][$target]),
+              'vocabulary_machine_name' => reset($cache['allowed_vocabularies'][$target]),
+            );
+            // Set language if the taxonomy is multilingual.
+            if ($language !== LANGUAGE_NONE) {
+              $info = entity_get_info('taxonomy_term');
+              if (!empty($info['entity keys']['language'])) {
+                $term->{$info['entity keys']['language']} = $language;
+              }
+            }
+            taxonomy_term_save($term);
+            $tid = $term->tid;
+            // Add to the list of allowed values.
+            $cache['allowed_values'][$target][$tid] = $term->name;
+          }
+          break;
+
+        // Lookup by tid.
+        case FEEDS_TAXONOMY_SEARCH_TERM_ID:
+          if (is_numeric($term)) {
+            $tid = (int) $term;
+          }
+          break;
+
+        // Lookup by GUID.
+        case FEEDS_TAXONOMY_SEARCH_TERM_GUID:
+          $tid = taxonomy_feeds_term_lookup_term_by_guid($term);
+          break;
+      }
+    }
+
+    if ($tid && isset($cache['allowed_values'][$target][$tid])) {
+      $field[$language][] = array('tid' => $tid);
+      $delta++;
+    }
+  }
+
+  $entity->$target = $field;
 }
