@@ -218,6 +218,7 @@ projects[taxonomy_term_depth][patch][] = "https://www.drupal.org/files/issues/28
 
 projects[telephone][subdir] = contrib
 projects[telephone][version] = "1.0-alpha1"
+projects[telephone][patch][] = "https://www.drupal.org/files/issues/telephone-integration-with-feeds-2109227-42.patch"
 
 projects[token][subdir] = contrib
 projects[token][version] = "1.7"
