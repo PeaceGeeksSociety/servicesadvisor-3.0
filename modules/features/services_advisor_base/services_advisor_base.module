@@ -161,7 +161,8 @@ function services_advisor_base_service_strings() {
     'FEEDBACK_MECHANISM' => t('Feedback Mechanism'),
     'FEEDBACK_DELAY' => t('Feedback Delay'),
     'COMPLAINTS_MECHANISM' => t('Complaints Mechanism'),
-    'ADDRESS' => t('Address')
+    'ADDRESS' => t('Address'),
+    'PRINT' => t('Print')
   ));
 }
 
