@@ -884,6 +884,16 @@ function services_advisor_base_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in service_partner_type'.
+  $permissions['delete terms in service_partner_type'] = array(
+    'name' => 'delete terms in service_partner_type',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in service_referral_method'.
   $permissions['delete terms in service_referral_method'] = array(
     'name' => 'delete terms in service_referral_method',
@@ -1058,6 +1068,16 @@ function services_advisor_base_user_default_permissions() {
   // Exported permission: 'edit terms in service_nested_location'.
   $permissions['edit terms in service_nested_location'] = array(
     'name' => 'edit terms in service_nested_location',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in service_partner_type'.
+  $permissions['edit terms in service_partner_type'] = array(
+    'name' => 'edit terms in service_partner_type',
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',
