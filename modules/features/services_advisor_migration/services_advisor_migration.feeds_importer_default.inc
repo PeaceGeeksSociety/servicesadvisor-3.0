@@ -851,176 +851,183 @@ function services_advisor_migration_feeds_importer_default() {
             'language' => 'und',
           ),
           1 => array(
+            'source' => 'Published',
+            'target' => 'status',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          2 => array(
             'source' => 'Language',
             'target' => 'language',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          2 => array(
+          3 => array(
             'source' => 'Start Date *',
             'target' => 'field_service_start_date:start',
             'timezone' => '__SITE__',
             'language' => 'und',
           ),
-          3 => array(
+          4 => array(
             'source' => 'End Date *',
             'target' => 'field_service_end_date:start',
             'timezone' => '__SITE__',
             'language' => 'und',
           ),
-          4 => array(
+          5 => array(
             'source' => 'Organisation Name *',
             'target' => 'og_group_ref:label',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          6 => array(
             'source' => 'Services Provided *',
             'target' => 'field_services_provided',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          7 => array(
             'source' => 'Availability *',
             'target' => 'field_service_availability',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          8 => array(
             'source' => 'Hours *',
             'target' => 'field_service_office_hours:all',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          8 => array(
+          9 => array(
             'source' => 'Accessiblity',
             'target' => 'field_service_accessibility',
             'term_search' => '0',
             'autocreate' => 0,
             'language' => 'und',
           ),
-          9 => array(
+          10 => array(
             'source' => 'Additional Details',
             'target' => 'field_service_location_details',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          11 => array(
             'source' => 'Service Location *',
             'target' => 'field_service_location_location',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          11 => array(
+          12 => array(
             'source' => 'Coverage',
             'target' => 'field_service_coverage',
             'term_search' => '0',
             'autocreate' => 0,
             'language' => 'und',
           ),
-          12 => array(
+          13 => array(
             'source' => 'Public Address/Location Details',
             'target' => 'field_location_address',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          13 => array(
+          14 => array(
             'source' => 'Legal Documents Required',
             'target' => 'field_service_registration_type',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          14 => array(
+          15 => array(
             'source' => 'Nationality *',
             'target' => 'field_service_nationality',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          15 => array(
+          16 => array(
             'source' => 'Intake Criteria',
             'target' => 'field_service_intake_criteria',
             'term_search' => '0',
             'autocreate' => 0,
             'language' => 'und',
           ),
-          16 => array(
+          17 => array(
             'source' => 'Referral Method',
             'target' => 'field_service_referral_method',
             'term_search' => '0',
             'autocreate' => 0,
             'language' => 'und',
           ),
-          17 => array(
+          18 => array(
             'source' => 'Referral Contact Name',
             'target' => 'field_service_contact_name',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          18 => array(
+          19 => array(
             'source' => 'Referral Contact Phone',
             'target' => 'field_service_contact_phone',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          19 => array(
+          20 => array(
             'source' => 'Referral Contact Email',
             'target' => 'field_service_contact_email',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          20 => array(
+          21 => array(
             'source' => 'Immediate Next Step after Referral',
             'target' => 'field_service_referral_next_step',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          21 => array(
+          22 => array(
             'source' => 'Response Delay after Referral',
             'target' => 'field_response_delay_after_refer',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          22 => array(
+          23 => array(
             'source' => 'Feedback Mechanism',
             'target' => 'field_service_feedback_mechanism',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          23 => array(
+          24 => array(
             'source' => 'Feedback Delay',
             'target' => 'field_service_feedback_delay',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          24 => array(
+          25 => array(
             'source' => 'Complaints Mechanism',
             'target' => 'field_complaints_mechanism',
             'term_search' => '0',
             'autocreate' => 0,
             'language' => 'und',
           ),
-          25 => array(
+          26 => array(
             'source' => 'Comments',
             'target' => 'field_service_comments',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          26 => array(
+          27 => array(
             'source' => 'More Info Link (URL)',
             'target' => 'field_service_more_info_link:url',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          27 => array(
+          28 => array(
             'source' => 'Latitude',
             'target' => 'field_service_location:lat',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          28 => array(
+          29 => array(
             'source' => 'Longitude',
             'target' => 'field_service_location:lon',
             'unique' => FALSE,
+            'language' => 'und',
           ),
         ),
         'insert_new' => '1',
