@@ -1,3 +1,7 @@
+SA 0.17.1
+---------
+* See #93 - Fixing issue where geocoder field wouldnt replace old features with new ones on the map.
+
 SA 0.17.0
 ---------
 * See #42 - Show the 'Public Address' field on the Client App record.
