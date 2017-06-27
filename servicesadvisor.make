@@ -154,6 +154,7 @@ projects[leaflet_widget][download][revision] = e2c24f9b
 projects[leaflet_widget][download][branch] = 7.x-2.x
 projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/configurable-draw-handlers-2812687-6.patch"
 projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/geom-type-ajax-2456915-9.patch"
+projects[leaflet_widget][patch][] = "https://www.drupal.org/files/issues/2890105-2-geocoder-cardinality.patch"
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = "2.3"
