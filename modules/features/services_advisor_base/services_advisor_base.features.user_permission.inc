@@ -520,6 +520,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'administer services advisor settings',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'services_advisor_base',
   );
