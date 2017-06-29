@@ -1,6 +1,7 @@
 SA 0.17.1
 ---------
 * See #93 - Fixing issue where geocoder field wouldnt replace old features with new ones on the map.
+* See #93 - Fixing issue where authenticated users could not use the geocoder api.
 
 SA 0.17.0
 ---------

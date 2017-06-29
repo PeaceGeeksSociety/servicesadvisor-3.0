@@ -1157,6 +1157,7 @@ function services_advisor_base_user_default_permissions() {
     'name' => 'geocoder_service_all_handlers',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'geocoder',
   );
