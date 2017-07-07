@@ -59,14 +59,16 @@ h1#site-name {
 
 
 //chosen corrections
-.hierarchical-select-wrapper 
+.hierarchical-select-wrapper
 .chosen-container {
     margin-bottom: 10px;
 }
 .hierarchical-select-wrapper .hierarchical-select .selects .grippie {
 	display:none;
 }
-
+select.chosen-rtl {
+    padding-right: 20px !important;
+}
 
 .absolute {
   position: absolute;
@@ -86,7 +88,7 @@ h1#site-name {
 	.f-dropdown.open::before, .f-dropdown.open::after  {
 	    left: auto !important;
 	    right: 8px !important;
-			
+
 	}
   .inline > li {
     float:right;

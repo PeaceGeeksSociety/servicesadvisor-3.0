@@ -26,7 +26,7 @@
 		}
 	}
   .views-exposed-widget.views-widget-filter-expired {
-    width:100% !important; 
+    width:100% !important;
   }
 	.lang-en &{
 		.views-exposed-widget.views-reset-button,
@@ -37,6 +37,9 @@
 	    right: 20px;
 		}
 	}
+  .lang-ku &,
+  .lang-ps &,
+  .lang-fa &,
 	.lang-ar & {
 		.views-exposed-widget.views-reset-button,
 		.views-exposed-widget.views-submit-button {
@@ -61,7 +64,7 @@
 #views-exposed-form-services-advisor-dashboard-organization-list {
 	#edit-search-wrapper {
 		width:100% !important;
-	} 
+	}
 }
 //custom search btn
 .custom-search-class  {
@@ -98,7 +101,7 @@ i.large {
 	}
 }
 
-//Node service location form 
+//Node service location form
 .node-service_location-form {
 	//alterations//
 	fieldset.date-combo .container-inline-date .date-padding {
@@ -113,19 +116,23 @@ i.large {
 		 > .description {
 			display:none;
 		}
-	} 
+	}
 	.description {
 		color: $sa-black;
 		span {
 			font-size: 12px;
 		}
 	}
-	.dropbox-title { 
+	.dropbox-title {
 		text-align: left;
 	}
-//  .form-type-select {
-//    width:300px !important;
-//  }
+
+#edit-field-service-office-hours-und-presets {
+
+  .fieldset-wrapper {
+    background: none !important;
+  }
+}
 .field-name-field-service-office-hours table {
   width: 96%;
   margin: 0 auto;
@@ -157,7 +164,7 @@ i.large {
 }
 	.field-group-fieldset {
 		border: 0px;
-		
+
 		& > legend {
 	    background: $sa-light-blue;
 	    width: 100%;
@@ -189,9 +196,9 @@ i.large {
 			}
 			legend {
 				color :$sa-black;
-		    background: none; 
-		    padding: 0; 
-		    margin: 0; 
+		    background: none;
+		    padding: 0;
+		    margin: 0;
 		    margin-left: 0;
 				span {
 					background: none;
@@ -248,11 +255,13 @@ i.large {
 #field-location-address-add-more-wrapper,
 #field-service-contact-name-add-more-wrapper,
 #field-service-comments-add-more-wrapper,
+#field-service-public-phone-add-more-wrapper,
 #field-service-more-info-link-add-more-wrapper,
 #field-service-contact-phone-add-more-wrapper,
 #field-service-contact-email-add-more-wrapper
 {
   padding: 20px;
+  padding-bottom: 0;
 	label {
 		color: $sa-black;
 		font-weight: bold;
@@ -307,7 +316,7 @@ i.large {
 	    padding-top: 20px;
 		}
 	}
-}  
+}
 .accordion-navigation {
   >a:after {
     content: "↡";
@@ -336,4 +345,13 @@ fieldset.collapsible > .fieldset-wrapper {
 		}
 	}
 
+}
+
+button.form-submit {
+  margin-top: 20px;
+}
+.rtl-session  {
+  button.form-submit {
+    margin-left: 0 !important;
+  }
 }

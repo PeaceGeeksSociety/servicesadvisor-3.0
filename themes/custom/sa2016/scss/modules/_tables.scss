@@ -1,0 +1,33 @@
+#field-service-office-hours-values {
+  tr td{
+
+    .oh-clear-link {
+      font-size: 11px;
+    }
+
+    position: relative;
+    .oh-add-more-link {
+      position: absolute;
+      top: 0;
+      font-size: 11px;
+      left: 96px;
+    }
+  }
+  .office-hours-block {
+    select {
+      margin-bottom: 0 !important;
+    }
+
+  }
+  .rtl-session & {
+    tr th,
+    tr td {
+
+      text-align: right;
+      .oh-add-more-link {
+        left: auto;
+        right: 96px;
+      }
+    }
+  }
+}
