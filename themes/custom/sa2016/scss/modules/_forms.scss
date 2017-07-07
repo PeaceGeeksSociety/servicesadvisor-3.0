@@ -346,12 +346,31 @@ fieldset.collapsible > .fieldset-wrapper {
 	}
 
 }
-
+.field-type-office-hours {
+  .field-multiple-table {
+    tr td {
+      .form-wrapper .fieldset-wrapper{
+        background:none !important;
+      }
+    }
+  }
+}
 button.form-submit {
   margin-top: 20px;
 }
 .rtl-session  {
   button.form-submit {
     margin-left: 0 !important;
+  }
+  .container-inline-date .date-padding{
+    float: right;
+  }
+}
+#edit-og-group-ref-und{
+  .form-item  {
+    input,
+    select {
+      margin-bottom: 0px;
+    }
   }
 }
