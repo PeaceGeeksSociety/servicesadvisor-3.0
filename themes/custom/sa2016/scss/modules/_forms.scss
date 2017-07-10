@@ -1,131 +1,128 @@
 
 //Chosen select options within the exposed filter's
 .views-exposed-form {
-	background:$sa-light-blue;
-	padding: 20px;
-	margin-bottom: 20px;
-	padding-bottom: 60px;
+  background:$sa-light-blue;
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 60px;
   position: relative;
-	@media #{$small-only} {
-		& {
-			padding-bottom: 80px;
-		}
-	}
-	.views-exposed-widget {
-	  width: 33.3% !important;
-		@media #{$small-only} {
-			& {
-				width: 100% !important;
-			}
-		}
-		.chosen-container {
-	    width: 100% !important;
-			li.search-field input[type="text"] {
-			    height: 32px !important;
-			}
-		}
-	}
+  @media #{$small-only} {
+    & {
+      padding-bottom: 80px;
+    }
+  }
+  .views-exposed-widget {
+    width: 33.3% !important;
+    @media #{$small-only} {
+      & {
+        width: 100% !important;
+      }
+    }
+    .chosen-container {
+      width: 100% !important;
+      li.search-field input[type="text"] {
+          height: 32px !important;
+      }
+    }
+  }
   .views-exposed-widget.views-widget-filter-expired {
     width:100% !important;
   }
-	.lang-en &{
-		.views-exposed-widget.views-reset-button,
-		.views-exposed-widget.views-submit-button {
-			width:100% !important;
-	    position: absolute;
-	    bottom: 20px;
-	    right: 20px;
-		}
-	}
-  .lang-ku &,
-  .lang-ps &,
-  .lang-fa &,
-	.lang-ar & {
-		.views-exposed-widget.views-reset-button,
-		.views-exposed-widget.views-submit-button {
-			width:100% !important;
-	    position: absolute;
-	    bottom: 20px;
-	    left: 20px;
-			.right {
-				float:left !important;
-			}
-		}
-		.views-exposed-widget.views-reset-button {
-//	    left: 100px;
-			.right {
-				float:left !important;
-			}
-		}
-	}
+  .lang-en &{
+    .views-exposed-widget.views-reset-button,
+    .views-exposed-widget.views-submit-button {
+      width:100% !important;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+  .rtl-session & {
+    .views-exposed-widget.views-reset-button,
+    .views-exposed-widget.views-submit-button {
+      width:100% !important;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      .right {
+        float:left !important;
+      }
+    }
+    .views-exposed-widget.views-reset-button {
+//      left: 100px;
+      .right {
+        float:left !important;
+      }
+    }
+  }
 
 }
 
 #views-exposed-form-services-advisor-dashboard-organization-list {
-	#edit-search-wrapper {
-		width:100% !important;
-	}
+  #edit-search-wrapper {
+    width:100% !important;
+  }
 }
 //custom search btn
 .custom-search-class  {
   border-style: solid !important;
   border-width: 1px !important;
-	border-color: #b9b9b9 !important;
-	border-left:0px !important;
-	.rtl-session & {
-			border-left:1px solid #b9b9b9!important;
-			border-right:0px !important;
-	}
+  border-color: #b9b9b9 !important;
+  border-left:0px !important;
+  .rtl-session & {
+      border-left:1px solid #b9b9b9!important;
+      border-right:0px !important;
+  }
 }
 i.large {
   font-size: 25px;
 }
 .form-type-checkboxes  {
-	.form-item.form-type-checkbox {
-		input.form-checkbox {
-	    float: left;
-	    position: relative;
-	    top: 0.2em;
+  .form-item.form-type-checkbox {
+    input.form-checkbox {
+      float: left;
+      position: relative;
+      top: 0.2em;
       .rtl-session & {
-  	    float: right;
+        float: right;
       }
-		}
-		label {
-	    display: block !important;
-	    padding-left: 20px;
+    }
+    label {
+      display: block !important;
+      padding-left: 20px;
       .rtl-session & {
-  	    padding-left: 0px;
-  	    padding-right: 20px;
+        padding-left: 0px;
+        padding-right: 20px;
       }
-		}
-	}
+    }
+  }
 }
 
 //Node service location form
 .node-service_location-form {
-	//alterations//
-	fieldset.date-combo .container-inline-date .date-padding {
-	    padding: 0px !important;
-	}
-	.form-item-field-service-start-date-und-0-value-date {
-		 > .description {
-			display:none;
-		}
-	}
-	.form-item-field-service-end-date-und-0-value-date {
-		 > .description {
-			display:none;
-		}
-	}
-	.description {
-		color: $sa-black;
-		span {
-			font-size: 12px;
-		}
-	}
-	.dropbox-title {
-		text-align: left;
-	}
+  //alterations//
+  fieldset.date-combo .container-inline-date .date-padding {
+      padding: 0px !important;
+  }
+  .form-item-field-service-start-date-und-0-value-date {
+     > .description {
+      display:none;
+    }
+  }
+  .form-item-field-service-end-date-und-0-value-date {
+     > .description {
+      display:none;
+    }
+  }
+  .description {
+    color: $sa-black;
+    span {
+      font-size: 12px;
+    }
+  }
+  .dropbox-title {
+    text-align: left;
+  }
 
 #edit-field-service-office-hours-und-presets {
 
@@ -148,13 +145,13 @@ i.large {
     border:0px;
     background:#E9E6CE;
   }
-	label {
-		color: $sa-black;
-		font-weight: bold;
+  label {
+    color: $sa-black;
+    font-weight: bold;
     .rtl-session & {
       padding-left:20px;
     }
-	}
+  }
   select {
     width:60px !important;
     .rtl-session & {
@@ -162,94 +159,94 @@ i.large {
     }
   }
 }
-	.field-group-fieldset {
-		border: 0px;
+  .field-group-fieldset {
+    border: 0px;
 
-		& > legend {
-	    background: $sa-light-blue;
-	    width: 100%;
-	    padding: 10px;
-			padding: 10px;
-			margin: 0px;
-		}
-		.fieldset-wrapper {
-			background:$sa-light-gray ;
-			fieldset {
-				border: none;
-				margin: 0px;
-				label {
-					color: $sa-black;
-					font-weight: bold;
-				}
-				.chosen-container {
-					width: 300px !important;
-					input {
-				    height: 30px  !important;
-					}
-				}
-				.description {
-					span {
-						color: $sa-black;
-						font-size: 12px;
-					}
-				}
-			}
-			legend {
-				color :$sa-black;
-		    background: none;
-		    padding: 0;
-		    margin: 0;
-		    margin-left: 0;
-				span {
-					background: none;
-					padding: 20px 0 0;
-				}
-			}
-		}
-	}
-	.form-checkboxes {
-	  display: flex;
-	  flex-flow: wrap row;
-	  align-content: space-between;
-	  align-items: stretch;
-		background: #E9E6CE;
+    & > legend {
+      background: $sa-light-blue;
+      width: 100%;
+      padding: 10px;
+      padding: 10px;
+      margin: 0px;
+    }
+    .fieldset-wrapper {
+      background:$sa-light-gray ;
+      fieldset {
+        border: none;
+        margin: 0px;
+        label {
+          color: $sa-black;
+          font-weight: bold;
+        }
+        .chosen-container {
+          width: 300px !important;
+          input {
+            height: 30px  !important;
+          }
+        }
+        .description {
+          span {
+            color: $sa-black;
+            font-size: 12px;
+          }
+        }
+      }
+      legend {
+        color :$sa-black;
+        background: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 0;
+        span {
+          background: none;
+          padding: 20px 0 0;
+        }
+      }
+    }
+  }
+  .form-checkboxes {
+    display: flex;
+    flex-flow: wrap row;
+    align-content: space-between;
+    align-items: stretch;
+    background: #E9E6CE;
     padding: 10px 0;
-		.form-item {
-			flex: 0 1 25%;
-			padding: 0 10px;
-			label {
-				display:inline;
-				margin:0 3px;
-				color: #4d4d4d !important;
-				font-weight: normal !important;
-			}
-			input.form-checkbox {
-		    margin: 0px;
-			}
-		}
-	}
-	.form-type-checkboxes {
-		& > label {
-			color: $sa-black;
-			font-weight: bold;
-		}
-	}
-	.field-type-taxonomy-term-reference ,
-	.form-type-hierarchical-select {
+    .form-item {
+      flex: 0 1 25%;
+      padding: 0 10px;
+      label {
+        display:inline;
+        margin:0 3px;
+        color: #4d4d4d !important;
+        font-weight: normal !important;
+      }
+      input.form-checkbox {
+        margin: 0px;
+      }
+    }
+  }
+  .form-type-checkboxes {
+    & > label {
+      color: $sa-black;
+      font-weight: bold;
+    }
+  }
+  .field-type-taxonomy-term-reference ,
+  .form-type-hierarchical-select {
     margin: 0 20px;
-		.hierarchical-select-wrapper  {
-			background: #E9E6CE;
-			padding: 20px 10px ;
-		}
-		label {
-			color: $sa-black;
-			font-weight: bold;
-		}
-	}
+    .hierarchical-select-wrapper  {
+      background: #E9E6CE;
+      padding: 20px 10px ;
+    }
+    label {
+      color: $sa-black;
+      font-weight: bold;
+    }
+  }
 }
 .form-type-hierarchical-select.form-item-field-service-location-location-und,
 .form-type-hierarchical-select.form-item-field-services-provided-und {
-	margin: 0px !important;
+  margin: 0px !important;
 }
 #field-service-location-details-add-more-wrapper,
 #field-location-address-add-more-wrapper,
@@ -262,15 +259,15 @@ i.large {
 {
   padding: 20px;
   padding-bottom: 0;
-	label {
-		color: $sa-black;
-		font-weight: bold;
-	}
-	.description {
-		span {
-			color:$sa-black;
-		}
-	}
+  label {
+    color: $sa-black;
+    font-weight: bold;
+  }
+  .description {
+    span {
+      color:$sa-black;
+    }
+  }
 }
 #edit-expired-wrapper {
   padding-top: 25px;
@@ -282,13 +279,13 @@ i.large {
 #field-service-contact-name-add-more-wrapper,
 #field-service-contact-phone-add-more-wrapper ,
 #field-service-contact-email-add-more-wrapper{
-	 padding: 0px 20px;
+   padding: 0px 20px;
 }
 #field-service-contact-email-add-more-wrapper {
-	padding-bottom:20px;
+  padding-bottom:20px;
 }
 #field-service-start-date-add-more-wrapper {
-	float: left;
+  float: left;
   fieldset label {
     display:none;
   }
@@ -300,22 +297,22 @@ i.large {
 }
 .field-name-field-complaints-mechanism,
 .field-name-field-services-provided {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 .group-service-location-office,.group-service-referral,.group-service-feedback  {
-	.field-name-field-service-availability,.field-name-field-service-registration-type,.field-name-field-service-referral-next-step  {
-		.form-item.form-type-checkboxes {
-	    margin-top: 0px;
-	    padding-top: 20px;
-		}
-	}
+  .field-name-field-service-availability,.field-name-field-service-registration-type,.field-name-field-service-referral-next-step  {
+    .form-item.form-type-checkboxes {
+      margin-top: 0px;
+      padding-top: 20px;
+    }
+  }
 }
 .group-service-location-details {
-	.field-type-taxonomy-term-reference {
-		.form-item.form-type-hierarchical-select {
-	    padding-top: 20px;
-		}
-	}
+  .field-type-taxonomy-term-reference {
+    .form-item.form-type-hierarchical-select {
+      padding-top: 20px;
+    }
+  }
 }
 .accordion-navigation {
   >a:after {
@@ -329,21 +326,21 @@ i.large {
   }
 }
 .node-service_location-form  >.field-group-fieldset, fieldset.collapsible {
-	padding: 0px;
+  padding: 0px;
 }
 //General form styles
 fieldset.collapsible > .fieldset-wrapper {
-	border: 1px solid $sa-light-blue;
+  border: 1px solid $sa-light-blue;
 }
 .collapsible {
-	.fieldset-legend {
-		.fieldset-title {
-			color:$sa-black;
-			.rtl-session & {
-				padding-right: 20px !important;
-			}
-		}
-	}
+  .fieldset-legend {
+    .fieldset-title {
+      color:$sa-black;
+      .rtl-session & {
+        padding-right: 20px !important;
+      }
+    }
+  }
 
 }
 .field-type-office-hours {

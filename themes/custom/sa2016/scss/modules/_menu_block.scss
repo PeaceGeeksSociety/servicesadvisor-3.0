@@ -2,42 +2,42 @@
   background-color: $sa-light-blue;
 }
 .block-system-main-menu {
-	position: absolute;
-	top: 0px;
+  position: absolute;
+  top: 0px;
 }
 .f-dropdown li.active {
     background: #eee;
 }
 li.language-list-item {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
-	a {
-		margin-left: 10px !important;
-		margin-right: 10px !important;
-	}
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  a {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
 }
 .block-menu-menu-footermenu {
-	li {
-		a {
-			color:white;
-		}
-	}
+  li {
+    a {
+      color:white;
+    }
+  }
 }
 #secondary-menu, .block-locale {
   display: inline-block;
   float: right;
 }
 #secondary-menu {
-	margin-left:10px;
+  margin-left:10px;
 }
 .rtl-session {
-	#secondary-menu, .block-locale {
-	  display: inline-block;
-	  float: left;
-	}
-	#secondary-menu {
-		margin-left:0px;
-		margin-right:10px;
+  #secondary-menu, .block-locale {
+    display: inline-block;
+    float: left;
+  }
+  #secondary-menu {
+    margin-left:0px;
+    margin-right:10px;
 
-	}
+  }
 }
