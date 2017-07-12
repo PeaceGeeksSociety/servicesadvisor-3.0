@@ -162,7 +162,9 @@ function services_advisor_base_service_strings() {
     'FEEDBACK_DELAY' => t('Feedback Delay'),
     'COMPLAINTS_MECHANISM' => t('Complaints Mechanism'),
     'ADDRESS' => t('Address'),
-    'PRINT' => t('Print')
+    'PRINT' => t('Print'),
+    'ADDITIONAL_DETAILS' => t('Additional Details'),
+    'COMMENTS' => t('Comments')
   ));
 }
 
