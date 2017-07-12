@@ -1063,6 +1063,16 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['fields']['field_location_address']['table'] = 'field_data_field_location_address';
   $handler->display->display_options['fields']['field_location_address']['field'] = 'field_location_address';
   $handler->display->display_options['fields']['field_location_address']['label'] = 'publicAddress';
+  /* Field: Content: Additional Details */
+  $handler->display->display_options['fields']['field_service_location_details']['id'] = 'field_service_location_details';
+  $handler->display->display_options['fields']['field_service_location_details']['table'] = 'field_data_field_service_location_details';
+  $handler->display->display_options['fields']['field_service_location_details']['field'] = 'field_service_location_details';
+  $handler->display->display_options['fields']['field_service_location_details']['label'] = 'additionalDetails';
+  /* Field: Content: Comments */
+  $handler->display->display_options['fields']['field_service_comments']['id'] = 'field_service_comments';
+  $handler->display->display_options['fields']['field_service_comments']['table'] = 'field_data_field_service_comments';
+  $handler->display->display_options['fields']['field_service_comments']['field'] = 'field_service_comments';
+  $handler->display->display_options['fields']['field_service_comments']['label'] = 'comments';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',

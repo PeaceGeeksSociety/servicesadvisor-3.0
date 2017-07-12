@@ -25,7 +25,7 @@ projects[chained_selects][subdir] = contrib
 projects[chained_selects][version] = "1.x-dev"
 
 projects[chosen][subdir] = contrib
-projects[chosen][version] = "2.0"
+projects[chosen][version] = "2.1"
 
 projects[color_field][subdir] = contrib
 projects[color_field][version] = "1.8"
@@ -43,7 +43,7 @@ projects[ctools][subdir] = contrib
 projects[ctools][version] = "1.12"
 
 projects[date][subdir] = contrib
-projects[date][version] = "2.9"
+projects[date][version] = "2.10"
 
 projects[datepicker][subdir] = contrib
 projects[datepicker][version] = "1.0"
@@ -67,7 +67,7 @@ projects[entity][subdir] = contrib
 projects[entity][version] = "1.8"
 
 projects[entityreference][subdir] = contrib
-projects[entityreference][version] = "1.2"
+projects[entityreference][version] = "1.4"
 
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entityreference_prepopulate][version] = "1.7"
@@ -98,7 +98,7 @@ projects[field_preset][download][url] = http://git.drupal.org/sandbox/smithmilne
 projects[field_preset][download][revision] = "60b5feb27c13e294cc402ee195246f0a12a0a90e"
 
 projects[file_entity][subdir] = contrib
-projects[file_entity][version] = "2.0-beta3"
+projects[file_entity][version] = "2.3"
 
 projects[geocoder][subdir] = contrib
 projects[geocoder][version] = "1.3"
@@ -121,12 +121,10 @@ projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = "2.3"
 
 projects[hierarchical_select][subdir] = contrib
-projects[hierarchical_select][version] = "3.0-beta7"
-projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/feature-code-export-error-2764871-4.patch"
-projects[hierarchical_select][patch][] = "https://www.drupal.org/files/issues/hierarchical_select-fix_selection_keys-2719141-22-7.x-3.x-dev.patch"
+projects[hierarchical_select][version] = "3.0-beta8"
 
 projects[i18n][subdir] = contrib
-projects[i18n][version] = "1.15"
+projects[i18n][version] = "1.18"
 
 projects[i18nviews][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
@@ -239,7 +237,7 @@ projects[unique_field][subdir] = contrib
 projects[unique_field][version] = "1.0-rc1"
 
 projects[uuid][subdir] = contrib
-projects[uuid][version] = "1.0-beta2"
+projects[uuid][version] = "1.0"
 
 projects[uif][subdir] = contrib
 projects[uif][version] = "1.5"
@@ -254,7 +252,7 @@ projects[varnish][subdir] = contrib
 projects[varnish][version] = "1.1"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.15"
+projects[views][version] = "3.16"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
 
 projects[views_aggregator][subdir] = contrib
@@ -264,7 +262,7 @@ projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.4"
 
 projects[views_data_export][subdir] = contrib
-projects[views_data_export][version] = "3.1"
+projects[views_data_export][version] = "3.2"
 
 projects[views_datasource][subdir] = contrib
 projects[views_datasource][version] = "1.0-alpha2"
@@ -274,7 +272,7 @@ projects[views_geojson][subdir] = contrib
 projects[views_geojson][version] = "1.0-beta3"
 
 projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][version] = "2.3"
+projects[wysiwyg][version] = "2.4"
 
 ;----------
 ; Libraries
