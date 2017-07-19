@@ -679,7 +679,7 @@ function services_advisor_migration_feeds_tamper_default() {
   $export['service_location_importer-availability__-explode'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->disabled = TRUE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-availability__-required';
   $feeds_tamper->importer = 'service_location_importer';

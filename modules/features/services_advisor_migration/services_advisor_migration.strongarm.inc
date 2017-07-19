@@ -74,7 +74,7 @@ function services_advisor_migration_strongarm() {
     'service_location_importer-services_provided__-required' => FALSE,
     'service_location_importer-services_provided__-explode' => FALSE,
     'service_location_importer-services_provided__-trim' => FALSE,
-    'service_location_importer-availability__-required' => FALSE,
+    'service_location_importer-availability__-required' => TRUE,
     'service_location_importer-availability__-explode' => FALSE,
     'service_location_importer-service_location__-required' => FALSE,
     'service_location_importer-service_location__-explode' => FALSE,
