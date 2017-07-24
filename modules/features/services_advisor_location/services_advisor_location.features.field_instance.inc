@@ -1634,6 +1634,7 @@ function services_advisor_location_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -1649,6 +1650,7 @@ function services_advisor_location_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1771,6 +1773,40 @@ function services_advisor_location_field_default_field_instances() {
       'settings' => array(),
       'type' => 'color_field_plain_text',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-service_nested_location-field_location_area'.
+  $field_instances['taxonomy_term-service_nested_location-field_location_area'] = array(
+    'bundle' => 'service_nested_location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_location_area',
+    'label' => 'Location Area',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geofield',
+      'settings' => array(),
+      'type' => 'geofield_geojson',
+      'weight' => 32,
     ),
   );
 
@@ -1900,6 +1936,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Immediate Next Step after Referral');
   t('Intake Criteria');
   t('Legal Documents Required');
+  t('Location Area');
   t('Location Point');
   t('Marker Color');
   t('More Info Link');
