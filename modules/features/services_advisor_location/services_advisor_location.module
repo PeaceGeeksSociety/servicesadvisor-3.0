@@ -73,6 +73,91 @@ function services_advisor_location_form_service_location_node_form_alter(&$form,
   services_advisor_location_og_group_ref_handling($form, $form_state);
 
   $form['#validate'][] = 'services_advisor_location_location_date_validate';
+
+  $term_ref_field_name = 'field_service_location_location';
+  $term_geofield = 'field_location_area';
+  ___inject_service_location_areas_map_js($form, $form_state, $term_ref_field_name, $term_geofield);
+}
+
+function ___inject_service_location_areas_map_js(&$form, &$form_state, $term_ref_field, $term_geofield) {
+  $field_settings = $form_state['field'][$term_ref_field][LANGUAGE_NONE]['field']['settings'];
+  $allowed_values = $field_settings['allowed_values'];
+  $vocabularies = array_map(
+    function ($allowed) {return $allowed['vocabulary'];},
+    $allowed_values
+  );
+
+  $terms = ___load_taxonomy_terms($vocabularies);
+  $term_geodata = array_map(___extract_term_geodata_as_geojson($term_geofield), $terms);
+
+  $map_settings = variable_get('services_advisor_location_default_map_settings', array(
+    'lat' => 31.95,
+    'lng' => 35.583,
+    'zoom' => 9
+  ));
+
+  $form['#attached']['js'][] = [
+    'type' => 'setting',
+    'data' => [
+      'service_location_areas' => [
+        'areas' => $term_geodata,
+        'defaults' => $map_settings
+      ]
+    ]
+  ];
+  $form['#attached']['js'][] = drupal_get_path('module', 'services_advisor_location') . '/js/service-location-areas.js';
+}
+
+function ___load_taxonomy_terms($vocabularies) {
+  $entity_type = 'taxonomy_term';
+  $result = (new EntityFieldQuery())
+    ->entityCondition('entity_type', $entity_type)
+    ->entityCondition('bundle', $vocabularies)
+    ->execute();
+
+  $tids = array_keys($result[$entity_type]);
+  $terms = taxonomy_term_load_multiple($tids);
+
+  return $terms;
+}
+
+function ___extract_term_geodata_as_geojson($geofield) {
+  geophp_load();
+
+  return function ($term) use ($geofield) {
+    // TODO: Memoize this function.
+    $geojson = [
+      'type' => 'FeatureCollection',
+      'features' => []
+    ];
+
+    if (!empty($term->{$geofield})) {
+      $geojson['features'] = array_map(
+        function ($geofield_value) {
+          // NOTE: This is brutal but unfortunately, despite the input format,
+          //       Geofield stores geodata as WKT and we need it as GeoJSON.
+          $wkt = $geofield_value['geom'];
+          $geom = geoPHP::load($wkt, 'wkt');
+          // NOTE: Doubly brutal; geoPHP doesn't provide ability to return
+          //       intermediate geojson object graph, instead it returns geojson
+          //       as a string. We want to pass data to client via
+          //       drupal_add_js() 'settings' which does its own js object
+          //       encoding. If we passed strings, they would need to be decoded
+          //       individually client-side.
+          $geojson_geometry = json_decode($geom->out('json'));
+          $bbox = $geom->getBBox();
+          return [
+            "type" => "Feature",
+            "geometry" => $geojson_geometry,
+            "properties" => ["bbox" => $bbox]
+          ];
+        },
+        $term->{$geofield}[LANGUAGE_NONE]
+      );
+    }
+
+    return $geojson;
+  };
 }
 
 /**
