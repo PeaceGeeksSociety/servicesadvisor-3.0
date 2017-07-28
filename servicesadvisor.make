@@ -163,6 +163,9 @@ projects[link][version] = "1.4"
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
 
+projects[memcache][subdir] = contrib
+projects[memcache][version] = "1.6"
+
 projects[migrate][subdir] = contrib
 projects[migrate[version] = "2.8"
 
