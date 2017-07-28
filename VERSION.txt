@@ -1,3 +1,9 @@
+SA 0.18.0
+---------
+* See #108 - Add pagination support for json feed.
+* See #109 - Performance Improvements.
+* See #110 - Leaflet cluster coloring.
+
 SA 0.17.1
 ---------
 * See #93 - Fixing issue where geocoder field wouldnt replace old features with new ones on the map.
