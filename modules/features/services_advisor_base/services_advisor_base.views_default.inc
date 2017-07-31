@@ -827,11 +827,16 @@ function services_advisor_base_views_default_views() {
     'service_referral_next_step' => 0,
     'service_response_delay' => 0,
   );
+  /* Field: Content translation: Translation set node ID */
+  $handler->display->display_options['fields']['tnid']['id'] = 'tnid';
+  $handler->display->display_options['fields']['tnid']['table'] = 'node';
+  $handler->display->display_options['fields']['tnid']['field'] = 'tnid';
+  $handler->display->display_options['fields']['tnid']['label'] = 'id';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = 'id';
+  $handler->display->display_options['fields']['nid']['label'] = 'originalId';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
   $handler->display->display_options['fields']['title_2']['table'] = 'node';
