@@ -434,7 +434,7 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1000';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_json';
-  $handler->display->display_options['style_options']['top_child_object'] = 'sector';
+  $handler->display->display_options['style_options']['top_child_object'] = '';
   $handler->display->display_options['style_options']['plaintext_output'] = 1;
   $handler->display->display_options['style_options']['remove_newlines'] = 0;
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
