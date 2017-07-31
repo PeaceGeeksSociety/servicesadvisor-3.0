@@ -431,7 +431,8 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1000';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_json';
   $handler->display->display_options['style_options']['top_child_object'] = 'sector';
   $handler->display->display_options['style_options']['plaintext_output'] = 1;
@@ -445,23 +446,63 @@ function services_advisor_base_views_default_views() {
   $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
   $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
   $handler->display->display_options['style_options']['char_encoding'] = array();
+  /* Relationship: Parent */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['ui_name'] = 'Parent';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = 'id';
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Taxonomy term: Depth */
+  $handler->display->display_options['fields']['depth']['id'] = 'depth';
+  $handler->display->display_options['fields']['depth']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['depth']['field'] = 'depth';
+  $handler->display->display_options['fields']['depth']['label'] = 'depth';
+  $handler->display->display_options['fields']['depth']['separator'] = '';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['tid_1']['label'] = 'parentId';
+  $handler->display->display_options['fields']['tid_1']['separator'] = '';
   /* Field: Taxonomy term: Name (translated) */
   $handler->display->display_options['fields']['name_i18n']['id'] = 'name_i18n';
   $handler->display->display_options['fields']['name_i18n']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_i18n']['field'] = 'name_i18n';
   $handler->display->display_options['fields']['name_i18n']['label'] = 'name';
+  /* Field: Taxonomy term: Weight */
+  $handler->display->display_options['fields']['weight']['id'] = 'weight';
+  $handler->display->display_options['fields']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['weight']['field'] = 'weight';
+  $handler->display->display_options['fields']['weight']['label'] = 'weight';
+  $handler->display->display_options['fields']['weight']['separator'] = '';
   /* Field: Taxonomy term: Glyph */
   $handler->display->display_options['fields']['field_sector_glyph']['id'] = 'field_sector_glyph';
   $handler->display->display_options['fields']['field_sector_glyph']['table'] = 'field_data_field_sector_glyph';
   $handler->display->display_options['fields']['field_sector_glyph']['field'] = 'field_sector_glyph';
   $handler->display->display_options['fields']['field_sector_glyph']['label'] = 'glyph';
-  $handler->display->display_options['fields']['field_sector_glyph']['empty'] = 'ocha-sector-logistic';
   /* Field: Taxonomy term: Marker Color */
   $handler->display->display_options['fields']['field_sector_marker_color']['id'] = 'field_sector_marker_color';
   $handler->display->display_options['fields']['field_sector_marker_color']['table'] = 'field_data_field_sector_marker_color';
   $handler->display->display_options['fields']['field_sector_marker_color']['field'] = 'field_sector_marker_color';
   $handler->display->display_options['fields']['field_sector_marker_color']['label'] = 'markerColor';
-  $handler->display->display_options['fields']['field_sector_marker_color']['empty'] = '#999999';
+  /* Sort criterion: Taxonomy term: Depth */
+  $handler->display->display_options['sorts']['depth']['id'] = 'depth';
+  $handler->display->display_options['sorts']['depth']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['depth']['field'] = 'depth';
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -470,11 +511,6 @@ function services_advisor_base_views_default_views() {
     'service_nested_categories' => 'service_nested_categories',
   );
   $handler->display->display_options['filters']['machine_name']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Depth */
-  $handler->display->display_options['filters']['depth']['id'] = 'depth';
-  $handler->display->display_options['filters']['depth']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['depth']['field'] = 'depth';
-  $handler->display->display_options['filters']['depth']['value']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
