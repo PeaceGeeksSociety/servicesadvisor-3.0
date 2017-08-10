@@ -118,6 +118,7 @@ function services_advisor_base_service_strings() {
   drupal_json_output(array(
     'CATEGORY' => t('Category'),
     'SEARCH_TEXT' => t('To find a service, select from the category or region below. Use the filter button above to further refine your search.'),
+    'SEARCH' => t('Search...'),
     'REGION' => t('Region'),
     'PHONE' => t('Hotline / Phone'),
     'INFO_LINK' => t('More Information'),
