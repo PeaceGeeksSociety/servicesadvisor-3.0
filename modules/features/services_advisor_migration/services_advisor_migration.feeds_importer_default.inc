@@ -1037,6 +1037,11 @@ function services_advisor_migration_feeds_importer_default() {
             'unique' => FALSE,
             'language' => 'und',
           ),
+          30 => array(
+            'source' => 'Hotline / Public Phone',
+            'target' => 'field_service_public_phone',
+            'unique' => FALSE,
+          ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',

@@ -242,6 +242,7 @@ function services_advisor_migration_strongarm() {
     'user_complete_importer-service_organisation-unique' => FALSE,
     'service_location_importer-latitude-trim' => FALSE,
     'service_location_importer-longitude-trim' => FALSE,
+    'service_location_importer-hotline___public_phone-trim' => FALSE,
   );
   $export['default_feeds_tamper'] = $strongarm;
 

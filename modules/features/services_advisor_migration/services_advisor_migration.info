@@ -102,6 +102,7 @@ features[feeds_tamper][] = service_location_importer-end_date__-required
 features[feeds_tamper][] = service_location_importer-feedback_delay-trim
 features[feeds_tamper][] = service_location_importer-feedback_mechanism-explode
 features[feeds_tamper][] = service_location_importer-feedback_mechanism-trim
+features[feeds_tamper][] = service_location_importer-hotline___public_phone-trim
 features[feeds_tamper][] = service_location_importer-immediate_next_step_after_referral-explode
 features[feeds_tamper][] = service_location_importer-immediate_next_step_after_referral-trim
 features[feeds_tamper][] = service_location_importer-intake_criteria-explode
