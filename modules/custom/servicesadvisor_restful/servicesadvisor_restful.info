@@ -1,0 +1,6 @@
+name = "Services Advisor RESTful"
+description = "RESTful bindings for Services Advisor content types."
+core = 7.x
+dependencies[] = restful
+
+registry_autoload[] = PSR-4

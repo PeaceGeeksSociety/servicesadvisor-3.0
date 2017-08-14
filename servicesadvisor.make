@@ -196,11 +196,20 @@ projects[og][version] = "2.9"
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = "1.3"
 
+projects[plug][subdir] = contrib
+projects[plug][version] = "1.1"
+
 projects[print][subdir] = contrib
 projects[print][version] = "2.0"
 
 projects[redirect][subdir] = contrib
 projects[redirect][version] = "1.0-rc3"
+
+projects[registry_autoload][subdir] = contrib
+projects[registry_autoload][version] = "1.3"
+
+projects[restful][subdir] = contrib
+projects[restful][version] = "2.16"
 
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][version] = "1.1"
