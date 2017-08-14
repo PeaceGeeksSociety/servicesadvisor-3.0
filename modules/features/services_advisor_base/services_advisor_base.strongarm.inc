@@ -682,11 +682,12 @@ function services_advisor_base_strongarm() {
     16 => 'field_service_start_date',
     17 => 'field_services_provided',
     18 => 'og_group_ref',
-    19 => 'uid',
-    20 => 'status',
-    21 => 'created',
-    22 => 'promote',
-    23 => 'sticky',
+    19 => 'field_service_public_phone',
+    20 => 'uid',
+    21 => 'status',
+    22 => 'created',
+    23 => 'promote',
+    24 => 'sticky',
   );
   $export['i18n_sync_node_type_service_location'] = $strongarm;
 
