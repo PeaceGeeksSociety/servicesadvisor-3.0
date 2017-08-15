@@ -194,24 +194,7 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
       'property' => 'field_service_comments'
     ];
 
-    $public_fields['custom'] = [
-      'callback' => [$this, 'getCustomField']
-    ];
-
     return $public_fields;
-  }
-
-  public function getCustomField(DataInterpreterInterface $data) {
-    $node = $data->getWrapper()->value();
-    // -s([
-    //   // 'node' => $node,
-    //   'nid' => $node->nid,
-    //   'tnid' => $node->tnid,
-    //   'language' => $node->language,
-    //   'translate' => $node->translate,
-    //   'title' => $node->title,
-    // ]);
-    return "test";
   }
 
 }
