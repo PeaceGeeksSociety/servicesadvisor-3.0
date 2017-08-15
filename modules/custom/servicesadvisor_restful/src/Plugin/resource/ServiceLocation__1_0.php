@@ -28,7 +28,7 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  *     "range": 500
  *   },
  *   renderCache = {
- *     "render": FALSE
+ *     "render": TRUE
  *   },
  *   majorVersion = 1,
  *   minorVersion = 0
