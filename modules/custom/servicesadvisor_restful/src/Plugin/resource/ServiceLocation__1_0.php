@@ -167,7 +167,20 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     ];
 
     $public_fields['officeHours'] = [
-      'property' => 'field_service_office_hours'
+      'property' => 'field_service_office_hours',
+      'process_callbacks' => [function ($value) {
+        return array_map(
+          function ($value) {
+            $daynames = date_week_days(TRUE);
+            return [
+              'day' => $daynames[intval($value['day'])],
+              'start' => _office_hours_time_to_24hr($value['starthours']),
+              'end' => _office_hours_time_to_24hr($value['endhours'])
+            ];
+          },
+          $value
+        );
+      }]
     ];
 
     $public_fields['hotlinePhone'] = [
