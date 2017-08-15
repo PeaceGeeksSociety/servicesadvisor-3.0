@@ -53,6 +53,10 @@ class ServicePartner__1_0 extends ResourceNode implements ResourceInterface {
   public function publicFields() {
     $public_fields = parent::publicFields();
 
+    // Disabling unneeded default fields.
+    $public_fields['self']['methods'] = [];
+    $public_fields['label']['methods'] = [];
+
     $public_fields['title'] = [
       'property' => 'title'
     ];
