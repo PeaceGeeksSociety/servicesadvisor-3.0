@@ -218,11 +218,12 @@ function ___flattenMultiField($multiField, $wrapperMethod, $default) {
   };
 }
 
-function ___getGeofieldAsGeoJSON($getGeofieldValue, $default = '') {
-  return function (DataInterpreterInterface $data) use ($getGeofieldValue, $default) {
-    $value = $getGeofieldValue($data);
+function ___getGeofieldAsGeoJSON($getGeofield, $default = '') {
+  return function (DataInterpreterInterface $data) use ($getGeofield, $default) {
+    $geofield = $getGeofield($data);
+    $value = $geofield->value();
 
-    if (!$wkt = $value->geom->value()) {
+    if (!$value || !$wkt = $geofield->geom->value()) {
       return $default;
     }
 
