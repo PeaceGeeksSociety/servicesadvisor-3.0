@@ -96,6 +96,14 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
       'property' => 'title'
     ];
 
+    $public_fields['nationality'] = [
+      'callback' => ___flattenMultiField('field_service_nationality', 'label', '')
+    ];
+
+    $public_fields['intakeCriteria'] = [
+      'callback' => ___flattenMultiField('field_service_intake_criteria', 'label', '')
+    ];
+
     $public_fields['language'] = [
       'property' => 'language'
     ];
@@ -227,7 +235,7 @@ function ___getNodeProperty($property) {
 function ___flattenMultiField($multiField, $wrapperMethod, $default) {
   return function (DataInterpreterInterface $data) use ($multiField, $wrapperMethod, $default) {
     $collection = $data->getWrapper()->{$multiField};
-    return ___map($collection, ___callMethod($wrapperMethod, $default));
+    return implode(', ', ___map($collection, ___callMethod($wrapperMethod, $default)));
   };
 }
 
