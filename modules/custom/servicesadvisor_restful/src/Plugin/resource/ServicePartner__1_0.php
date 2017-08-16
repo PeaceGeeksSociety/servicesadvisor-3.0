@@ -24,6 +24,9 @@ use Drupal\restful\Util\EntityFieldQuery;
  *       "service_partner"
  *     }
  *   },
+ *   renderCache = {
+ *     "render": TRUE
+ *   },
  *   majorVersion = 1,
  *   minorVersion = 0
  * )
