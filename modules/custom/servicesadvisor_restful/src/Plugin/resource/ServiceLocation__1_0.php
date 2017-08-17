@@ -79,7 +79,7 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     ];
 
     $public_fields['region'] = [
-      'property' => 'title'
+      'property' => 'field_service_location_location'
     ];
 
     $public_fields['startDate'] = [
