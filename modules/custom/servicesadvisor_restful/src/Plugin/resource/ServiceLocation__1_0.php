@@ -18,8 +18,8 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  *   resource = "service_location",
  *   label = "Service Location",
  *   description = "Services Advisor Service Location entity",
- *   authenticationTypes = TRUE,
- *   authenticationOptional = TRUE,
+ *   authenticationTypes = {"basic_auth"},
+ *   authenticationOptional = FALSE,
  *   dataProvider = {
  *     "entityType": "node",
  *     "bundles": {
