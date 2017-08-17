@@ -16,7 +16,7 @@ use Drupal\restful\Util\EntityFieldQuery;
  *   resource = "service_partner",
  *   label = "Service Partner",
  *   description = "Services Advisor Service Partner entity",
- *   authenticationTypes = {"basic_auth"},
+ *   authenticationTypes = {"basic_auth", "cookie"},
  *   authenticationOptional = FALSE,
  *   dataProvider = {
  *     "entityType": "node",
