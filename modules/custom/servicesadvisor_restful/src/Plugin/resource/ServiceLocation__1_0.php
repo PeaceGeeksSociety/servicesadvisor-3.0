@@ -25,7 +25,7 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  *     "bundles": {
  *       "service_location"
  *     },
- *     "range": 500
+ *     "range": 250
  *   },
  *   renderCache = {
  *     "render": TRUE
@@ -189,10 +189,6 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
           $value
         );
       }]
-    ];
-
-    $public_fields['hotlinePhone'] = [
-      'property' => 'field_service_public_phone'
     ];
 
     $public_fields['hotlinePhone'] = [
