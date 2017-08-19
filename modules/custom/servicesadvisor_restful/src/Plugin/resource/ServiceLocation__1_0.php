@@ -27,6 +27,7 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  *     },
  *     "range": 250
  *   },
+ *   formatter = "json",
  *   renderCache = {
  *     "render": TRUE
  *   },
@@ -35,6 +36,8 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  * )
  */
 class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
+
+  use FieldFormatterTrait;
 
   public function discover($path = NULL) {
     return NULL;
@@ -157,17 +160,18 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     ];
 
     $public_fields['location'] = [
-      'callback' => ___getGeofieldAsGeoJSON(function (DataInterpreterInterface $data) {
-        $wrapper = $data->getWrapper();
-        return $wrapper->field_service_location_location->field_location_point;
-      })
+      'property' => 'field_service_location_location',
+      'resource' => [
+        'name' => 'service_region',
+        'majorVersion' => 1,
+        'minorVersion' => 0
+      ]
     ];
 
     $public_fields['locationAlternate'] = [
-      'callback' => ___getGeofieldAsGeoJSON(function (DataInterpreterInterface $data) {
-        $wrapper = $data->getWrapper();
-        return $wrapper->field_service_location;
-      })
+      'property' => 'field_service_location',
+      'sub_property' => 'geom',
+      'process_callbacks' => [array($this, '___format_geojson')]
     ];
 
     $public_fields['servicesProvided'] = [

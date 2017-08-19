@@ -21,6 +21,9 @@ use Drupal\restful\Util\EntityFieldQuery;
  *   dataProvider = {
  *     "entityType": "taxonomy_term"
  *   },
+ *   renderCache = {
+ *     "render": FALSE
+ *   },
  *   majorVersion = 1,
  *   minorVersion = 0
  * )
@@ -54,7 +57,26 @@ class TaxonomyTerm__1_0 extends ResourceEntity implements ResourceInterface {
       'property' => 'name'
     ];
 
+    unset($public_fields['self']);
+
+    $public_fields['parentId'] = array(
+      'property' => 'parent',
+      'sub_property' => 'tid'
+    );
+    $public_fields['depth'] = array(
+      'callback' => ___getProperty('depth')
+    );
+    $public_fields['weight'] = array(
+        'property' => 'weight'
+    );
+
     return $public_fields;
   }
 
+}
+
+function ___getProperty($property) {
+  return function (DataInterpreterInterface $data) use ($property) {
+    return $data->getWrapper()->value()->{$property};
+  };
 }

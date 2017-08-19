@@ -889,6 +889,20 @@ function services_advisor_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'restful_enable_users_resource';
+  $strongarm->value = '0';
+  $export['restful_enable_users_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'restful_enable_user_login_resource';
+  $strongarm->value = '0';
+  $export['restful_enable_user_login_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_404';
   $strongarm->value = '';
   $export['site_404'] = $strongarm;

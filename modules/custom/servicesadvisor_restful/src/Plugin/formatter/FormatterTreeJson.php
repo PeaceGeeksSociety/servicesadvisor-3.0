@@ -7,6 +7,12 @@ use Drupal\restful\Plugin\formatter\FormatterJson;
 use Drupal\restful\Plugin\formatter\FormatterInterface;
 use Drupal\restful\RenderCache\Entity\CacheFragment;
 
+use Drupal\restful\Exception\BadRequestException;
+use Drupal\restful\Exception\InternalServerErrorException;
+use Drupal\restful\Plugin\resource\Field\ResourceFieldCollectionInterface;
+use Drupal\restful\Plugin\resource\Field\ResourceFieldInterface;
+use Drupal\restful\Plugin\resource\Field\ResourceFieldResourceInterface;
+
 /**
  * Class FormatterTreeJson.
  *
@@ -21,58 +27,79 @@ use Drupal\restful\RenderCache\Entity\CacheFragment;
 class FormatterTreeJson extends FormatterJson implements FormatterInterface {
 
   /**
-   * Overrides Formatter::setCachedData().
+   * Extracts the actual values from the resource fields.
    *
-   * Gets the cached computed value for the fields to be rendered. Override
-   * of default setCachedData to prevent the parent object from being
-   * invalidated which creates a chain reaction to all other nodes in OG
-   * groups.
-   *
-   * @param mixed $data
-   *   The data to be rendered.
-   * @param mixed $output
-   *   The rendered data to output.
+   * @param array[]|ResourceFieldCollectionInterface $data
+   *   The array of rows or a ResourceFieldCollection.
+   * @param string[] $parents
+   *   An array that holds the name of the parent fields that lead to the
+   *   current data structure.
    * @param string[] $parent_hashes
    *   An array that holds the name of the parent cache hashes that lead to the
    *   current data structure.
+   *
+   * @return array[]
+   *   The array of prepared data.
+   *
+   * @throws InternalServerErrorException
    */
-  protected function setCachedData($data, $output, array $parent_hashes = array()) {
-    if (!$render_cache = $this->createCacheController($data)) {
-      return;
+  protected function extractFieldValues($data, array $parents = array(), array &$parent_hashes = array()) {
+    $output = array();
+    $child_hashes = [];
+    if ($this->isCacheEnabled($data)) {
+      $this_hash = $this->getCacheHash($data);
+      if ($cache = $this->getCachedData($data)) {
+        return $cache->data;
+      }
     }
-    $render_cache->set($output);
-    // After setting the cache for the current object, mark all parent hashes
-    // with the current cache fragments. That will have the effect of allowing
-    // to clear the parent caches based on the children fragments.
-    // $fragments = $this->cacheFragments($data);
-    // foreach ($parent_hashes as $parent_hash) {
-    //   foreach ($fragments as $tag_type => $tag_value) {
-    //     // Check if the fragment already exists.
-    //     $query = new \EntityFieldQuery();
-    //     $duplicate = (bool) $query
-    //       ->entityCondition('entity_type', 'cache_fragment')
-    //       ->propertyCondition('value', $tag_value)
-    //       ->propertyCondition('type', $tag_type)
-    //       ->propertyCondition('hash', $parent_hash)
-    //       ->count()
-    //       ->execute();
-    //     if ($duplicate) {
-    //       continue;
-    //     }
-    //     $cache_fragment = new CacheFragment(array(
-    //       'value' => $tag_value,
-    //       'type' => $tag_type,
-    //       'hash' => $parent_hash,
-    //     ), 'cache_fragment');
-    //     try {
-    //       $cache_fragment->save();
-    //     }
-    //     catch (\Exception $e) {
-    //       watchdog_exception('restful', $e);
-    //     }
-    //   }
-    // }
+    foreach ($data as $public_field_name => $resource_field) {
+      if (!$resource_field instanceof ResourceFieldInterface) {
+        // If $resource_field is not a ResourceFieldInterface it means that we
+        // are dealing with a nested structure of some sort. If it is an array
+        // we process it as a set of rows, if not then use the value directly.
+        $parents[] = $public_field_name;
+        $output[$public_field_name] = static::isIterable($resource_field) ? $this->extractFieldValues($resource_field, $parents, $child_hashes) : $resource_field;
+        continue;
+      }
+      if (!$data instanceof ResourceFieldCollectionInterface) {
+        throw new InternalServerErrorException('Inconsistent output.');
+      }
 
+      // This feels a bit awkward, but if the result is going to be cached, it
+      // pays off the extra effort of generating the whole resource entity. That
+      // way we can get a different field set with the previously cached entity.
+      // If the entity is not going to be cached, then avoid generating the
+      // field data altogether.
+      $limit_fields = $data->getLimitFields();
+      if (
+        !$this->isCacheEnabled($data) &&
+        $limit_fields &&
+        !in_array($resource_field->getPublicName(), $limit_fields)
+      ) {
+        // We are not going to cache this and this field is not in the output.
+        continue;
+      }
+      $value = $resource_field->render($data->getInterpreter());
+      // If the field points to a resource that can be included, include it
+      // right away.
+      if (
+        static::isIterable($value) &&
+        $resource_field instanceof ResourceFieldResourceInterface
+      ) {
+        $value = $this->extractFieldValues($value, $parents, $child_hashes);
+      }
+      $output[$public_field_name] = $value;
+    }
+
+    if ($this_hash) {
+      $child_hashes = array_merge($child_hashes, [$this_hash]);
+    }
+
+    $parent_hashes = $child_hashes;
+    if ($this->isCacheEnabled($data)) {
+      $this->setCachedData($data, $output, $parent_hashes);
+    }
+    return $output;
   }
 
 }
