@@ -16,10 +16,10 @@ use Drupal\restful\Util\EntityFieldQuery;
  * @Resource(
  *   name = "service_region:1.0",
  *   resource = "service_region",
- *   label = "Service Location",
+ *   label = "Service Region",
  *   description = "Services Advisor Service Region entity",
- *   authenticationTypes = TRUE,
- *   authenticationOptional = TRUE,
+ *   authenticationTypes = {"basic_auth", "cookie"},
+ *   authenticationOptional = FALSE,
  *   dataProvider = {
  *     "entityType": "taxonomy_term",
  *     "bundles": {
@@ -27,6 +27,7 @@ use Drupal\restful\Util\EntityFieldQuery;
  *     },
  *     "range": 500
  *   },
+ *   formatter = "json",
  *   renderCache = {
  *     "render": FALSE
  *   },
@@ -34,34 +35,23 @@ use Drupal\restful\Util\EntityFieldQuery;
  *   minorVersion = 0
  * )
  */
-class ServiceRegion__1_0 extends ResourceNode implements ResourceInterface {
+class ServiceRegion__1_0 extends TaxonomyTerm__1_0 {
 
-    /**
+  use FieldFormatterTrait;
+
+  /**
    * Overrides Resource::publicFields().
    */
   public function publicFields() {
     $public_fields = parent::publicFields();
 
-    unset($public_fields['self']);
-
-    $public_fields['parentId'] = array(
-        'property' => 'parent',
-        'sub_property' => 'tid'
-    );
-    $public_fields['depth'] = array(
-        'callback' => ___getProperty('depth')
-    );
-    $public_fields['weight'] = array(
-        'property' => 'weight'
-    );
+    $public_fields['location'] = [
+      'property' => 'field_location_point',
+      'sub_property' => 'geom',
+      'process_callbacks' => [array($this, '___format_geojson')],
+    ];
 
     return $public_fields;
   }
 
-}
-
-function ___getProperty($property) {
-  return function (DataInterpreterInterface $data) use ($property) {
-    return $data->getWrapper()->value()->{$property};
-  };
 }

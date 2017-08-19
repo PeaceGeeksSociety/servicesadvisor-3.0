@@ -24,8 +24,9 @@ use Drupal\restful\Util\EntityFieldQuery;
  *       "service_partner"
  *     }
  *   },
+ *   formatter = "json",
  *   renderCache = {
- *     "render": TRUE
+ *     "render": FALSE
  *   },
  *   majorVersion = 1,
  *   minorVersion = 0
