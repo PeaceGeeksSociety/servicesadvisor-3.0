@@ -22,12 +22,13 @@ use Drupal\restful\Util\EntityFieldQuery;
  *     "entityType": "node",
  *     "bundles": {
  *       "service_partner"
- *     }
+ *     },
+ *     "range": 250
+ *   },
+ *   renderCache = {
+ *     "render": TRUE
  *   },
  *   formatter = "json",
- *   renderCache = {
- *     "render": FALSE
- *   },
  *   majorVersion = 1,
  *   minorVersion = 0
  * )
@@ -49,6 +50,13 @@ class ServicePartner__1_0 extends ResourceNode implements ResourceInterface {
     }
 
     return $result;
+  }
+
+  /**
+   * Overrides Resource::dataProviderClassName().
+   */
+  protected function dataProviderClassName() {
+    return '\Drupal\servicesadvisor_restful\Plugin\resource\DataProvider\I18nDataProviderNode';
   }
 
   /**
