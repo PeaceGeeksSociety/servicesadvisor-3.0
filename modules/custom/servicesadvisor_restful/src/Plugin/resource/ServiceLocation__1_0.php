@@ -27,10 +27,10 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  *     },
  *     "range": 250
  *   },
+ *   formatter = "json",
  *   renderCache = {
  *     "render": TRUE
  *   },
- *   formatter = "json",
  *   majorVersion = 1,
  *   minorVersion = 0
  * )
@@ -110,21 +110,6 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     $public_fields['language'] = [
       'property' => 'language'
     ];
-
-    $public_fields['organizationName'] = array(
-      'callback' => function (DataInterpreterInterface $data) {
-        return $data->getWrapper()->og_group_ref->label();
-      }
-    );
-
-    $public_fields['organizationLogo'] = array(
-      'callback' => function (DataInterpreterInterface $data) {
-        $style = 'small_logo';
-        $logo_field = $data->getWrapper()->og_group_ref->field_logo->value();
-        $url = image_style_url($style, $logo_field['uri']);
-        return $url;
-      }
-    );
 
     $public_fields['organization'] = array(
       'property' => 'og_group_ref',
