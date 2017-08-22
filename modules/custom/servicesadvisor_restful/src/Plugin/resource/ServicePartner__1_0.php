@@ -22,11 +22,12 @@ use Drupal\restful\Util\EntityFieldQuery;
  *     "entityType": "node",
  *     "bundles": {
  *       "service_partner"
- *     }
+ *     },
+ *     "range": 250
  *   },
- *   formatter = "json",
+ *   formatter = "json_fixed",
  *   renderCache = {
- *     "render": FALSE
+ *     "render": TRUE
  *   },
  *   majorVersion = 1,
  *   minorVersion = 0

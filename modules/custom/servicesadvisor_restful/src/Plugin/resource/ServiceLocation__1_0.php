@@ -27,7 +27,7 @@ define('SA_API_DATEFORMAT', 'Y-m-d');
  *     },
  *     "range": 250
  *   },
- *   formatter = "json",
+ *   formatter = "json_fixed",
  *   renderCache = {
  *     "render": TRUE
  *   },
@@ -113,11 +113,6 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
 
     $public_fields['organization'] = array(
       'property' => 'og_group_ref',
-      'resource' => [
-        'name' => 'service_partner',
-        'majorVersion' => 1,
-        'minorVersion' => 0
-      ]
     );
 
     $public_fields['accessibility'] = [
@@ -160,12 +155,10 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     ];
 
     $public_fields['location'] = [
-      'property' => 'field_service_location_location',
-      'resource' => [
-        'name' => 'service_region',
-        'majorVersion' => 1,
-        'minorVersion' => 0
-      ]
+      'callback' => ___getGeofieldAsGeoJSON(function (DataInterpreterInterface $data) {
+        $wrapper = $data->getWrapper();
+        return $wrapper->field_service_location_location->field_location_point;
+      })
     ];
 
     $public_fields['locationAlternate'] = [

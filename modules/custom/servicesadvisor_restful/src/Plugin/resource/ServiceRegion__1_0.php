@@ -27,7 +27,7 @@ use Drupal\restful\Util\EntityFieldQuery;
  *     },
  *     "range": 500
  *   },
- *   formatter = "json",
+ *   formatter = "json_fixed",
  *   renderCache = {
  *     "render": FALSE
  *   },
