@@ -157,7 +157,9 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     $public_fields['location'] = [
       'callback' => ___getGeofieldAsGeoJSON(function (DataInterpreterInterface $data) {
         $wrapper = $data->getWrapper();
-        return $wrapper->field_service_location_location->field_location_point;
+        if ($wrapper->field_service_location_location->value()) {
+          return $wrapper->field_service_location_location->field_location_point;
+        }
       })
     ];
 
@@ -235,6 +237,8 @@ function ___flattenMultiField($multiField, $wrapperMethod, $default) {
 function ___getGeofieldAsGeoJSON($getGeofield, $default = '') {
   return function (DataInterpreterInterface $data) use ($getGeofield, $default) {
     $geofield = $getGeofield($data);
+    if (!$geofield) { return ""; }
+
     $value = $geofield->value();
 
     if (!$value || !$wkt = $geofield->geom->value()) {
