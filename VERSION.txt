@@ -1,3 +1,10 @@
+SA 0.19.0
+---------
+* See #125 - Fix for zoom issue when selecting service popup.
+* See #122 - Adding category counts
+* See #114 - Deeper menu structure.
+* See #109 - Performance improvements and caching.
+
 SA 0.18.0
 ---------
 * See #108 - Add pagination support for json feed.
