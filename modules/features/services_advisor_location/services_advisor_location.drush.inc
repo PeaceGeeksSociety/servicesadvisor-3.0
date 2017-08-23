@@ -25,8 +25,6 @@ function drush_services_advisor_location_import_location_geodata($src) {
   $locations = load_location_sources($args, $region_prop_name);
   $terms = vocabulary_get_terms($vocab_name);
 
-  d(count(array_keys($locations)), count($terms));
-
   $missing = [];
   foreach ($terms as $tid => $data) {
     $term = entity_metadata_wrapper('taxonomy_term', $data);
@@ -35,6 +33,7 @@ function drush_services_advisor_location_import_location_geodata($src) {
       $missing[$tid] = $term;
     } else {
       $geometry = $locations[$key];
+      unset($locations[$key]);
       $geojson = json_encode($geometry);
       $wkb = geoPHP::load($geojson, 'json')->out('wkb');
       $term->{$geofield_name} = ['geom' => $wkb];
@@ -42,12 +41,20 @@ function drush_services_advisor_location_import_location_geodata($src) {
     }
   }
 
-  d(array_map(
-    function ($term) {
-      return $term->label();
-    },
-    $missing
-  ));
+  print_r([
+    'Terms skipped' => array_map(
+      function ($term) {
+        return $term->label();
+      },
+      $missing
+    ),
+    'Left over regions' => array_map(
+      function ($geometry) {
+        return json_encode($geometry);
+      },
+      $locations
+    )
+  ]);
 }
 
 function load_location_sources($sources, $prop_name) {
