@@ -25,7 +25,12 @@ use Drupal\restful\Util\EntityFieldQuery;
  *     "bundles": {
  *       "service_nested_location"
  *     },
- *     "range": 500
+ *     "range": 500,
+ *     "sort": {
+ *       "depth": "ASC",
+ *       "weight": "ASC",
+ *       "name": "ASC"
+ *     }
  *   },
  *   formatter = "json_fixed",
  *   renderCache = {
