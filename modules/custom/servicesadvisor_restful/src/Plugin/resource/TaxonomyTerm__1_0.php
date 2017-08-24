@@ -53,10 +53,9 @@ class TaxonomyTerm__1_0 extends ResourceEntity implements ResourceInterface {
   public function publicFields() {
     $public_fields = parent::publicFields();
 
-    $public_fields['name'] = [
-      'property' => 'name'
-    ];
+    $public_fields['name'] = $public_fields['label'];
 
+    unset($public_fields['label']);
     unset($public_fields['self']);
 
     $public_fields['parentId'] = array(
