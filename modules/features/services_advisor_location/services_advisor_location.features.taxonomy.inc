@@ -113,7 +113,7 @@ function services_advisor_location_taxonomy_default_vocabularies() {
       'name' => 'Service Nested Location',
       'machine_name' => 'service_nested_location',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => -5,
       'language' => 'und',

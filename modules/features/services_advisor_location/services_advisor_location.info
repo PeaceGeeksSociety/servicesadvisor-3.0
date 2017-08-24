@@ -146,6 +146,7 @@ features[user_permission][] = edit any service_location content
 features[user_permission][] = edit own service_location content
 features[user_permission][] = view any service_location content
 features[user_permission][] = view own service_location content
+features[variable][] = hs_config_taxonomy-field_service_location_location
 features[variable][] = hs_config_taxonomy-field_services_provided
 features[variable][] = node_options_service_location
 features[variable][] = node_preview_service_location

@@ -71,6 +71,61 @@ function services_advisor_location_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'hs_config_taxonomy-field_service_location_location';
+  $strongarm->value = array(
+    'config_id' => 'taxonomy-field_service_location_location',
+    'save_lineage' => '1',
+    'enforce_deepest' => '1',
+    'resizable' => '1',
+    'level_labels' => array(
+      'status' => 0,
+      'labels' => array(
+        0 => '',
+        1 => '',
+      ),
+    ),
+    'dropbox' => array(
+      'status' => 0,
+      'title' => 'All selections',
+      'limit' => '0',
+      'reset_hs' => '1',
+      'sort' => 1,
+    ),
+    'editability' => array(
+      'status' => 0,
+      'item_types' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_levels' => array(
+        0 => 1,
+        1 => 1,
+      ),
+      'allow_new_levels' => 0,
+      'max_levels' => '4',
+    ),
+    'entity_count' => array(
+      'enabled' => 0,
+      'require_entity' => 0,
+      'settings' => array(
+        'count_children' => 0,
+        'entity_types' => array(
+          'node' => array(
+            'count_node' => array(
+              'page' => 0,
+              'service_location' => 0,
+              'service_partner' => 0,
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['hs_config_taxonomy-field_service_location_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_service_location';
   $strongarm->value = array(
     0 => 'status',
