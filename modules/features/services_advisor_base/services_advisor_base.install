@@ -5,6 +5,17 @@
  *
  */
 
+function services_advisor_base_install() {
+  $views_defaults = variable_get('views_defaults', array());
+
+  $views_defaults = array_merge($views_defaults, array(
+    'admin_views_user' => true,
+    'admin_views_node' => true
+  ));
+
+  variable_set('views_defaults', $views_defaults);
+}
+
 /**
  * Recreate missing translation nodes.
  */
@@ -60,4 +71,17 @@ function services_advisor_base_update_7014(&$sandbox) {
     $sandbox['#finished'] = 1;
     return t('Updated @count nodes', array('@count' => $sandbox['progress']));
   }
+}
+
+/**
+ * Disable the default admin_views node view. So our override will display.
+ */
+function services_advisor_base_update_7015() {
+  $views_defaults = variable_get('views_defaults', array());
+
+  $views_defaults = array_merge($views_defaults, array(
+    'admin_views_node' => true
+  ));
+
+  variable_set('views_defaults', $views_defaults);
 }
