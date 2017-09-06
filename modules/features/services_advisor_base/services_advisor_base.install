@@ -22,3 +22,42 @@ function services_advisor_base_update_7013() {
     }
   }
 }
+
+/**
+ * Updating service locations to store location lineage as well.
+ */
+function services_advisor_base_update_7014(&$sandbox) {
+  $batch = 50;
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('n.type', 'service_location');
+    // i18n_sync does not run during update hooks so we have to run through
+    // translations as well.
+    // ->where('n.nid = n.tnid');
+
+  if (!isset($sandbox['max'])) {
+    $countQuery = clone $query;
+    $sandbox['progress'] = 0;
+    $sandbox['max'] = count($countQuery->execute()->fetchCol());
+  }
+
+  $results = $query->range($sandbox['progress'], $batch)->execute()->fetchCol();
+
+  foreach(entity_metadata_wrapper('list<node>', $results) as $wrapper) {
+    $locations = $wrapper->field_service_location_location->value();
+    if (count($locations) === 1) {
+      $lineage = array_reverse(taxonomy_get_parents_all($locations[0]->tid));
+      $wrapper->field_service_location_location->set($lineage);
+      $node = $wrapper->value();
+      node_save($node);
+    }
+    $sandbox['progress']++;
+  }
+
+  if (!empty($results) && $sandbox['max'] > 0 && $sandbox['max'] > $sandbox['progress']) {
+    $sandbox['#finished'] = $sandbox['progress'] / $sandbox['max'];
+  } else {
+    $sandbox['#finished'] = 1;
+    return t('Updated @count nodes', array('@count' => $sandbox['progress']));
+  }
+}
