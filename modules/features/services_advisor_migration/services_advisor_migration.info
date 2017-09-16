@@ -125,6 +125,7 @@ features[feeds_tamper][] = service_location_importer-referral_method-trim
 features[feeds_tamper][] = service_location_importer-response_delay_after_referral-trim
 features[feeds_tamper][] = service_location_importer-service_location__-explode
 features[feeds_tamper][] = service_location_importer-service_location__-feeds_tamper_array_select
+features[feeds_tamper][] = service_location_importer-service_location__-find_replace
 features[feeds_tamper][] = service_location_importer-service_location__-required
 features[feeds_tamper][] = service_location_importer-service_location__-trim
 features[feeds_tamper][] = service_location_importer-service_location__-trim_whitespace

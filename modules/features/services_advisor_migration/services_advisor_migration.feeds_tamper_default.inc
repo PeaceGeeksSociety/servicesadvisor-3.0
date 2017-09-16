@@ -1185,6 +1185,26 @@ function services_advisor_migration_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'service_location_importer-service_location__-find_replace';
+  $feeds_tamper->importer = 'service_location_importer';
+  $feeds_tamper->source = 'Service Location *';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'i̇',
+    'replace' => 'i',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Replace i̇ with i';
+  $export['service_location_importer-service_location__-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'service_location_importer-service_location__-required';
   $feeds_tamper->importer = 'service_location_importer';
   $feeds_tamper->source = 'Service Location *';
