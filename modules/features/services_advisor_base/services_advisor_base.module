@@ -137,6 +137,7 @@ function services_advisor_base_service_strings() {
     'REFERRAL_METHOD' => t('Referral Method'),
     'SERVICES_ADVISOR' => t('Services Advisor'),
     'POWERED_BY' => t('Powered by PeaceGeeks'),
+    'INQUIRIES' => t('For general inquiries, please email'),
     'Ajlun Governorate' => t('Ajlun Governorate'),
     'Al Aqabah Governorate' => t('Al Aqabah Governorate'),
     'Al Balqa Governorate' => t('Al Balqa Governorate'),
