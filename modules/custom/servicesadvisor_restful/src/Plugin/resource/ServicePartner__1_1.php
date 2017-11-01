@@ -8,11 +8,11 @@ use Drupal\restful\Plugin\resource\DataInterpreter\DataInterpreterInterface;
 use Drupal\restful\Util\EntityFieldQuery;
 
 /**
- * Class ServicePartner__1_0
+ * Class ServicePartner__1_1
  * @package Drupal\servicesadvisor_restful\Plugin\resource
  *
  * @Resource(
- *   name = "service_partner:1.0",
+ *   name = "service_partner:1.1",
  *   resource = "service_partner",
  *   label = "Service Partner",
  *   description = "Services Advisor Service Partner entity",
@@ -30,10 +30,10 @@ use Drupal\restful\Util\EntityFieldQuery;
  *     "render": TRUE
  *   },
  *   majorVersion = 1,
- *   minorVersion = 0
+ *   minorVersion = 1
  * )
  */
-class ServicePartner__1_0 extends ResourceNode implements ResourceInterface {
+class ServicePartner__1_1 extends ResourceNode implements ResourceInterface {
 
   public function discover($path = NULL) {
     return NULL;
@@ -75,8 +75,12 @@ class ServicePartner__1_0 extends ResourceNode implements ResourceInterface {
 
   public function getLogoURL(DataInterpreterInterface $data) {
     $style = 'small_logo';
+    $url = '';
     $logo_field = $data->getWrapper()->field_logo->value();
-    $url = image_style_url($style, $logo_field['uri']);
+    if ($logo_field) {
+      $url = image_style_url($style, $logo_field['uri']);
+    }
+
     return $url;
   }
 
