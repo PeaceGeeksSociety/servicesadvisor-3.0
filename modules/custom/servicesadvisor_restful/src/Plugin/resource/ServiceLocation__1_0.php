@@ -157,8 +157,20 @@ class ServiceLocation__1_0 extends ResourceNode implements ResourceInterface {
     $public_fields['location'] = [
       'callback' => ___getGeofieldAsGeoJSON(function (DataInterpreterInterface $data) {
         $wrapper = $data->getWrapper();
-        if ($wrapper->field_service_location_location->value()) {
-          return $wrapper->field_service_location_location->field_location_point;
+        $deepest = null;
+        // Find the deepest term in the location tree and use it's value data.
+        foreach ($wrapper->field_service_location_location->value() as $term) {
+          if ($deepest) {
+            if ($term->depth > $deepest->depth && !empty($term->field_location_point)) {
+              $deepest = $term;
+            }
+          } else {
+            $deepest = $term;
+          }
+        }
+
+        if ($deepest) {
+          return entity_metadata_wrapper('taxonomy_term', $deepest)->field_location_point;
         }
       })
     ];
