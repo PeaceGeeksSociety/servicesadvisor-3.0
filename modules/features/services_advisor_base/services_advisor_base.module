@@ -88,7 +88,7 @@ function services_advisor_base_menu() {
 
   $items['service-strings'] = array(
     'title' => 'Service Strings',
-    'page callback' => 'services_advisor_base_service_strings',
+    'page callback' => 'services_advisor_base_service_strings_page',
     'type' => MENU_CALLBACK,
     'access callback' => TRUE
   );
@@ -114,62 +114,120 @@ function services_advisor_base_menu_alter(&$items) {
   $items['admin/config/people/ip-blocking']['access arguments'] = array('administer users advanced');
 }
 
+/**
+ * List text groups for string translation.
+ *
+ * This information will be automatically produced later for hook_locale()
+ */
+function services_advisor_base_i18n_string_info() {
+  $groups['services_advisor_ui'] = array(
+    'title' => t('Services Advisor UI'),
+    'description' => t('Translatable text items for the Services Advisor Web App.'),
+    'format' => FALSE, // This group doesn't have strings with format
+    'list' => TRUE, // This group can list all strings
+    'refresh callback' => 'services_advisor_base_locale_refresh'
+  );
+  return $groups;
+}
+
+/**
+ * Provide list of translatable strings for text group.
+
+ * A module can provide either a list of translatable strings using hook_i18n_string_list() or
+ * it can provide a list of objects using hook_i18n_string_objects() from which the string
+ * list will be produced automatically. But not both.
+ *
+ * @param $group
+ *   Text group name.
+ */
+function services_advisor_base_i18n_string_list($group) {
+  if ($group == 'services_advisor_ui') {
+    $strings = services_advisor_base_service_strings();
+
+    foreach ($strings as $key => $value) {
+      $strings['services_advisor_ui']['string'][$key]['default'] = $value;
+    }
+
+    return $strings;
+  }
+}
+
+/**
+ * Implements hook_locale_refresh().
+ */
+function services_advisor_base_locale_refresh() {
+  $strings = services_advisor_base_service_strings();
+
+  foreach ($strings as $key => $value) {
+    i18n_string_update('services_advisor_ui:string:' . $key . ':default', $value);
+  }
+}
+
+/**
+ * Static Strings meant to serve the Services Advisor Angular App.
+ */
 function services_advisor_base_service_strings() {
-  drupal_json_output(array(
-    'CATEGORY' => t('Category'),
-    'SEARCH_TEXT' => t('To find a service, select from the category or region below. Use the filter button above to further refine your search.'),
-    'SEARCH' => t('Search...'),
-    'REGION' => t('Region'),
-    'PHONE' => t('Hotline / Phone'),
-    'INFO_LINK' => t('More Information'),
-    'FILTERS' => t('More Filters'),
-    'TOGGLE_MAP' => t('Show/Hide Map'),
-    'REFERRAL_REQUIRED' => t('Referral Required'),
-    'OK' => t('OK'),
-    'ORGANIZATION' => t('Organization'),
-    'ORGANIZATIONS' => t('Organizations'),
-    'BACK' => t('Back'),
-    'SEARCH_RESULTS' => t('Search Results'),
-    'HOURS' => t('Hours'),
-    'ACTIVITY_DETAILS' => t('Activity Details'),
-    'START_DATE' => t('Start Date'),
-    'END_DATE' => t('End Date'),
-    'REFERRAL_METHOD' => t('Referral Method'),
-    'SERVICES_ADVISOR' => t('Services Advisor'),
-    'POWERED_BY' => t('Powered by PeaceGeeks'),
-    'INQUIRIES' => t('For general inquiries, please email'),
-    'YOU_ARE_HERE' => t('Current Location'),
-    'Ajlun Governorate' => t('Ajlun Governorate'),
-    'Al Aqabah Governorate' => t('Al Aqabah Governorate'),
-    'Al Balqa Governorate' => t('Al Balqa Governorate'),
-    'Al Karak Governorate' => t('Al Karak Governorate'),
-    'Al Mafraq Governorate' => t('Al Mafraq Governorate'),
-    'Amman Governorate' => t('Amman Governorate'),
-    'At Tafilah Governorate' => t('At Tafilah Governorate'),
-    'Az Zarqa Governorate' => t('Az Zarqa Governorate'),
-    'Irbid Governorate' => t('Irbid Governorate'),
-    'Jarash Governorate' => t('Jarash Governorate'),
-    'Ma\'an Governorate' => t('Ma\'an Governorate'),
-    'Madaba Governorate' => t('Madaba Governorate'),
-    'ALL' => t('All'),
-    'REFERRAL_NOT_REQUIRED' => t('Referral Not Required'),
-    'UNKNOWN' => t('Unknown'),
-    'NATIONALITY' => t('Nationality'),
-    'INTAKE_CRITERIA' => t('Intake Criteria'),
-    'ACCESSIBILITY' => t('Accessibility'),
-    'COVERAGE' => t('Coverage'),
-    'AVAILABILITY' => t('Availability'),
-    'REFERRAL_METHOD' => t('Referral Method'),
-    'REFERRAL_NEXT_STEPS' => t('Referral Next Steps'),
-    'FEEDBACK_MECHANISM' => t('Feedback Mechanism'),
-    'FEEDBACK_DELAY' => t('Feedback Delay'),
-    'LEGAL_DOCUMENTS_REQUIRED' => t('Legal Documents Required'),
-    'COMPLAINTS_MECHANISM' => t('Complaints Mechanism'),
-    'ADDRESS' => t('Address'),
-    'PRINT' => t('Print'),
-    'ADDITIONAL_DETAILS' => t('Additional Details'),
-    'COMMENTS' => t('Comments')
-  ));
+  return array(
+    'accessibility'            => variable_get('services_advisor_string_accessibility', 'Accessibility'),
+    'activity_details'         => variable_get('services_advisor_string_activity_details', 'Activity Details'),
+    'additional_details'       => variable_get('services_advisor_string_additional_details', 'Additional Details'),
+    'address'                  => variable_get('services_advisor_string_address', 'Address'),
+    'all'                      => variable_get('services_advisor_string_all', 'All'),
+    'availability'             => variable_get('services_advisor_string_availability', 'Availability'),
+    'back'                     => variable_get('services_advisor_string_back', 'Back'),
+    'category'                 => variable_get('services_advisor_string_category', 'Category'),
+    'comments'                 => variable_get('services_advisor_string_comments', 'Comments'),
+    'complaints_mechanism'     => variable_get('services_advisor_string_complaints_mechanism', 'Complaints Mechanism'),
+    'coverage'                 => variable_get('services_advisor_string_coverage', 'Coverage'),
+    'end_date'                 => variable_get('services_advisor_string_end_date', 'End Date'),
+    'feedback_delay'           => variable_get('services_advisor_string_feedback_delay', 'Feedback Delay'),
+    'feedback_mechanism'       => variable_get('services_advisor_string_feedback_mechanism', 'Feedback Mechanism'),
+    'filters'                  => variable_get('services_advisor_string_filters', 'More Filters'),
+    'help_text'                => variable_get('services_advisor_string_help_text', ''),
+    'hours'                    => variable_get('services_advisor_string_hours', 'Hours'),
+    'info_link'                => variable_get('services_advisor_string_info_link', 'More Information'),
+    'inquiries'                => variable_get('services_advisor_string_inquiries', 'For general inquiries, please email'),
+    'intake_criteria'          => variable_get('services_advisor_string_intake_criteria', 'Intake Criteria'),
+    'legal_documents_required' => variable_get('services_advisor_string_legal_documents_required', 'Legal Documents Required'),
+    'nationality'              => variable_get('services_advisor_string_nationality', 'Nationality'),
+    'ok'                       => variable_get('services_advisor_string_ok', 'OK'),
+    'organization'             => variable_get('services_advisor_string_organization', 'Organization'),
+    'organizations'            => variable_get('services_advisor_string_organizations', 'Organizations'),
+    'phone'                    => variable_get('services_advisor_string_phone', 'Hotline / Phone'),
+    'powered_by'               => variable_get('services_advisor_string_powered_by', 'Powered by PeaceGeeks'),
+    'print'                    => variable_get('services_advisor_string_print', 'Print'),
+    'referral_method'          => variable_get('services_advisor_string_referral_method', 'Referral Method'),
+    'referral_next_steps'      => variable_get('services_advisor_string_referral_next_steps', 'Referral Next Steps'),
+    'referral_not_required'    => variable_get('services_advisor_string_referral_not_required', 'Referral Not Required'),
+    'referral_required'        => variable_get('services_advisor_string_referral_required', 'Referral Required'),
+    'region'                   => variable_get('services_advisor_string_region', 'Region'),
+    'search'                   => variable_get('services_advisor_string_search', 'Search...'),
+    'search_results'           => variable_get('services_advisor_string_search_results', 'Search Results'),
+    'search_text'              => variable_get('services_advisor_string_search_text', 'To find a service, select from the category or region below. Use the filter button above to further refine your search.'),
+    'services_advisor'         => variable_get('services_advisor_string_services_advisor', 'Services Advisor'),
+    'start_date'               => variable_get('services_advisor_string_start_date', 'Start Date'),
+    'toggle_map'               => variable_get('services_advisor_string_toggle_map', 'Show/Hide Map'),
+    'unknown'                  => variable_get('services_advisor_string_unknown', 'Unknown'),
+    'you_are_here'             => variable_get('services_advisor_string_you_are_here', 'Current Location')
+  );
+}
+
+/**
+ * Page callback for Services Advisor Strings. Output as JSON array.
+ */
+function services_advisor_base_service_strings_page() {
+  $sources = services_advisor_base_service_strings();
+  $export = array();
+
+  foreach ($sources as $key => $string) {
+    $export[strtoupper($key)] = services_advisor_base_translate($key, t($string));
+  }
+
+  drupal_json_output($export);
+}
+
+function services_advisor_base_translate($name, $string, $langcode = NULL, $textgroup = 'services_advisor_ui') {
+  return function_exists('i18n_string') ? i18n_string($textgroup . ':string:' . $name . ':default', $string, array('langcode' => $langcode)) : $string;
 }
 
 /**
@@ -195,6 +253,26 @@ function services_advisor_base_settings_form($form, &$form_state) {
   drupal_alter('sa_settings_form', $form, $form_state);
 
   return system_settings_form($form);
+}
+
+function services_advisor_base_sa_settings_form($form, &$form_state) {
+  $form['translations'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => true,
+    '#title' => t('Translations')
+  );
+
+  $strings = services_advisor_base_service_strings();
+
+  foreach ($strings as $key => $value) {
+    $form['translations']['services_advisor_string_' . $key] = array(
+      '#type' => 'textarea',
+      '#default_value' => $value,
+      '#title' => $key
+    );
+  }
+
+  return $form;
 }
 
 /**
