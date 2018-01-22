@@ -220,14 +220,14 @@ function services_advisor_base_service_strings_page() {
   $export = array();
 
   foreach ($sources as $key => $string) {
-    $export[strtoupper($key)] = services_advisor_base_translate($key, t($string));
+    $export[strtoupper($key)] = services_advisor_base_translate($key, $string);
   }
 
   drupal_json_output($export);
 }
 
 function services_advisor_base_translate($name, $string, $langcode = NULL, $textgroup = 'services_advisor_ui') {
-  return function_exists('i18n_string') ? i18n_string($textgroup . ':string:' . $name . ':default', $string, array('langcode' => $langcode)) : $string;
+  return function_exists('i18n_string') ? i18n_string_translate($textgroup . ':string:' . $name . ':default', $string, array('langcode' => $langcode, 'sanitize' => false)) : $string;
 }
 
 /**

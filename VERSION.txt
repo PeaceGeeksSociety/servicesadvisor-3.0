@@ -1,3 +1,8 @@
+SA 0.20.0
+---------
+* Updating string translations to have their own textgroup and install specific content.
+* New Restful API system.
+
 SA 0.19.0
 ---------
 * See #125 - Fix for zoom issue when selecting service popup.
