@@ -50,7 +50,7 @@
                                 ));
                             });
                             map.fitBounds(bounds);
-                        } else {
+                        } else if (isNaN(tid)) {
                             map.setView([defaults.lat, defaults.lng], defaults.zoom);
                         }
                     })
