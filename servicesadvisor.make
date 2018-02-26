@@ -13,10 +13,10 @@ projects[admin_views][version] = "1.6"
 projects[admin_views][patch][] = "https://www.drupal.org/files/issues/admin_views-duplicate_system_path-1780004-54.patch"
 
 projects[backup_migrate][subdir] = contrib
-projects[backup_migrate][version] = "3.1"
+projects[backup_migrate][version] = "3.5"
 
 projects[better_exposed_filters][subdir] = contrib
-projects[better_exposed_filters][version] = "3.4"
+projects[better_exposed_filters][version] = "3.5"
 
 projects[captcha][subdir] = contrib
 projects[captcha][version] = "1.3"
@@ -40,7 +40,7 @@ projects[context][subdir] = contrib
 projects[context][version] = "3.7"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.12"
+projects[ctools][version] = "1.14"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.10"
@@ -64,10 +64,10 @@ projects[email_registration][subdir] = contrib
 projects[email_registration][version] = "1.3"
 
 projects[entity][subdir] = contrib
-projects[entity][version] = "1.8"
+projects[entity][version] = "1.9"
 
 projects[entityreference][subdir] = contrib
-projects[entityreference][version] = "1.4"
+projects[entityreference][version] = "1.5"
 
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entityreference_prepopulate][version] = "1.7"
@@ -82,13 +82,13 @@ projects[features_extra][subdir] = contrib
 projects[features_extra][version] = "1.0"
 
 projects[feeds][subdir] = contrib
-projects[feeds][version] = "2.0-beta3"
+projects[feeds][version] = "2.0-beta4"
 
 projects[feeds_tamper][subdir] = contrib
-projects[feeds_tamper][version] = "1.1"
+projects[feeds_tamper][version] = "1.2"
 
 projects[field_group][subdir] = contrib
-projects[field_group][version] = "1.5"
+projects[field_group][version] = "1.6"
 
 projects[field_preset][subdir] = contrib
 projects[field_preset][type] = module
@@ -98,7 +98,7 @@ projects[field_preset][download][url] = http://git.drupal.org/sandbox/smithmilne
 projects[field_preset][download][revision] = "60b5feb27c13e294cc402ee195246f0a12a0a90e"
 
 projects[file_entity][subdir] = contrib
-projects[file_entity][version] = "2.3"
+projects[file_entity][version] = "2.16"
 
 projects[geocoder][subdir] = contrib
 projects[geocoder][version] = "1.3"
@@ -124,19 +124,19 @@ projects[hierarchical_select][subdir] = contrib
 projects[hierarchical_select][version] = "3.0-beta8"
 
 projects[i18n][subdir] = contrib
-projects[i18n][version] = "1.18"
+projects[i18n][version] = "1.22"
 
 projects[i18nviews][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
 
 projects[l10n_update][subdir] = contrib
-projects[l10n_update][version] = "2.1"
+projects[l10n_update][version] = "2.2"
 
 projects[imagefield_crop][subdir] = contrib
 projects[imagefield_crop][version] = "1.1"
 
 projects[job_scheduler][subdir] = contrib
-projects[job_scheduler][version] = "2.0-alpha3"
+projects[job_scheduler][version] = "2.0"
 
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.7"
@@ -182,8 +182,7 @@ projects[node_clone][subdir] = contrib
 projects[node_clone][version] = "1.0"
 
 projects[node_view_permissions][subdir] = contrib
-projects[node_view_permissions][version] = "1.5"
-projects[node_view_permissions][patch][] = "https://www.drupal.org/files/issues/node_view_permissions-D7-2564273-22.patch"
+projects[node_view_permissions][version] = "1.6"
 
 projects[office_hours][subdir] = contrib
 projects[office_hours][version] = "1.x-dev"
@@ -218,7 +217,7 @@ projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
 
 projects[taxonomy_access_fix][subdir] = contrib
-projects[taxonomy_access_fix][version] = "2.3"
+projects[taxonomy_access_fix][version] = "2.4"
 
 projects[taxonomy_csv][subdir] = contrib
 projects[taxonomy_csv][version] = "5.10"
@@ -265,7 +264,7 @@ projects[varnish][subdir] = contrib
 projects[varnish][version] = "1.1"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.16"
+projects[views][version] = "3.18"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
 
 projects[views_aggregator][subdir] = contrib
