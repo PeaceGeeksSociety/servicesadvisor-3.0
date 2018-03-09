@@ -263,6 +263,7 @@ function services_advisor_base_sa_settings_form($form, &$form_state) {
   $form['translations'] = array(
     '#type' => 'fieldset',
     '#collapsible' => true,
+    '#collapsed' => true,
     '#title' => t('Translations')
   );
 

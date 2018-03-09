@@ -1,0 +1,99 @@
+<?php
+/**
+ * @file
+ * Code for the Services Advisor Feedback feature.
+ */
+
+include_once 'services_advisor_feedback.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function services_advisor_feedback_menu() {
+  $items = [];
+  $items['feedback'] = array(
+    'title' => 'Feedback json endpoint',
+    'page callback' => 'services_advisor_feedback_endpoint',
+    'delivery callback' => 'drupal_json_output',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * JSON endpoint which receives feedback information and generates an entity.
+ */
+function services_advisor_feedback_endpoint() {
+  $data = json_decode(file_get_contents('php://input'), true);
+
+  // Create an Entity.
+  if (services_advisor_feedback_validate($data)) {
+    $node = entity_create('node', array('type' => 'feedback'));
+    $node->title = $data['title'];
+    $node->language = $data['language'];
+
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $wrapper->field_feedback_type->set($data['type']);
+    $wrapper->field_feedback_summary->set($data['summary']);
+    $wrapper->field_feedback_url->set([
+      'url' => services_advisor_feedback_process_url($data['url'])
+    ]);
+
+    $wrapper->save();
+
+    if ($wrapper->getIdentifier()) {
+      return [
+        'status' => true,
+        'message' => t('Feedback saved.')
+      ];
+    }
+  }
+
+  return [
+    'status' => false,
+    'message' => t('Feedback data not valid.')
+  ];
+}
+
+/**
+ * Validate data POSTed to Drupal is a valid feedback entity.
+ *
+ * @param  array $data values to create feedback entity.
+ * @return boolean
+ */
+function services_advisor_feedback_validate($data) {
+  return (
+    isset($data['title']) &&
+    isset($data['type']) &&
+    isset($data['summary']) &&
+    isset($data['url'])
+  );
+}
+
+/**
+ * Prefix the reported URL with the client so we can create absolute links.
+ */
+function services_advisor_feedback_process_url($url) {
+  $client_url = variable_get('services_advisor_client_url', '');
+
+  if ($client_url) {
+    $url = $client_url . '/#' . $url;
+  }
+
+  return $url;
+}
+
+/**
+ * Implements hook_sa_settings_form().
+ */
+function services_advisor_feedback_sa_settings_form($form, &$form_state) {
+  $form['services_advisor_client_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('Client URL'),
+    '#default_value' => variable_get('services_advisor_client_url', ''),
+    '#description' => t('Add the full domain name of a Angular client connected to this backend. ex http://site-name.com')
+  ];
+
+  return $form;
+}
