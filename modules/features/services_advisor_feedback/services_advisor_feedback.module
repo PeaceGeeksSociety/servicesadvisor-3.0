@@ -18,9 +18,23 @@ function services_advisor_feedback_menu() {
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
+
   return $items;
 }
 
+/**
+ * Implements hook_permission().
+ */
+function services_advisor_feedback_permission() {
+  return array(
+    'view feedback lists' => array(
+      'title' => t('View lists of service feedback nodes')
+    ),
+    'export feedback lists' => array(
+      'title' => t('Export service feedback to CSV')
+    )
+  );
+}
 /**
  * JSON endpoint which receives feedback information and generates an entity.
  */
