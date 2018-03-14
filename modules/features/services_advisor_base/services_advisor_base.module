@@ -201,6 +201,7 @@ function services_advisor_base_service_strings() {
     'referral_next_steps'      => variable_get('services_advisor_string_referral_next_steps', 'Referral Next Steps'),
     'referral_not_required'    => variable_get('services_advisor_string_referral_not_required', 'Referral Not Required'),
     'referral_required'        => variable_get('services_advisor_string_referral_required', 'Referral Required'),
+    'report_feedback'          => variable_get('services_advisor_string_report_feedback', 'Report Feedback'),
     'region'                   => variable_get('services_advisor_string_region', 'Region'),
     'search'                   => variable_get('services_advisor_string_search', 'Search...'),
     'search_btn'               => variable_get('services_advisor_string_search_btn', 'Search'),
