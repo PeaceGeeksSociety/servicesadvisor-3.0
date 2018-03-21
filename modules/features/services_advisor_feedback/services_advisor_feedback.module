@@ -53,6 +53,9 @@ function services_advisor_feedback_endpoint() {
     $wrapper->field_feedback_url->set([
       'url' => services_advisor_feedback_process_url($data['url'])
     ]);
+    if (isset($data['serviceId'])) {
+      $wrapper->field_feedback_service_location->set($data['serviceId']);
+    }
 
     $wrapper->save();
 
