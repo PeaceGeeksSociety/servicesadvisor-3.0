@@ -83,6 +83,7 @@ function services_advisor_feedback_field_default_field_bases() {
         'not_available' => 'Service not available',
         'incorrect_hours' => 'Opening hours incorrect',
         'incorrect_location' => 'Service location incorrect',
+        'other' => 'Other',
       ),
       'allowed_values_function' => '',
     ),

@@ -62,6 +62,14 @@ function services_advisor_feedback_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Service Location */
+  $handler->display->display_options['fields']['field_feedback_service_location']['id'] = 'field_feedback_service_location';
+  $handler->display->display_options['fields']['field_feedback_service_location']['table'] = 'field_data_field_feedback_service_location';
+  $handler->display->display_options['fields']['field_feedback_service_location']['field'] = 'field_feedback_service_location';
+  $handler->display->display_options['fields']['field_feedback_service_location']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
   /* Field: Content: Type */
   $handler->display->display_options['fields']['field_feedback_type']['id'] = 'field_feedback_type';
   $handler->display->display_options['fields']['field_feedback_type']['table'] = 'field_data_field_feedback_type';
