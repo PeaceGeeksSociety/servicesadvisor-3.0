@@ -216,6 +216,9 @@ projects[restful][version] = "2.16"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 
+projects[rules][subdir] = contrib
+projects[rules][version] = "2.10"
+
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
 
