@@ -58,7 +58,7 @@ projects[diff][subdir] = contrib
 projects[diff][version] = "3.3"
 
 projects[ds][subdir] = contrib
-projects[ds][version] = "2.14"
+projects[ds][version] = "2.15"
 
 projects[email][subdir] = contrib
 projects[email][version] = "1.3"
