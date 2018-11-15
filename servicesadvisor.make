@@ -202,7 +202,7 @@ projects[plug][subdir] = contrib
 projects[plug][version] = "1.1"
 
 projects[print][subdir] = contrib
-projects[print][version] = "2.0"
+projects[print][version] = "2.2"
 
 projects[redirect][subdir] = contrib
 projects[redirect][version] = "1.0-rc3"
