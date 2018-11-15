@@ -78,6 +78,7 @@ dependencies[] = uuid
 dependencies[] = views
 dependencies[] = views_aggregator
 dependencies[] = views_bulk_operations
+dependencies[] = views_data_export
 dependencies[] = views_geojson
 dependencies[] = views_json
 dependencies[] = wysiwyg

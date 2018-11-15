@@ -402,7 +402,9 @@ function services_advisor_base_user_default_permissions() {
   // Exported permission: 'administer fields'.
   $permissions['administer fields'] = array(
     'name' => 'administer fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'field',
   );
 
