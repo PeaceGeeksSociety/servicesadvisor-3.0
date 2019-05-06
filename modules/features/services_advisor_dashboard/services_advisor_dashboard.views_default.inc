@@ -1176,6 +1176,7 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['label'] = 'Location';
   $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['operator'] = 'field_service_location_location_tid_op';
   $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['identifier'] = 'sa_loc_tid';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
