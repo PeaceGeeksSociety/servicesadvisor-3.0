@@ -10,6 +10,12 @@ function services_advisor_location_drush_command() {
       'src' => 'Path to file containing location data as geojson.'
     ]
   ];
+  $items['import-location-points'] = [
+    'description' => 'Import service location points.',
+    'arguments' => [
+      'src' => 'Path to file containing location points.'
+    ]
+  ];
   return $items;
 }
 
@@ -65,9 +71,61 @@ function load_location_sources($sources, $prop_name) {
   return $locations;
 }
 
+function drush_services_advisor_location_import_location_points($src) {
+  $geofield_name = 'field_location_point';
+  $vocab_name = 'service_nested_location';
+
+  $args = drush_get_arguments();
+  array_shift($args);
+
+  $locations = load_points_from_file($args[0]);
+
+  print_r($locations);
+  exit;
+
+  $terms = vocabulary_get_terms($vocab_name);
+
+  $missing = [];
+  foreach ($terms as $tid => $data) {
+    $term = entity_metadata_wrapper('taxonomy_term', $data);
+    $key = strtoupper(remove_accents($term->label()));
+    if (!array_key_exists($key, $locations)) {
+      $missing[$tid] = $term;
+    } else {
+      $geometry = $locations[$key];
+      unset($locations[$key]);
+      $geojson = json_encode($geometry);
+      $wkb = geoPHP::load($geojson, 'json')->out('wkb');
+      $term->{$geofield_name} = ['geom' => $wkb];
+      $term->save();
+    }
+  }
+
+  print_r([
+    'Terms skipped' => array_map(
+      function ($term) {
+        return $term->label();
+      },
+      $missing
+    ),
+    'Left over regions' => array_map(
+      function ($geometry) {
+        return json_encode($geometry);
+      },
+      $locations
+    )
+  ]);
+}
+
+
+function load_points_from_file($src) {
+  $locations = array_map('str_getcsv', file($src));
+  return $locations;
+}
+
+
 function load_location_source($src, $prop_name) {
   $json_str = file_get_contents($src);
-  $data = json_decode($json_str);
 
   $locations = [];
   foreach ($data->features as $feature) {

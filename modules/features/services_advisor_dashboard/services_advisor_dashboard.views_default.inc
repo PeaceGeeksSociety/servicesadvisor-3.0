@@ -1023,6 +1023,317 @@ function services_advisor_dashboard_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'service_location' => 'service_location',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Search */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['ui_name'] = 'Search';
+  $handler->display->display_options['filters']['title']['operator'] = 'allwords';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'search';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Organization */
+  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['ui_name'] = 'Organization';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Organization';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'organization';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Services Provided */
+  $handler->display->display_options['filters']['field_services_provided_tid']['id'] = 'field_services_provided_tid';
+  $handler->display->display_options['filters']['field_services_provided_tid']['table'] = 'field_data_field_services_provided';
+  $handler->display->display_options['filters']['field_services_provided_tid']['field'] = 'field_services_provided_tid';
+  $handler->display->display_options['filters']['field_services_provided_tid']['ui_name'] = 'Services Provided';
+  $handler->display->display_options['filters']['field_services_provided_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_services_provided_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_services_provided_tid']['expose']['operator_id'] = 'field_services_provided_tid_op';
+  $handler->display->display_options['filters']['field_services_provided_tid']['expose']['label'] = 'Services Provided';
+  $handler->display->display_options['filters']['field_services_provided_tid']['expose']['operator'] = 'field_services_provided_tid_op';
+  $handler->display->display_options['filters']['field_services_provided_tid']['expose']['identifier'] = 'services_provided';
+  $handler->display->display_options['filters']['field_services_provided_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_services_provided_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_services_provided_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_services_provided_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_services_provided_tid']['vocabulary'] = 'service_nested_categories';
+  $handler->display->display_options['filters']['field_services_provided_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_services_provided_tid']['error_message'] = FALSE;
+  /* Filter criterion: Accessibility */
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['id'] = 'field_service_accessibility_tid';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['table'] = 'field_data_field_service_accessibility';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['field'] = 'field_service_accessibility_tid';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['ui_name'] = 'Accessibility';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['expose']['operator_id'] = 'field_service_accessibility_tid_op';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['expose']['label'] = 'Accessibility';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['expose']['operator'] = 'field_service_accessibility_tid_op';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['expose']['identifier'] = 'accessibility';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['vocabulary'] = 'service_accessibility';
+  $handler->display->display_options['filters']['field_service_accessibility_tid']['hierarchy'] = 1;
+  /* Filter criterion: Coverage */
+  $handler->display->display_options['filters']['field_service_coverage_tid']['id'] = 'field_service_coverage_tid';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['table'] = 'field_data_field_service_coverage';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['field'] = 'field_service_coverage_tid';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['ui_name'] = 'Coverage';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_coverage_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_coverage_tid']['expose']['operator_id'] = 'field_service_coverage_tid_op';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['expose']['label'] = 'Coverage';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['expose']['operator'] = 'field_service_coverage_tid_op';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['expose']['identifier'] = 'coverage';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_coverage_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_coverage_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_service_coverage_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['vocabulary'] = 'service_coverage';
+  $handler->display->display_options['filters']['field_service_coverage_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_service_coverage_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Service Location (field_service_location_location) */
+  $handler->display->display_options['filters']['field_service_location_location_tid']['id'] = 'field_service_location_location_tid';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['table'] = 'field_data_field_service_location_location';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['field'] = 'field_service_location_location_tid';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_location_location_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['operator_id'] = 'field_service_location_location_tid_op';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['operator'] = 'field_service_location_location_tid_op';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['identifier'] = 'sa_loc_tid';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_location_location_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['vocabulary'] = 'service_nested_location';
+  $handler->display->display_options['filters']['field_service_location_location_tid']['hierarchy'] = 1;
+  /* Filter criterion: Nationality */
+  $handler->display->display_options['filters']['field_service_nationality_tid']['id'] = 'field_service_nationality_tid';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['table'] = 'field_data_field_service_nationality';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['field'] = 'field_service_nationality_tid';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['ui_name'] = 'Nationality';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_nationality_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_nationality_tid']['expose']['operator_id'] = 'field_service_nationality_tid_op';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['expose']['label'] = 'Nationality';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['expose']['operator'] = 'field_service_nationality_tid_op';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['expose']['identifier'] = 'nationality';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_nationality_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_nationality_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_service_nationality_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['vocabulary'] = 'service_available_nationality';
+  $handler->display->display_options['filters']['field_service_nationality_tid']['hierarchy'] = 1;
+  /* Filter criterion: In-Take Criteria */
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['id'] = 'field_service_intake_criteria_tid';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['table'] = 'field_data_field_service_intake_criteria';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['field'] = 'field_service_intake_criteria_tid';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['ui_name'] = 'In-Take Criteria';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['expose']['operator_id'] = 'field_service_intake_criteria_tid_op';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['expose']['label'] = 'In-Take Criteria';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['expose']['operator'] = 'field_service_intake_criteria_tid_op';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['expose']['identifier'] = 'intake_criteria';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['vocabulary'] = 'service_intake_criteria';
+  $handler->display->display_options['filters']['field_service_intake_criteria_tid']['hierarchy'] = 1;
+  /* Filter criterion: Partner Type */
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['id'] = 'field_service_partner_type_tid_1';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['table'] = 'field_data_field_service_partner_type';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['field'] = 'field_service_partner_type_tid';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['relationship'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['ui_name'] = 'Partner Type';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['expose']['operator_id'] = 'field_service_partner_type_tid_1_op';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['expose']['label'] = 'Partner Type';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['expose']['operator'] = 'field_service_partner_type_tid_1_op';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['expose']['identifier'] = 'partner_type';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['vocabulary'] = 'service_partner_type';
+  $handler->display->display_options['filters']['field_service_partner_type_tid_1']['hierarchy'] = 1;
+  /* Filter criterion: Content: End Date (field_service_end_date) */
+  $handler->display->display_options['filters']['field_service_end_date_value']['id'] = 'field_service_end_date_value';
+  $handler->display->display_options['filters']['field_service_end_date_value']['table'] = 'field_data_field_service_end_date';
+  $handler->display->display_options['filters']['field_service_end_date_value']['field'] = 'field_service_end_date_value';
+  $handler->display->display_options['filters']['field_service_end_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_service_end_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_service_end_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_service_end_date_value']['expose']['operator_id'] = 'field_service_end_date_value_op';
+  $handler->display->display_options['filters']['field_service_end_date_value']['expose']['label'] = 'End Date';
+  $handler->display->display_options['filters']['field_service_end_date_value']['expose']['operator'] = 'field_service_end_date_value_op';
+  $handler->display->display_options['filters']['field_service_end_date_value']['expose']['identifier'] = 'field_service_end_date_value';
+  $handler->display->display_options['filters']['field_service_end_date_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_end_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_service_end_date_value']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_service_end_date_value']['group_info']['identifier'] = 'expired';
+  $handler->display->display_options['filters']['field_service_end_date_value']['group_info']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_service_end_date_value']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['field_service_end_date_value']['group_info']['default_group_multiple'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_service_end_date_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Exclude Expired Service Locations',
+      'operator' => '>=',
+      'value' => array(
+        'value_group' => array(
+          'value_choose_input_type' => 'relative',
+          'value' => NULL,
+          'default_date' => 'today',
+        ),
+        'min_group' => array(
+          'min_choose_input_type' => 'relative',
+          'min' => NULL,
+          'default_date' => 'today',
+        ),
+        'max_group' => array(
+          'max_choose_input_type' => 'date',
+          'max' => NULL,
+          'default_to_date' => '',
+        ),
+      ),
+    ),
+    2 => array(
+      'title' => 'Show Only Expired Service Locations',
+      'operator' => '<',
+      'value' => array(
+        'value_group' => array(
+          'value_choose_input_type' => 'relative',
+          'value' => NULL,
+          'default_date' => 'today',
+        ),
+        'min_group' => array(
+          'min_choose_input_type' => 'relative',
+          'min' => NULL,
+          'default_date' => 'today',
+        ),
+        'max_group' => array(
+          'max_choose_input_type' => 'date',
+          'max' => NULL,
+          'default_to_date' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['filters']['field_service_end_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_service_end_date_value']['default_date'] = 'today';
   $handler->display->display_options['path'] = 'search-services';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Search';
