@@ -43,7 +43,7 @@ projects[cors][subdir] = contrib
 projects[cors][version] = "1.3"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.14"
+projects[ctools][version] = "1.15"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.10"
@@ -104,14 +104,13 @@ projects[file_entity][subdir] = contrib
 projects[file_entity][version] = "2.16"
 
 projects[geocoder][subdir] = contrib
-projects[geocoder][version] = "1.3"
+projects[geocoder][version] = "1.4"
 
 projects[geofield][subdir] = contrib
-projects[geofield][version] = "2.3"
-projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-feeds_import_not_saving-2534822-46.patch"
+projects[geofield][version] = "2.4"
 
 projects[geolocation][subdir] = contrib
-projects[geolocation][version] = "1.6"
+projects[geolocation][version] = "1.7"
 
 projects[geophp][subdir] = contrib
 projects[geophp][version] = "1.x-dev"
@@ -270,7 +269,7 @@ projects[varnish][subdir] = contrib
 projects[varnish][version] = "1.1"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.18"
+projects[views][version] = "3.22"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
 
 projects[views_aggregator][subdir] = contrib
