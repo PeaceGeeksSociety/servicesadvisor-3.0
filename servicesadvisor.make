@@ -6,14 +6,14 @@ core = 7.x
 ;--------
 
 projects[admin_menu][subdir] = contrib
-projects[admin_menu][version] = "3.0-rc5"
+projects[admin_menu][version] = "3.0-rc6"
 
 projects[admin_views][subdir] = contrib
 projects[admin_views][version] = "1.6"
 projects[admin_views][patch][] = "https://www.drupal.org/files/issues/admin_views-duplicate_system_path-1780004-54.patch"
 
 projects[backup_migrate][subdir] = contrib
-projects[backup_migrate][version] = "3.5"
+projects[backup_migrate][version] = "3.6"
 
 projects[better_exposed_filters][subdir] = contrib
 projects[better_exposed_filters][version] = "3.5"
@@ -52,13 +52,13 @@ projects[datepicker][subdir] = contrib
 projects[datepicker][version] = "1.0"
 
 projects[devel][subdir] = contrib
-projects[devel][version] = "1.5"
+projects[devel][version] = "1.7"
 
 projects[diff][subdir] = contrib
-projects[diff][version] = "3.3"
+projects[diff][version] = "3.4"
 
 projects[ds][subdir] = contrib
-projects[ds][version] = "2.15"
+projects[ds][version] = "2.16"
 
 projects[email][subdir] = contrib
 projects[email][version] = "1.3"
@@ -210,7 +210,7 @@ projects[registry_autoload][subdir] = contrib
 projects[registry_autoload][version] = "1.3"
 
 projects[restful][subdir] = contrib
-projects[restful][version] = "2.16"
+projects[restful][version] = "2.17"
 
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][version] = "1.1"
@@ -276,7 +276,7 @@ projects[views_aggregator][subdir] = contrib
 projects[views_aggregator][version] = "1.4"
 
 projects[views_bulk_operations][subdir] = contrib
-projects[views_bulk_operations][version] = "3.4"
+projects[views_bulk_operations][version] = "3.5"
 
 projects[views_data_export][subdir] = contrib
 projects[views_data_export][version] = "3.2"
