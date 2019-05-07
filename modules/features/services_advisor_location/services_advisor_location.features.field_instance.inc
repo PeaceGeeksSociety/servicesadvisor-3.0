@@ -693,7 +693,7 @@ function services_advisor_location_field_default_field_instances() {
     'bundle' => 'service_location',
     'default_value' => array(),
     'deleted' => 0,
-    'description' => 'If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present. Enter Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field and will be inserted as marker on the map when you are done. ex. 31.95, 35.583',
+    'description' => 'If you have the Location of your Service, you can add a marker to the map here. These coordinates will be used for display on the map if they are present. Or you may enter a Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field, press "Save location", and it will be inserted as marker on the map. ex. 31.95, 35.583',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1932,7 +1932,7 @@ function services_advisor_location_field_default_field_instances() {
   t('Hotline / Public Phone');
   t('Hours');
   t('If needed, you can add additional details');
-  t('If you have the Location of your Service, Add a marker to the map here. These coordinates will be used for display on the map if they are present. Enter Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field and will be inserted as marker on the map when you are done. ex. 31.95, 35.583');
+  t('If you have the Location of your Service, you can add a marker to the map here. These coordinates will be used for display on the map if they are present. Or you may enter a Latitude and Longitude separated by a comma into the <strong>Geo-Coding</strong> field, press "Save location", and it will be inserted as marker on the map. ex. 31.95, 35.583');
   t('Immediate Next Step after Referral');
   t('Intake Criteria');
   t('Legal Documents Required');

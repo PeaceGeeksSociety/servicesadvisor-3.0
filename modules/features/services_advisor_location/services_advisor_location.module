@@ -258,8 +258,8 @@ function services_advisor_location_field_widget_properties_alter(&$widget, $cont
 function services_advisor_location_field_widget_leaflet_widget_widget_form_alter(&$element, &$form_state, $context) {
   if (isset($element['geocoder'])) {
     $element['geocoder']['#attached']['js'][] = drupal_get_path('module', 'services_advisor_location') . '/js/widget.js';
-    unset($element['geocoder']['#description']);
-    unset($element['geocoder']['#field_suffix']);
+    $element['geocoder']['#description'] = t('Enter an address and click "Save location" to insert it as marker on the map.');
+    $element['geocoder']['#field_suffix'] = '<a href="#" class="geocoder-submit button">' . t('Save location') . '</a>';
   }
 }
 
