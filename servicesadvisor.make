@@ -162,6 +162,12 @@ projects[libraries][version] = "2.3"
 projects[link][subdir] = contrib
 projects[link][version] = "1.4"
 
+projects[mailsystem][subdir] = contrib
+projects[mailsystem][version] = "2.35"
+
+projects[mailgun][subdir] = contrib
+projects[mailgun][version] = "1.6"
+
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
 
