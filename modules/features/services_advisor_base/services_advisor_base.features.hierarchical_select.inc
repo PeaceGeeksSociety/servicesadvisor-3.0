@@ -10,9 +10,9 @@
 function services_advisor_base_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
-  'save_lineage' => 0,
-  'enforce_deepest' => 1,
-  'resizable' => 1,
+  'save_lineage' => '1',
+  'enforce_deepest' => '1',
+  'resizable' => '1',
   'level_labels' => array(
     'status' => 0,
     'labels' => array(
@@ -25,8 +25,8 @@ $config = array(
   'dropbox' => array(
     'status' => 0,
     'title' => 'All selections',
-    'limit' => 0,
-    'reset_hs' => 1,
+    'limit' => '0',
+    'reset_hs' => '1',
     'sort' => 1,
   ),
   'editability' => array(
@@ -44,14 +44,28 @@ $config = array(
       '3' => 1,
     ),
     'allow_new_levels' => 0,
-    'max_levels' => 4,
+    'max_levels' => '4',
   ),
-  'entity_count' => 0,
+  'entity_count' => array(
+    'enabled' => 0,
+    'require_entity' => 0,
+    'settings' => array(
+      'count_children' => 0,
+      'entity_types' => array(
+        'node' => array(
+          'count_node' => array(
+            'page' => 0,
+            'service_location' => 0,
+            'service_partner' => 0,
+          ),
+        ),
+      ),
+    ),
+  ),
   'animation_delay' => 400,
   'special_items' => array(),
   'render_flat_select' => 0,
   'config_id' => 'taxonomy-field_service_location_location',
-  'require_entity' => 0,
 );
 
 $configs['taxonomy-field_service_location_location'] = $config;
