@@ -7,7 +7,7 @@ api = 2
 core = 7.x
 
 projects[drupal][type] = core
-projects[drupal][version] = 7.61
+projects[drupal][version] = 7.81
 
 ; Download the Services Advisor install profile
 projects[servicesadvisor][type] = profile

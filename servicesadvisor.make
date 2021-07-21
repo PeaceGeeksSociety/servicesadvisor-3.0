@@ -9,7 +9,7 @@ projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = "3.0-rc5"
 
 projects[admin_views][subdir] = contrib
-projects[admin_views][version] = "1.6"
+projects[admin_views][version] = "1.7"
 projects[admin_views][patch][] = "https://www.drupal.org/files/issues/admin_views-duplicate_system_path-1780004-54.patch"
 
 projects[backup_migrate][subdir] = contrib
@@ -37,7 +37,7 @@ projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][version] = "3.0-alpha2"
 
 projects[context][subdir] = contrib
-projects[context][version] = "3.7"
+projects[context][version] = "3.10"
 
 projects[cors][subdir] = contrib
 projects[cors][version] = "1.3"
@@ -127,7 +127,7 @@ projects[hierarchical_select][subdir] = contrib
 projects[hierarchical_select][version] = "3.0-beta8"
 
 projects[i18n][subdir] = contrib
-projects[i18n][version] = "1.22"
+projects[i18n][version] = "1.31"
 
 projects[i18nviews][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
@@ -270,7 +270,7 @@ projects[varnish][subdir] = contrib
 projects[varnish][version] = "1.1"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.18"
+projects[views][version] = "3.24"
 projects[views][patch][] = "https://www.drupal.org/files/issues/views-exposed-type-2303939.patch"
 
 projects[views_aggregator][subdir] = contrib
