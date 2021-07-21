@@ -10,6 +10,6 @@
     "grunt-sass": "^1.2.0",
     "load-grunt-tasks": "^3.5.0",
     "node-bourbon": "^4.2.8",
-    "node-sass": "^3.8.0"
+    "node-sass": "^4.13.1"
   }
 }
