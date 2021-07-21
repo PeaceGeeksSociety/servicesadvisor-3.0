@@ -161,7 +161,7 @@ projects[libraries][subdir] = contrib
 projects[libraries][version] = "2.3"
 
 projects[link][subdir] = contrib
-projects[link][version] = "1.4"
+projects[link][version] = "1.9"
 
 projects[masquerade][subdir] = contrib
 projects[masquerade][version] = "1.0-rc7"
@@ -188,9 +188,7 @@ projects[node_view_permissions][subdir] = contrib
 projects[node_view_permissions][version] = "1.6"
 
 projects[office_hours][subdir] = contrib
-projects[office_hours][version] = "1.x-dev"
-projects[office_hours][download][revision] = "9377182c38080968313b86470278df92ed1fe3c7"
-projects[office_hours][patch][] = "https://www.drupal.org/files/issues/office_hours-midnight_values-2553501-7.patch"
+projects[office_hours][version] = "1.9"
 
 projects[og][subdir] = contrib
 projects[og][version] = "2.9"
