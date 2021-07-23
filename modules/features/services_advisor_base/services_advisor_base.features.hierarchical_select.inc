@@ -10,7 +10,7 @@
 function services_advisor_base_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
-  'save_lineage' => '0',
+  'save_lineage' => '1',
   'enforce_deepest' => '1',
   'resizable' => '1',
   'level_labels' => array(
